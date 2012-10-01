@@ -1,0 +1,151 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is a template for constructing your project plan document, but
+% also to show the use of the l3deliverable class. Use pdflatex and
+% bibtex to process the file, creating a PDF file as output (there is
+% no need to use dvips when using pdflatex).
+%
+% Several meta data commands have been implemented to collect
+% information such as deliverable identifier, project name etc (see
+% below the \date command.
+
+\documentclass{l3deliverable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can use the svn-multi package to automatically insert version
+% control information into your document (an example of how to do this
+% is shown below).  Make sure to set the 'svn:keywords' subversion
+% property to 'Id' for the source file, for example, type:
+%
+% svn propset svn:keywords 'Id' d1.tex
+%
+% in the same directory as your 'd2.tex' file. 
+%
+% The information between the two $$ will now be updated when you next
+% commit the file to your SVN repository.
+%
+% You can of course, just use this field to insert manual version
+% information, e.g. 1.2, 1.2.1 ... instead.
+
+\usepackage{svn-multi}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\svnid{$Id: d1.tex 2500 2011-09-21 15:56:43Z tws $}
+\version{SVN Revision \svnrev~ \
+
+Made \svnday/\svnmonth/\svnyear~ by \svnauthor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Check these macro values for appropriateness for your own document.
+
+\title{Team Organisation}
+
+%%authors
+\author{
+  Dan Tomosoiu \\
+  Peeranat Fupongsiripan \\
+  Hector James Grebbell \\
+  Michael Kilian \\
+  Anthony Lau \\
+}
+
+%%release date 
+\date{25 September 2012}
+
+\deliverableID{D1}
+\project{PSD3 Group Exercise 1}
+\team{L}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Standard section for all documents
+
+\section{Introduction}
+
+\subsection{Identification}
+
+E.g., "This is the Management Plan of the Level 3 Project of Team X."
+
+\subsection{Related Documentation}
+
+E.g.,
+\begin{list}{}{}
+\item PSD3 Group Exercise Description \
+  
+  \url{http://fims.moodle.gla.ac.uk/...}
+\end{list}
+ 
+
+\subsection{Purpose and Description of Document}
+This document describes the Organisation and Responsibility designation within our team. Team members individual duties are listed, assuring the workload is split evenly. To extend on this methods of communication and decision making are recorded.
+
+By agreeing on the spread of responsibility before the project commences we can avoid disagreements at a later, more time-sensitive point. We can also attempt to see flaws in our management system. By finding these now, the issues can be closer watched to prevent serious problems occuring.
+
+\subsection{Document Status and Schedule}
+
+25/09/2012 – First Draft. Initial Roles, Predicted Communication tools and Flaws documented.
+\color{red}09/10/2012} – Planned Second Draft. Updated with any changes in role / communication structure upon commencing project. Addition of any noticeable flaws.
+\color{red}30/10/2012} – Third Draft – Any further Updates as above
+\color{red}27/11/2012} – Final Review before Submission
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Roles}
+
+ Who does what?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Authority}
+
+Who decides?  How are decisions taken?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Communication}
+
+Where and when will you meet?  How will you communicate otherwise?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Information Management}
+
+Where is information kept?  How and when will it distributed?  Who can
+use it?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Organisational Risks}
+
+What are the threats to team success arising from the way you organise
+the group?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\section{Glossary}
+
+Including expansions of non-standard abbreviations and acronyms and
+other key definitions.  You may find it useful to maintain a glossary
+as a shared section amongst all your PSD documents. using the
+\verb!\input{}! macro.
+
+\section{Another appendix}
+
+Any relevant associated documentation, e.g., a meeting plan.
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
