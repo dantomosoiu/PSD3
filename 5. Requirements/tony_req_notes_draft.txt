@@ -1,0 +1,23 @@
+Companies will have direct access to the system via a login
+The login will be distributed by the course coordinator to the company
+The advert submission screen should be a structured template. It should be like a web form with fields to fill in. He envisages a table of skills that advertisers can select as required or desired -- possibly via check boxes
+Would like the system to warn the advertiser if they leave the start date out or don’t give a clear indication
+
+Normally for the established companies, a link to the application page of the company should be included in the description
+The student only applies through the system if the company (usually small company) requests them to do so. These companies normally only take 1 or 2 students tops.
+Some placements come from e-Placements and Club 21 and are re-advertised. The advert normally links the student back to where it was originally advertised.
+Some adverts/applications are still handled by Club 21 and e-Placements
+If the student needs to upload their CV to apply to a small company that uses the system to handle applications, they upload a base copy and are allowed to edit it to tailor it to the company they are applying for.
+
+When a new advert is published, an email is sent to the student 
+The system will not allow students to comment on adverts
+
+Students notify of success in gaining an offer for an internship through the system
+If a student notifies of success in gaining an offer from one of the advertised companies on the system, then this is automatically approved.
+The adverts will be left up and not taken down
+The criteria of the notification the student gives: pay, how long, description of job and what you are doing (must be substantially SE/ESE based, depending on course). If the description involves Requirements Engineering and not actually coding, then this still counts as SE.
+The system should ideally have no manuals/online help features/tutorials. It should be easy enough to use that it doesn’t require it.
+The system should have a single point of entry for all users but should have different dashboard for different types of users after they log in.
+The system should automatically enroll SE/ESE students to the system with a login. Other users will have to register to use the system.
+Getting login details to the company could be done by email -- an email could be sent to the company with registration details and the course coordinator would approve the request for the company to be part of the system. 
+
