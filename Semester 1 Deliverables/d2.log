@@ -1,0 +1,312 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.7)  25 OCT 2012 18:02
+entering extended mode
+ %&-line parsing enabled.
+**d2.tex
+(./d2.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(./l3deliverable.cls
+Document Class: l3deliverable 
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+))
+
+! LaTeX Error: File `textcase.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen105
+\extrarowheight=\dimen106
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen107
+\TX@old@table=\dimen108
+\TX@old@col=\dimen109
+\TX@target=\dimen110
+\TX@delta=\dimen111
+\TX@cols=\count88
+\TX@ftn=\toks16
+)
+(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+))
+
+! LaTeX Error: File `svn-multi.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+! Undefined control sequence.
+<recently read> \svnid 
+                       
+l.8 \svnid
+          {$Id: d2.tex 1000 2012-10-21 15:56:43Z hg $}
+? 
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \svnid{$
+            Id: d2.tex 1000 2012-10-21 15:56:43Z hg $}
+? 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 8.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 8.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 8.
+
+! LaTeX Error: File `tabulary.sty' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+
+Enter file name: 
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+) (./d2.aux)
+\openout1 = `d2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 54.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count89
+\scratchdimen=\dimen112
+\scratchbox=\box26
+\nofMPsegments=\count90
+\nofMParguments=\count91
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count92
+\MPscratchDim=\dimen113
+\MPnumerator=\count93
+\everyMPtoPDFconversion=\toks18
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<img/CompSci_mono.pdf, id=9, 413.545pt x 93.34875pt>
+File: img/CompSci_mono.pdf Graphic file (type pdf)
+
+<use img/CompSci_mono.pdf>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
+
+! Undefined control sequence.
+\@version ->SVN Revision \svnrev 
+                                 ~ \^^M\par Made \svnday /\svnmonth /\svnyea...
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ...sion \svnrev ~ \^^M\par Made \svnday 
+                                                  /\svnmonth /\svnyear ~ by ...
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ...v ~ \^^M\par Made \svnday /\svnmonth 
+                                                  /\svnyear ~ by \svnauthor 
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ...ar Made \svnday /\svnmonth /\svnyear 
+                                                  ~ by \svnauthor 
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version .../\svnmonth /\svnyear ~ by \svnauthor 
+                                                  
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ->SVN Revision \svnrev 
+                                 ~ \^^M\par Made \svnday /\svnmonth /\svnyea...
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ...sion \svnrev ~ \^^M\par Made \svnday 
+                                                  /\svnmonth /\svnyear ~ by ...
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ...v ~ \^^M\par Made \svnday /\svnmonth 
+                                                  /\svnyear ~ by \svnauthor 
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ...ar Made \svnday /\svnmonth /\svnyear 
+                                                  ~ by \svnauthor 
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version .../\svnmonth /\svnyear ~ by \svnauthor 
+                                                  
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ->SVN Revision \svnrev 
+                                 ~ \^^M\par Made \svnday /\svnmonth /\svnyea...
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ...sion \svnrev ~ \^^M\par Made \svnday 
+                                                  /\svnmonth /\svnyear ~ by ...
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ...v ~ \^^M\par Made \svnday /\svnmonth 
+                                                  /\svnyear ~ by \svnauthor 
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version ...ar Made \svnday /\svnmonth /\svnyear 
+                                                  ~ by \svnauthor 
+l.58 \maketitle
+               
+? 
+! Undefined control sequence.
+\@version .../\svnmonth /\svnyear ~ by \svnauthor 
+                                                  
+l.58 \maketitle
+               
+? 
+[1 <./img/CompSci_mono.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
+ (./d2.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+)
+\tf@toc=\write3
+\openout3 = `d2.toc'.
+
+ [1]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 101.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 101.
+ [2]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 216.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [3] [4] (./d2.aux) ) 
+Here is how much of TeX's memory you used:
+ 1271 strings out of 495061
+ 16260 string characters out of 1182622
+ 67337 words of memory out of 3000000
+ 4441 multiletter control sequences out of 15000+50000
+ 21808 words of font info for 46 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 32i,14n,23p,185b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1
+/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.
+pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/tex
+mf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/typ
+e1/urw/times/utmri8a.pfb>
+Output written on d2.pdf (6 pages, 115839 bytes).
+PDF statistics:
+ 62 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
