@@ -1,0 +1,30 @@
+Companies receive login credentials from .. (not specified - the system probably).
+Companies post ads with structured templates, that need to be approved by the coordinator before becoming public. 
+Ads are posted via the system (not by email) eg - webform. The form should have a table of tickable skills that the company can select what it is looking for.
+There should be warning about not completed fields, but there shouldn't be required fields (obviously some essential things will need to be required).
+Companies can post links to more info in the ad.
+
+Students can apply either through the company's system, by redirect from the ad, or through the system, if the company doesn't have/want to use their own system.
+
+Students should be able to upload their CVs and cover letters, but should also be able to change them prior to applying to individual placements. (Either by editing through the system or re-uploading ?)
+
+Students should be able to receive emails for new posted ads.
+Students shouldn't be able to comment to adds. (An answer wasn't given for 'vote-type' review - eg 5 star)
+
+Students are supposed to notify the coordinator once they secure the placement, via the system.
+If the ad was approved by the coordinator as being SE compliant, the placement should be auto-approved once the student informs the coordinator.
+
+Once a placement is secured, the ad should remain in the system.
+The ad should be readvertised by the company if needed. We don't need to bother with making the ad available once the placement 'goes bad'.
+
+For placements secured through other means (not the system), the student needs to inform the coordinator by giving a brief description of the placement. The placement needs to satisfy basic SE placement requirements - 10+ wk,  £250+, substantially SE.
+
+There should be no manuals/tutorials.
+
+There should be a single interface, but different dashboards available to the user type once the user logs in.
+SE students should be preinrolled in the system.
+
+New students/copmanies should be able to apply for accounts. These need to be approved by a coordinator. Once they're approved, emails with user/password should be sent tho the applicants.
+
+
+
