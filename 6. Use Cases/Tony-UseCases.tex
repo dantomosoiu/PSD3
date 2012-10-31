@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage { usecasedescription }
+%...
+
+\begin {document}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Submission of adverts by company/academics (organisation)}
+\UseCaseDescription{Companies, and academics in the university need to be able to submit advertisments for internships. This allows an organisation to submit an advertisement for an internship without emailing the course coordinator directly.}
+\UseCaseRationale{This is a core feature of the system. It was originally specified in the business case}
+\UseCasePriority{Must Have}
+\UseCaseStatus{Not Implemented}
+\UseCaseActors{Organisation}
+\UseCaseExtensions{Structured fields input}
+\UseCaseIncludes{Login}
+\UseCaseConditions{
+\textbf{pre}\ The organisation must have already obtained a login for the system. The organisation must be logged in.
+\textbf{post}\ The advert is queued to be reviewed by the course coordinator before being visible to the users of the system
+}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{
+\textbf{Primary:}\ Apple Inc. logs in successfully. They select the ‘Submit Advertisement’ menu item and are taken to the correct page. They fill in all fields and click the ‘Confirm’ button at the bottom of the page. A confirmation is displayed saying that the advert submission was successful.
+\
+\textbf{Alternate 1:} Dr. Jones logs in successfully. He selects the ‘Submit Advertisement’ menu item and is taken to the correct page. He enters details in the fields and clicks ‘Confirm’. An error message is displayed saying that not all fields have been filled out. Dr. Jones fill in the missing fields and clicks ‘Confirm’ again. A confirmation is displayed saying the advert submission was successful.\\
+}
+\UseCaseRisks{}
+\UseCaseUserInterface{}
+\end{UseCaseTemplate}
+
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Submission of advert by SE/ESE student}
+\UseCaseDescription{An SE/ESE student submits an advertisement for an internship not already advertised on system}
+\UseCaseRationale{An SE/ESE student must get an internship approved by submitting the internship details}
+\UseCasePriority{Should Have}
+\UseCaseActors{Students}
+\UseCaseExtensions{Structured fields input}
+\UseCaseIncludes{Login}
+\UseCaseConditions{
+\textbf{pre}\ The student must have already obtained a login for the system (by auomatic assignment or from the course coordinator). The student must be logged in.
+\textbf{post}\ The advert is queued to be reviewed by the course coordinator
+}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{
+\textbf{Primary:}\ Barry wants to submit an advert to be reviewed. He logs in to the system, clicks the submit advert button under the review section and fills in the details. It gives him a message confirming of success.\
+}
+\UseCaseRisks{}
+\UseCaseUserInterface{}
+\end{UseCaseTemplate}
+
+
+
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Structured fields input}
+\UseCaseDescription{When submitting an advert, a student, company, or academic has to fill in pre-specified text fields with information}
+\UseCaseRationale{The submission of an advert in a standard form will speed up the review process.}
+\UseCasePriority{Should Have}
+\UseCaseActors{Organisation\\
+		Student\\}
+\UseCaseExtensions{}
+\UseCaseIncludes{}
+\UseCaseConditions{
+\textbf{pre}\ The organisation or student has entered the appropriate interface for submitting an advert.
+}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{}
+\UseCaseRisks{}
+\UseCaseUserInterface{}
+\end{UseCaseTemplate}
+
+
+\end{document}
