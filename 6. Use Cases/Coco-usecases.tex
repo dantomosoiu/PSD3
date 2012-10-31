@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage { usecasedescription }
+%...
+
+\begin {document}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Advert Approval}
+\UseCaseDescription{The advert approval use case changes the status of an advert to approved ready to inform course students}
+\UseCaseRationale{Course coordinator needs to be able to assess advert to be visible for course coordinator}
+\UseCasePriority{Must Have}
+\UseCaseStatus{Not Implemented}
+\UseCaseActors{Course coordinator}
+\UseCaseExtensions{Email approved adverts (to student)}
+\UseCaseIncludes{-Login -Search for advert}
+\UseCaseConditions{\textbf{pre} - Advert must exist \textbf{post} - Advert is marked as approved \textbf{post} - Advert becomes public}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{\textbf{Primary:}\ John logs in and search for unapproved adverts on the advert board. He determines whether the advert is suitable for the course. Then, he marks the advert as approved. \textbf{Alternate 1:}\ Kate logs in and search for unapproved adverts. Then she accidentally click approve advert without determining the purpose of the course carefully.}
+\UseCaseRisks{Students can enroll in unsuitable placement.}
+\UseCaseUserInterface{}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Email approved adverts (to student)}
+\UseCaseDescription{User logs in and approve suitable advert. Then, he can be able to email approved advert to students.}
+\UseCaseRationale{Course coordinator needs to be able to notify course students when new advert is approved.}
+\UseCasePriority{Should Have}
+\UseCaseActors{Course coordinator}
+\UseCaseExtensions{}
+\UseCaseIncludes{Login}
+\UseCaseConditions{\textbf{pre} - Advert must be approved by course coordinator}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{\textbf{Primary:}\ John logs in and set suitable advert as approved. He then clicks on send advert to students.}
+\UseCaseRisks{}
+\UseCaseUserInterface{}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Notify secure placement via the system (to course coordinator)}
+\UseCaseDescription{User logs in and select suitable advert. After that, he can send the notification of secure placement to course coordinator.}
+\UseCaseRationale{Course coordinator must ensure that every course student has their work placement.}
+\UseCasePriority{Should Have}
+\UseCaseActors{Student}
+\UseCaseExtensions{}
+\UseCaseIncludes{Login}
+\UseCaseConditions{\textbf{pre} - Advert must exist \textbf{pre} - Advert must be approved by course coordinator \textbf{pre} - Organisation has to secure the placement position for student \textbf{post} - course student's status is marked as secure}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{\textbf{Primary:}\ Andrew logs in and look for desirable and approved advert. He clicks on secure the placement button and sends an email about the selected placement to course coordinator.\textbf{Alternate 1:}\ Margaret logs in and select desirable advert but she cannot click on secure the placement button because the organisation she applies for has not accepted her position.}
+\UseCaseRisks{It may take time for the organisation to secure student's position.}
+\UseCaseUserInterface{}
+\end{UseCaseTemplate}
+
+\end {document}
