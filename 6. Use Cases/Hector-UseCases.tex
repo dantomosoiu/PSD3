@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage { usecasedescription }
+%...
+
+\begin {document}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Account Creation}
+\UseCaseDescription{It must be possibe to create accounts on the system for all users}
+\UseCaseRationale{To interact on an individual basis with the system, it must have some way of telling who is using it}
+\UseCasePriority{Must Have}
+\UseCaseStatus{Not Implemented}
+\UseCaseActors{Course Co-ordinator}
+\UseCaseExtensions{- Logging into the System\\
+- Automatic Enrolment for SE/ESE Students\\
+- Ability for Company Accounts}
+\UseCaseIncludes{}
+\UseCaseConditions{\textbf{pre}\ Account ID does not already exist\\
+\textbf{post}\ Account now present on system}
+\UseCaseNonFunctionalRequirements{- Security (ie a Password)\\
+- Graphical User Interface}
+\UseCaseScenarios{\textbf{Primary:}\ Course Co-Ordinator creates an account for a student\\
+\textbf{Alternative 1:}\ Automatic Enrollment for SE/ESE Students\\
+\textbf{Alternative 2:}\ Course Co-Ordinator creates an account for a company}
+\UseCaseRisks{}
+\UseCaseUserInterface{A field based input for each value required}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Automatic SE/ESE Student Enrollment}
+\UseCaseDescription{The Course Co-Ordinator inputs a list of students on SE/ESE courses. The System generates a User account for each of these.}
+\UseCaseRationale{All SE/ESE Students must find a placement as part of their course. Therefore it is highly likely they shall use the system (And
+if the system meets all desired use-cases compulsory). By allowing automatic account creation for these students, it saves the course co-ordinator
+a substantial amount of time.}
+\UseCasePriority{Should Have}
+\UseCaseActors{Course Co-Ordinator}
+\UseCaseExtensions{}
+\UseCaseIncludes{Account Creation}
+\UseCaseConditions{\textbf{pre}\ Account for each student does not already exist\\
+\textbf{post}\ All SE/ESE students now have an account}
+\UseCaseNonFunctionalRequirements{Email Students account details\\Automatically Generate Random Passwords}
+\UseCaseScenarios{\textbf{Primary:}\ The Course Co-Ordinator inputs a csv file including the necessary details for each SE/ESE student he wished to make an account for.
+The accounts are then made.\\
+\textbf{Alternate 1:} The Course  Co-Ordinator has recieved a large number of requests for accounts, so decides to create an input file for them all and make all the accounts at once.
+}
+\UseCaseRisks{If there are errors in the input file, accounts may be made with incorrect details / Not at all.}
+\UseCaseUserInterface{Ability to input a file}
+\end{UseCaseTemplate}
+
+\begin{UseCaseTemplate}
+\UseCaseLabel{Ability for Company Accounts}
+\UseCaseDescription{A Company has an account, which allows them to submit adverts directly to the system for approval. It also allows students applications
+to be forwarded directly.}
+\UseCaseRationale{This saves the course co-ordinator time, since he does not have to manually enter each advert. It also means applications reach the companies more quickly.}
+\UseCasePriority{Should Have}
+\UseCaseActors{Co-ordinator\\Company's}
+\UseCaseExtensions{}
+\UseCaseIncludes{Account Creation\\Advert Submission\\Application By Students}
+\UseCaseConditions{}
+\UseCaseNonFunctionalRequirements{}
+\UseCaseScenarios{\textbf{Primary:}\ A Company Submits an advert to the system
+\textbf{Alternate 1:}\ A Student submits an application to an advert. This is then sent to the company who placed it directly.}
+\UseCaseRisks{This removes the ability for the couse co-ordinator to moderate students applications}
+\UseCaseUserInterface{}
+\end{UseCaseTemplate}
