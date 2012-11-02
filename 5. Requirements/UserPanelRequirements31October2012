@@ -1,0 +1,16 @@
+1: Companies can provide feedback/message of acceptance through system.
+2: Application through the system is an optional module
+3: Login should be GUID for students and generated for companies
+4: Status info might be of use to the coordinator - ie status of a students application
+5: Possibly get students info from myCampus
+6: Companies can make the decision to take down their own adverts from the system
+7: Provide the coordinator with a dashboard view of a students status to show their applications and the process with each.
+	Jeremy would like a downloadable CSV file to be generated which conveys this data
+8: Adverts can only be edited BEFORE it has been published (approved)
+9: The lifecycle for an advert is:
+	Submitted -> Approved -> Withdrawn or Expired
+10: A mailing list should be generated highlighting newly published events to students. All
+	SE/ESE students are enrolled automatically. This can only be opted out of if they have secured
+	a suitable placement.
+11: The situation where a placement 'falls through', eg the student cannot take part in the placment,
+	the company goes bust,etc. is outside the scope of the system.

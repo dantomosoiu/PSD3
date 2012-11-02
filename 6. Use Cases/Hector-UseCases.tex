@@ -6,14 +6,13 @@
 
 \begin{UseCaseTemplate}
 \UseCaseLabel{Account Creation}
-\UseCaseDescription{It must be possibe to create accounts on the system for all users}
+\UseCaseDescription{It must be possibe to create accounts on the system for all users. SE/ESE students have accounts created automatically.}
 \UseCaseRationale{To interact on an individual basis with the system, it must have some way of telling who is using it}
 \UseCasePriority{Must Have}
 \UseCaseStatus{Not Implemented}
 \UseCaseActors{Course Co-ordinator}
-\UseCaseExtensions{- Logging into the System\\
-- Automatic Enrolment for SE/ESE Students\\
-- Ability for Company Accounts}
+\UseCaseExtensions{- Automatic Enrolment for SE/ESE Students\\
+- Company Account Creation}
 \UseCaseIncludes{}
 \UseCaseConditions{\textbf{pre}\ Account ID does not already exist\\
 \textbf{post}\ Account now present on system}
@@ -43,19 +42,20 @@ a substantial amount of time.}
 The accounts are then made.\\
 \textbf{Alternate 1:} The Course  Co-Ordinator has recieved a large number of requests for accounts, so decides to create an input file for them all and make all the accounts at once.
 }
-\UseCaseRisks{If there are errors in the input file, accounts may be made with incorrect details / Not at all.}
+\UseCaseRisks{If there are errors in the input file, accounts may be made with incorrect details or not at all.}
 \UseCaseUserInterface{Ability to input a file}
 \end{UseCaseTemplate}
 
 \begin{UseCaseTemplate}
-\UseCaseLabel{Ability for Company Accounts}
+\UseCaseLabel{Company Account Creation}
 \UseCaseDescription{A Company has an account, which allows them to submit adverts directly to the system for approval. It also allows students applications
 to be forwarded directly.}
 \UseCaseRationale{This saves the course co-ordinator time, since he does not have to manually enter each advert. It also means applications reach the companies more quickly.}
 \UseCasePriority{Should Have}
-\UseCaseActors{Co-ordinator\\Company's}
+\UseCaseActors{Coordinator\\
+Organisation}
 \UseCaseExtensions{}
-\UseCaseIncludes{Account Creation\\Advert Submission\\Application By Students}
+\UseCaseIncludes{Account Creation}
 \UseCaseConditions{}
 \UseCaseNonFunctionalRequirements{}
 \UseCaseScenarios{\textbf{Primary:}\ A Company Submits an advert to the system
