@@ -1,0 +1,4 @@
+divide workload into some basic first tasks:
+1. account creation/authentication
+2. placement posting, cv 'uploading'
+3. the things the coordinator does (approving/rejecting adverts, placements, accounts)
