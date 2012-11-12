@@ -1,0 +1,127 @@
+#!/bin/bash
+#PSD3 Prototype for Internship Management System
+#Version 1.0
+
+function login() {
+
+exit=0
+
+while [[ ! $exit -eq 1 ]];
+do 
+
+	#get username
+	echo -n "Enter username: "
+	read username
+
+	while [ -z "$username" ];
+	do
+	echo "No username entered. Please try again"
+		echo -n "Enter username: "
+	read username
+	done
+
+	#get password
+	echo -n "Enter password: "
+	read password
+
+	while [ -z "$password" ];
+	do
+		echo "No password entered. Please try again"
+		echo -n "Enter password: "
+		read password
+	done
+
+	#process username and password
+	if [[ "$username" = "s" && "$password" = "s" ]]; then
+		userType="student"
+		exit=1;
+	elif [[ "$username" = "timstorer" && "$password" = "coursecoord" ]]; then
+		userType="coordinator"
+		exit=1;
+	elif [[ "$username" = "academic" && "$password" = "academicpass" ]]; then
+		userType="academic"
+		exit=1;
+	elif [[ "$username" = "company" && "$password" = "companypass" ]]; then
+		userType="company"
+		exit=1;
+	else
+		echo "Wrong username or password. Please try again."
+		echo
+	fi
+
+done
+
+}
+
+
+function menu() {
+	echo
+	echo "Please choose an option from the menu below by entering the appropriate number and pressing enter:"
+
+	if [[ "$userType" = "student" ]]; then
+		echo "1. Review advertisements"
+		echo "2. Notify course coordinator of placement success"
+		echo
+		processMenuChoice
+	elif [[ "$userType" = "coordinator" ]]; then
+		echo "1. Review advertisements"
+		echo "2. Approve advertisments"
+		echo "3. Approve internships"
+		echo
+		processMenuChoice
+	elif [[ "$userType" = "academic" ]]; then
+		echo "1. Submit advertisement"
+		echo "2. View submitted advertisements"
+		echo
+		processMenuChoice
+	elif [[ "$userType" = "company" ]]; then
+		echo "1. Submit advertisement"
+		echo "2. View submitted advertisements"
+		echo
+		processMenuChoice
+	fi
+}
+
+function processMenuChoice() {
+	read choice #get user choice
+
+	while [ -z "$choice" ]; #keep asking for choice if empty string entered
+	do
+		echo "No choice entered"
+		echo -n "Enter choice and press enter: "
+		read choice
+	done
+
+	if [[ "$userType" = "student" && "$choice" -eq 1 ]]; then
+		echo "choice 1"
+	elif [[ "$userType" = "student" && "$choice" -eq 2 ]]; then
+		echo "choice 2"
+	elif [[ "$userType" = "coordinator" && "$choice" -eq 1 ]]; then
+		echo "choice 1"
+	elif [[ "$userType" = "coordinator" && "$choice" -eq 2 ]]; then
+		echo "choice 2"
+	elif [[ "$userType" = "coordinator" && "$choice" -eq 3 ]]; then
+		echo "choice 3"
+	elif [[ "$userType" = "academic" && "$choice" -eq 1 ]]; then
+		echo "choice 1"
+	elif [[ "$userType" = "academic" && "$choice" -eq 2 ]]; then
+		echo "choice 2"
+	elif [[ "$userType" = "company" && "$choice" -eq 1 ]]; then
+		echo "choice 1"
+	elif [[ "$userType" = "company" && "$choice" -eq 2 ]]; then
+		echo "choice 2"	
+	fi
+
+}
+
+
+# START MAIN PROGRAM #
+echo
+echo "Welcome to the University of Glasgow Internship Management System"
+echo
+login
+menu
+
+#result=$userType   # or result=`myfunc`
+#echo $userType
+
