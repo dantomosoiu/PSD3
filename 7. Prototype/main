@@ -12,24 +12,37 @@ do
 	#get username
 	echo -n "Enter username: "
 	read username
+	if [ ! -z $username ]
+		then username=$(cat .users.csv | grep --no-messages $username)
+		fi
 
 	while [ -z "$username" ];
 	do
-	echo "No username entered. Please try again"
+		echo "Incorrect username entered. Please try again"
 		echo -n "Enter username: "
-	read username
+		read username
+		
+		if [ ! -z $username ]
+			then username=$(cat .users.csv | grep --no-messages $username)
+			fi
+		
 	done
+
+	echo $username
 
 	#get password
 	echo -n "Enter password: "
-	read password
-
+	read -s password
+	
+	
 	while [ -z "$password" ];
 	do
 		echo "No password entered. Please try again"
 		echo -n "Enter password: "
-		read password
+		read -s password
 	done
+
+
 
 	#process username and password
 	if [[ "$username" = "s" && "$password" = "s" ]]; then
