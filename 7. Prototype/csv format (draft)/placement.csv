@@ -2,4 +2,4 @@ Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires
 acompanyID, 10, 250, true, 1, no alcoholics, true, 10.03.13
 anothercompanyID, 12, 150, false, 2, only alcoholics, true, 10.02.13
 anacademic, 48, 300, true, 1, null, true, 31.12.12
-EXTERNAL, 12, 300, 1, "some relevant info the student could/should specify about external placements", false, null
+EXTERNAL, 12, 300, false, 1, "some relevant info the student could/should specify about external placements", false, null

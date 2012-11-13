@@ -5,6 +5,7 @@
 function login() {
 
 exit=0
+quit=0
 
 while [[ ! $exit -eq 1 ]];
 do 
@@ -31,7 +32,7 @@ do
 
 	#get password
 	echo -n "Enter password: "
-	read password
+	read -s password
 	if [ ! -z $password ]
 		then password=$(echo $username | grep -c $password)
 		fi
@@ -40,7 +41,7 @@ do
 	do
 		echo "No password entered. Please try again"
 		echo -n "Enter password: "
-		read password
+		read -s password
 		if [ ! -z $password ]
 			then password=$(echo $username | grep -c $password)
 			fi
@@ -50,7 +51,7 @@ do
 
 	#process username and password
 	if [[  $password = 1 ]]; then
-		userType=$(echo $username | grep -o "student")
+		userType=$(echo $username | grep -o " student" | grep -o "student")
 		userType=$(echo $userType$(echo $username | grep -o "coordinator"))
 		userType=$(echo $userType$(echo $username | grep -o "academic"))
 		userType=$(echo $userType$(echo $username | grep -o "organisation"))
@@ -68,7 +69,7 @@ done
 
 function menu() {
 	echo
-	echo "Please choose an option from the menu below by entering the appropriate number and pressing enter:"
+	echo "Please choose an option from the menu below by entering the appropriate number and pressing enter. q to exit:"
 
 	if [[ "$userType" = "student" ]]; then
 		echo "1. Review advertisements"
@@ -91,6 +92,7 @@ function menu() {
 		echo "2. View submitted advertisements"
 		echo
 		processMenuChoice
+	else quit=1
 	fi
 }
 
@@ -104,16 +106,23 @@ function processMenuChoice() {
 		read choice
 	done
 
-	if [[ "$userType" = "student" && "$choice" -eq 1 ]]; then
-		echo "choice 1"
+	if [[ "$choice" = "q" ]]; then
+		quit=1
+	elif [[ "$userType" = "student" && "$choice" -eq 1 ]]; then
+		echo "ID, Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires"
+		cat .placement.csv | grep "true.*true"
+		cat .placement.csv | grep "false.*true"
 	elif [[ "$userType" = "student" && "$choice" -eq 2 ]]; then
-		echo "choice 2"
+		echo "choice 2" 
+		processPlacement
 	elif [[ "$userType" = "coordinator" && "$choice" -eq 1 ]]; then
-		echo "choice 1"
+		cat .placement.csv
 	elif [[ "$userType" = "coordinator" && "$choice" -eq 2 ]]; then
-		echo "choice 2"
+		cat .studentPlacement
 	elif [[ "$userType" = "coordinator" && "$choice" -eq 3 ]]; then
 		echo "choice 3"
+	elif [[ "$userType" = "coordinator" && "$choice" -eq 4 ]]; then
+		echo "choice 4"
 	elif [[ "$userType" = "academic" && "$choice" -eq 1 ]]; then
 		echo "choice 1"
 	elif [[ "$userType" = "academic" && "$choice" -eq 2 ]]; then
@@ -123,8 +132,48 @@ function processMenuChoice() {
 	elif [[ "$userType" = "organisation" && "$choice" -eq 2 ]]; then
 		echo "choice 2"	
 	fi
+	echo "Enter to continue"
+	read cont
 
 }
+
+function processPlacement() {
+	echo
+	echo "Please choose an option from the menu below by entering the appropriate number and pressing enter. q to exit:"
+
+	echo "1. The placement was found using the University of Glasgow Internship Management System"
+	echo "2. The placement was found externally"
+	echo
+	read choice #get user choice
+
+	while [ -z "$choice" ]; #keep asking for choice if empty string entered
+	do
+		echo "No choice entered"
+		echo -n "Enter choice and press enter: "
+		read choice
+	done
+
+	if [[ "$choice" = "q" ]]; then
+		cont=0
+	elif [[ "$choice" -eq 1 ]]; then
+	echo "Select the correct position by number"
+		echo "ID, Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires"
+		cat .placement.csv | grep "true.*true"
+		cat .placement.csv | grep "false.*true"
+		read choice
+		choice=$(cat .placement.csv | grep "$choice, ")
+		echo $choice $username >> .studentPlacement
+		echo "Thank you. Your response has been saved and is awaiting approval from the course coordinator. You will be contacted by email in due course."
+		
+		
+	elif [[ "$choice" -eq 2 ]]; then
+		echo "Enter Placement in form Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires"
+		read placement
+		echo $placement $username >> .studentPlacement
+		echo "Thank you. Your response has been saved and is awaiting approval from the course coordinator. You will be contacted by email in due course."
+	fi
+}
+
 
 
 # START MAIN PROGRAM #
@@ -132,7 +181,10 @@ echo
 echo "Welcome to the University of Glasgow Internship Management System"
 echo
 login
-menu
+while [[ ! $quit -eq 1 ]];
+do 
+	menu
+done
 
 #result=$userType   # or result=`myfunc`
 #echo $userType
