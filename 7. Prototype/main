@@ -78,8 +78,9 @@ function menu() {
 		processMenuChoice
 	elif [[ "$userType" = "coordinator" ]]; then
 		echo "1. Review advertisements"
-		echo "2. Approve advertisments"
-		echo "3. Approve internships"
+		echo "2. View current status of students’ internship applications"
+		echo "3. Approve student internship placements"
+		echo "4. Approve User"
 		echo
 		processMenuChoice
 	elif [[ "$userType" = "academic" ]]; then
