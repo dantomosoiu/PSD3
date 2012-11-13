@@ -28,39 +28,38 @@ do
 		
 	done
 
-	echo $username
 
 	#get password
 	echo -n "Enter password: "
-	read -s password
-	
+	read password
+	if [ ! -z $password ]
+		then password=$(echo $username | grep -c $password)
+		fi
 	
 	while [ -z "$password" ];
 	do
 		echo "No password entered. Please try again"
 		echo -n "Enter password: "
-		read -s password
+		read password
+		if [ ! -z $password ]
+			then password=$(echo $username | grep -c $password)
+			fi
 	done
-
-
+	
+	
 
 	#process username and password
-	if [[ "$username" = "s" && "$password" = "s" ]]; then
-		userType="student"
-		exit=1;
-	elif [[ "$username" = "timstorer" && "$password" = "coursecoord" ]]; then
-		userType="coordinator"
-		exit=1;
-	elif [[ "$username" = "academic" && "$password" = "academicpass" ]]; then
-		userType="academic"
-		exit=1;
-	elif [[ "$username" = "company" && "$password" = "companypass" ]]; then
-		userType="company"
+	if [[  $password = 1 ]]; then
+		userType=$(echo $username | grep -o "student")
+		userType=$(echo $userType$(echo $username | grep -o "coordinator"))
+		userType=$(echo $userType$(echo $username | grep -o "academic"))
+		userType=$(echo $userType$(echo $username | grep -o "organisation"))
 		exit=1;
 	else
-		echo "Wrong username or password. Please try again."
+		echo "Wrong Password. Please try again."
 		echo
 	fi
+	
 
 done
 
@@ -87,7 +86,7 @@ function menu() {
 		echo "2. View submitted advertisements"
 		echo
 		processMenuChoice
-	elif [[ "$userType" = "company" ]]; then
+	elif [[ "$userType" = "organisation" ]]; then
 		echo "1. Submit advertisement"
 		echo "2. View submitted advertisements"
 		echo
@@ -119,9 +118,9 @@ function processMenuChoice() {
 		echo "choice 1"
 	elif [[ "$userType" = "academic" && "$choice" -eq 2 ]]; then
 		echo "choice 2"
-	elif [[ "$userType" = "company" && "$choice" -eq 1 ]]; then
+	elif [[ "$userType" = "organisation" && "$choice" -eq 1 ]]; then
 		echo "choice 1"
-	elif [[ "$userType" = "company" && "$choice" -eq 2 ]]; then
+	elif [[ "$userType" = "organisation" && "$choice" -eq 2 ]]; then
 		echo "choice 2"	
 	fi
 
