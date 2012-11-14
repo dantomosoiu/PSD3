@@ -1,0 +1,9 @@
+{{Username}}{{Password}}{{Email}}{{IsApproved}}{{AccountType}}{{StudentFirstName}}{{StudentLastName}}{{StudentType}}{{StudentYear}}{{OrganisationType}}{{OrganisationName}}{{CoordinatorFirstName}}{{CoordinatorLastName}}
+{{1102486D}}{{apassword}}{{john.doe@student.gla.ac.uk}}{{true}}{{student}}{{John}}{{Doe}}{{ESE}}{{3}}{{null}}{{null}}{{null}}{{null}}
+{{1102487S}}{{apassword}}{{john.smith@student.gla.ac.uk}}{{true}}{{student}}{{John}}{{Smith}}{{CS}}{{3}}{{null}}{{null}}{{null}}{{null}}
+{{tim.storer}}{{tim'spassword}}{{tim.storer@gla.ac.uk}}{{true}}{{coordinator}}{{null}}{{null}}{{null}}{{null}}{{null}}{{null}}{{null}}{{null}}{{Tim}}{{Storer}}
+{{acompanyID}}{{apassword}}{{first@company.com}}{{true}}{{organisation}}{{null}}{{null}}{{null}}{{null}}{{company}}{{Company Name}}{{null}}{{null}}
+{{anothercompanyID}}{{apassword}}{{second@company.com}}{{true}}{{organisation}}{{null}}{{null}}{{null}}{{null}}{{company}}{{Second Company Name}}{{null}}{{null}}
+{{anacademic}}{{apassword}}{{academic@cglasgow.ac.uk}}{{true}}{{organisation}}{{null}}{{null}}{{null}}{{null}}{{academic}}{{Some Academic Name}}{{null}}{{null}}
+{{1100000u}}{{apassword}}{{unapproved@student.gla.ac.uk}}{{false}}{{student}}{{Unapproved}}{{Student}}{{SE}}{{2}}{{null}}{{null}}{{null}}{{null}}
+{{unapprovedCompany}}{{apassword}}{{unapproved@company.com}}{{false}}{{organisation}}{{null}}{{null}}{{null}}{{null}}{{company}}{{Another Company}}{{null}}{{null}}

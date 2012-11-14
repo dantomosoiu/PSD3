@@ -1,0 +1,4 @@
+{{Username}}{{Education}}{{WorkExperience}}{{Skills}}{{Hobbies}}
+{{1102486D}}{{3rd year SE student at University of Glasgow}}{{1 year work experience at McDonalds}}{{no skills}}{{no hobbies}}
+{{1102487S}}{{2nd year CS student at University of glasgow}}{{no experience}}{{lots of skills}}{{lots of hobbies}}
+
