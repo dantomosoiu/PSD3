@@ -13,9 +13,11 @@ do
 	#get username
 	echo -n "Enter username: "
 	read username
+	#get password
 	echo -n "Enter password: "
 	read -s password
 	
+	#check credentials
 	while read line           
 	do           
 		re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
@@ -29,7 +31,10 @@ do
 		fi
 		if [ $exit -eq 1 ]; then break; fi
 	done <.users.csv
-	
+	if [ "$AccountType" = "AccountType" ]; then
+		echo "Nice Try you cheeky Bastard"
+		exit=0
+	fi
 done
 
 }
