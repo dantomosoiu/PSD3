@@ -11,31 +11,31 @@ while [[ ! $exit -eq 1 ]];
 do 
 
 	#get username
-	echo -n "Enter username: "
+	echo -n "Enter username; q to quit: "
 	read username
+	if [ "$username" = "q" ]; then quit=1
+	break; fi
 	#get password
 	echo -n "Enter password: "
 	read -s password
+	echo
 	
 	#check credentials
 	while read line           
 	do           
 		re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
 		[[ "$line" =~ $re ]] && Username="${BASH_REMATCH[1]}" && Password="${BASH_REMATCH[2]}" && Email="${BASH_REMATCH[3]}" && IsApproved="${BASH_REMATCH[4]}" && AccountType="${BASH_REMATCH[5]}" && FirstName="${BASH_REMATCH[6]}" && LastName="${BASH_REMATCH[7]}" && StudentType="${BASH_REMATCH[8]}" && StudentYear="${BASH_REMATCH[9]}" && OrganisationType="${BASH_REMATCH[10]}"
-		if [ "$username" = "$Username" ]; then
+		if [[ "$username" = "$Username" && "$AccountType" != "AccountType" ]]; then
 			if [ "$password" = "$Password" ]; then
 				exit=1
 				echo -e "\nLogin Successful. Welcome $FirstName"
-			else echo "Incorrent Password"
+			else echo -e "Incorrent Password\n"
 			fi
+			break
 		fi
-		if [ $exit -eq 1 ]; then break; fi
 	done <.users.csv
-	if [ "$AccountType" = "AccountType" ]; then
-		echo "Nice Try you cheeky Bastard"
-		exit=0
-	fi
-done
+	if [ "$username" != "$Username" ]; then echo -e "Incorrent Username\n"; fi
+	done
 
 }
 
@@ -146,18 +146,46 @@ function processPlacement() {
 	fi
 }
 
+function newAccount() {
+	echo "Are You a student? Academic? Or Organisation?(s/a/o)"
+	read nAccType
+	if [ $nAccType="s" ]; then makeStudent
+	elif [ $nAccType="a" ]; then makeAcademic
+	elif [ $nAccType="0" ]; then makeOrganisation
+	fi
+	echo -e "\nYour account needs to be verified before use. You will recieve an email when this Happens."
+}
+function makeStudent() {
+	echo "implement"
+}
+function makeAcademic() {
+	echo "implement"
+}
+function makeOrganisation() {
+	echo "implement"
+}
 
 
 # START MAIN PROGRAM #
-echo
-echo "Welcome to the University of Glasgow Internship Management System"
-echo
-login
+echo -e "\nWelcome to the University of Glasgow Internship Management System"
+
 while [[ ! $quit -eq 1 ]];
-do 
-	menu
+do
+	echo -e "\nDo You Have a username?(y/n/q)"
+	read continue
+	echo
+	if [ "$continue" = "y" ]; then
+		login
+		while [[ ! $quit -eq 1 ]];
+		do 
+			menu
+		done
+	elif [ "$continue" = "n" ]; then newAccount
+	else quit=1
+	fi
 done
 
+exit(0)
 #result=$AccountType   # or result=`myfunc`
 #echo $AccountType
 
