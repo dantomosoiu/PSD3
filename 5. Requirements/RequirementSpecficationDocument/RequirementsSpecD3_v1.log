@@ -1,0 +1,107 @@
+This is TeX, Version 3.1415926 (TeX Live 2009/Debian) (format=tex 2012.6.7)  15 NOV 2012 20:47
+**RequirementsSpecD3_v1.tex
+(./RequirementsSpecD3_v1.tex
+! Undefined control sequence.
+l.3 \documentclass
+                  {l3deliverable}
+? 
+! Undefined control sequence.
+l.7 \usepackage
+               {graphicx}%
+? 
+! Undefined control sequence.
+l.11 \version
+             {2.0}
+? 
+! Undefined control sequence.
+l.14 \usepackage
+                {tabularx}%
+? 
+! Undefined control sequence.
+l.15 \usepackage
+                {url}%
+? 
+! Undefined control sequence.
+l.16 \usepackage
+                {usecasedescription}%
+? 
+! Undefined control sequence.
+l.21 \title
+           {Requirements Document}
+? 
+! Undefined control sequence.
+l.23 \author
+            {Michael Kilian\\
+? 
+! Argument of \\ has an extra }.
+<inserted text> 
+                \par 
+<to be read again> 
+                   }
+l.28 }
+      
+? 
+Runaway argument?
+ Dan Tomosoiu\\ Tony Lau\\ Peeranat Fupongsiripan\\ Hector Grebbel 
+! Paragraph ended before \\ was complete.
+<to be read again> 
+                   \par 
+<to be read again> 
+                   }
+l.28 }
+      
+? 
+! Undefined control sequence.
+l.30 \date
+          {12 November 2012}
+? 
+! Undefined control sequence.
+l.32 \deliverableID
+                   {D3}
+? 
+! Undefined control sequence.
+l.33 \project
+             {PSD3 Group Exercise 1}
+? 
+! Undefined control sequence.
+l.34 \team
+          {L}
+? 
+! Undefined control sequence.
+l.38 \begin
+           {document}
+? 
+! Undefined control sequence.
+l.42 \maketitle
+               
+? 
+! Undefined control sequence.
+l.44 \tableofcontents
+                     
+? 
+! Undefined control sequence.
+l.46 \newpage
+             
+? 
+! Undefined control sequence.
+l.51 \section
+             {Introduction}
+? 
+Runaway argument?
+ \\ Currently, available internships are advertised to students on an\ETC.
+! Paragraph ended before \\ was complete.
+<to be read again> 
+                   \par 
+l.90 
+     
+? 
+! Undefined control sequence.
+l.92 \subsection
+                {Related Documentation}
+? 
+! Undefined control sequence.
+l.94 \begin
+           {itemize}
+? 
+[1] )
+Output written on RequirementsSpecD3_v1.dvi (1 page, 1700 bytes).
