@@ -86,7 +86,7 @@ This is the Management Plan of the Level 3 PSD3 Project for Team L.
  
 
 \subsection{Purpose and Description of Document}
-This document describes the organisation and responsibility designation within the team. Team members' individual duties are listed, ensuring the workload is split evenly. It contains 5 main sections which define, between them, the roles of the team members, the decision-making and communication strategy, mechanisms for information management and the potential risks of this particular group organisation. \\
+This document describes the organisation and responsibility designation within the eam. Team members' individual duties are listed, ensuring the workload is split evenly. It contains 5 main sections which define, between them, the roles of the team members, the decision-making and communication strategy, mechanisms for information management and the potential risks of this particular group organisation. \\
 \\
 By agreeing on the spread of responsibility before the project commences, the team can avoid disagreements at a later, more time-sensitive point. The team can also attempt to see potential flaws in it's management system. By finding these now, the issues can be closer watched to prevent serious problems occurring.\\
 \\
@@ -108,7 +108,7 @@ The teams organisational structure consists of the five roles described in the A
 \begin{itemize}
 \item{\emph{Project Manager} - Michael Kilian}
 \item{\emph{Toolsmith} - Peeranat Fupongsiripan}
-\item{\emph{Librarian} - Hector Grebbell}
+\item{\emph{Librarian} - Hector Grebbel}
 \item{\emph{Quality Assurer} - Tony Lau}
 \item{\emph{Configuration Manager} - Dan Tomosoiu}
 
@@ -130,7 +130,7 @@ No member has ultimate authority. \\
 \\
 Team members are accountable for minor/time-sensitive decisions within their responsibility areas.\\
 \\
-Major issues are discussed as a group, until an agreeable outcome is reached. A member's unexplained absence at a meeting where such a decision occurs will result in them losing their vote, assuming they cannot be contacted directly before a decision is made.\\
+Major issues are discussed as a group, until an agreeable outcome is reached. A member's unexplained abscence at a meeting where such a decision occurs will result in them losing their vote, assuming they cannot be contacted directly before a decision is made.\\
 \\
 The agenda for meetings is always set by the project manager, based on what tasks need to be done with respect to the project plan. If he intends to be absent from a meeting he should make this available to the team in advance.
 
@@ -142,7 +142,7 @@ Weekly meetings 11.00am Tuesdays and Thursdays. The time of these meetings will 
 \\
 Informal discussion will occur through the team Facebook group.\\
 \\
-Redmine is our primary project management system. The wiki provided by Redmine should be used for communicating progress on distributed tasks involving multiple members contribution. For example when writing an initial requirements list, members can post new requirements gathered on the wiki so the requirements we currently have are visible and to give the team a chance as a whole to review each members contributions as they submit their own. A Trello account has been set up for the team as a back up system.
+Redmine is our primary project management system. The wiki provided by Redmine should be used for communicating progess on distributed tasks involving multiple members contribution. For example when writing an inital requirements list, members can post new requirements gathered on the wiki so the requirements we currently have are visible and to give the team a chance as a whole to review each members contributions as they submit their own. A Trello account has been set up for the team as a back up system.
 \\
 If a team member cannot make a meeting, they should post a message on the Facebook Group at least 24 hours before the scheduled meeting. Any tasks which were allocated to the person who will not be present at the meeting (e.g. secretarial duties for that meeting) should be reallocated to another team member.
 \\
@@ -163,7 +163,7 @@ Our biggest risk is that by dividing the work into roles, the absence of one per
 \\
 Also, without one definitive leader we must all be clear on what our top-level aim is for the system. Differing interpretations of what the software is meant to do will ultimately lead to the building of the wrong system.
 \\
-Since we don't fully know each other's skills, there is the risk that a person may be assigned a role that they are not competent at. It may be the case that someone in the team over-estimates their ability to do a particular task. To mitigate this team members are encouraged to be as honest as possible in their competence and abilities: if you are not comfortable with a task it is by far preferable to admit this and ask for help with the task than to do it badly.\\
+Since we don't fully know each other's skills, there is the risk that a person may be assigned a role that they are not competent at. It may be the case that someone in the team over-estimates their ability to do a particular task. To mitigate this team members are encouraged to be as honest as possible in their competence and abilities: if you are not comfortable with a task it is by far preferrable to admit this and ask for help with the task than to do it badly.\\
 \\
 It might also be difficult to balance the workload fairly between each member of the team.\\
 \\
