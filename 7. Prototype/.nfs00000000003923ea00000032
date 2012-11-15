@@ -192,7 +192,7 @@ echo -e "ApplicationId; Firstname; Surname; (StudentType; Year;) Email; Company;
 			
 				replaceLine="$pUsername, $pFirstName, $pSurname, $pEmail, $pStudentType, $pYear, $choice, $pOwner, $pDuration, $pPayment, $pSECompliant, $pPositions, $pInfo, $pVisible, $pExpires"
 				echo -e "$replaceLine\n$lineCounter\n"
-				cat .studentPlacement.csv >> .studentPlacement.csv
+				cat < .studentPlacement.csv >> .studentPlacement.csv
 				#cat .studentPlacement.csv | sed '$lineCounters/.*/$replaceLine/' #> .studentPlacement.csv
 				break
 			fi

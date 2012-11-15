@@ -1,7 +1,7 @@
 Username, Password, Email, IsApproved, AccountType, FirstName, Lastname, StudentType, StudentYear, OrganisationType
 1102486D, password, john.doe@student.gla.ac.uk, true, student, John, Doe, ESE, 3, null
 1102487S, password, john.smith@student.gla.ac.uk, true, student, John, Smith, CS, 3, null
-tim.storer, tim'spassword, tim.storer@gla.ac.uk, true, coordinator, Tim, Storer, null, null, null
+y, y, tim.storer@gla.ac.uk, true, coordinator, Tim, Storer, null, null, null
 MorganStanley, password, careers@MorganStanley.com, true, organisation, Morgan Stanley, , null, null, Banking
 Google, password, liz@google.com, true, organisation, Google, , null, null, Networking
 Joe.Sventek, MyMommaDidn'tCompileNoFool, joe.sventek@glasgow.ac.uk, true, accademic, Joe, Sventek, null, null, null
@@ -9,3 +9,4 @@ Joe.Sventek, MyMommaDidn'tCompileNoFool, joe.sventek@glasgow.ac.uk, true, accade
 SpeedyPC's, tomatoes, timmy@speedy.com, false, organisation, Speedy PC's, , null, null, PC Repair
 1007414g, unbreakable, hectorgrebbell@googlemail.com, false, student, Hector, Grebbell, SE, 3, null
 jeremy.singer, lilybank, jeremy.singer@glasgow.ac.uk, false, accademic, Jeremy, Singer, null, null, null
+0902059k, blabla, 0902059k@student.gla.ac.uk, false, student, Nic, Kearns, CS, 3, null
