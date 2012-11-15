@@ -196,7 +196,10 @@ Use Case Diagram\\
 \UseCaseConditions{\begin{itemize}
 \item{\textbf{pre}\ user must have an account created in the system}
 \end{itemize}}
-\UseCaseNonFunctionalRequirements{}
+\UseCaseNonFunctionalRequirements{\begin{itemize}
+\item{Login should be GUID for students and generated for companies.}
+\end{itemize}
+}
 \UseCaseScenarios{\begin{itemize}
 \item{\textbf{Primary:}\ Mark enters his username and password into the corresponding fields and selects login. He is logged into the system successfully.}
 \item{\textbf{Alternate 1:}\ Ross makes a typing mistake whilst entering his password and attempts to login. The system reports this error and prompts him to reenter his password.}
@@ -346,14 +349,18 @@ Use Case Diagram\\
 \item{\textbf{pre}\ The organisation must have already obtained a login for the system. The organisation must be logged in.}
 \item{\textbf{post}\ The advert is queued to be reviewed by the course coordinator before being visible to the users of the system.}
 \end{itemize}}
-\UseCaseNonFunctionalRequirements{Structured input form}
+\UseCaseNonFunctionalRequirements{\begin{itemize}
+\item{Normally for the established organisations, a link to the application page of the organisation should be included in the description. Also organisations can post links to more info in the ad.}
+\end{itemize}
+}
 \UseCaseScenarios{
-\textbf{Primary:}\ Apple Inc. logs in successfully. They select the ‘Submit Advertisement’ menu item and are taken to the correct page. They fill in all fields and click the ‘Confirm’ button at the bottom of the page. A confirmation is displayed saying that the advert submission was successful.
-\
-\textbf{Alternate 1:} Dr. Jones logs in successfully. He selects the ‘Submit Advertisement’ menu item and is taken to the correct page. He enters details in the fields and clicks ‘Confirm’. An error message is displayed saying that not all fields have been filled out. Dr. Jones fill in the missing fields and clicks ‘Confirm’ again. A confirmation is displayed saying the advert submission was successful.\\
+\begin{itemize}
+\item{\textbf{Primary:}\ Apple Inc. logs in successfully. They select the ‘Submit Advertisement’ menu item and are taken to the correct page. They fill in all fields and click the ‘Confirm’ button at the bottom of the page. A confirmation is displayed saying that the advert submission was successful.}
+\item{\textbf{Alternate 1:} Dr. Jones logs in successfully. He selects the ‘Submit Advertisement’ menu item and is taken to the correct page. He enters details in the fields and clicks ‘Confirm’. An error message is displayed saying that not all fields have been filled out. Dr. Jones fill in the missing fields and clicks ‘Confirm’ again. A confirmation is displayed saying the advert submission was successful.}
+\end{itemize}
 }
 \UseCaseRisks{}
-\UseCaseUserInterface{}
+\UseCaseUserInterface{Structure Input Form}
 \end{UseCaseTemplate}
 
 
@@ -489,7 +496,11 @@ an application. He enters all relevant extra data and sends off the application.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Non Functional Requirements}
-No non functional requirements for the system as a whole have been identified to date. This should be a priority in the next requirements gathering phase.
+\begin{itemize}
+\item{When the deadline for a placement has been reached, the placement should remain visible for one week after the deadline before being removed from the advert board}
+\item{There should be a single interface, but different dashboards available to the user type once the user logs in.}
+\item{Getting login details to the company could be done by email -- an email could be sent to the company with registration details and the course coordinator would approve the request for the company to be part of the system.}
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
