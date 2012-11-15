@@ -84,19 +84,33 @@ function processMenuChoice() {
 	if [[ "$choice" = "q" ]]; then
 		quit=1
 	elif [[ "$AccountType" = "student" && "$choice" -eq 1 ]]; then
-		echo "ID, Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires"
-		cat .placement.csv | grep "true.*true"
-		cat .placement.csv | grep "false.*true"
+		while read line           
+		do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
+			if [[ "$Visible" = "true" ]]; then
+				echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; SE Compliant: $SECompliant; Positions: $Positions; Expires: $Expires\n"
+			fi
+		done <.placement.csv
 	elif [[ "$AccountType" = "student" && "$choice" -eq 2 ]]; then
 		echo "choice 2" 
 		processPlacement
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 1 ]]; then
-		cat .placement.csv
+		while read line           
+		do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
+			echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; SE Compliant: $SECompliant; Positions: $Positions; Expires: $Expires\n"
+		done <.placement.csv
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 2 ]]; then
-		cat .studentPlacement
+		while read line           
+		do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
+			echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; SE Compliant: $SECompliant; Positions: $Positions; Expires: $Expires\n"
+		done <.placement.csv
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 3 ]]; then
 		echo "choice 3"
-		approvePlacement
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 4 ]]; then
 		echo "choice 4"
 	elif [[ "$AccountType" = "academic" && "$choice" -eq 1 ]]; then
@@ -111,44 +125,6 @@ function processMenuChoice() {
 	echo "Enter to continue"
 	read cont
 
-}
-
-function approvePlacement(){
-	echo -e "\nPlease enter the ID of the student whose placement you want to process. q to exit:"
-	
-	read choice #get user choice
-	while [ -z "$choice" ]; #keep asking for choice if empty string entered
-	do
-		echo "No choice entered"
-		echo -n "Enter choice and press enter: "
-		read choice
-	done
-	
-	local placement=hi;
-	
-	if [[ "$choice" = "q" ]]; then
-		cont=0
-	else
-		placement=$(cat .studentPlacement | grep "$choice$")
-	fi
-	echo -e "\nEnter number of action for the following placement:\n$placement\n"
-	echo "1. approve"
-	echo "2. reject"
-	
-	while [[ -z "$choice" ]]  #i can't get this shit to work :( || $choice=~"1\|\2\|q ]]"; #keep asking for choice if invalid string entered
-	do
-		echo "Invalid choice entered"
-		echo -n "Enter a valid choice and press enter: "
-		read choice
-	done
-
-	if [[ "$choice" = "q" ]]; then
-		cont=0
-	elif [[ "$choice" -eq 1 ]]; then
-		echo "approved"
-	else
-		echo "rejected"
-	fi
 }
 
 function processPlacement() {
@@ -170,19 +146,31 @@ function processPlacement() {
 		cont=0
 	elif [[ "$choice" -eq 1 ]]; then
 	echo "Select the correct position by number"
-		echo "ID, Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires"
-		cat .placement.csv | grep "true.*true"
-		cat .placement.csv | grep "false.*true"
+		while read line           
+		do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
+			if [[ "$Visible" = "true" ]]; then
+				echo -e "$ID; SE Compliant: $SECompliant; - $Owner: $Info\n"
+			fi
+		done <.placement.csv
 		read choice
-		choice=$(cat .placement.csv | grep "^$choice, \|\n$choice|\r\n$choice")
-		echo $choice, $username >> .studentPlacement
+		while read line           
+		do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
+			if [[ "$Visible" = "true" && "$ID" = "$choice" ]]; then
+				echo "$Username, $FirstName, $LastName, $Email, $StudentType, false, $line" >> .studentPlacement
+			else echo "No Placment with that ID exists"
+			fi
+		done <.placement.csv
 		echo "Thank you. Your response has been saved and is awaiting approval from the course coordinator. You will be contacted by email in due course."
 		
 		
 	elif [[ "$choice" -eq 2 ]]; then
 		echo "Enter Placement in form Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires"
 		read placement
-		echo $placement, $username >> .studentPlacement
+		echo $placement $username >> .studentPlacement
 		echo "Thank you. Your response has been saved and is awaiting approval from the course coordinator. You will be contacted by email in due course."
 	fi
 }
@@ -309,6 +297,5 @@ do
 	fi
 done
 
-exit(0)
 
 
