@@ -199,7 +199,7 @@ function processPlacement() {
 			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
 			if [[ "$Visible" = "true" && "$ID" = "$choice" ]]; then
 				echo "$Username, $FirstName, $LastName, $Email, $StudentType, false, $line" >> .studentPlacement
-			else echo "No Placment with that ID exists"
+				break
 			fi
 		done <.placement.csv
 		echo "Thank you. Your response has been saved and is awaiting approval from the course coordinator. You will be contacted by email in due course."
