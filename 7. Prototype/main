@@ -2,6 +2,8 @@
 #PSD3 Prototype for Internship Management System
 #Version 1.0
 
+#ToImplement - New Username verification, Some Option Processing
+
 function login() {
 
 exit=0
@@ -147,22 +149,105 @@ function processPlacement() {
 }
 
 function newAccount() {
-	echo "Are You a student? Academic? Or Organisation?(s/a/o)"
+	echo -n "Are You a student? Academic? Or Organisation?(s/a/o): "
 	read nAccType
-	if [ $nAccType="s" ]; then makeStudent
-	elif [ $nAccType="a" ]; then makeAcademic
-	elif [ $nAccType="0" ]; then makeOrganisation
+	if [ "$nAccType" = "s" ]; then makeStudent
+	elif [ "$nAccType" = "a" ]; then makeAcademic
+	elif [ "$nAccType" = "o" ]; then makeOrganisation
 	fi
-	echo -e "\nYour account needs to be verified before use. You will recieve an email when this Happens."
+	if [[ "$nAccType" = "s" && "$nAccType" = "a" && "$nAccType" = "o" ]]; then  echo -e "\nThank You. Your account needs to be verified before use. You will recieve an email when this Happens."; fi
 }
 function makeStudent() {
-	echo "implement"
+	echo "Wyat? $nAccType"
+	echo -n "Enter Your GUID (Matric + first letter of surname). This will be your Username: "
+	read userName
+	p1="a"
+	password="b"
+	while [ "$p1" != "$password" ] 
+	do
+		echo -n "Enter Password: "
+		read -s p1
+		echo
+		echo -n "Confirm Password: "
+		read -s password
+		echo
+		if [ "$p1" != "$password" ]; then echo "Passwords Do Not Match"; fi
+	done
+	echo -n "Enter Email: "
+	read email
+	echo -n "Enter First Name: "
+	read fName
+	echo -n "Enter Surame: "
+	read sName
+	echo -n "Enter Course Type (SE/ESE/CS/other): "
+	read sType
+	echo -n "Enter year of study (1/2/3/4/5/PG): "
+	read sYear
+	echo "Confirm Details (y/n)-"
+	echo -n "$userName, $email, $fName, $sName, $sType, $sYear"
+	read conf
+	if [ $conf = "n" ]; then makeStudent
+	elif [ $conf != $"y" ]; then echo "Error"
+	else echo "$userName, $password, $email, false, student, $fName, $sName, $sType, $sYear, null" >> .users.csv
+	fi
 }
 function makeAcademic() {
-	echo "implement"
+	echo -n "Enter Your University Username: "
+	read userName
+	p1="a"
+	password="b"
+	while [ "$p1" != "$password" ] 
+	do
+		echo -n "Enter Password: "
+		read -s p1
+		echo
+		echo -n "Confirm Password: "
+		read -s password
+		echo
+		if [ "$p1" != "$password" ]; then echo "Passwords Do Not Match"; fi
+	done
+	echo -n "Enter Email: "
+	read email
+	echo -n "Enter First Name: "
+	read fName
+	echo -n "Enter Surame: "
+	read sName
+	echo "Confirm Details (y/n)-"
+	echo -n "$userName, $email, $fName, $sName"
+	read conf
+	if [ $conf = "n" ]; then makeAcademic
+	elif [ $conf != $"y" ]; then echo "Error"
+	else echo "$userName, $password, $email, false, accademic, $fName, $sName, null, null, null" >> .users.csv
+	fi
 }
 function makeOrganisation() {
-	echo "implement"
+	echo -n "Enter a username (No Spaces or comma's): "
+	read userName
+	p1="a"
+	password="b"
+	while [ "$p1" != "$password" ] 
+	do
+		echo -n "Enter Password: "
+		read -s p1
+		echo
+		echo -n "Confirm Password: "
+		read -s password
+		echo
+		if [ "$p1" != "$password" ]; then echo "Passwords Do Not Match"; fi
+	done
+	echo -n "Enter Email: "
+	read email
+	echo -n "Enter Organisation Name: "
+	read fName
+	echo -n "Enter a description of your Company's core area of Business (Max Three Words, No Commas): "
+	read oType
+	echo "Confirm Details (y/n)-"
+	echo -n "$userName, $email, $fName, $oType"
+	read conf
+	if [ $conf = "n" ]; then makeOrganisation
+	elif [ $conf != $"y" ]; then echo "Error"
+	else echo "$userName, $password, $email, false, organisation, $fName, , null, null, $oType" >> .users.csv
+	fi
 }
 
 
@@ -171,7 +256,7 @@ echo -e "\nWelcome to the University of Glasgow Internship Management System"
 
 while [[ ! $quit -eq 1 ]];
 do
-	echo -e "\nDo You Have a username?(y/n/q)"
+	echo -en "\nDo You Have a username?(y/n/q): "
 	read continue
 	echo
 	if [ "$continue" = "y" ]; then
@@ -186,6 +271,5 @@ do
 done
 
 exit(0)
-#result=$AccountType   # or result=`myfunc`
-#echo $AccountType
+
 
