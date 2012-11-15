@@ -2,6 +2,8 @@
 #PSD3 Prototype for Internship Management System
 #Version 1.0
 
+#ToImplement - New Username verification, Some Option Processing
+
 function login() {
 
 exit=0
@@ -11,84 +13,56 @@ while [[ ! $exit -eq 1 ]];
 do 
 
 	#get username
-	echo -n "Enter username: "
+	echo -n "Enter username; q to quit: "
 	read username
-	if [ ! -z $username ]
-		then username=$(cat .users.csv | grep --no-messages $username)
-		fi
-
-	while [ -z "$username" ];
-	do
-		echo "Incorrect username entered. Please try again"
-		echo -n "Enter username: "
-		read username
-		
-		if [ ! -z $username ]
-			then username=$(cat .users.csv | grep --no-messages $username)
-			fi
-		
-	done
-
-
+	if [ "$username" = "q" ]; then quit=1
+	break; fi
 	#get password
 	echo -n "Enter password: "
 	read -s password
-	if [ ! -z $password ]
-		then password=$(echo $username | grep -c $password)
-		fi
+	echo
 	
-	while [ -z "$password" ];
-	do
-		echo "No password entered. Please try again"
-		echo -n "Enter password: "
-		read -s password
-		if [ ! -z $password ]
-			then password=$(echo $username | grep -c $password)
+	#check credentials
+	while read line           
+	do           
+		re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+		[[ "$line" =~ $re ]] && Username="${BASH_REMATCH[1]}" && Password="${BASH_REMATCH[2]}" && Email="${BASH_REMATCH[3]}" && IsApproved="${BASH_REMATCH[4]}" && AccountType="${BASH_REMATCH[5]}" && FirstName="${BASH_REMATCH[6]}" && LastName="${BASH_REMATCH[7]}" && StudentType="${BASH_REMATCH[8]}" && StudentYear="${BASH_REMATCH[9]}" && OrganisationType="${BASH_REMATCH[10]}"
+		if [[ "$username" = "$Username" && "$AccountType" != "AccountType" ]]; then
+			if [ "$password" = "$Password" ]; then
+				exit=1
+				echo -e "\nLogin Successful. Welcome $FirstName"
+			else echo -e "Incorrent Password\n"
 			fi
+			break
+		fi
+	done <.users.csv
+	if [ "$username" != "$Username" ]; then echo -e "Incorrent Username\n"; fi
 	done
-	
-	
-
-	#process username and password
-	if [[  $password = 1 ]]; then
-		userType=$(echo $username | grep -o " student" | grep -o "student")
-		userType=$(echo $userType$(echo $username | grep -o "coordinator"))
-		userType=$(echo $userType$(echo $username | grep -o "academic"))
-		userType=$(echo $userType$(echo $username | grep -o "organisation"))
-		exit=1;
-	else
-		echo "Wrong Password. Please try again."
-		echo
-	fi
-	
-
-done
 
 }
 
 
 function menu() {
-	echo
-	echo "Please choose an option from the menu below by entering the appropriate number and pressing enter. q to exit:"
+	echo -e "\nPlease choose an option from the menu below by entering the appropriate number and pressing enter. q to exit:"
 
-	if [[ "$userType" = "student" ]]; then
+	if [[ "$AccountType" = "student" ]]; then
 		echo "1. Review advertisements"
 		echo "2. Notify course coordinator of placement success"
 		echo
 		processMenuChoice
-	elif [[ "$userType" = "coordinator" ]]; then
+	elif [[ "$AccountType" = "coordinator" ]]; then
 		echo "1. Review advertisements"
 		echo "2. View current status of students’ internship applications"
 		echo "3. Approve student internship placements"
 		echo "4. Approve User"
 		echo
 		processMenuChoice
-	elif [[ "$userType" = "academic" ]]; then
+	elif [[ "$AccountType" = "academic" ]]; then
 		echo "1. Submit advertisement"
 		echo "2. View submitted advertisements"
 		echo
 		processMenuChoice
-	elif [[ "$userType" = "organisation" ]]; then
+	elif [[ "$AccountType" = "organisation" ]]; then
 		echo "1. Submit advertisement"
 		echo "2. View submitted advertisements"
 		echo
@@ -109,28 +83,28 @@ function processMenuChoice() {
 
 	if [[ "$choice" = "q" ]]; then
 		quit=1
-	elif [[ "$userType" = "student" && "$choice" -eq 1 ]]; then
+	elif [[ "$AccountType" = "student" && "$choice" -eq 1 ]]; then
 		echo "ID, Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires"
 		cat .placement.csv | grep "true.*true"
 		cat .placement.csv | grep "false.*true"
-	elif [[ "$userType" = "student" && "$choice" -eq 2 ]]; then
+	elif [[ "$AccountType" = "student" && "$choice" -eq 2 ]]; then
 		echo "choice 2" 
 		processPlacement
-	elif [[ "$userType" = "coordinator" && "$choice" -eq 1 ]]; then
+	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 1 ]]; then
 		cat .placement.csv
-	elif [[ "$userType" = "coordinator" && "$choice" -eq 2 ]]; then
+	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 2 ]]; then
 		cat .studentPlacement
-	elif [[ "$userType" = "coordinator" && "$choice" -eq 3 ]]; then
+	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 3 ]]; then
 		echo "choice 3"
-	elif [[ "$userType" = "coordinator" && "$choice" -eq 4 ]]; then
+	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 4 ]]; then
 		echo "choice 4"
-	elif [[ "$userType" = "academic" && "$choice" -eq 1 ]]; then
+	elif [[ "$AccountType" = "academic" && "$choice" -eq 1 ]]; then
 		echo "choice 1"
-	elif [[ "$userType" = "academic" && "$choice" -eq 2 ]]; then
+	elif [[ "$AccountType" = "academic" && "$choice" -eq 2 ]]; then
 		echo "choice 2"
-	elif [[ "$userType" = "organisation" && "$choice" -eq 1 ]]; then
+	elif [[ "$AccountType" = "organisation" && "$choice" -eq 1 ]]; then
 		echo "choice 1"
-	elif [[ "$userType" = "organisation" && "$choice" -eq 2 ]]; then
+	elif [[ "$AccountType" = "organisation" && "$choice" -eq 2 ]]; then
 		echo "choice 2"	
 	fi
 	echo "Enter to continue"
@@ -139,8 +113,7 @@ function processMenuChoice() {
 }
 
 function processPlacement() {
-	echo
-	echo "Please choose an option from the menu below by entering the appropriate number and pressing enter. q to exit:"
+	echo -e "\nPlease choose an option from the menu below by entering the appropriate number and pressing enter. q to exit:"
 
 	echo "1. The placement was found using the University of Glasgow Internship Management System"
 	echo "2. The placement was found externally"
@@ -175,18 +148,128 @@ function processPlacement() {
 	fi
 }
 
+function newAccount() {
+	echo -n "Are You a student? Academic? Or Organisation?(s/a/o): "
+	read nAccType
+	if [ "$nAccType" = "s" ]; then makeStudent
+	elif [ "$nAccType" = "a" ]; then makeAcademic
+	elif [ "$nAccType" = "o" ]; then makeOrganisation
+	fi
+	if [[ "$nAccType" = "s" && "$nAccType" = "a" && "$nAccType" = "o" ]]; then  echo -e "\nThank You. Your account needs to be verified before use. You will recieve an email when this Happens."; fi
+}
+function makeStudent() {
+	echo "Wyat? $nAccType"
+	echo -n "Enter Your GUID (Matric + first letter of surname). This will be your Username: "
+	read userName
+	p1="a"
+	password="b"
+	while [ "$p1" != "$password" ] 
+	do
+		echo -n "Enter Password: "
+		read -s p1
+		echo
+		echo -n "Confirm Password: "
+		read -s password
+		echo
+		if [ "$p1" != "$password" ]; then echo "Passwords Do Not Match"; fi
+	done
+	echo -n "Enter Email: "
+	read email
+	echo -n "Enter First Name: "
+	read fName
+	echo -n "Enter Surame: "
+	read sName
+	echo -n "Enter Course Type (SE/ESE/CS/other): "
+	read sType
+	echo -n "Enter year of study (1/2/3/4/5/PG): "
+	read sYear
+	echo "Confirm Details (y/n)-"
+	echo -n "$userName, $email, $fName, $sName, $sType, $sYear"
+	read conf
+	if [ $conf = "n" ]; then makeStudent
+	elif [ $conf != $"y" ]; then echo "Error"
+	else echo "$userName, $password, $email, false, student, $fName, $sName, $sType, $sYear, null" >> .users.csv
+	fi
+}
+function makeAcademic() {
+	echo -n "Enter Your University Username: "
+	read userName
+	p1="a"
+	password="b"
+	while [ "$p1" != "$password" ] 
+	do
+		echo -n "Enter Password: "
+		read -s p1
+		echo
+		echo -n "Confirm Password: "
+		read -s password
+		echo
+		if [ "$p1" != "$password" ]; then echo "Passwords Do Not Match"; fi
+	done
+	echo -n "Enter Email: "
+	read email
+	echo -n "Enter First Name: "
+	read fName
+	echo -n "Enter Surame: "
+	read sName
+	echo "Confirm Details (y/n)-"
+	echo -n "$userName, $email, $fName, $sName"
+	read conf
+	if [ $conf = "n" ]; then makeAcademic
+	elif [ $conf != $"y" ]; then echo "Error"
+	else echo "$userName, $password, $email, false, accademic, $fName, $sName, null, null, null" >> .users.csv
+	fi
+}
+function makeOrganisation() {
+	echo -n "Enter a username (No Spaces or comma's): "
+	read userName
+	p1="a"
+	password="b"
+	while [ "$p1" != "$password" ] 
+	do
+		echo -n "Enter Password: "
+		read -s p1
+		echo
+		echo -n "Confirm Password: "
+		read -s password
+		echo
+		if [ "$p1" != "$password" ]; then echo "Passwords Do Not Match"; fi
+	done
+	echo -n "Enter Email: "
+	read email
+	echo -n "Enter Organisation Name: "
+	read fName
+	echo -n "Enter a description of your Company's core area of Business (Max Three Words, No Commas): "
+	read oType
+	echo "Confirm Details (y/n)-"
+	echo -n "$userName, $email, $fName, $oType"
+	read conf
+	if [ $conf = "n" ]; then makeOrganisation
+	elif [ $conf != $"y" ]; then echo "Error"
+	else echo "$userName, $password, $email, false, organisation, $fName, , null, null, $oType" >> .users.csv
+	fi
+}
 
 
 # START MAIN PROGRAM #
-echo
-echo "Welcome to the University of Glasgow Internship Management System"
-echo
-login
+echo -e "\nWelcome to the University of Glasgow Internship Management System"
+
 while [[ ! $quit -eq 1 ]];
-do 
-	menu
+do
+	echo -en "\nDo You Have a username?(y/n/q): "
+	read continue
+	echo
+	if [ "$continue" = "y" ]; then
+		login
+		while [[ ! $quit -eq 1 ]];
+		do 
+			menu
+		done
+	elif [ "$continue" = "n" ]; then newAccount
+	else quit=1
+	fi
 done
 
-#result=$userType   # or result=`myfunc`
-#echo $userType
+exit(0)
+
 
