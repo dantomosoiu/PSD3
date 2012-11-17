@@ -2,7 +2,7 @@
 #PSD3 Prototype for Internship Management System
 #Version 1.0
 
-#ToImplement - New Username verification, Some Option Processing
+#ToImplement - Comments; Make pretty, Spellchecking, Making things uniform etc
 
 function login() {
 
