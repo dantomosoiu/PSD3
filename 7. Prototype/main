@@ -17,17 +17,18 @@ do
 	read username
 	if [ "$username" = "q" ]; then quit=1
 	break; fi
-	#get password
-	echo -n "Enter password: "
-	read -s password
-	echo
 	
 	#check credentials
-	while read line           
+	exec 3< .users.csv
+	while read -u 3 line     
 	do           
 		re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
 		[[ "$line" =~ $re ]] && Username="${BASH_REMATCH[1]}" && Password="${BASH_REMATCH[2]}" && Email="${BASH_REMATCH[3]}" && IsApproved="${BASH_REMATCH[4]}" && AccountType="${BASH_REMATCH[5]}" && FirstName="${BASH_REMATCH[6]}" && LastName="${BASH_REMATCH[7]}" && StudentType="${BASH_REMATCH[8]}" && StudentYear="${BASH_REMATCH[9]}" && OrganisationType="${BASH_REMATCH[10]}"
-		if [[ "$username" = "$Username" && "$AccountType" != "AccountType" ]]; then
+		if [[ "$username" = "$Username" && "$AccountType" != "AccountType" && $IsApproved = "true" ]]; then
+			#get password
+			echo -n "Enter password: "
+			read -s password 
+			echo $password
 			if [ "$password" = "$Password" ]; then
 				exit=1
 				echo -e "\nLogin Successful. Welcome $FirstName"
@@ -35,13 +36,13 @@ do
 			fi
 			break
 		fi
-	done <.users.csv
-	if [ "$username" != "$Username" ]; then echo -e "Incorrent Username\n"; fi
+	done
+	if [ "$IsApproved" = "false" ]; then echo -e "Unverified Username\n"
+	elif [ "$username" != "$Username" ]; then echo -e "Incorrent Username\n"
+	fi
 	done
 
 }
-
-
 function menu() {
 	echo -e "\nPlease choose an option from the menu below by entering the appropriate number and pressing enter. q to exit:"
 
@@ -51,10 +52,12 @@ function menu() {
 		echo
 		processMenuChoice
 	elif [[ "$AccountType" = "coordinator" ]]; then
-		echo "1. Review advertisements"
-		echo "2. View current status of students’ internship applications"
-		echo "3. Approve student internship placements"
-		echo "4. Approve User"
+		echo "1. View All advertisements"
+		echo "2. Approve/Reject Adverts"
+		echo "3. Submit Advert"
+		echo "4. Approve/Reject New Users"
+		echo "5. View Approved Internships"
+		echo "6. Approve/Reject Internships"
 		echo
 		processMenuChoice
 	elif [[ "$AccountType" = "academic" ]]; then
@@ -70,7 +73,6 @@ function menu() {
 	else quit=1
 	fi
 }
-
 function processMenuChoice() {
 	read choice #get user choice
 
@@ -83,128 +85,138 @@ function processMenuChoice() {
 
 	if [[ "$choice" = "q" ]]; then
 		quit=1
+	#Review Adverts
 	elif [[ "$AccountType" = "student" && "$choice" -eq 1 ]]; then
-		while read line           
-		do           
+		while read line; do           
 			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
 			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
 			if [[ "$Visible" = "true" ]]; then
 				echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; SE Compliant: $SECompliant; Positions: $Positions; Expires: $Expires\n"
 			fi
 		done <.placement.csv
+	#Notify Course co-ordinator of placement success
 	elif [[ "$AccountType" = "student" && "$choice" -eq 2 ]]; then
-		echo "choice 2" 
 		processPlacement
+	#View All Adverts
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 1 ]]; then
-		while read line           
-		do           
+		while read line; do           
 			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
 			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
-			echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; SE Compliant: $SECompliant; Positions: $Positions; Expires: $Expires\n"
+			echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; SE Compliant: $SECompliant; Positions: $Positions; Expires: $Expires\nCurrentStatus: $Visible\n"
 		done <.placement.csv
+	#Approve / Reject Adverts
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 2 ]]; then
-		while read line           
-		do           
-			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
-			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
-			echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; SE Compliant: $SECompliant; Positions: $Positions; Expires: $Expires\n"
-		done <.placement.csv
+		approveAd
+	#Submit Advert
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 3 ]]; then
-		approvePlacement
+		echo -n "Enter Company Name: "
+		read cName
+		echo -n "Enter Duration (Weeks): "
+		read dur
+		echo -n "Enter Payment (Weekly): £"
+		read pay
+		echo -n "Enter a Description of the Work Involved: "
+		read desc
+		echo -n "Enter Number of Positions available: "
+		read pos
+		echo -n "Enter Expiration Date: "
+		read date
+		echo -n "SE Compliant? (true/false): "
+		read seCom
+		let "currentID+=1"
+		echo "$currentID, $cName, $dur, $pay, $seCom, $pos, $desc, true, $date" >> .placement.csv
+		echo
+	#Approve/Reject New Users
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 4 ]]; then
-		echo "choice 4"
+		approveUser
+	#View Approved Internships
+	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 5 ]]; then
+		while read line      
+		do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && pUsername="${BASH_REMATCH[1]}" && pFirstName="${BASH_REMATCH[2]}" && pSurname="${BASH_REMATCH[3]}" && pEmail="${BASH_REMATCH[4]}" && pStudentType="${BASH_REMATCH[5]}" && pYear="${BASH_REMATCH[6]}" && pApproved="${BASH_REMATCH[7]}" && pID="${BASH_REMATCH[8]}" && pOwner="${BASH_REMATCH[9]}" && pDuration="${BASH_REMATCH[10]}" && pPayment="${BASH_REMATCH[11]}" && pSECompliant="${BASH_REMATCH[12]}" && pPositions="${BASH_REMATCH[13]}" && pInfo="${BASH_REMATCH[14]}" && pVisible="${BASH_REMATCH[15]}" && pExpires="${BASH_REMATCH[16]}"
+			if [[ $pApproved = "approved" ]]; then echo -e "$pUsername-$placementID; $pFirstName $pSurname ($pStudentType $pYear) $pEmail $pOwner: $pInfo\nDuration: $pDuration; Payment: $pPayment; SE Compliant: $pSECompliant; Positions: $pPositions; Expires: $pExpires\n"; fi
+		done < .studentPlacement.csv
+	#Approve/Reject Internships
+	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 6 ]]; then
+		approvePlacement
+	#Submit Advert
 	elif [[ "$AccountType" = "academic" && "$choice" -eq 1 ]]; then
-		echo "choice 1"
+		echo -n "Enter Duration (Weeks): "
+		read dur
+		echo -n "Enter Payment (Weekly): £"
+		read pay
+		echo -n "Enter a Description of the Work Involved: "
+		read desc
+		echo -n "Enter Number of Positions available: "
+		read pos
+		echo -n "Enter Expiration Date: "
+		read date
+		let "currentID+=1"
+		echo "$currentID, $Username, $dur, $pay, false, $pos, $desc, false, $date" >> .placement.csv
+		echo
+		echo "Thankyou. Your advert will be public once verified by the course co-ordinator"
+		echo
+	#View Submitted Adverts
 	elif [[ "$AccountType" = "academic" && "$choice" -eq 2 ]]; then
-		echo "choice 2"
+		while read line; do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
+			if [[ "$Owner" = "$Username" ]]; then
+				echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; Positions: $Positions; Expires: $Expires\nPublic: $Visible\n"
+			fi
+		done <.placement.csv
+	#Submit Advert
 	elif [[ "$AccountType" = "organisation" && "$choice" -eq 1 ]]; then
-		echo "choice 1"
+		echo -n "Enter Duration (Weeks): "
+		read dur
+		echo -n "Enter Payment (Weekly): £"
+		read pay
+		echo -n "Enter a Description of the Work Involved: "
+		read desc
+		echo -n "Enter Number of Positions available: "
+		read pos
+		echo -n "Enter Expiration Date: "
+		read date
+		let "currentID+=1"
+		echo "$currentID, $Username, $dur, $pay, false, $pos, $desc, false, $date" >> .placement.csv
+		echo
+		echo "Thankyou. Your advert will be public once verified by the course co-ordinator"
+		echo
+	#View Submitted Adverts
 	elif [[ "$AccountType" = "organisation" && "$choice" -eq 2 ]]; then
-		echo "choice 2"	
+		while read line; do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
+			if [[ "$Owner" = "$Username" ]]; then
+				echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; Positions: $Positions; Expires: $Expires\nPublic: $Visible\n"
+			fi
+		done <.placement.csv
+	else echo -e "\n\n\nWhat... is the air-speed velocity of an unladen swallow?\n\n\n"
 	fi
 	echo "Enter to continue"
 	read cont
 
 }
-
 function approvePlacement(){
 
-echo -e "ApplicationId; Firstname; Surname; (StudentType; Year;) Email; Company; PlacementInfo;\nDuration(weeks); Payment(£); SE Compliant; Positions; Expires;\n"
+	echo -e "ApplicationId; Firstname; Surname; (StudentType; Year;) Email; Company; PlacementInfo;\nDuration(weeks); Payment(£); SE Compliant; Positions; Expires;\n"
 
-	while read line           
+	exec 3< .studentPlacement.csv
+	while read -u 3 line       
 		do           
 			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
-			[[ "$line" =~ $re ]] && pUsername="${BASH_REMATCH[1]}" && pFirstName="${BASH_REMATCH[2]}" && pSurname="${BASH_REMATCH[3]}" && pEmail="${BASH_REMATCH[4]}" && pStudentType="${BASH_REMATCH[5]}" && pYear="${BASH_REMATCH[6]}" && pApproved="${BASH_REMATCH[7]}" && placementID="${BASH_REMATCH[8]}" && pOwner="${BASH_REMATCH[9]}" && pDuration="${BASH_REMATCH[10]}" && pPayment="${BASH_REMATCH[11]}" && pSECompliant="${BASH_REMATCH[12]}" && pPositions="${BASH_REMATCH[13]}" && pInfo="${BASH_REMATCH[14]}" && pVisible="${BASH_REMATCH[15]}" && pExpires="${BASH_REMATCH[16]}"
+			[[ "$line" =~ $re ]] && pUsername="${BASH_REMATCH[1]}" && pFirstName="${BASH_REMATCH[2]}" && pSurname="${BASH_REMATCH[3]}" && pEmail="${BASH_REMATCH[4]}" && pStudentType="${BASH_REMATCH[5]}" && pYear="${BASH_REMATCH[6]}" && pApproved="${BASH_REMATCH[7]}" && pID="${BASH_REMATCH[8]}" && pOwner="${BASH_REMATCH[9]}" && pDuration="${BASH_REMATCH[10]}" && pPayment="${BASH_REMATCH[11]}" && pSECompliant="${BASH_REMATCH[12]}" && pPositions="${BASH_REMATCH[13]}" && pInfo="${BASH_REMATCH[14]}" && pVisible="${BASH_REMATCH[15]}" && pExpires="${BASH_REMATCH[16]}"
 			echo -e "$pUsername-$placementID; $pFirstName $pSurname ($pStudentType $pYear) $pEmail $pOwner: $pInfo\nDuration: $pDuration; Payment: $pPayment; SE Compliant: $pSECompliant; Positions: $pPositions; Expires: $pExpires\n"
-	done <.studentPlacement.csv
-
-
-	echo -e "\nPlease enter the ID of the placement you want to process. q to exit:"
-
-   #get user choices	
-	read -d '-' choice1
-	read choice2
-
-	while [[ -z "$choice1" || -z "$choice2" ]]; #keep asking for choice if empty string entered
-	do
-		echo "Invalid id detected!"
-		echo -en "Please enter an id of form \"StudentId-PlacementId\"."
-		read -d '-' choice1
-		read choice2
+			echo -n "Current Status: $pApproved; New Status (approved/rejected): "
+			read choice1
+			if [[ $choice1 != "approved" && $choice1 != "rejected" ]]; then choice1=$pApproved; fi
+			echo -e "\n\n"
+			echo "$pUsername, $pFirstName, $pSurname, $pEmail, $pStudentType, $pYear, $choice1, $pID, $pOwner, $pDuration, $pPayment, $pSECompliant, $pPositions, $pInfo, $pVisible, $pExpires" >> .studentplacement2.csv
 	done
-	
-	
-	echo -e "\nEnter number of action for the following placement:\n$placement\n"
-	echo "1. approve"
-	echo "2. reject"
-	read choice
-	
-	while [[ -z "$choice" ]]  #i can't get this shit to work :( || $choice=~"1\|\2\|q ]]"; #keep asking for choice if invalid string entered
-	do
-		echo "Invalid choice entered"
-		echo -n "Enter a valid choice and press enter: "
-		read choice
-	done
-
-	if [[ "$choice" = "q" ]]; then
-		cont=0
-	elif [[ "$choice" -eq 1 ]]; then
-		choice="approved"
-	else
-		choice="rejected"
-	fi
-	
-	cat < .studentPlacement.csv > .studentPlacement2.csv
-	
-	
-	lineCounter=0
-	
-	while read line           
-		do        
-			lineCounter=$((lineCounter+1))
-			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
-			[[ "$line" =~ $re ]] && pUsername="${BASH_REMATCH[1]}" && pFirstName="${BASH_REMATCH[2]}" && pSurname="${BASH_REMATCH[3]}" && pEmail="${BASH_REMATCH[4]}" && pStudentType="${BASH_REMATCH[5]}" && pYear="${BASH_REMATCH[6]}" && pApproved="${BASH_REMATCH[7]}" && placementID="${BASH_REMATCH[8]}" && pOwner="${BASH_REMATCH[9]}" && pDuration="${BASH_REMATCH[10]}" && pPayment="${BASH_REMATCH[11]}" && pSECompliant="${BASH_REMATCH[12]}" && pPositions="${BASH_REMATCH[13]}" && pInfo="${BASH_REMATCH[14]}" && pVisible="${BASH_REMATCH[15]}" && pExpires="${BASH_REMATCH[16]}"
-			if [[ $pUsername = $choice1 && $placementID = $choice2 ]] ; then 
-				
-				
-				
-			#add a comment field as well
-			
-				replaceLine="$pUsername, $pFirstName, $pSurname, $pEmail, $pStudentType, $pYear, $choice, $pOwner, $pDuration, $pPayment, $pSECompliant, $pPositions, $pInfo, $pVisible, $pExpires"
-				echo -e "$replaceLine\n$lineCounter\n"
-				cat .studentPlacement.csv >> .studentPlacement.csv
-				#cat .studentPlacement.csv | sed '$lineCounters/.*/$replaceLine/' #> .studentPlacement.csv
-				break
-			fi
-			
-	done <.studentPlacement.csv
-	if [[ $pUsername != $choice1 || $placementID != $choice2 ]] ; then
-		echo "Invalid id detected!"
-		approvePlacement; fi
-	
+	mv -f .studentplacement2.csv .studentPlacement.csv
 	
 }
-
 function processPlacement() {
 	echo -e "\nPlease choose an option from the menu below by entering the appropriate number and pressing enter. q to exit:"
 
@@ -238,21 +250,76 @@ function processPlacement() {
 			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
 			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
 			if [[ "$Visible" = "true" && "$ID" = "$choice" ]]; then
-				echo "$Username, $FirstName, $LastName, $Email, $StudentType, $StudentYear, false, $line" >> .studentPlacement.csv
+				echo "$Username, $FirstName, $LastName, $Email, $StudentType, $StudentYear, new, $line" >> .studentPlacement.csv
 				break
 			fi
 		done <.placement.csv
 		echo "Thank you. Your response has been saved and is awaiting approval from the course coordinator. You will be contacted by email in due course."
 		
-		
+	####fix me	
 	elif [[ "$choice" -eq 2 ]]; then
-		echo "Enter Placement in form Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires"
-		read placement
-		echo $placement $username >> .studentPlacement.csv
+		#ID, Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires
+		echo -n "Enter Company Name: "
+		read cName
+		echo -n "Enter Duration (Weeks): "
+		read dur
+		echo -n "Enter Payment (Weekly): £"
+		read pay
+		echo -n "Enter a Description of the Work Involved: "
+		read desc
+		echo "$Username, $FirstName, $LastName, $Email, $StudentType, $StudentYear, new, $RANDOM, $cName, $dur, $pay, N/A, 1, $desc, false, N/A" >> .studentPlacement.csv
 		echo "Thank you. Your response has been saved and is awaiting approval from the course coordinator. You will be contacted by email in due course."
 	fi
 }
-
+function approveAd(){
+	exec 3< .placement.csv
+	read -u 3 line
+	echo $line >> .placement2.csv
+	while read -u 3 line     
+		do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
+			echo -e "$Owner: $Info\nDuration: $Duration; Payment: $Payment; SE Compliant: $SECompliant; Positions: $Positions; Expires: $Expires\n"
+			echo -n "Current Public Status: $Visible; New Status (true/false): "
+			read choice1
+			if [[ "$choice1" != "true" && "$choice1" != "false" ]]; then choice1="$Visible"; fi
+			echo -n "Current SECompliant Status: $SECompliant; New Status (true/false): "
+			read choice2
+			if [[ "$choice2" != "true" && "$choice2" != "false" ]]; then choice2="$SECompliant"; fi
+			echo -e "\n\n"
+			if [[ $ID != "ID" ]]; then echo "$ID, $Owner, $Duration, $Payment, $choice2, $Positions, $Info, $choice1, $Expires" >> .placement2.csv; fi
+	done
+	mv -f .placement2.csv .placement.csv
+	
+}
+function approveUser(){
+	exec 3< .users.csv
+	read -u 3 line
+	echo $line >> .users2.csv
+	while read -u 3 line     
+		do           
+			re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+			[[ "$line" =~ $re ]] && aUsername="${BASH_REMATCH[1]}" && aPassword="${BASH_REMATCH[2]}" && aEmail="${BASH_REMATCH[3]}" && aIsApproved="${BASH_REMATCH[4]}" && aAccountType="${BASH_REMATCH[5]}" && aFirstName="${BASH_REMATCH[6]}" && aLastName="${BASH_REMATCH[7]}" && aStudentType="${BASH_REMATCH[8]}" && aStudentYear="${BASH_REMATCH[9]}" && aOrganisationType="${BASH_REMATCH[10]}"
+			if [[ $aIsApproved = "false" ]]; then
+				echo "$aUsername, $aFirstName $aLastname, $aEmail"
+				if [[ "$aAccountType" = "student" ]]; then echo "Student: $aStudentType, $aStudentYear"; fi
+				if [[ "$aAccountType" = "academic" ]]; then echo "academic"; fi
+				if [[ "$aAccountType" = "organisation" ]]; then echo "Organisation: $aOrganisationType"; fi
+				echo
+				echo -n "Approve? Reject? Skip?(a/r/s): "
+				read choice2
+				if [[ "$choice2" = "a" ]]; then choice2="true"
+				elif [[ "$choice2" = "r" ]]; then choice2="REJECTED"
+				else choice2="false"
+				fi
+				echo -e "\n\n"
+				echo "$aUsername, $aPassword, $aEmail, $choice2, $aAccountType, $aFirstName, $aLastname, $aStudentType, $aStudentYear, $aOrganisationType" >> .users2.csv
+			else echo $line >> .users2.csv
+			fi
+	done
+	mv -f .users2.csv .users.csv
+	
+}
 function newAccount() {
 	echo -n "Are You a student? Academic? Or Organisation?(s/a/o): "
 	read nAccType
@@ -322,7 +389,7 @@ function makeAcademic() {
 	read conf
 	if [ $conf = "n" ]; then makeAcademic
 	elif [ $conf != $"y" ]; then echo "Error"
-	else echo "$userName, $password, $email, false, accademic, $fName, $sName, null, null, null" >> .users.csv
+	else echo "$userName, $password, $email, false, academic, $fName, $sName, null, null, null" >> .users.csv
 	fi
 }
 function makeOrganisation() {
@@ -354,6 +421,12 @@ function makeOrganisation() {
 	else echo "$userName, $password, $email, false, organisation, $fName, , null, null, $oType" >> .users.csv
 	fi
 }
+
+while read line; do           
+	re="^([^,]+), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*)$"
+	[[ "$line" =~ $re ]] && ID="${BASH_REMATCH[1]}" && Owner="${BASH_REMATCH[2]}" && Duration="${BASH_REMATCH[3]}" && Payment="${BASH_REMATCH[4]}" && SECompliant="${BASH_REMATCH[5]}" && Positions="${BASH_REMATCH[6]}" && Info="${BASH_REMATCH[7]}" && Visible="${BASH_REMATCH[8]}" && Expires="${BASH_REMATCH[9]}"
+	currentID=$ID
+done <.placement.csv
 
 
 # START MAIN PROGRAM #

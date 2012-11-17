@@ -1,5 +1,5 @@
 ID, Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires
-1, acompanyID, 10, 250, true, 1, no alcoholics, true, 10.03.13
-2, anothercompanyID, 12, 150, false, 2, only alcoholics, true, 10.02.13
-3, anacademic, 48, 300, true, 1, null, true, 31.12.12
-4, EXTERNAL, 12, 300, false, 1, "some relevant info the student could/should specify about external placements", false, null
+1, Google, 10, 360, false, 2, Network Penetration Specialists required for "Streetview Project", true, 10.03.13
+2, MorganStanley, 10, 260, true, 3, We're Not Evil! Promise!, true, 10/12/12
+3, IBM, 10, 280, true, 2, Mainframe Software Deployment, true, 10/10/2012
+4, Joe.Sventek, 8, 50, false, 2, Part Time C Programming, false, 12/12/2012
