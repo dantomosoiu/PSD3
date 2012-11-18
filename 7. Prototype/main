@@ -37,11 +37,10 @@ do
 			break
 		fi
 	done
-	if [ "$IsApproved" = "false" ]; then echo -e "Unverified Username\n"
+	if [[ "$username" = "$Username" && $IsApproved = "true" ]]; then echo -e "Unverified Username\n"
 	elif [ "$username" != "$Username" ]; then echo -e "Incorrent Username\n"
 	fi
-	done
-
+done
 }
 function menu() {
 	echo -e "\nPlease choose an option from the menu below by entering the appropriate number and pressing enter. q to exit:"

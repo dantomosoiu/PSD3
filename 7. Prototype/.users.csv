@@ -5,11 +5,11 @@ y, y, tim.storer@gla.ac.uk, true, coordinator, Tim, Storer, null, null, null
 MorganStanley, password, careers@MorganStanley.com, true, organisation, Morgan Stanley, , null, null, Banking
 Google, password, liz@google.com, true, organisation, Google, , null, null, Networking
 Joe.Sventek, MyMommaDidn'tCompileNoFool, joe.sventek@glasgow.ac.uk, true, academic, Joe, Sventek, null, null, null
-1100000u, password, 1100000u@student.gla.ac.uk, false, student, Bob, Marley, SE, 2, null
-SpeedyPC's, tomatoes, timmy@speedy.com, false, organisation, Speedy PC's, , null, null, PC Repair
+1100000u, password, 1100000u@student.gla.ac.uk, true, student, Bob, , SE, 2, null
+SpeedyPC's, tomatoes, timmy@speedy.com, true, organisation, Speedy PC's, , null, null, PC Repair
 1007414g, unbreakable, hectorgrebbell@googlemail.com, true, student, Hector, Grebbell, SE, 3, null
-jeremy.singer, lilybank, jeremy.singer@glasgow.ac.uk, false, academic, Jeremy, Singer, null, null, null
-0902059k, blabla, 0902059k@student.gla.ac.uk, false, student, Nic, Kearns, CS, 3, null
-1102266L, p, tony@gla.ac.uk, false, student, Tony, Lau, SE, 3, null
-2056647f, 1234, peeranat85@gmail.com, false, student, Peeranat, Fupongsiripan, SE, 3, null
-1003819k, password, fake@email.com, false, student, Michael, Kilian, SE, 3, null
+jeremy.singer, lilybank, jeremy.singer@glasgow.ac.uk, true, academic, Jeremy, , null, null, null
+0902059k, blabla, 0902059k@student.gla.ac.uk, true, student, Nic, , CS, 3, null
+1102266L, p, tony@gla.ac.uk, REJECTED, student, Tony, , SE, 3, null
+2056647f, 1234, peeranat85@gmail.com, REJECTED, student, Peeranat, , SE, 3, null
+1003819k, password, fake@email.com, REJECTED, student, Michael, , SE, 3, null
