@@ -104,14 +104,14 @@ This document displays the use cases we have identified for the system. The long
 \subsection{Document Status and Schedule}
 Naturally this document is under constant revision as new requirements are identified and as stakeholder conflicts are resolved\\
 \\
-This document should be revised weekly in time for the next PSD team meeting (Tuesday 11am), assuming any changes are required. A change log for this document is visible in the Appendix. Further information about changes can be viewed using github's version tracking features.
+This document should be revised weekly in time for the next PSD team meeting (Tuesday 11am), assuming any changes are required. A change log for this document is visible in the Appendix. Further information about changes can be viewed using githubs version tracking features.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
 \section{System Scope}
-As specified in the initial business case, the system is only to be used within the Department of Computing Science. The only outside interaction comes from companies who submit advertisements to the system. \\
-The process of a student applying for a placement is the most complex with regards to scope. In many cases larger companies will have their own websites or online application processes which they will wish the student to take part in. In this case the student does not apply through the system and will apply by using the details found in the corresponding advert for the placement. However smaller, independent companies may not have their own process. For such companies the system will handle direct applications by the student to the company. Finally the student may also find placements entirely on their own. When this occurs the student should submit information about the placement through the system, but the application to the placement is outside the system scope.\\
+As specified in the initial business case, the system is only to be used within the Department of Computing Science. The only outside interaction comes from companies whosubmit advertisements to the system. \\
+The process of a student applying for a placement is the most complex with regards to scope. In many cases larger companies will have their own websites or online applicationprocesses which they will wish the student to take part in. In this case the student does not apply through the system and will apply by using the details found in the correspondingadvert for the placement. However smaller, independant companies may not have their own process. For such companies the system will handle direct applications by the student to the company. Finally the student may also find placements entirely on their own. When this occurs the student should submit information about the placement through the system, butthe application to the placement is outside the system scope.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -121,9 +121,9 @@ The process of a student applying for a placement is the most complex with regar
 The above diagram shows the actor roles present in the system:
 \begin{itemize}
 \item{\textbf{Student:}\ all students enrolled in the system who can apply for placements. This can be further broken down into CS, SE and ESE students, who will have
-different rules on what constitutes a suitable placement.}
+different rules on what constitues a suitable placment.}
 \item{\textbf{Coordinator: }\ the course coordinator will have privileges to approve and reject files, view student progress, etc.}
-\item{\textbf{Organisation: }\ any group who advertises placements to the system. This may include external companies, internship schemes and university groups.}
+\item{\textbf{Organisation: }\ any group who advertises placements to the system. This may include external companies, intership schemes and university groups.}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -187,7 +187,7 @@ Use Case Diagram\\
 \item{END}
 \end{enumerate}
 }
-\UseCaseRationale{Identified a need for different classes of user to have a different range of functionality presented. For example only the coordinator should be able to approve adverts. Identified at client interview.}
+\UseCaseRationale{Identified a need for different classes of user to have a different range of functionality presented. For example only the coordinator should be able to approve adverts. Indentified at client interview.}
 \UseCasePriority{Must Have}
 \UseCaseStatus{Implemented}
 \UseCaseActors{User}
@@ -217,7 +217,7 @@ the details emailed to him he successfully logs in.}
 \begin{enumerate}
 \item{User chooses an account type (Organisation or Student) .}
 \item{User is prompted for an account username. IF (the account name is taken) THEN prompt the user to enter another name and repeat.}
-\item{Prompt user to enter password and then enter it again to confirm. IF (passwords don't match) THEN alert the user and repeat.}
+\item{Prompt user to enter password and then enter it again to confirm. IF (passwords dont match) THEN alert the user and repeat.}
 \item{Continue to prompt user for relevant data in this fashion.}
 \item{END}
 \end{enumerate}
@@ -258,7 +258,7 @@ Use Case Diagram\\
 \UseCaseDescription{
 \begin{enumerate}
 \item{User selects an advert.}
-\item{User selects 'approve' and confirms.}
+\item{User selecnts 'approve' and confirms.}
 \item{Advert is made visible to students.}
 \item{END}
 \end{enumerate}
@@ -296,7 +296,7 @@ Use Case Diagram\\
 \item{Advert now appears as taken in advert board}
 \item{END}
 \end{enumerate}}
-\UseCaseRationale{There is obviously a need to communicate that a placement has been successfully filled so that other students don't waste their time making applications to it. However the client requested that in this situation the advert should not be removed, in case the placement becomes available again. Identified at client interview.}
+\UseCaseRationale{There is obviously a need to communicate that a placement has been successfully filled so that other students dont waste their time making applications to it. However the client requested that in this situation the advert should not be removed, in case the placement becomes available again. Identified at client interview.}
 \UseCasePriority{Should Have}
 \UseCaseStatus{Not Implemented}
 \UseCaseActors{Coordinator}
@@ -314,7 +314,7 @@ the advert, selects in and chooses an option to mark it as taken.}
 \item{\textbf{Alternate 1:}\ Margaret logs in and searches the advert board for a placement she wishes to mark as taken. She mistakenly selects the wrong placement and proceed to mark it as taken.
 Upon realising her mistake, she reselects the advert and chooses to reopen the advert for submissions.}
 \end{itemize}}
-\UseCaseRisks{User could mistakenly mark an advert as taken and leave the system, making the advert appear closed to students ( and therefore most likely leave a taken advert
+\UseCaseRisks{User could mistakenly mark an advert as taken and leave the system, making the advert appear closed to students ( and therfore most likely leave a taken advert
 marked as unfulfilled), failing to notice their mistake.}
 \UseCaseUserInterface{}
 \end{UseCaseTemplate}
@@ -466,8 +466,8 @@ an application. He enters all relevant extra data and sends off the application.
 \begin{enumerate}
 \item{Student selects a placement from the advert board}
 \item{They choose to notify that they have secured this placement}
-\item{IF (the placement is already filled) THEN user is notified and submission is ignored. GOTO 2}
-\item{Notification is received and put into system for confirmation by coordinator}
+\item{IF (the placement is alread filled) THEN user is notified and submission is ignored. GOTO 2}
+\item{Notification is recieved and put into system for confirmation by coordinator}
 \item{END}
 \end{enumerate}
 }
@@ -507,7 +507,7 @@ an application. He enters all relevant extra data and sends off the application.
 
 \section{Conflicts and Resolution}
 \textbf{Conflict}: Originally in client interview it was established that students could be able to make applications through the system directly to companies. However at the stakeholder panel it was suggested that this feature was outside of the system's scope.
-\textbf{Resolution - \date{2012/11/08}}: The question of whether this feature should or should not be implemented was raised by the team in the Requirements Forum. compromise the team chose to keep this feature as a potential use case but relegated it from a must have to a could have status.\\
+\textbf{Resoultion - \date{2012/11/08}}: The question of whether this feature should or should not be implemented was raised by the team in the Requirements Forum. compromise the team chose to keep this feature as a potential use case but relegated it from a must have to a could have status.\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -517,7 +517,7 @@ an application. He enters all relevant extra data and sends off the application.
 \subsection{Version 1}
 \begin{enumerate}
 \setcounter{enumi}{-1}
-\item{Initial Draft -- \date{2012/11/01}}
+\item{Inital Draft -- \date{2012/11/01}}
 \item{Minor edits / cleanup -- \date{2012/11/09}}
 \end{enumerate}
 
@@ -529,7 +529,7 @@ an application. He enters all relevant extra data and sends off the application.
 \subsection{Version 3}
 \begin{enumerate}
 \setcounter{enumi}{-1}
-\item{Addition of pseudocode descriptions and Conflict and Resolution section -- \date{2012/11/12}}
+\item{Addition of pseducode descriptions and Conflict and Resolution section -- \date{2012/11/12}}
 \end{enumerate}
 
 \section{Glossary}
