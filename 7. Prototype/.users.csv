@@ -10,6 +10,8 @@ SpeedyPC's, tomatoes, timmy@speedy.com, true, organisation, Speedy PC's, , null,
 1007414g, unbreakable, hectorgrebbell@googlemail.com, true, student, Hector, Grebbell, SE, 3, null
 jeremy.singer, lilybank, jeremy.singer@glasgow.ac.uk, true, academic, Jeremy, , null, null, null
 0902059k, blabla, 0902059k@student.gla.ac.uk, true, student, Nic, , CS, 3, null
-1102266L, p, tony@gla.ac.uk, REJECTED, student, Tony, , SE, 3, null
+1102266L, p, tony@gla.ac.uk, true, student, Tony, , SE, 3, null
 2056647f, 1234, peeranat85@gmail.com, REJECTED, student, Peeranat, , SE, 3, null
-1003819k, password, fake@email.com, REJECTED, student, Michael, , SE, 3, null
+1003819k, password, fake@email.com, true, student, Michael, , SE, 3, null
+0405116g, dongs, dongz@gmail.com, REJECTED, student, Mr, , other, 4, null
+1000007n, p, mamasisGay, REJECTED, student, mamas, , CS, 3, null

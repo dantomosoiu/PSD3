@@ -28,7 +28,7 @@ do
 			#get password
 			echo -n "Enter password: "
 			read -s password 
-			echo $password
+			echo
 			if [ "$password" = "$Password" ]; then
 				exit=1
 				echo -e "\nLogin Successful. Welcome $FirstName"
@@ -210,7 +210,7 @@ function processMenuChoice() {
 			fi
 		done
 		rm .studentApplication.csv
-		mv -f .studentApplication2.csv .studentApplication.csv 2>> .errorLog
+		mv -f .studentApplication2.csv .studentApplication.csv
 	#Submit Advert
 	elif [[ "$AccountType" = "organisation" && "$choice" -eq 1 ]]; then
 		echo -n "Enter Duration (Weeks): "
@@ -257,7 +257,7 @@ function processMenuChoice() {
 			fi
 		done
 		rm .studentApplication.csv
-		mv -f .studentApplication2.csv .studentApplication.csv 2>> .errorLog
+		mv -f .studentApplication2.csv .studentApplication.csv
 	else echo -e "\n\n\nWhat... is the air-speed velocity of an unladen swallow?\n\n\n"
 	fi
 	echo "Enter to continue"
@@ -281,7 +281,7 @@ function approvePlacement(){
 			echo "$pUsername, $pFirstName, $pSurname, $pEmail, $pStudentType, $pYear, $choice1, $pID, $pOwner, $pDuration, $pPayment, $pSECompliant, $pPositions, $pInfo, $pVisible, $pExpires" >> .studentplacement2.csv
 	done
 	rm .studentPlacement.csv
-	mv -f .studentplacement2.csv .studentPlacement.csv 2>> .errorLog
+	mv -f .studentplacement2.csv .studentPlacement.csv
 	
 }
 function processPlacement() {
@@ -358,7 +358,7 @@ function approveAd(){
 			if [[ $ID != "ID" ]]; then echo "$ID, $Owner, $Duration, $Payment, $choice2, $Positions, $Info, $choice1, $Expires" >> .placement2.csv; fi
 	done
 	rm .placement.csv
-	mv -f .placement2.csv .placement.csv 2>> .errorLog
+	mv -f .placement2.csv .placement.csv
 	
 }
 function approveUser(){
@@ -388,7 +388,7 @@ function approveUser(){
 			fi
 	done
 	rm .users.csv
-	mv -f .users2.csv .users.csv 2>> .errorLog
+	mv -f .users2.csv .users.csv
 	
 }
 function newAccount() {
@@ -499,9 +499,11 @@ while read line; do
 	currentID=$ID
 done <.placement.csv
 
+
+exec 2>> .errorLog
 rm .*2.csv
 
-
+cp man man2
 # START MAIN PROGRAM #
 echo -e "\nWelcome to the University of Glasgow Internship Management System"
 
