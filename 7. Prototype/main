@@ -60,12 +60,12 @@ function menu() {
 		echo "6. Approve/reject internships"
 		echo
 		processMenuChoice
-	elif [[ "$AccountType" = "academic" ]]; then
-		echo "1. Submit advertisement"
-		echo "2. View submitted advertisements"
-		echo "3. Approve/reject applications"
-		echo
-		processMenuChoice
+	#elif [[ "$AccountType" = "academic" ]]; then
+		#echo "1. Submit advertisement"
+		#echo "2. View submitted advertisements"
+		#echo "3. Approve/reject applications"
+		#echo
+		#processMenuChoice
 	elif [[ "$AccountType" = "organisation" ]]; then
 		echo "1. Submit advertisement"
 		echo "2. View submitted advertisements"
@@ -258,7 +258,7 @@ function processMenuChoice() {
 		done
 		rm .studentApplication.csv
 		mv -f .studentApplication2.csv .studentApplication.csv
-	else echo -e "\n\n\nWhat... is the air-speed velocity of an unladen swallow?\n\n\n"
+	##else echo -e "\n\n\nWhat... is the air-speed velocity of an unladen swallow?\n\n\n"
 	fi
 	echo "Enter to continue"
 	read cont
@@ -392,10 +392,10 @@ function approveUser(){
 	
 }
 function newAccount() {
-	echo -n "Are you a Student? Academic? Or Organisation?(s/a/o): "
+	echo -n "Are you a Student? Or Organisation?(s/o): "
 	read nAccType
 	if [ "$nAccType" = "s" ]; then makeStudent
-	elif [ "$nAccType" = "a" ]; then makeAcademic
+	#elif [ "$nAccType" = "a" ]; then makeAcademic
 	elif [ "$nAccType" = "o" ]; then makeOrganisation
 	fi
 	if [[ "$nAccType" = "s" && "$nAccType" = "a" && "$nAccType" = "o" ]]; then  echo -e "\nThank You. Your account needs to be verified before use. You will recieve an email when this happens."; fi
