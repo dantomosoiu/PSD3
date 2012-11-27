@@ -28,11 +28,11 @@ do
 			#get password
 			echo -n "Enter password: "
 			read -s password 
-			echo $password
+			echo
 			if [ "$password" = "$Password" ]; then
 				exit=1
-				echo -e "\nLogin Successful. Welcome $FirstName"
-			else echo -e "Incorrent Password\n"
+				echo -e "\nLogin successful. Welcome $FirstName"
+			else echo -e "Incorrect Password\n"
 			fi
 			break
 		fi
@@ -52,24 +52,24 @@ function menu() {
 		echo
 		processMenuChoice
 	elif [[ "$AccountType" = "coordinator" ]]; then
-		echo "1. View All advertisements"
-		echo "2. Approve/Reject Adverts"
-		echo "3. Submit Advert"
-		echo "4. Approve/Reject New Users"
-		echo "5. View Approved Internships"
-		echo "6. Approve/Reject Internships"
+		echo "1. View all advertisements"
+		echo "2. Approve/reject adverts"
+		echo "3. Submit advert"
+		echo "4. Approve/reject new users"
+		echo "5. View approved internships"
+		echo "6. Approve/reject internships"
 		echo
 		processMenuChoice
-	elif [[ "$AccountType" = "academic" ]]; then
-		echo "1. Submit advertisement"
-		echo "2. View submitted advertisements"
-		echo "3. Approve/Reject Applications"
-		echo
-		processMenuChoice
+	#elif [[ "$AccountType" = "academic" ]]; then
+		#echo "1. Submit advertisement"
+		#echo "2. View submitted advertisements"
+		#echo "3. Approve/reject applications"
+		#echo
+		#processMenuChoice
 	elif [[ "$AccountType" = "organisation" ]]; then
 		echo "1. Submit advertisement"
 		echo "2. View submitted advertisements"
-		echo "3. Approve/Reject Applications"
+		echo "3. Approve/reject applications"
 		echo
 		processMenuChoice
 	else quit=1
@@ -120,7 +120,7 @@ function processMenuChoice() {
 				break
 			fi
 		done <.placement.csv
-		echo -e "Thank you. Your response has been saved And is awaiting Response from the Company/Academic. You will be contacted by email in due course.\nThere is no need to notify the co-ordinator of success of this application. It will happen automatically."
+		echo -e "Thank you. Your response has been saved and is awaiting response from the company/academic. You will be contacted by email in due course.\nThere is no need to notify the co-ordinator of success of this application. It will happen automatically."
 	#View All Adverts
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 1 ]]; then
 		while read line; do           
@@ -133,19 +133,19 @@ function processMenuChoice() {
 		approveAd
 	#Submit Advert
 	elif [[ "$AccountType" = "coordinator" && "$choice" -eq 3 ]]; then
-		echo -n "Enter Company Name: "
+		echo -n "Enter company name: "
 		read cName
-		echo -n "Enter Duration (Weeks): "
+		echo -n "Enter duration (weeks): "
 		read dur
-		echo -n "Enter Payment (Weekly): £"
+		echo -n "Enter payment (weekly): £"
 		read pay
-		echo -n "Enter a Description of the Work Involved: "
+		echo -n "Enter a description of the work involved: "
 		read desc
-		echo -n "Enter Number of Positions available: "
+		echo -n "Enter number of positions available: "
 		read pos
-		echo -n "Enter Expiration Date: "
+		echo -n "Enter expiration Date: "
 		read date
-		echo -n "SE Compliant? (true/false): "
+		echo -n "SE compliant? (true/false): "
 		read seCom
 		let "currentID+=1"
 		echo "$currentID, $cName, $dur, $pay, $seCom, $pos, $desc, true, $date" >> .placement.csv
@@ -166,20 +166,20 @@ function processMenuChoice() {
 		approvePlacement
 	#Submit Advert
 	elif [[ "$AccountType" = "academic" && "$choice" -eq 1 ]]; then
-		echo -n "Enter Duration (Weeks): "
+		echo -n "Enter duration (weeks): "
 		read dur
-		echo -n "Enter Payment (Weekly): £"
+		echo -n "Enter payment (weekly): £"
 		read pay
-		echo -n "Enter a Description of the Work Involved: "
+		echo -n "Enter a description of the work involved: "
 		read desc
-		echo -n "Enter Number of Positions available: "
+		echo -n "Enter number of positions available: "
 		read pos
-		echo -n "Enter Expiration Date: "
+		echo -n "Enter expiration date: "
 		read date
 		let "currentID+=1"
 		echo "$currentID, $Username, $dur, $pay, false, $pos, $desc, false, $date" >> .placement.csv
 		echo
-		echo "Thankyou. Your advert will be public once verified by the course co-ordinator"
+		echo "Thank you. Your advert will be publicly visible once verified by the course co-ordinator"
 		echo
 	#View Submitted Adverts
 	elif [[ "$AccountType" = "academic" && "$choice" -eq 2 ]]; then
@@ -200,7 +200,7 @@ function processMenuChoice() {
 			[[ "$line" =~ $re ]] && pUsername="${BASH_REMATCH[1]}" && pFirstName="${BASH_REMATCH[2]}" && pSurname="${BASH_REMATCH[3]}" && pEmail="${BASH_REMATCH[4]}" && pStudentType="${BASH_REMATCH[5]}" && pYear="${BASH_REMATCH[6]}" && pApproved="${BASH_REMATCH[7]}" && pID="${BASH_REMATCH[8]}" && pOwner="${BASH_REMATCH[9]}" && pDuration="${BASH_REMATCH[10]}" && pPayment="${BASH_REMATCH[11]}" && pSECompliant="${BASH_REMATCH[12]}" && pPositions="${BASH_REMATCH[13]}" && pInfo="${BASH_REMATCH[14]}" && pVisible="${BASH_REMATCH[15]}" && pExpires="${BASH_REMATCH[16]}"
 			if [[ "$pOwner" = "$Username" ]]; then
 				echo -e "$pUsername-$placementID; $pFirstName $pSurname ($pStudentType $pYear) $pEmail; $pInfo\nDuration: $pDuration; Payment: $pPayment; SE Compliant: $pSECompliant; Positions: $pPositions; Expires: $pExpires\n"	
-				echo -n "New Status (approved/rejected): "
+				echo -n "New status (approved/rejected): "
 				read choice1
 				if [[ $choice1 != "approved" && $choice1 != "rejected" ]]; then choice1=$pApproved; fi
 				echo -e "\n\n"
@@ -210,23 +210,23 @@ function processMenuChoice() {
 			fi
 		done
 		rm .studentApplication.csv
-		mv -f .studentApplication2.csv .studentApplication.csv 2>> .errorLog
+		mv -f .studentApplication2.csv .studentApplication.csv
 	#Submit Advert
 	elif [[ "$AccountType" = "organisation" && "$choice" -eq 1 ]]; then
-		echo -n "Enter Duration (Weeks): "
+		echo -n "Enter duration (weeks): "
 		read dur
-		echo -n "Enter Payment (Weekly): £"
+		echo -n "Enter payment (weekly): £"
 		read pay
-		echo -n "Enter a Description of the Work Involved: "
+		echo -n "Enter a description of the work involved: "
 		read desc
-		echo -n "Enter Number of Positions available: "
+		echo -n "Enter number of positions available: "
 		read pos
-		echo -n "Enter Expiration Date: "
+		echo -n "Enter expiration date: "
 		read date
 		let "currentID+=1"
 		echo "$currentID, $Username, $dur, $pay, false, $pos, $desc, false, $date" >> .placement.csv
 		echo
-		echo "Thankyou. Your advert will be public once verified by the course co-ordinator"
+		echo "Thank you. Your advert will be publicly visible once verified by the course co-ordinator"
 		echo
 	#View Submitted Adverts
 	elif [[ "$AccountType" = "organisation" && "$choice" -eq 2 ]]; then
@@ -247,7 +247,7 @@ function processMenuChoice() {
 			[[ "$line" =~ $re ]] && pUsername="${BASH_REMATCH[1]}" && pFirstName="${BASH_REMATCH[2]}" && pSurname="${BASH_REMATCH[3]}" && pEmail="${BASH_REMATCH[4]}" && pStudentType="${BASH_REMATCH[5]}" && pYear="${BASH_REMATCH[6]}" && pApproved="${BASH_REMATCH[7]}" && pID="${BASH_REMATCH[8]}" && pOwner="${BASH_REMATCH[9]}" && pDuration="${BASH_REMATCH[10]}" && pPayment="${BASH_REMATCH[11]}" && pSECompliant="${BASH_REMATCH[12]}" && pPositions="${BASH_REMATCH[13]}" && pInfo="${BASH_REMATCH[14]}" && pVisible="${BASH_REMATCH[15]}" && pExpires="${BASH_REMATCH[16]}"
 			if [[ "$pOwner" = "$Username" ]]; then
 				echo -e "$pUsername-$placementID; $pFirstName $pSurname ($pStudentType $pYear) $pEmail; $pInfo\nDuration: $pDuration; Payment: $pPayment; SE Compliant: $pSECompliant; Positions: $pPositions; Expires: $pExpires\n"	
-				echo -n "New Status (approved/rejected): "
+				echo -n "New status (approved/rejected): "
 				read choice1
 				if [[ $choice1 != "approved" && $choice1 != "rejected" ]]; then choice1=$pApproved; fi
 				echo -e "\n\n"
@@ -257,8 +257,8 @@ function processMenuChoice() {
 			fi
 		done
 		rm .studentApplication.csv
-		mv -f .studentApplication2.csv .studentApplication.csv 2>> .errorLog
-	else echo -e "\n\n\nWhat... is the air-speed velocity of an unladen swallow?\n\n\n"
+		mv -f .studentApplication2.csv .studentApplication.csv
+	##else echo -e "\n\n\nWhat... is the air-speed velocity of an unladen swallow?\n\n\n"
 	fi
 	echo "Enter to continue"
 	read cont
@@ -281,7 +281,7 @@ function approvePlacement(){
 			echo "$pUsername, $pFirstName, $pSurname, $pEmail, $pStudentType, $pYear, $choice1, $pID, $pOwner, $pDuration, $pPayment, $pSECompliant, $pPositions, $pInfo, $pVisible, $pExpires" >> .studentplacement2.csv
 	done
 	rm .studentPlacement.csv
-	mv -f .studentplacement2.csv .studentPlacement.csv 2>> .errorLog
+	mv -f .studentplacement2.csv .studentPlacement.csv
 	
 }
 function processPlacement() {
@@ -326,13 +326,13 @@ function processPlacement() {
 	####fix me	
 	elif [[ "$choice" -eq 2 ]]; then
 		#ID, Owner, Duration, Payment, SECompliant, Positions, Info, Visible, Expires
-		echo -n "Enter Company Name: "
+		echo -n "Enter company name: "
 		read cName
-		echo -n "Enter Duration (Weeks): "
+		echo -n "Enter duration (weeks): "
 		read dur
-		echo -n "Enter Payment (Weekly): £"
+		echo -n "Enter payment (weekly): £"
 		read pay
-		echo -n "Enter a Description of the Work Involved: "
+		echo -n "Enter a description of the work involved: "
 		read desc
 		echo "$Username, $FirstName, $LastName, $Email, $StudentType, $StudentYear, new, $RANDOM, $cName, $dur, $pay, N/A, 1, $desc, false, N/A" >> .studentPlacement.csv
 		echo "Thank you. Your response has been saved and is awaiting approval from the course coordinator. You will be contacted by email in due course."
@@ -358,7 +358,7 @@ function approveAd(){
 			if [[ $ID != "ID" ]]; then echo "$ID, $Owner, $Duration, $Payment, $choice2, $Positions, $Info, $choice1, $Expires" >> .placement2.csv; fi
 	done
 	rm .placement.csv
-	mv -f .placement2.csv .placement.csv 2>> .errorLog
+	mv -f .placement2.csv .placement.csv
 	
 }
 function approveUser(){
@@ -388,39 +388,39 @@ function approveUser(){
 			fi
 	done
 	rm .users.csv
-	mv -f .users2.csv .users.csv 2>> .errorLog
+	mv -f .users2.csv .users.csv
 	
 }
 function newAccount() {
-	echo -n "Are You a student? Academic? Or Organisation?(s/a/o): "
+	echo -n "Are you a Student? Or Organisation?(s/o): "
 	read nAccType
 	if [ "$nAccType" = "s" ]; then makeStudent
-	elif [ "$nAccType" = "a" ]; then makeAcademic
+	#elif [ "$nAccType" = "a" ]; then makeAcademic
 	elif [ "$nAccType" = "o" ]; then makeOrganisation
 	fi
-	if [[ "$nAccType" = "s" && "$nAccType" = "a" && "$nAccType" = "o" ]]; then  echo -e "\nThank You. Your account needs to be verified before use. You will recieve an email when this Happens."; fi
+	if [[ "$nAccType" = "s" && "$nAccType" = "a" && "$nAccType" = "o" ]]; then  echo -e "\nThank You. Your account needs to be verified before use. You will recieve an email when this happens."; fi
 }
 function makeStudent() {
 	echo "Wyat? $nAccType"
-	echo -n "Enter Your GUID (Matric + first letter of surname). This will be your Username: "
+	echo -n "Enter Your GUID (Matric + first letter of surname). This will be your username: "
 	read userName
 	p1="a"
 	password="b"
 	while [ "$p1" != "$password" ] 
 	do
-		echo -n "Enter Password: "
+		echo -n "Enter password: "
 		read -s p1
 		echo
-		echo -n "Confirm Password: "
+		echo -n "Confirm password: "
 		read -s password
 		echo
-		if [ "$p1" != "$password" ]; then echo "Passwords Do Not Match"; fi
+		if [ "$p1" != "$password" ]; then echo "Passwords do not match"; fi
 	done
 	echo -n "Enter Email: "
 	read email
 	echo -n "Enter First Name: "
 	read fName
-	echo -n "Enter Surame: "
+	echo -n "Enter Surname: "
 	read sName
 	echo -n "Enter Course Type (SE/ESE/CS/other): "
 	read sType
@@ -435,25 +435,25 @@ function makeStudent() {
 	fi
 }
 function makeAcademic() {
-	echo -n "Enter Your University Username: "
+	echo -n "Enter Your University username: "
 	read userName
 	p1="a"
 	password="b"
 	while [ "$p1" != "$password" ] 
 	do
-		echo -n "Enter Password: "
+		echo -n "Enter password: "
 		read -s p1
 		echo
-		echo -n "Confirm Password: "
+		echo -n "Confirm password: "
 		read -s password
 		echo
-		if [ "$p1" != "$password" ]; then echo "Passwords Do Not Match"; fi
+		if [ "$p1" != "$password" ]; then echo "Passwords do not match"; fi
 	done
 	echo -n "Enter Email: "
 	read email
 	echo -n "Enter First Name: "
 	read fName
-	echo -n "Enter Surame: "
+	echo -n "Enter Surname: "
 	read sName
 	echo "Confirm Details (y/n)-"
 	echo -n "$userName, $email, $fName, $sName"
@@ -464,25 +464,25 @@ function makeAcademic() {
 	fi
 }
 function makeOrganisation() {
-	echo -n "Enter a username (No Spaces or comma's): "
+	echo -n "Enter a username (no spaces or commas): "
 	read userName
 	p1="a"
 	password="b"
 	while [ "$p1" != "$password" ] 
 	do
-		echo -n "Enter Password: "
+		echo -n "Enter password: "
 		read -s p1
 		echo
-		echo -n "Confirm Password: "
+		echo -n "Confirm password: "
 		read -s password
 		echo
-		if [ "$p1" != "$password" ]; then echo "Passwords Do Not Match"; fi
+		if [ "$p1" != "$password" ]; then echo "Passwords do not match"; fi
 	done
 	echo -n "Enter Email: "
 	read email
 	echo -n "Enter Organisation Name: "
 	read fName
-	echo -n "Enter a description of your Company's core area of Business (Max Three Words, No Commas): "
+	echo -n "Enter a description of your Company's core area of business (Max three words, no commas): "
 	read oType
 	echo "Confirm Details (y/n)-"
 	echo -n "$userName, $email, $fName, $oType"
@@ -499,15 +499,18 @@ while read line; do
 	currentID=$ID
 done <.placement.csv
 
+
+exec 2>> .errorLog
 rm .*2.csv
 
-
+cp man man2
 # START MAIN PROGRAM #
+clear #clear existing terminal text
 echo -e "\nWelcome to the University of Glasgow Internship Management System"
 
 while [[ ! $quit -eq 1 ]];
 do
-	echo -en "\nDo You Have a username?(y/n/q): "
+	echo -en "\nDo you have a username?(y/n/q): "
 	read continue
 	echo
 	if [ "$continue" = "y" ]; then
