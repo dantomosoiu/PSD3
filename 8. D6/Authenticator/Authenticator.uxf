@@ -4,8 +4,8 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>310</x>
-      <y>350</y>
+      <x>370</x>
+      <y>320</y>
       <w>430</w>
       <h>110</h>
     </coordinates>
@@ -23,8 +23,8 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>340</x>
-      <y>180</y>
+      <x>400</x>
+      <y>150</y>
       <w>370</w>
       <h>70</h>
     </coordinates>
@@ -39,8 +39,8 @@ Authenticator
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>500</x>
-      <y>220</y>
+      <x>560</x>
+      <y>190</y>
       <w>50</w>
       <h>150</h>
     </coordinates>
@@ -50,8 +50,8 @@ Authenticator
   <element>
     <type>com.umlet.element.custom.Text</type>
     <coordinates>
-      <x>30</x>
-      <y>590</y>
+      <x>90</x>
+      <y>560</y>
       <w>410</w>
       <h>80</h>
     </coordinates>
