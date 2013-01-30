@@ -5,7 +5,7 @@
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
       <x>90</x>
-      <y>430</y>
+      <y>380</y>
       <w>200</w>
       <h>100</h>
     </coordinates>
@@ -18,7 +18,7 @@
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
       <x>350</x>
-      <y>290</y>
+      <y>240</y>
       <w>200</w>
       <h>100</h>
     </coordinates>
@@ -30,7 +30,7 @@
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
       <x>350</x>
-      <y>50</y>
+      <y>0</y>
       <w>200</w>
       <h>100</h>
     </coordinates>
@@ -42,7 +42,7 @@
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
       <x>90</x>
-      <y>660</y>
+      <y>610</y>
       <w>200</w>
       <h>100</h>
     </coordinates>
@@ -56,7 +56,7 @@
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
       <x>610</x>
-      <y>460</y>
+      <y>410</y>
       <w>200</w>
       <h>100</h>
     </coordinates>
@@ -68,7 +68,7 @@
     <type>com.umlet.element.custom.Component</type>
     <coordinates>
       <x>350</x>
-      <y>500</y>
+      <y>450</y>
       <w>200</w>
       <h>100</h>
     </coordinates>
@@ -80,7 +80,7 @@
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>420</x>
-      <y>120</y>
+      <y>70</y>
       <w>50</w>
       <h>190</h>
     </coordinates>
@@ -91,7 +91,7 @@
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>420</x>
-      <y>360</y>
+      <y>310</y>
       <w>50</w>
       <h>160</h>
     </coordinates>
@@ -102,7 +102,7 @@
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>150</x>
-      <y>500</y>
+      <y>450</y>
       <w>50</w>
       <h>180</h>
     </coordinates>
@@ -113,7 +113,7 @@
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>260</x>
-      <y>570</y>
+      <y>520</y>
       <w>210</w>
       <h>170</h>
     </coordinates>
@@ -124,7 +124,7 @@
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>240</x>
-      <y>360</y>
+      <y>310</y>
       <w>150</w>
       <h>320</h>
     </coordinates>
@@ -135,7 +135,7 @@
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>520</x>
-      <y>300</y>
+      <y>250</y>
       <w>210</w>
       <h>180</h>
     </coordinates>
