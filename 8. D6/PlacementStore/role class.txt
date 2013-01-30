@@ -1,0 +1,69 @@
+Role
+--
+- title: String
+- start: Date
+- end: Date
+- description: String
+- location: String
+- deadline: DateTime
+- salary: int
+- approved: Status
+--
++ Role(t: title, s: Date, e: Date, des: String, loc: String, dl: DateTime, sal: int, app: Approved)
++ getTitle(): String
++ getStartDate(): Date
++ getEndDate(): Date
++ getDes(): String
++ getLocation(): String
++ getDeadline(): DateTime
++ getSalary(): int
++ isApproved(): Status
++ setTitle(t: String): void
++ setStartDate(start: Date): void
++ setEndDate(end: Date): void
++ setDes(des: String): void
++ setLocation(loc: String): void
++ setDeadline(dt: DateTime): void
++ setSalary(sal: int): void 
++ setApproval(s: Status): void
+
+
+
+------------
+
+
+Class Role
+Methods
+1.  public Role( String title, Date start, Date end, String description, String location, DateTime deadline,  int salary, Status approved) - constructor
+	Parameters: String title
+		        Date start
+		        Date end
+		        String description
+		        String location
+		        DateTime deadline
+ 		        int salary
+		        Status approved
+2. public String getTitle() - returns title of the role
+3. public Date getStartDate() - returns the start date of the role
+4. public Date getEndDate() - returns the end date of the role
+5. public String getDes() - returns the description of the role
+6. public String getLocation() - returns the location of the role
+7. public DateTime getDeadline() - returns deadline of the application
+8. public int getSalary() - returns salary of the role
+9. public isApproved() - returns the status of the role (value can be either APPROVED OR REJECTED)
+10. public void setTitle(String t) - sets title of the role
+	Parameter: String t
+11. public void setStartDate (Date start) – sets the start date of the role
+	Parameter: Date start
+12. public void setEndDate(Date end) – sets the end date of the role
+	Parameter: Date end
+13. public void setDes(String des) – sets description of the role
+	Parameter: String des
+14. public void setLocation(String loc) – sets location of the role
+	Parameter: String loc
+15. public void setDeadline(DateTime dt) – sets deadline of the application
+	Parameter: DateTime dt
+16. public void setSalary(int sal) – sets salary of the role
+	Parameter: int sal
+17. public void setApproval(Status s) – sets the status of the role(value can be either APPROVED OR REJECTED)
+	Parameter: Status s
