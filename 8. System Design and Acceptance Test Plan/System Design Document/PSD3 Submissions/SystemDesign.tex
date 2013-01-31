@@ -31,7 +31,7 @@
 \usepackage{color}
 \usepackage{comment}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\version{3.0}
+\version{1.0}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -48,7 +48,7 @@
   Peeranat Fupongsiripan \\
   Hector Grebbell \\
   Michael Kilian \\
-  Anthony Lau \\
+  Tony Lau \\
 }
 
 %%release date 
@@ -72,7 +72,7 @@
 \section{Introduction}
 
 \subsection{Identification}
-This document outlines the proposed design for the Intern Management System. 
+This document outlines the proposed design for the Internship Management System. 
 \subsection{Related Documentation}
 \begin{itemize}
 \item{Requirements Specification Document}
@@ -83,8 +83,7 @@ This document outlines the proposed design for the Intern Management System.
 30/01/2013 - First draft 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{System Overview}
-\includegraphics[scale = 0.4]{ComponentDiagram.png}
-\\
+\includegraphics[scale = 0.4]{ComponentDiagram.png}\\
 The proposed system consists of the following components:
 \begin{itemize}
 \item{InternMan: This component contains an implementation of the InternMan facade provided and can be seen as the 'main' component for the system. }
@@ -96,6 +95,14 @@ manages the storage and retrieval of adverts from an appropriate source.}
 \item{Placement Store: Provides services for manipulating internships and associating these with an approriate role.}
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{State Machine Diagram}
+\subsection{Description and Rationale}
+The state machine diagram shows the state of objects within the Internship Management System at any given moment in time.\\
+\includegraphics[scale = 0.25]{StateMachineDiagram.png}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Component Breakdown}
 
@@ -112,32 +119,29 @@ the UserFactory component.
 \subsubsection{API}
 UserStoreImpl implements UserStore
 
-\textbf{Methods}
-\\
+\textbf{Methods}\\
 %addUser
 \textbf{public void addUser(String surname, String forename, String GUID, String password)}\\
 Adds a new user to the store.\\
-\textbf{Parameter}\\
+\textbf{Parameters}\\
 String surname\\
 String forename\\
 String GUID\\
 String password\\
-\\
 \\
 %addVisitor
 \textbf{public void addVisitor(String surname,String forename,String GUID, String password)}\\
 Adds a new visitor to the store\\
-\textbf{Parameter}\\
+\textbf{Parameters}\\
 String surname\\
 String forename\\
 String GUID\\
 String password\\
 \\
-\\
 %addStudent
 \textbf{public void addVisitor(String surname,String forename,String GUID, String password,String matriculation,String programme)}\\
 Adds a new student to the store\\
-\textbf{Parameter}\\
+\textbf{Parameters}\\
 String surname\\
 String forename\\
 String GUID\\
@@ -145,86 +149,103 @@ String password\\
 String matricaulation\\
 String programme\\
 \\
-\\
 %addEmployer
 \textbf{public void addVisitor(String surname,String forename,String GUID, String password,String contact)}\\
 Adds a new employer to the store\\
-\textbf{Parameter}\\
-String surname\\\
-String forename\
+\textbf{Parameters}\\
+String surname\\
+String forename\\
 String GUID\\
 String password\\
 String contact\\
-\\
 \\
 %getUser
 \textbf{public User getUser(String GUID, String password)}\\
 Returns a user specified by the GUID, if authentication is successful.\\
 \textbf{Return} the user specified by GUID, if the password is a match\\
-\textbf{Parameter}\\
+\textbf{Parameters}\\
 String GUID\\
 String password\\
-\\
 \\
 %getVisitor
 \textbf{public Visitor getVisitor(String GUID, String password)}\\
 Returns a visitor specified by the GUID, if authentication is successful.\\
 \textbf{Return} the visitor specified by GUID, if the password is a match\\
-\textbf{Parameter}\\
+\textbf{Parameters}\\
 String GUID\\
 String password\\
-\\
 \\
 %getStudent
 \textbf{public Student getVisitor(String GUID, String password)}\\
 Returns a Student specified by the GUID, if authentication is successful.\\
 \textbf{Return} the student specified by GUID, if the password is a match\\
-\textbf{Parameter}\\
+\textbf{Parameters}\\
 String GUID\\
 String password\\
-\\
 \\
 %getEmployer
 \textbf{public Visitor getVisitor(String name, String password)}\\
 Returns a visitor specified by the name if authentication is successful.\\
 \textbf{Return} the user specified by name, if the password is a match\\
-\textbf{Parameter}\\
+\textbf{Parameters}\\
 String name\\
 String password\\
-\\
 \\
 %%%%%OfferManager
 \subsection{Offer Management}
 \includegraphics[scale = 0.5]{OfferManagement.png}
-\\
 \subsubsection{Description and Rationale}
-TODO
+This component is needed to allow students to notify the course coordinator that they have accepted an internship. If the internship was advertised in the internship management system, then it is automatically approved. Otherwise, the student can create a new self-sourced role which will send an email to the course coordinator asking for approval. Approval is done through this component.
 \subsubsection{API}
-TODO
+OfferMangementImpl implements OfferManagement\\
+\textbf{Methods}\\
+%addUser
+\textbf{public void notifyAcceptedOffer(Role role, String managerName, String managerEmail)}\\
+Sends email to coordinator informing that a student has accepted an internship\\
+\textbf{Parameters}\\
+Role role\\
+String managerName\\
+String managerEmail\\
+\\
+\textbf{public void approveAcceptedOffer(String matriculation)}\\
+Sends email to coordinator informing that a student has accepted an internship\\
+\textbf{Parameters}\\
+String matriculation\\
+\\
+\textbf{public Role createNewSelfSourcedRole(String title, String location, Data start, Date end, String description, Double salary)}\\
+Sends email to coordinator informing that a student has accepted an internship\\
+\textbf{Return}\\
+Returns the newly created self-sourced role\\
+\textbf{Parameters}\\
+String title\\
+String location\\
+Data start\\
+Date end\\
+String description\\
+Double salary\\
+\\
 
 %%%%%Advert Management/Store
 \subsection{Advert Management/Store}
 \includegraphics[scale = 0.5]{adStore.png}
-\\
+
 \subsubsection{Description and Rationale}
-TODO
+Advert Management/Store is needed to handle creation, selection and publishing of all advertisements within the system. It interacts with other components which need information on adverts through the selectAdvertisement method which provides a handle on an advert with a supplied index.
 \subsubsection{API}
 TODO
 
 %%%%%Placement Store
 \subsection{Placement Store}
 \includegraphics[scale = 0.4]{ClassDiagram_PlacementStore.png}
-\\
 \subsubsection{Description and Rationale}
-TODO
+Placement Store contains all information on placements in the system at any given time and is needed to allow other componenets to keep track of which placements are in the system and their status.
 \subsubsection{API}
-\textbf{Interface PlacementStoreInf}
+\textbf{Interface PlacementStoreInf}\\
 
 \textbf{Methods}\\
 %viewPlacements
 \textbf{public void viewPlacements()}\\
-Prints out all existing placements.
-\\
+Prints out all existing placements.\\
 \\
 %addPlacement
 \textbf{public Placement addPlacement( Placement p )}\\
@@ -233,13 +254,11 @@ Add new placement.\\
 \textbf{Parameters}\\
 Placement p\\
 \\
-\\
 %removePlacement
 \textbf{public Placement removePlacement(int id)}\\
 \textbf{Return: }Placement with identification number id removed if successful , otherwise null.\\
 \textbf{Parameters}\\
 int id\\
-\\
 \\
 %editPlacement
 \textbf{public Placement editPlacement(Placement p) }\\
@@ -247,7 +266,6 @@ Edits existing placement.\\
 \textbf{Return: }Placement edited if successful, null otherwise.\\
 \textbf{Parameters}\\
 Placement p\\
-\\
 \\
 %%%%Class Placement
 \textbf{Class Placement}\\
@@ -261,55 +279,40 @@ String manager\\
 String contact\\
 Status status\\
 \\
-\\
 \textbf{public Role getRole()}\\
 \textbf{Return: }Role of placement if exists, null otherwise.\\
-\textbf{Parameters}\\
-\\
 \\
 \textbf{public Student getStudent()}\\
 \textbf{Return: }Student secured the placement , null otherwise.\\
-\textbf{Parameters}\\
-\\
 \\
 \textbf{public String getManager()}\\
 \textbf{Return:}Manager if exists, null otherwise.\\
-\textbf{Parameters}\\
-\\
 \\
 \textbf{public String getContact()}\\
 \textbf{Return: }Contact details, if exists, null otherwise.\\
-\textbf{Parameters}\\
-\\
 \\
 \textbf{public Status getStatus()}\\
 \textbf{Return: }returns the status of a particular placement (value can be either APPROVED OR REJECTED)\\
-\textbf{Parameters}\\
-\\
 \\
 \textbf{setRole(Role r)}\\
 \textbf{Return:}\\
 \textbf{Parameters}\\
 Role r\\
 \\
-\\
 \textbf{setStudent(Student s)}\\
 \textbf{Return:}\\
 \textbf{Parameters}\\
 Student s\\
-\\
 \\
 \textbf{setManager(String m)}\\
 \textbf{Return:}\\
 \textbf{Parameters}\\
 String m
 \\
-\\
-\textbf{setContact(String c)}
+\textbf{setContact(String c)}\\
 \textbf{Return:}
 \textbf{Parameters}
 String c\\
-\\
 \\
 \textbf{setStatus(Status s)}\\
 \textbf{Return:}\\
@@ -325,10 +328,11 @@ Status s\\
 %as a shared section amongst all your PSD documents. using the
 %%\input{glossary}
 \section{Glossary}
+\begin{itemize}
 \item{UML - Unified Modelling Language}
 \item{API - Application Programming Interface}
 \item{PSD/PSD3 - Professional Software Development (3)}
-
+\end{itemize}
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

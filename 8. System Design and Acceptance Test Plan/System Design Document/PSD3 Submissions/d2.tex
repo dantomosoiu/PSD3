@@ -1,0 +1,223 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{l3deliverable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{svn-multi}
+\svnid{$Id: d2.tex 2500 2011-09-21 15:56:43Z tws $}
+\version{SVN Revision \svnrev~ \
+
+Made \svnday/\svnmonth/\svnyear~ by \svnauthor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a utility environment for formatting tasks - see document for usage
+\usepackage{tabulary}
+\newenvironment{PSDTask}[2]{
+  \tabularx{\linewidth}{|l|X|} \hline
+    \bf\itshape Task #1: & \bf\itshape #2 \\\hline
+}{\endtabularx}
+
+\newcommand{\PSDTaskComponent}[2]{\it #1: & #2 \\ \hline}
+\newcommand{\PSDTaskDescription}[1]{\PSDTaskComponent{Description}{#1}}
+\newcommand{\PSDTaskOutcomes}[1]{\PSDTaskComponent{Outcomes}{#1}}
+\newcommand{\PSDTaskDeliverables}[1]{\PSDTaskComponent{Deliverables}{#1}}
+\newcommand{\PSDTaskRisks}[1]{\PSDTaskComponent{Risk}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Check these macro values for appropriateness for your own document.
+
+\title{Project Plan}
+
+%%authors
+\author{
+  Author 1 \\
+  Author 2 \\
+  Author 3 \\
+  ...}
+
+%%release date
+\date{10 January 2009}
+
+\deliverableID{D2}
+\project{PSD Group Exercise 1}
+\team{X}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Standard section for all documents
+
+\section{Introduction}
+
+\subsection{Identification}
+
+\subsection{Related Documentation}
+
+\subsection{Purpose and Description of Document}
+
+\subsection{Document Status and Schedule}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Resources, Budgets, Schedules and Organisation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Work Breakdown Structure}
+
+Describe the logical structure for managing acquisition and
+development (or relevant subsection thereof) by means of a Work
+Breakdown Structure (WBS) scheme that is coordinated with the resource
+allocation described in Subsection \ref{sec:allocation}. An
+activities-oriented rather than an organisation- or product oriented
+WBS is recommended. The level of detail given in the WBS should be
+sufficient to support sound management practices.
+
+For purposes of the WBS, identify the activities to be
+undertaken. Define these in terms of a descriptive statement in
+operational terms of activities and identification of the products to
+be delivered or outcomes of the activity.
+
+For each activity give: 
+
+\begin{itemize}
+\item an identifying label;
+\item a descriptive statement in operational terms (what needs to be
+  done);
+\item identification of outcomes, including deliverables; and
+\item a brief risk assessment.
+\end{itemize}
+
+For example, using the PSDTask environment (defined in this document's
+header):
+
+\begin{PSDTask}{4}{Prepare Interview Plan}
+  \PSDTaskDescription{ An interview plan will be written, consisting
+    of the objectives of the interview, questions to be asked,
+    identification of the roles in the interview. If will then be
+    reviewed, edited and approved.}%
+  \PSDTaskOutcomes{Plan description document.}%
+  \PSDTaskDeliverables{None}%
+  \PSDTaskRisks{Questions may be in inappropriate may be too many or
+    too few questions; role assignment late.}
+\end{PSDTask}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Resource Estimation and Allocation to WBS\label{sec:allocation}}
+
+
+The purpose of this subsection is to list and describe the resources
+available to support the activities defined in the WBS. The resources
+may include team members involved in the activity, roles assigned and
+estimated overall effort (in person days or other appropriate
+measure).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Schedules}
+
+Present the schedules on which performance and resource planning are
+based. Include a task table, Gantt and PERT charts.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Equipment, Materials, Facilities, and Other Resources}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Assurance Plan}
+
+Describe the activities to be performed by for assurance of the
+software and other deliverables.
+
+Assurance activities include:
+\begin{enumerate}
+\item Review and acceptance testing of products
+\item Verification and validation procedures
+\end{enumerate}
+
+The contents of this subsection will be explained later in the 1st
+semester in the PSD lectures. For initial hand-in deadline, you may
+leave this subsection blank or make your best effort to produce an
+assurance plan.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Risk Management Plan}
+
+The purpose of the Risk Management Plan is to identify potential risks
+affecting development or acquisition, specify analysis and monitoring
+methods including data to be collected, and state measures to control
+or minimize the effects of the risks.
+
+The primary topics for the plan include:
+
+\begin{enumerate}
+\item Risk Identification and Analysis
+\item Monitoring
+\item Avoidance
+\item Mitigation
+\item Review
+\item List of Managed Risks 
+\end{enumerate}
+
+The contents of this subsection will be explained later in the 1st
+semester in the PSD lectures. For initial hand-in deadline, you may
+leave this subsection blank or make your best effort to produce an
+assurance plan.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Configuration Management Plan}
+
+Describe the activities and plans for configuration management to be
+performed by the organization preparing this Management Plan. The
+primary topics for the plan include:
+
+\begin{enumerate}
+\item Configuration management process
+\item Configuration control activities
+\item Configuration identification
+\item Configuration change control
+\end{enumerate}
+
+The contents of this subsection will be explained later in the 1st
+semester in the PSD lectures. For initial hand-in deadline, you may
+leave this subsection blank or make your best effort to produce an
+assurance plan.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\section{Glossary}
+
+Including expansions of non-standard abbreviations and acronyms and
+other key definitions.  You may find it useful to maintain a glossary
+as a shared section amongst all your PSD documents. using the
+\verb!\input{}! macro.
+
+\section{Another appendix}
+
+Any relevant associated documentation, e.g., a meeting plan.
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

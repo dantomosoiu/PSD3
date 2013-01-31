@@ -1,0 +1,392 @@
+\documentclass[12pt,a4paper,english,intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn]{scrbook}
+\usepackage{lmodern}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setcounter{secnumdepth}{3}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+
+\makeatletter
+
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+\providecommand{\tabularnewline}{\\}
+
+\@ifundefined{date}{}{\date{}}
+\AtBeginDocument{\renewcommand{\ref}[1]{\mbox{\autoref{#1}}}}
+\addto\extrasenglish{%
+ \renewcommand*{\equationautorefname}[1]{}
+ \renewcommand{\sectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsubsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\figureautorefname}{Fig.\negthinspace}
+ \renewcommand{\tableautorefname}{Tab.\negthinspace}
+}
+
+\usepackage[figure]{hypcap}
+
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+\setkomafont{captionlabel}{\bfseries}
+\setcapindent{1em}
+
+\usepackage{calc}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\renewcommand{\bottomfraction}{0.5}
+
+\let\mySection\section\renewcommand{\section}{\suppressfloats[t]\mySection}
+
+\makeatother
+
+\begin{document}
+
+\subject{Professional Software Development 3}
+
+
+\title{Acceptance Test Plan}
+
+
+\subtitle{Team L}
+
+
+\author{Peeranat Fupongsiripan, Dan Tomosoiu,\\
+Michael Kilian, Tony Lau,\\
+Hector Grebbell}
+
+
+\publishers{\includegraphics[width=6cm]{Downloads/GlasgowUniTransp}}
+
+
+\dedication{This Document Describes the Acceptance Test Plan for each component
+within our design of an Internship Management System for the Department
+of Computing Science at the University of Glasgow. The purpose of
+this acceptance test is to make sure the system developed meets its
+system requirements and is suitable for all accepted use cases.}
+
+\maketitle
+Test Cases Prefixed A can be performed with an automatic test harness. Any Prefixed M must be completed manually.
+\section*{Authenticator}
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A001\tabularnewline
+\hline 
+\hline 
+Use Case & The Authenicator is passed a valid username and password for a user
+registered with the MyCampus System\tabularnewline
+\hline 
+Input Specification & Multiple known MyCampus Username-Password sets are fed into the authenticator.\tabularnewline
+\hline 
+Output Specification & For each input the authenticator should return the correct User item associated with the username given.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A002\tabularnewline
+\hline 
+\hline 
+Use Case & The Authenicator is passed a valid username and password for a user
+registered within the Internship Management System\tabularnewline
+\hline 
+Input Specification & Multiple known Username-Password sets from the system database are fed into the authenticator.\tabularnewline
+\hline 
+Output Specification & For each input the authenticator should return the correct User item associated with the username passed in.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A003\tabularnewline
+\hline 
+\hline 
+Use Case & The Authenicator is passed a valid username with incorrect password for a user
+registered with the MyCampus System\tabularnewline
+\hline 
+Input Specification & Multiple known MyCampus Usernames are fed into the authenticator with incorrect passwords.\tabularnewline
+\hline 
+Output Specification & For each input the authenticator should return null.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A004\tabularnewline
+\hline 
+\hline 
+Use Case & The Authenicator is passed a valid username with incorrect password for a user
+registered within the Internship Management System\tabularnewline
+\hline 
+Input Specification & Multiple known Usernames from the system database are fed into the authenticator with incorrect passwords.\tabularnewline
+\hline 
+Output Specification & For each input the authenticator should return null.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A005\tabularnewline
+\hline 
+\hline 
+Use Case & The Authenicator is passed an invalid username with a correct password for a user (with a different username)
+registered with the MyCampus System\tabularnewline
+\hline 
+Input Specification & Multiple Usernames known not to exist within the MyCampus System are fed into the authenticator with correct passwords for other users.\tabularnewline
+\hline 
+Output Specification & For each input the authenticator should return null.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A006\tabularnewline
+\hline 
+\hline 
+Use Case & The Authenicator is passed a valid username with incorrect password for a user
+registered within the Internship Management System\tabularnewline
+\hline 
+Input Specification & Multiple Usernames known not to exist within the system database are fed into the authenticator with correct passwords for other users.\tabularnewline
+\hline 
+Output Specification & For each input the authenticator should return null.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A006\tabularnewline
+\hline 
+\hline 
+Use Case & The Authenicator is passed an invalid username with a password not within the Intern Management or MyCampus systems.\tabularnewline
+\hline 
+Input Specification & Multiple Username-Password Sets known not to exist within either system are fed into the authenticator.\tabularnewline
+\hline 
+Output Specification & For each input the authenticator should return null.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\section*{UserStore}
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A007\tabularnewline
+\hline 
+\hline 
+Use Case & A logged in Coordinator wishes to create a new General User Account\tabularnewline
+\hline 
+Input Specification & addUser() is called with the correct arguments for a specific new user. getUser() (also from this component) and authenticate() (From the authenticator) should then be called with the correct details for the new user.\tabularnewline
+\hline 
+Output Specification & Both getUser() and authenticate() should return the correct user item (Only valid once tests A002 and A0011).\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A008\tabularnewline
+\hline 
+\hline 
+Use Case & A logged in Coordinator wishes to create a new Student User Account\tabularnewline
+\hline 
+Input Specification & addStudent() is called with the correct arguments for a specific new user. getUser(), getStudent() (also from this component) and authenticate() (From the authenticator) should then be called with the correct details for the new user.\tabularnewline
+\hline 
+Output Specification & Both getUser() and authenticate() should return the correct user item. getStudent() should return the correct student item (Only valid once tests A002, A011 and A013).\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A009\tabularnewline
+\hline 
+\hline 
+Use Case & A logged in Coordinator wishes to create a new Employer User Account\tabularnewline
+\hline 
+Input Specification & addEmployer() is called with the correct arguments for a specific new user. getUser(), getEmployer() (also from this component) and authenticate() (From the authenticator) should then be called with the correct details for the new user.\tabularnewline
+\hline 
+Output Specification & Both getUser() and authenticate() should return the correct user item. getEmployer() should return the correct employer item (Only valid once tests A002, A011 and A014).\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A010\tabularnewline
+\hline 
+\hline 
+Use Case & A logged in Coordinator wishes to create a new Visitor User Account\tabularnewline
+\hline 
+Input Specification & addVisitor() is called with the correct arguments for a specific new user. getUser(), getVisitor() (also from this component) and authenticate() (From the authenticator) should then be called with the correct details for the new user.\tabularnewline
+\hline 
+Output Specification & Both getUser() and authenticate() should return the correct user item. getVisitor() should return the correct visitor item (Only valid once tests A002, A011 and A015).\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A011\tabularnewline
+\hline 
+\hline 
+Use Case & The System wishes to retrieve a User item from the UserStore\tabularnewline
+\hline 
+Input Specification & A valid username is passed to the getUser() function.\tabularnewline
+\hline 
+Output Specification & The correct User item is returned\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A012\tabularnewline
+\hline 
+\hline 
+Use Case & The System wishes to retrieve a Coordinator item from the UserStore\tabularnewline
+\hline 
+Input Specification & A valid username for the coordinator is passed to the getCoordinator() function.\tabularnewline
+\hline 
+Output Specification & The correct Coordinator item is returned\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A013\tabularnewline
+\hline 
+\hline 
+Use Case & The System wishes to retrieve a Student item from the UserStore\tabularnewline
+\hline 
+Input Specification & A valid username for the student is passed to the getStudent() function.\tabularnewline
+\hline 
+Output Specification & The correct Student item is returned\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A014\tabularnewline
+\hline 
+\hline 
+Use Case & The System wishes to retrieve an Employer item from the UserStore\tabularnewline
+\hline 
+Input Specification & A valid username for the Employer is passed to the getEmployer() function.\tabularnewline
+\hline 
+Output Specification & The correct Employer item is returned\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A015\tabularnewline
+\hline 
+\hline 
+Use Case & The System wishes to retrieve a Visitor item from the UserStore\tabularnewline
+\hline 
+Input Specification & A valid username for the Visitor is passed to the getVisitor() function.\tabularnewline
+\hline 
+Output Specification & The correct Visitor item is returned\tabularnewline
+\hline 
+\end{tabular}\\
+
+\section*{OfferManager}
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A016\tabularnewline
+\hline 
+\hline 
+Use Case & A student wishes to inform the system of an accepted offer\tabularnewline
+\hline 
+Input Specification & notifyAcceptedOffer() is called with a range of acceptable variables. getStatus (from the placement store) should then be called on each placement\tabularnewline
+\hline 
+Output Specification & When getStatus is called on each placement it should return Rejected, not an error\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A017\tabularnewline
+\hline 
+\hline 
+Use Case & The Course Co-ordinator wishes to approve a placement\tabularnewline
+\hline 
+Input Specification & approveAcceptedOffer() should be called on a range of placements. getStatus (from the placement store) should then be called on each placement.\tabularnewline
+\hline 
+Output Specification & getStatus should return Accepted\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A018\tabularnewline
+\hline 
+\hline 
+Use Case & A Student wishes to inform the system of an accepted role from outside of the system.\tabularnewline
+\hline 
+Input Specification & createNewSelfSourcedRole() is called with a range of acceptable variables.\tabularnewline
+\hline 
+Output Specification & The function should return the correct role.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\section*{PlacementStore}
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A019\tabularnewline
+\hline 
+\hline 
+Use Case & The user wishes to view all placements\tabularnewline
+\hline 
+Input Specification & viewPlacements() should be called\tabularnewline
+\hline 
+Output Specification & The UI should list all placements\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A020\tabularnewline
+\hline 
+\hline 
+Use Case & A user wishes to add a placement\tabularnewline
+\hline 
+Input Specification & addPlacement should be called with a range of placement items\tabularnewline
+\hline 
+Output Specification & When eviewPlacements() is called, the new placements should also be displayed\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A021\tabularnewline
+\hline 
+\hline 
+Use Case & The coordinator wishes to remove a placement\tabularnewline
+\hline 
+Input Specification & removePlacement is called with the correct placement id\tabularnewline
+\hline 
+Output Specification & listPlacements no longer displays the placement.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\end{document}
