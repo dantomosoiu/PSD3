@@ -1,0 +1,422 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.7)  21 NOV 2012 23:12
+entering extended mode
+ %&-line parsing enabled.
+**RequirementsSpecD3_v1.tex
+(./RequirementsSpecD3_v1.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(./l3deliverable.cls
+Document Class: l3deliverable 
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)) (./textcase.sty
+Package: textcase 1998/11/12 v0.06 Text only upper/lower case changing (DPC)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen105
+\extrarowheight=\dimen106
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen107
+\TX@old@table=\dimen108
+\TX@old@col=\dimen109
+\TX@target=\dimen110
+\TX@delta=\dimen111
+\TX@cols=\count88
+\TX@ftn=\toks16
+)
+(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+))
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+) (./usecasedescription.sty
+Package: usecasedescription 
+
+(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip45
+\LTright=\skip46
+\LTpre=\skip47
+\LTpost=\skip48
+\LTchunksize=\count89
+\LTcapwidth=\dimen112
+\LT@head=\box26
+\LT@firsthead=\box27
+\LT@foot=\box28
+\LT@lastfoot=\box29
+\LT@cols=\count90
+\LT@rows=\count91
+\c@LT@tables=\count92
+\c@LT@chunks=\count93
+\LT@p@ftn=\toks17
+))
+(./RequirementsSpecD3_v1.aux)
+\openout1 = `RequirementsSpecD3_v1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 38.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count94
+\scratchdimen=\dimen113
+\scratchbox=\box30
+\nofMPsegments=\count95
+\nofMParguments=\count96
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count97
+\MPscratchDim=\dimen114
+\MPnumerator=\count98
+\everyMPtoPDFconversion=\toks19
+) <img/CompSci_mono.pdf, id=1, 413.545pt x 93.34875pt>
+File: img/CompSci_mono.pdf Graphic file (type pdf)
+
+<use img/CompSci_mono.pdf>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/CompSci_mono.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+ (./RequirementsSpecD3_v1.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+)
+\tf@toc=\write3
+\openout3 = `RequirementsSpecD3_v1.toc'.
+
+ [1]
+Underfull \hbox (badness 10000) in paragraph at lines 52--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--84
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 85.
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 92.
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 105--108
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./Actors.pdf): PDF inclusion: found PDF version 
+<1.5>, but at most version <1.4> allowed
+<Actors.pdf, id=25, 488.32437pt x 392.46625pt>
+File: Actors.pdf Graphic file (type pdf)
+ <use Actors.pdf>
+<domain_model_v2.pdf, id=27, 1009.7725pt x 933.4875pt>
+File: domain_model_v2.pdf Graphic file (type pdf)
+
+<use domain_model_v2.pdf>
+Overfull \hbox (11.73969pt too wide) in paragraph at lines 131--134
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--134
+
+ []
+
+[4 <./Actors.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+[5 <./domain_model_v2.pdf>] [6] [7]
+
+pdfTeX warning: pdflatex (file ./Utilities.pdf): PDF inclusion: found PDF versi
+on <1.5>, but at most version <1.4> allowed
+<Utilities.pdf, id=54, 264.48813pt x 196.735pt>
+File: Utilities.pdf Graphic file (type pdf)
+ <use Utilities.pdf> [8 <./Utilities.pdf>]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 179--211
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 211
+ []
+
+[9]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 214--245
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 245
+ []
+
+[10]
+
+pdfTeX warning: pdflatex (file ./CoordinatorAdministration.pdf): PDF inclusion:
+ found PDF version <1.5>, but at most version <1.4> allowed
+<CoordinatorAdministration.pdf, id=73, 283.55937pt x 109.40875pt>
+File: CoordinatorAdministration.pdf Graphic file (type pdf)
+
+<use CoordinatorAdministration.pdf> [11 <./CoordinatorAdministration.pdf>]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 256--288
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 288
+ []
+
+[12]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 291--320
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 320
+ []
+
+[13]
+
+pdfTeX warning: pdflatex (file ./AdvertSubmission.pdf): PDF inclusion: found PD
+F version <1.5>, but at most version <1.4> allowed
+<AdvertSubmission.pdf, id=93, 465.23813pt x 119.19531pt>
+File: AdvertSubmission.pdf Graphic file (type pdf)
+
+<use AdvertSubmission.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 326--329
+
+ []
+
+
+Overfull \hbox (22.58324pt too wide) in paragraph at lines 326--329
+[] 
+ []
+
+[14 <./AdvertSubmission.pdf>]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ˜ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ˜ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ˜ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ˜ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ˜ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+
+Overfull \hbox (25.19997pt too wide) in alignment at lines 331--364
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 364
+ []
+
+[15]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 367--393
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 393
+ []
+
+[16]
+
+pdfTeX warning: pdflatex (file ./AdvertViewingAndApplications.pdf): PDF inclusi
+on: found PDF version <1.5>, but at most version <1.4> allowed
+<AdvertViewingAndApplications.pdf, id=112, 464.23438pt x 225.34187pt>
+File: AdvertViewingAndApplications.pdf Graphic file (type pdf)
+
+<use AdvertViewingAndApplications.pdf>
+Overfull \hbox (21.57948pt too wide) in paragraph at lines 399--401
+[] 
+ []
+
+[17 <./AdvertViewingAndApplications.pdf>]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 402--429
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 429
+ []
+
+[18]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 431--461
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 461
+ []
+
+[19]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 463--493
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 493
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 509--511
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--542
+
+ []
+
+[21] (./RequirementsSpecD3_v1.aux) ) 
+Here is how much of TeX's memory you used:
+ 1379 strings out of 495061
+ 18101 string characters out of 1182622
+ 79749 words of memory out of 3000000
+ 4546 multiletter control sequences out of 15000+50000
+ 17980 words of font info for 40 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 32i,14n,23p,805b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/b
+ase/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-te
+xlive/fonts/type1/urw/times/utmr8a.pfb>
+Output written on RequirementsSpecD3_v1.pdf (22 pages, 138064 bytes).
+PDF statistics:
+ 150 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+

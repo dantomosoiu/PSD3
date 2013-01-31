@@ -1,0 +1,61 @@
+\ProvidesPackage{usecasedescription}
+
+\RequirePackage{longtable}
+
+\newcommand{\UseCaseEntry}[2]{\raggedright\bf #1 &  #2 \\ \hline}
+
+\newcommand\UseCaseLabel[1]{\UseCaseEntry{Use case}{#1}}
+\newcommand\UseCaseDescription[1]{\UseCaseEntry{Description}{#1}}
+\newcommand\UseCaseRationale[1]{\UseCaseEntry{Rationale}{#1}}
+\newcommand\UseCasePriority[1]{\UseCaseEntry{Priority}{#1}}
+\newcommand\UseCaseStatus[1]{\UseCaseEntry{Status}{#1}}
+\newcommand\UseCaseActors[1]{\UseCaseEntry{Actors}{#1}}
+\newcommand\UseCaseExtensions[1]{\UseCaseEntry{Extensions}{#1}}
+\newcommand\UseCaseIncludes[1]{\UseCaseEntry{Includes}{#1}}
+\newcommand\UseCaseConditions[1]{\UseCaseEntry{Conditions}{#1}}
+\newcommand\UseCaseNonFunctionalRequirements[1]{\UseCaseEntry{Non-Functional Requirements}{#1}}
+\newcommand\UseCaseScenarios[1]{\UseCaseEntry{Scenarios}{#1}}
+\newcommand\UseCaseRisks[1]{\UseCaseEntry{Risks}{#1}}
+\newcommand\UseCaseUserInterface[1]{\UseCaseEntry{User Interface}{#1}}
+
+\newenvironment{UseCaseTemplate}{%
+\newpage%
+\begin{longtable}{|p{.2\linewidth}|p{.8\linewidth}|}\hline%
+}{\end{longtable}}
+
+%%Condition Lists
+
+\newcommand\PostCondition[1]{\item[\bf post:] #1}
+\newcommand\PreCondition[1]{\item[\bf pre:] #1}
+
+\newenvironment{ConditionList}{%
+  \begin{list}{%
+      \topsep=0pt%
+      \partopsep=0pt%}%
+}{}
+}{%
+  \end{list}
+}
+
+%%Priority - MoSCoW
+\newcommand\MustHaveLong{Must have}
+\newcommand\ShouldHaveLong{Should have}
+\newcommand\CouldHaveLong{Could have}
+\newcommand\WouldHaveLong{Would have}
+
+
+\newcommand\MustHave{M}
+\newcommand\ShouldHave{S}
+\newcommand\CouldHave{C}
+\newcommand\WouldHave{W}
+
+\renewcommand\MustHaveLong{}
+\renewcommand\ShouldHaveLong{}
+\renewcommand\CouldHaveLong{}
+\renewcommand\WouldHaveLong{}
+
+
+\renewcommand\MustHave{}
+\renewcommand\ShouldHave{}
+\renewcommand\CouldHave{}
+\renewcommand\WouldHave{}
