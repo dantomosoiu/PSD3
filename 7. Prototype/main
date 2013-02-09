@@ -38,7 +38,7 @@ do
 		fi
 	done
 	if [[ "$username" = "$Username" && $IsApproved != "true" ]]; then echo -e "Unverified Username\n"
-	elif [ "$username" != "$Username" ]; then echo -e "Incorrent Username\n"
+	elif [ "$username" != "$Username" ]; then echo -e "Incorrect Username\n"
 	fi
 done
 }
@@ -401,7 +401,6 @@ function newAccount() {
 	if [[ "$nAccType" = "s" && "$nAccType" = "a" && "$nAccType" = "o" ]]; then  echo -e "\nThank You. Your account needs to be verified before use. You will recieve an email when this happens."; fi
 }
 function makeStudent() {
-	echo "Wyat? $nAccType"
 	echo -n "Enter Your GUID (Matric + first letter of surname). This will be your username: "
 	read userName
 	p1="a"
