@@ -1,0 +1,69 @@
+\begin{thebibliography}{10}
+
+\bibitem{AdaptiveBehaviourWiki}
+\url{http://en.wikipedia.org/wiki/Adaptive_behavior_(ecology)}.
+
+\bibitem{CIFEResearchProposal}
+Ken~Dauber Kincho H.~Law and Xiaoshan Pan.
+\newblock {\em Computational Modeling of Nonadaptive Crowd Behaviors for Egress
+  Analysis}.
+\newblock PhD thesis, Stanford University, 2006.
+
+\bibitem{PanMASSEgressThesis}
+Xiaoshan Pan.
+\newblock {\em COMPUTATIONAL MODELING OF HUMAN AND SOCIAL BEHAVIORS FOR
+  EMERGENCY EGRESS ANALYSIS}.
+\newblock PhD thesis, Stanford University, 2006.
+
+\bibitem{BoundedRationalityDefinition}
+Gerd Gigerenzer and Peter~M. Todd.
+\newblock Simple heuristics that make us smart.
+\newblock .
+
+\bibitem{HandbookOfPsychology5}
+Theodore Millon & Melvin J.~Lerner Irving B.~Weiner, editor.
+\newblock {\em Handbook of Psychology, Volume 5: Personality and Social
+  Psychology}.
+\newblock John Wiley & Sons, 2003.
+
+\bibitem{SocialProofWiki}
+\url{http://en.wikipedia.org/wiki/Social_proof}.
+
+\bibitem{HiddenDimension}
+Edward~T. Hall.
+\newblock {\em The Hidden Dimension}.
+\newblock Bantam Doubleday Dell Publishing Group, 1966.
+
+\bibitem{ProxemicsWiki}
+\url{http://en.wikipedia.org/wiki/Proxemics}.
+
+\bibitem{MultiAgentFramework}
+Ken Dauber Kincho H.~Law Xiaoshan~Pan, Charles S.~Han.
+\newblock {\em A multi-agent based framework for the simulation of human and
+  social behaviors during emergency evacuations}.
+\newblock PhD thesis, Stanford University, 2006.
+
+\bibitem{IndivBehaviourPseudo}
+Kincho H.~Law Xiaoshan~Pan, Chuck~Han and Jean-Claude Latombe.
+\newblock {\em A computational framework to simulate human and social
+  behaviours for egress analysis}.
+\newblock PhD thesis, Stanford University, 2006.
+
+\bibitem{BottleneckStudy}
+Anna~Grunebohm Tobias~Kretz and Michael Schreckenberg.
+\newblock {\em Experimental study of pedestrian flow through a bottleneck}.
+\newblock PhD thesis, University of Dulsburg-Essen, 2008.
+
+\bibitem{EgressBehaviourKirchner}
+Katsuhiro Nishinari Andreas Schadschneider Michael~Schreckenberg
+  Ansgar~Kirchnera, Hubert~Klupfel.
+\newblock {\em Simulation of competitive egress behavior: comparison with
+  aircraft evacuation data}.
+\newblock PhD thesis, Various Institutes, 2003.
+
+\bibitem{HerdingInHumans}
+Nick~Chater Ramsey M.~Raafat and Chris Frith.
+\newblock Herding in humans.
+\newblock {\em Trends in Cognitive Science. Vol. 13 No. 10}, 2009.
+
+\end{thebibliography}

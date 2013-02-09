@@ -1,0 +1,376 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.9.3)  31 JAN 2013 09:44
+entering extended mode
+ %&-line parsing enabled.
+**SystemDesign.tex
+(./SystemDesign.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(./l3deliverable.cls
+Document Class: l3deliverable 
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo
+File: size11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/ltxmisc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)) (./textcase.sty
+Package: textcase 1998/11/12 v0.06 Text only upper/lower case changing (DPC)
+)
+(/usr/share/texmf/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2006/02/20 v1.4 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
+\col@sep=\dimen105
+\extrarowheight=\dimen106
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen107
+\TX@old@table=\dimen108
+\TX@old@col=\dimen109
+\TX@target=\dimen110
+\TX@delta=\dimen111
+\TX@cols=\count88
+\TX@ftn=\toks16
+)
+(/usr/share/texmf/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+))
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+) (./comment.sty
+Excluding comment 'comment') (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texmf/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+\everycr=\toks17
+\minrowclearance=\skip45
+)
+LaTeX Info: Redefining \color on input line 702.
+\rownum=\count89
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/share/texmf/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2007/01/21 v2.11 Predefined colors according to SVG 1.1 (UK)
+))
+(/usr/share/texmf/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+) (./SystemDesign.aux)
+\openout1 = `SystemDesign.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 63.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+<img/CompSci_mono.pdf, id=1, 413.545pt x 93.34875pt>
+File: img/CompSci_mono.pdf Graphic file (type pdf)
+
+<use img/CompSci_mono.pdf>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 67.
+ [1
+
+{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/CompSci_mono.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 72.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 78.
+ (/usr/share/texmf/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+
+<ComponentDiagram.png, id=16, 762.85pt x 752.8125pt>
+File: ComponentDiagram.png Graphic file (type png)
+
+<use ComponentDiagram.png> [1 <./ComponentDiagram.png (PNG copy)>]
+<StateMachineDiagram.png, id=21, 1836.8625pt x 1154.3125pt>
+File: StateMachineDiagram.png Graphic file (type png)
+
+<use StateMachineDiagram.png>
+Overfull \hbox (16.56076pt too wide) in paragraph at lines 101--103
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
+
+ []
+
+<UserFactoryComponent.png, id=22, 1204.5pt x 742.775pt>
+File: UserFactoryComponent.png Graphic file (type png)
+
+<use UserFactoryComponent.png> [2 <./StateMachineDiagram.png (PNG copy)>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 112.
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--195
+
+ []
+
+[3 <./UserFactoryComponent.png (PNG copy)>] [4]
+<OfferManagement.png, id=32, 582.175pt x 160.6pt>
+File: OfferManagement.png Graphic file (type png)
+ <use OfferManagement.png>
+Underfull \hbox (badness 10000) in paragraph at lines 200--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--227
+
+ []
+
+[5 <./OfferManagement.png (PNG copy)>]
+<adStore.png, id=36, 582.175pt x 291.0875pt>
+File: adStore.png Graphic file (type png)
+ <use adStore.png>
+<ClassDiagram_PlacementStore.png, id=37, 1084.05pt x 511.9125pt>
+File: ClassDiagram_PlacementStore.png Graphic file (type png)
+
+<use ClassDiagram_PlacementStore.png> [6 <./adStore.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--323
+
+ []
+
+[7 <./ClassDiagram_PlacementStore.png (PNG copy)>] [8] [9] (./SystemDesign.aux)
+ ) 
+Here is how much of TeX's memory you used:
+ 1629 strings out of 256216
+ 20868 string characters out of 1917073
+ 93227 words of memory out of 1500000
+ 4899 multiletter control sequences out of 10000+200000
+ 15798 words of font info for 33 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 41i,16n,35p,409b,284s stack positions out of 5000i,500n,6000p,200000b,15000s
+{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/b
+luesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/s
+hare/texmf/fonts/type1/urw/times/utmr8a.pfb>
+Output written on SystemDesign.pdf (10 pages, 260903 bytes).
+PDF statistics:
+ 63 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+

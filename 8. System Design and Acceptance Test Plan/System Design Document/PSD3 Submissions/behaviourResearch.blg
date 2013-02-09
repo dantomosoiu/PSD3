@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: behaviourResearch.aux
+The style file: unsrt.bst
+Database file #1: references.bib
+I was expecting a `,' or a `}'---line 57 of file references.bib
+ : 
+ : YEAR = {2003},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "MutliAgentFramework"
+Too many commas in name 1 of "Xiaoshan Pan, Charles S. Han, Ken Dauber, Kincho H. Law" for entry MultiAgentFramework
+while executing---line 944 of file unsrt.bst
+Name 1 in "Xiaoshan Pan, Chuck Han, Kincho H. Law, and Jean-Claude Latombe" has a comma at the end for entry IndivBehaviourPseudo
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Ansgar Kirchnera, Hubert Klupfel, Katsuhiro Nishinari,Andreas Schadschneider, Michael Schreckenberg" for entry EgressBehaviourKirchner
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Ansgar Kirchnera, Hubert Klupfel, Katsuhiro Nishinari,Andreas Schadschneider, Michael Schreckenberg" for entry EgressBehaviourKirchner
+while executing---line 944 of file unsrt.bst
+You've used 13 entries,
+            1791 wiz_defined-function locations,
+            508 strings with 5502 characters,
+and the built_in function-call counts, 1630 in all, are:
+= -- 136
+> -- 64
+< -- 0
++ -- 28
+- -- 15
+* -- 46
+:= -- 286
+add.period$ -- 33
+call.type$ -- 13
+change.case$ -- 5
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 90
+empty$ -- 181
+format.name$ -- 15
+if$ -- 360
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 4
+newline$ -- 62
+num.names$ -- 11
+pop$ -- 47
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 48
+stack$ -- 0
+substring$ -- 0
+swap$ -- 12
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 10
+width$ -- 15
+write$ -- 122
+(There were 5 error messages)
