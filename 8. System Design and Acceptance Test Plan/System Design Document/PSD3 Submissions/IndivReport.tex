@@ -1,0 +1,111 @@
+\documentclass{article}
+\begin{document}
+\title{Team Project Individual Writing Exercise}
+\author{Michael Kilian}
+\maketitle
+\tableofcontents
+\section{Introduction}
+\subsection{What is an Evacuation Simulator}
+A simulation can be defined as the imitation of a real-world process or system over time \cite{DiscreteEvent}.
+Therefore it follows that an evacuation simulator is a system which attempts
+to predict, with reasonable accuracy, the evacuation of a population from a given environment such as a building or vehicle.
+
+Underlying any such simulator is a logical model. In a simulation model, the designer aims to
+``represent the behaviour and movement observed in evacuations not only to achieve accurate results,
+but to realistically represent the paths and decisions taken during an evacuation''\cite{MethodReview}. These criteria have been
+achieved in our simulator by implementing a number of key features such as implementing a multi-agent architecture and the use of navigation meshes
+for individual movement.
+
+\subsection{Why Implement and Evacuation Simulator}
+The task of accurately testing a building's evacuation procedure can be
+both difficult and expensive. One approach is to hire members of the public
+as stand-in 'evacuees' and run a mock evaluation, such as those performed as part of Forward Defensive
+in preparation for the London 2012 Olympics \cite{DailyMailEvacuation}. In theory this would allow an 
+appropriate expert such as a consultant from a local fire department to assess the effectiveness
+of an existing plan. However such tests on public buildings can be very expensive: the cost
+of hiring evacuees could be significant. Also certain aspects of evacuations, such
+as testing the possibility of a crush occurring, can only really be explored by exposing participants
+to real danger. Naturally this is undesirable. Finally another interesting drawback 
+to this approach is that when an evacuee knows they are participating in an experiment
+their behaviour is inherently different than it would be in a real evacuation. This
+phenomenon is known as Evaluation Apprehension\cite{EvalApprehension}. \\
+
+For these reasons large scale tests on a building are rarely performed, if ever.
+What a simulator provides is a means for an expert to extensively test the outcomes of evacuating a location
+at minimal cost. By tweaking variables in the simulation the expert can examine the probable outcome of multiple evacuations
+and look for potential sources of danger in a building or evacuation procedure.
+
+\subsection{Prerequisites For Reading This Project}
+Where possible all technical concepts used within this paper will be clearly defined. However it is helpful for the reader to have a reasonable
+understanding of Object-Oriented programming (preferably in Java) and of concurrent programming concepts such as multi-threading. A knowledge of 3-Dimensional
+vectors and their manipulation is also beneficial.
+
+\subsection{Previous Work}
+\subsubsection{Fluid Based Systems}
+These systems model crowd movement as if the crowd were a fluid \cite{WikipediaFluidMechanics}, using equations and principles taken from Physics. 
+Exodus \cite{GaleaNumericalSimulation,GaleaMathModelling} is an example of such a system. There are apparent drawbacks in such a style 
+of simulator. Crowds "have a choice in their direction, they have no conservation of momentum and can stop and start at will" \cite{StillCrowdDynamics}. 
+These concepts are not accounted for in fluid models, and so this style of simulator is limited to estimating the movement of a crowd as a whole without
+considering individual interactions.
+\subsubsection{Matrix or Grid Based Systems}
+In a matrix or grid based system, the floor of the environment is represented by a series of adjacent nodes, often square or hexagonal in shape. Each 
+cell can represent open areas, areas blocked by a static obstacle, exits, etc. This method is becoming less common, but two formerly well know examples are 
+Egress and Pedroute. It was suggested that the existing matrix-based models suffer from the
+difficulties of simulating crowd cross flow and concourses; furthermore, the
+assumptions employed in these models are questionable when compared with field observations \cite{StillCrowdDynamics}.
+\subsubsection{Emergent Agent Based Systems}
+The final class of simulator we discuss here is the emergent (agent based) simulator. In this approach the system is composed of autonomous
+and interacting 'agents'. Agents interact within an environment using a defined set of simple relationships. The benefit of this approach is the introduction
+of \emph{emergent} behaviour: "patterns, structures and behaviours emerge that were not explicitly programmed into the models, but arise as the 
+result of agent interactions" \cite{AgentBasedTutorial}.\\
+The MASSEgress project developed at Stanford University is an ongoing effort to develop a framework for the development of such systems \cite{MultiAgentFramework,IndivPseudoCode}.
+It has also led to the production of at least one prototype implementing this framework. 
+This project has utilised a modified version of this framework for the integration
+of agent behaviour. This is discussed further in the Research and Implementation sections.
+
+\subsection{Aims}
+\subsubsection{A Multi-Agent Model of Individuals and Individual Behaviour}
+Previous projects have emphasised crowd behaviour: they have modelled the population from a top down 
+perspective with little consideration for the perception and interaction which an individual experiences in an evacuation.
+One of the primary aims of this project is to represent a reasonably accurate model of individual behaviour.
+Previous work has shown that multi-agent systems can achieve this. By taking this approach "the full effects of diversity that exists among agents in their attributes and behaviours can be observed as it
+gives rises to the behaviour of the system as a whole" \cite{AgentBasedTutorial}.
+
+\subsubsection{An Update of the Technologies Used in Previous Projects}
+Many previous works in this field have made use of software packages such as Java 3D; these are now unsupported and 
+would be difficult to extend in the future. Relatively new systems have been chosen for this project which we believe will remain active for an acceptable amount of time.
+These are discussed in the Implementation section.
+
+\subsubsection{Use of Navigation Meshes in Environment Modelling}
+A Navigation Mesh is a graph representation of an environment in terms of a set of convex polygons which describe the `walkable' surface of an environment. This design aids agents in finding paths through large areas, whilst avoiding static obstacles in the environment.
+This technique has largely been pioneered in Gaming, but is equally applicable in this setting. The benefits of a navigation mesh, or 'navmesh' is that it allows agents to move 
+freely compared to other techniques such as representing the environment using a grid. A navmesh is typically combined with the powerful path finding algorithm A* to 
+optimise agent movement \cite{A*Review}.
+
+\subsection{Environment}
+The Tall Ship at Riverside, Glasgow \cite{TallShipWebsite} was chosen as the environment for simulating our evacuations. It is necessary to choose an environment for testing purposes; this
+is discussed further under Evaluation.\\
+There are several properties of the Tall Ship which make it an interesting choice of location:
+\begin{itemize}
+\item{It can host 200 guests at any time, not including staff}
+\item{It's structure is significantly complex to allow for the testing of most behavioural principle which we could hope to implement}
+\item{No full scale evacuations have ever been carried out on the tall ship. Only mock evacuations have been performed and even these have been done at night with staff only.}
+\end{itemize}
+
+\begin{thebibliography}{99}
+\bibitem{DailyMailEvacuation} \url{http://www.dailymail.co.uk/news/article-2104822/London-2012-Olympics-tube-terror-attack-drill-staged-emergency-services.html}
+\bibitem{DiscreteEvent}J. Banks, J. Carson, B. Nelson, D. Nicol, (2001). \emph{Discrete-Event System Simulation}, page 3. Prentice Hall. ISBN 0-13-088702-1.
+\bibitem{AgentBasedTutorial}CM Macal & MJ North (2010). \emph{Tutorial on agent-based modelling and simulation}. Palgrave Journals
+\bibitem{MethodReview} S.Gwynne, E.R. Galea, P.J. Lawrence and L. Filippidis, (1999). \emph{A Review of the Methodologies Used in Evacuation Modelling}. University of Greenwich.
+\bibitem{EvalApprehension} Robert Rosenthal and Ralph L. Rosnow (2009). \emph{Artifacts in Behavioral Research}, pg 212. Oxford. ISBN 978-0-19-538554-0 .
+\bibitem{A*Review}Xiao Cui & Hao Shi (2011). \emph{A*-based Pathfinding in Modern Computer Games}.School of Engineering and Science, Victoria University, Melbourne, Australia.
+\bibitem{TallShipWebsite}\url{www.thetallship.com}
+\bibitem{GaleaNumericalSimulation}E.R. Galea (1999). \emph{The numerical simulation of aircraft evacuation and it's application to aircraft design and certification.} F.S.E.G., University of Greenwich
+\bibitem{GaleaMathModelling}E.R. Galea . \emph{Use of mathematical modelling in fire safety engineering.} F.S.E.G., University of Greenwich.
+\bibitem{StillCrowdDynamics}G. Keith Still (2000). \emph{Crowd Dynamics.} University of Warwick.
+\bibitem{WikipediaFluidMechanics} \url{http://en.wikipedia.org/wiki/Fluid_mechanics}
+\bibitem{MultiAgentFramework} Xiaoshan Pan, Charles S. Han, Ken Dauber, Kincho H. Law (2006). \emph{A multi-agent based framework for the simulation of human and social behaviours during emergency evacuations.} Stanford University.
+\bibitem{IndivPseudoCode} Xiaoshan Pan, Chuck Han, Kincho H. Law, Jean-Claude Latombe (2006). \emph{A Computational Framework to Simulate Human and Social Behaviours for Egress Analysis.} Stanford University.
+\end{thebibliography}
+.
+\end{document}

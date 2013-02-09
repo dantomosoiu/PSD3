@@ -1,0 +1,75 @@
+UserStoreImpl implements UserStore
+
+\textbf{Methods}
+
+%addUser
+\textbf{public void addUser(String surname, String forename, String GUID, String password)}
+Adds a new user to the store.
+\textbf{Parameter}
+String surname
+String forename
+String GUID
+String password
+
+%addVisitor
+\textbf{public void addVisitor(String surname,String forename,String GUID, String password)
+Adds a new visitor to the store
+\textbf{Parameter}
+String surname
+String forename
+String GUID
+String password
+
+%addStudent
+\textbf{public void addStudent(String surname,String forename,String GUID, String password,String matriculation,String programme)
+Adds a new student to the store
+\textbf{Parameter}
+String surname
+String forename
+String GUID
+String password
+String matricaulation
+String programme
+
+%addEmployer
+\textbf{public void addEmployer(String name,String contact, String password)
+Adds a new employer to the store
+\textbf{Parameter}
+String name
+String contact
+String password
+
+%getUser
+\textbf{public User getUser(String GUID, String password)}
+Returns a user specified by the GUID, if authentication is successful.
+\textbf{Return} the user specified by GUID, if the password is a match
+\textbf{Parameter}
+String GUID
+String password
+
+%getVisitor
+\textbf{public Visitor getVisitor(String GUID, String password)}
+Returns a visitor specified by the GUID, if authentication is successful.
+\textbf{Return} the visitor specified by GUID, if the password is a match
+\textbf{Parameter}
+String GUID
+String password
+
+%getStudent
+\textbf{public Student getVisitor(String GUID, String password)}
+Returns a Student specified by the GUID, if authentication is successful.
+\textbf{Return} the student specified by GUID, if the password is a match
+\textbf{Parameter}
+String GUID
+String password
+
+%getEmployer
+\textbf{public Visitor getVisitor(String contact, String password)}
+Returns a visitor specified by the contact if authentication is successful.
+\textbf{Return} the user specified by contact, if the password is a match
+\textbf{Parameter}
+String contact
+String password
+
+
+
