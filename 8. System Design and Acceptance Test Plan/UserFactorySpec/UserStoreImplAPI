@@ -21,7 +21,7 @@ String GUID
 String password
 
 %addStudent
-\textbf{public void addVisitor(String surname,String forename,String GUID, String password,String matriculation,String programme)
+\textbf{public void addStudent(String surname,String forename,String GUID, String password,String matriculation,String programme)
 Adds a new student to the store
 \textbf{Parameter}
 String surname
@@ -32,14 +32,12 @@ String matricaulation
 String programme
 
 %addEmployer
-\textbf{public void addVisitor(String surname,String forename,String GUID, String password,String contact)
+\textbf{public void addEmployer(String name,String contact, String password)
 Adds a new employer to the store
 \textbf{Parameter}
-String surname
-String forename
-String GUID
-String password
+String name
 String contact
+String password
 
 %getUser
 \textbf{public User getUser(String GUID, String password)}
@@ -66,11 +64,11 @@ String GUID
 String password
 
 %getEmployer
-\textbf{public Visitor getVisitor(String name, String password)}
-Returns a visitor specified by the name if authentication is successful.
-\textbf{Return} the user specified by name, if the password is a match
+\textbf{public Visitor getVisitor(String contact, String password)}
+Returns a visitor specified by the contact if authentication is successful.
+\textbf{Return} the user specified by contact, if the password is a match
 \textbf{Parameter}
-String name
+String contact
 String password
 
 

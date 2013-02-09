@@ -5,9 +5,9 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>567</x>
-      <y>70</y>
+      <y>63</y>
       <w>147</w>
-      <h>133</h>
+      <h>140</h>
     </coordinates>
     <panel_attributes>
 
@@ -20,6 +20,7 @@ UserStoreImpl
 +addStudent():void
 +addEmployer():void
 +addVisitor():void
++addCoordinator():boolean
 
 +getUser(): User
 +getCoordinator(): Coordinator
@@ -321,11 +322,11 @@ m2=1</panel_attributes>
       <x>616</x>
       <y>0</y>
       <w>34</w>
-      <h>83</h>
+      <h>76</h>
     </coordinates>
     <panel_attributes>lt=-
 </panel_attributes>
-    <additional_attributes>21;70;21;21</additional_attributes>
+    <additional_attributes>21;63;21;21</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
