@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="11.5">
+<diagram program="umlet" version="11.5.1">
   <zoom_level>10</zoom_level>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>60</x>
+      <x>200</x>
       <y>50</y>
       <w>540</w>
       <h>240</h>
@@ -17,9 +17,9 @@ AdvertManagement
 + getPublishedAds(): LinkedList&lt;&lt;Advert&gt;&gt;
 + getAllAds(): LinkedList&lt;&lt;Advert&gt;&gt;
 + publishAd(long id): void
-+ addAd(Advert ad): boolean
++ addAd(Advert ad): long
 + delAd(long id): boolean
-+ addPlacement(Placement p): boolean
++ addPlacement(Placement p): int
 + viewPlacement(int id): Placement
 + delPlacement(int id): boolean
 + editPlacement(int id, Placement p): boolean
@@ -29,13 +29,12 @@ AdvertManagement
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>60</x>
+      <x>200</x>
       <y>360</y>
       <w>540</w>
       <h>250</h>
     </coordinates>
-    <panel_attributes>
-AdvertManagement
+    <panel_attributes>AdvertManagement
 --
 LinkedList&lt;&lt;Advert&gt;&gt; adverts
 int numAds
@@ -44,9 +43,9 @@ int numAds
 + getPublishedAds(): LinkedList&lt;&lt;Advert&gt;&gt;
 + getAllAds(): LinkedList&lt;&lt;Advert&gt;&gt;
 + publishAd(long id): void
-+ addAd(Advert ad): boolean
++ addAd(Advert ad): long
 + delAd(long id): boolean
-+ addPlacement(Placement p): boolean
++ addPlacement(Placement p): int
 + viewPlacement(int id): Placement
 + delPlacement(int id): boolean
 + editPlacement(int id, Placement p): boolean
@@ -56,7 +55,7 @@ int numAds
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>300</x>
+      <x>440</x>
       <y>260</y>
       <w>50</w>
       <h>120</h>
