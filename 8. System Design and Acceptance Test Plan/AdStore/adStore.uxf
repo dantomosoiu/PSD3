@@ -13,12 +13,12 @@
 AdvertManagement
 --
 --
-+ getAd(long id): Advert
++ getAd(int id): Advert
 + getPublishedAds(): LinkedList&lt;&lt;Advert&gt;&gt;
 + getAllAds(): LinkedList&lt;&lt;Advert&gt;&gt;
-+ publishAd(long id): void
-+ addAd(Advert ad): long
-+ delAd(long id): boolean
++ publishAd(int id): void
++ addAd(Advert ad): int
++ delAd(int id): boolean
 + addPlacement(Placement p): int
 + viewPlacement(int id): Placement
 + delPlacement(int id): boolean
@@ -39,12 +39,12 @@ AdvertManagement
 LinkedList&lt;&lt;Advert&gt;&gt; adverts
 int numAds
 --
-+ getAd(long id): Advert
++ getAd(int id): Advert
 + getPublishedAds(): LinkedList&lt;&lt;Advert&gt;&gt;
 + getAllAds(): LinkedList&lt;&lt;Advert&gt;&gt;
-+ publishAd(long id): void
-+ addAd(Advert ad): long
-+ delAd(long id): boolean
++ publishAd(int id): void
++ addAd(Advert ad): int
++ delAd(int id): boolean
 + addPlacement(Placement p): int
 + viewPlacement(int id): Placement
 + delPlacement(int id): boolean
