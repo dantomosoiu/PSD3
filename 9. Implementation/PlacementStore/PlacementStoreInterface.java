@@ -1,8 +1,9 @@
 
+package PlacementStore;
+
 import java.util.ArrayList;
 
-public interface PlacementStoreInf{
-
+public interface PlacementStoreInterface {
 	/**
 	 * returns ArrayList of all existing placements in PlacementStore
 	 */
@@ -39,16 +40,5 @@ public interface PlacementStoreInf{
 	 * @param id
 	 *            the placement id
 	 */
-	Placement getPlacement(id: int);
+	Placement getPlacement(int id);
 }
-
-
-
-
-
-
-
-
-
-
-
