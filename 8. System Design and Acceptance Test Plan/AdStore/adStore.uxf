@@ -10,19 +10,19 @@
       <h>240</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
-AdvertManagement
+AdStore
 --
 --
 + getAd(int id): Advert
-+ getPublishedAds(): LinkedList&lt;&lt;Advert&gt;&gt;
-+ getAllAds(): LinkedList&lt;&lt;Advert&gt;&gt;
++ getPublishedAds(): Collection&lt;&lt;Advert&gt;&gt;
++ getAllAds(): Collection&lt;&lt;Advert&gt;&gt;
 + publishAd(int id): void
 + addAd(Advert ad): int
 + delAd(int id): boolean
-+ addPlacement(Placement p): int
++ addPlacement(Placement p): void
 + viewPlacement(int id): Placement
-+ delPlacement(int id): boolean
-+ editPlacement(int id, Placement p): boolean
++ delPlacement(int id): void
++ editPlacement(int id, Placement p): void
 + editAd(int id, Advert a): boolean </panel_attributes>
     <additional_attributes/>
   </element>
@@ -36,19 +36,20 @@ AdvertManagement
     </coordinates>
     <panel_attributes>AdvertManagement
 --
-LinkedList&lt;&lt;Advert&gt;&gt; adverts
-int numAds
+- Map&lt;&lt;Int, Advert&gt;&gt; adverts
+- int maxInt
+- PlacementStore ps
 --
 + getAd(int id): Advert
-+ getPublishedAds(): LinkedList&lt;&lt;Advert&gt;&gt;
-+ getAllAds(): LinkedList&lt;&lt;Advert&gt;&gt;
++ getPublishedAds(): Collection&lt;&lt;Advert&gt;&gt;
++ getAllAds(): Collection&lt;&lt;Advert&gt;&gt;
 + publishAd(int id): void
 + addAd(Advert ad): int
 + delAd(int id): boolean
-+ addPlacement(Placement p): int
++ addPlacement(Placement p): void
 + viewPlacement(int id): Placement
-+ delPlacement(int id): boolean
-+ editPlacement(int id, Placement p): boolean
++ delPlacement(int id): void
++ editPlacement(int id, Placement p): void
 + editAd(int id, Advert a): boolean </panel_attributes>
     <additional_attributes/>
   </element>
