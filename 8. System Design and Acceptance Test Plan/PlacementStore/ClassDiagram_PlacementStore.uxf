@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="11.5.1">
+<diagram program="umlet" version="11.5">
   <zoom_level>10</zoom_level>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>720</x>
-      <y>0</y>
-      <w>320</w>
-      <h>160</h>
+      <x>700</x>
+      <y>10</y>
+      <w>340</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>PlacementStore
 --
 - placements: ArrayList&lt;Placement&gt;
 --
 + PlacementStore()
-+ viewPlacements(): void
++ getAllPlacements(): ArrayList&lt;Placement&gt;
 + addPlacement(p : Placement): Placement
 + removePlacement(id: int): Placement
 + editPlacement(p: Placement): Placement
-- findPlacement(id: int): Placement</panel_attributes>
++ getPlacement(id: int): Placement
++ size(): int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>80</x>
-      <y>0</y>
+      <x>60</x>
+      <y>10</y>
       <w>580</w>
       <h>330</h>
     </coordinates>
@@ -38,7 +39,7 @@
 - contact: String
 - status: Status
 --
-+ Placement(role: Role, stu: Student, manager: .., contact: String, s: Status)
++ Placement(role: Role, stu: Student, manager: String, contact: String, s: Status)
 + getRole(): Role
 + getStudent(): Student
 + getManager(): String 
@@ -54,8 +55,8 @@
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>370</x>
-      <y>390</y>
+      <x>350</x>
+      <y>400</y>
       <w>130</w>
       <h>80</h>
     </coordinates>
@@ -70,8 +71,8 @@ Status
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>630</x>
-      <y>70</y>
+      <x>610</x>
+      <y>80</y>
       <w>110</w>
       <h>50</h>
     </coordinates>
@@ -81,8 +82,8 @@ Status
   <element>
     <type>com.umlet.element.custom.Text</type>
     <coordinates>
-      <x>700</x>
-      <y>80</y>
+      <x>680</x>
+      <y>90</y>
       <w>20</w>
       <h>30</h>
     </coordinates>
@@ -92,8 +93,8 @@ Status
   <element>
     <type>com.umlet.element.custom.Text</type>
     <coordinates>
-      <x>660</x>
-      <y>80</y>
+      <x>640</x>
+      <y>90</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -103,26 +104,27 @@ Status
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>800</x>
-      <y>330</y>
-      <w>320</w>
-      <h>120</h>
+      <x>720</x>
+      <y>350</y>
+      <w>330</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 PlacementStoreInf
 --
-+ viewPlacement(): void
++ getAllPlacements(): ArrayList&lt;Placement&gt;
 + addPlacement(p: Placement): Placement
 + removePlacement(id: int): Placement
 + editPlacement(p: Placement): Placement
++ getPlacement(id: int): Placement
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>860</x>
-      <y>130</y>
+      <x>840</x>
+      <y>150</y>
       <w>50</w>
       <h>220</h>
     </coordinates>
