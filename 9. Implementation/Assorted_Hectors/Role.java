@@ -10,7 +10,7 @@ public interface Role {
 
 	public Date getEnd();
 
-	public double getSalary();
+	public Double getSalary();
 	
 	boolean isApproved();
 

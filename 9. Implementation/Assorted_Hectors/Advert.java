@@ -65,7 +65,7 @@ public class Advert implements Advertisement {
 		status = s;
 	}
 
-	public Role addNewRole( String title, String location, Date start, Date end, String description, double salary) {
+	public Role addNewRole( String title, String location, Date start, Date end, String description, Double salary) {
 		roleMaxInt += 1;
 		roles.put(roleMaxInt, new PlRole(title, location, start, end, description, salary));
 	}

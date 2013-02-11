@@ -5,10 +5,10 @@ public class PlRole implements Role{
 	
 	private String title, location, description;
 	Date start, end;
-	double salary;
+	Double salary;
 	boolean approved;
 	
-	public PlRole(String t, String l, Date s, Date e, String d, double sal) {
+	public PlRole(String t, String l, Date s, Date e, String d, Double sal) {
 		title = t;
 		location = l;
 		description = d;
@@ -30,7 +30,7 @@ public class PlRole implements Role{
 		return end;
 	}
 
-	public double getSalary() {
+	public Double getSalary() {
 		return salary;
 	}
 	
