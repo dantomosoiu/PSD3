@@ -1,0 +1,9 @@
+package UserFactory;
+
+import uk.ac.glasgow.internman.impl.User;
+
+public class UserFactory {
+	protected  User createUser(String surname,String forename, String GUID, String password){
+		return new User(surname,forename,GUID, password);
+	}
+}

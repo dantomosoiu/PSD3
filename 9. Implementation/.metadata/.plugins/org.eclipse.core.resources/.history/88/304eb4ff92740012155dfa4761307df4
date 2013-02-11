@@ -1,0 +1,80 @@
+package uk.ac.glasgow.internman.impl;
+
+import uk.ac.glasgow.internman.Role;
+import uk.ac.glasgow.internman.users.Status;
+import uk.ac.glasgow.internman.users.StudentImpl;
+
+public class Placement {
+	
+	private int id;
+	private RoleImpl role;
+	private String manager;
+	private String contact;
+	private StudentImpl studentImpl;
+	private Status status;
+	
+	public Placement(int id, Role role, StudentImpl stu, String manager, String contact, Status status){
+		this.id = id;
+		this.role = (RoleImpl) role;
+		this.studentImpl = stu;
+		this.manager = manager;
+		this.contact = contact;
+		this.status = status;
+	}
+	
+	public int getID(){
+		return this.id;
+	}
+	
+	public Role getRole(){
+		return this.role;
+	}
+	
+	public StudentImpl getStudent(){
+		return this.studentImpl;
+	}
+	
+	public String getManager(){
+		return this.manager;
+	}
+	
+	public String getContact(){
+		return this.contact;
+	}
+	
+	public Status getStatus(){
+		return this.status;
+	}
+	
+	public void setRole(Role r){
+		this.role = (RoleImpl) r;
+	}
+	
+	public void setStudent(StudentImpl s){
+		this.studentImpl = s;
+	}
+	
+	public void setManager(String m){
+		this.manager = m;
+	}
+	
+	public void setContact(String c){
+		this.contact = c;
+	}
+	
+	public void setStatus(Status s){
+		this.status = s;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

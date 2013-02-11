@@ -1,0 +1,12 @@
+package uk.ac.glasgow.internman.users;
+
+import uk.ac.glasgow.internman.impl.UserFactory;
+
+
+public class StudentFactory extends UserFactory {
+	
+	protected StudentImpl createStudent(String surname, String forename, String GUID, String password, String matriculation, String programme){
+		return new StudentImpl(surname,forename,GUID,password,matriculation,programme);
+	}
+
+}

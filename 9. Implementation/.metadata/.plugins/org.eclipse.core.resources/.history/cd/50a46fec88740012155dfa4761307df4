@@ -1,0 +1,74 @@
+import java.util.Date;
+import java.util.HashMap;
+
+import uk.ac.glasgow.internman.Advertisement;
+import uk.ac.glasgow.internman.Employer;
+
+
+public class Advert implements Advertisement {
+
+	private Advertisement.AdvertisementStatus status;
+	private HashMap<Integer, RoleImpl> roles;
+	private int roleMaxInt;
+	private Employer employer;
+	private String applicationDetails;
+	private String comments;
+	
+	
+	public Advert(Employer e, String d, String c, Advertisement.AdvertisementStatus s, HashMap<Integer, RoleImpl> r, int m) {
+		roles = (HashMap<Integer, RoleImpl>)r;
+		status = s;
+		roleMaxInt = m;
+		employer = e;
+		applicationDetails = d;
+		comments = c;
+	}
+	
+	public Advert(Employer e, String d, String c, Advertisement.AdvertisementStatus s) {
+		roles = new HashMap<Integer, PlRole>();
+		status = s;
+		roleMaxInt = 0;
+		employer = e;
+		applicationDetails = d;
+		comments = c;
+	}
+	
+	public Advert(Employer e, String d, String c) {
+		roles = new HashMap<Integer, PlRole>();
+		status = Advertisement.AdvertisementStatus.PENDING;
+		roleMaxInt = 0;
+		employer = e;
+		applicationDetails = d;
+		comments = c;
+	}
+	
+	public HashMap<Integer, Role> getRoles() {
+		return (HashMap<Integer, Role>)roles;
+	}
+
+	public Employer getEmployer() {
+		return employer;
+	}
+
+	public String getApplicationDetails() {
+		return applicationDetails;
+	}
+
+	public String getComments() {
+		return comments;
+	}
+
+	public AdvertisementStatus getStatus() {
+		return status;
+	}
+	
+	public void setStatus(AdvertisementStatus s) {
+		status = s;
+	}
+
+	public Role addNewRole( String title, String location, Date start, Date end, String description, Double salary) {
+		roleMaxInt += 1;
+		roles.put(roleMaxInt, new PlRole(title, location, start, end, description, salary));
+	}
+	
+}
