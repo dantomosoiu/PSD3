@@ -1,13 +1,18 @@
 package UserFactory;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Interface UserStore.
+ */
 public interface UserStore {
 	
 	/**
 	 * Adds a new user to the store.
-	 * @param surname
-	 * @param GUID
-	 * @param forename
-	 * @param password
+	 *
+	 * @param surname the surname
+	 * @param forename the forename
+	 * @param GUID the guid
+	 * @param password the password
 	 */
 	public void addUser(
 			String surname, 
