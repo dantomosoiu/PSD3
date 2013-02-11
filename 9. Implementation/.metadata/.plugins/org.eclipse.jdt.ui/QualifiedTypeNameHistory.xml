@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.PlacementStore"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.Role"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.Advertisement"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.Employer"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.impl.Visitor"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.Student"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.impl.Placement"/>
+</qualifiedTypeNameHistroy>

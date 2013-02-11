@@ -28,7 +28,7 @@
       <x>60</x>
       <y>10</y>
       <w>580</w>
-      <h>330</h>
+      <h>350</h>
     </coordinates>
     <panel_attributes>Placement
 --
@@ -40,6 +40,7 @@
 - status: Status
 --
 + Placement(role: Role, stu: Student, manager: String, contact: String, s: Status)
++ getID(): int
 + getRole(): Role
 + getStudent(): Student
 + getManager(): String 
