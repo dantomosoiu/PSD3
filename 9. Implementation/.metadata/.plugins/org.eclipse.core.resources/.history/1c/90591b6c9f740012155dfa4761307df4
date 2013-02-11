@@ -97,7 +97,7 @@ public class InternManStub implements InternMan {
 	@Override
 	public void notifyAcceptedOffer(Role role, String managerName,
 			String managerEmail) {
-		System.out.println("Send an email to " + managerEmail + " because " + role.getTitle() + " Accepted");
+		System.out.println("Send an email to " + managerEmail + " because " role.getTitle() + " Accepted");
 		
 	}
 
@@ -108,7 +108,7 @@ public class InternManStub implements InternMan {
 
 	@Override
 	public void assignAcademicVisitor(String matriculation, String visitorName) {
-		System.out.println("Send an email to " + matriculation + ", " + visitorName + " & employer to let them know about the assignment");
+		System.out.println("Send an email to " + matriculation + ", " visitor name + " & employer to let them know about the assignment");
 	}
 
 	@Override

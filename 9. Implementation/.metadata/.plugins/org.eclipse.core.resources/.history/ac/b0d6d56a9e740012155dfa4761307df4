@@ -103,30 +103,33 @@ public class InternManStub implements InternMan {
 
 	@Override
 	public void approveAcceptedOffer(String matriculation) {
-		offerman.approveAcceptedOffer(matriculation);
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void assignAcademicVisitor(String matriculation, String visitorName) {
-		System.out.println("Send an email to " + matriculation + ", " + visitorName + " & employer to let them know about the assignment");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public void recordVisitAssessment(String matriculation, UoGGrade grade,
 			String description) {
-		//Add grade thing
-		System.out.println("Send an email to " + matriculation + " & employer to let them know about the grade");
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
 	public Employer getCurrentEmployer() {
-		return ( Employer ) currentUser;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Role createNewSelfSourcedRole(String title, String location,
 			Date start, Date end, String description, Double salary) {
-		offerman.createNewSelfSourcedRole(title, location, start, end, description, salary);
+		// TODO Auto-generated method stub
 		return null;
 	}
 }

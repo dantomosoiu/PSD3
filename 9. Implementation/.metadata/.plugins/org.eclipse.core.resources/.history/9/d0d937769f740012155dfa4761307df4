@@ -97,7 +97,7 @@ public class InternManStub implements InternMan {
 	@Override
 	public void notifyAcceptedOffer(Role role, String managerName,
 			String managerEmail) {
-		System.out.println("Send an email to " + managerEmail + " because " + role.getTitle() + " Accepted");
+		System.out.println("Send an email to " + managerEmail + " because " role.getTitle() + " Accepted");
 		
 	}
 
