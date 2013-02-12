@@ -1,0 +1,12 @@
+package UserFactory;
+
+import uk.ac.glasgow.internman.impl.UserFactory;
+import uk.ac.glasgow.internman.impl.Visitor;
+
+public class VisitorFactory extends UserFactory {
+
+	protected Visitor createVisitor(String surname, String forename, String GUID,String password) {
+		return new Visitor(surname,forename,GUID,password);
+	}
+	
+}
