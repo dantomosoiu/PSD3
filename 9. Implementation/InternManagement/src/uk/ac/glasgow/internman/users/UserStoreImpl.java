@@ -1,6 +1,7 @@
 package uk.ac.glasgow.internman.users;
 
 import java.io.File;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -10,7 +11,7 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import uk.ac.glasgow.internman.UserStore;
+import uk.ac.glasgow.internman.users.UserStore;
 import uk.ac.glasgow.internman.impl.UserFactory;
 
 

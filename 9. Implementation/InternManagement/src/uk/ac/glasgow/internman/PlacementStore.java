@@ -14,7 +14,6 @@ public interface PlacementStore {
 	
 	/**
 	 * Returns a newly added Placement, if successful, Null otherwise.
-	 * 
 	 * @param p
 	 *            the new placement
 	 */
@@ -23,7 +22,6 @@ public interface PlacementStore {
 
 	/**
 	 * Returns a removed Placement, if placement id matches, Null otherwise.
-	 * 
 	 * @param id
 	 *            the placement id
 	 */
@@ -31,7 +29,6 @@ public interface PlacementStore {
 
 	/**
 	 * Returns an edited Placement, if placement exists, Null otherwise.
-	 * 
 	 * @param p
 	 *            the edited placement
 	 */
@@ -39,7 +36,6 @@ public interface PlacementStore {
 
 	/**
 	 * Returns a Placement with the given id, if successful, Null otherwise.
-	 * 
 	 * @param id
 	 *            the placement id
 	 */

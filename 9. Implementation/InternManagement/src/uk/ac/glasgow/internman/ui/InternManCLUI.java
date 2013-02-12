@@ -4,7 +4,7 @@ import uk.ac.glasgow.clui.CommandLineUI;
 import uk.ac.glasgow.clui.SystemCommand;
 import uk.ac.glasgow.clui.SystemDialogue;
 import uk.ac.glasgow.internman.InternMan;
-import uk.ac.glasgow.internman.impl.InternManStub;
+import uk.ac.glasgow.internman.impl.InternManImpl;
 import uk.ac.glasgow.internman.users.UserStore;
 import uk.ac.glasgow.internman.users.UserStoreImpl;
 
@@ -20,6 +20,12 @@ import uk.ac.glasgow.internman.users.UserStoreImpl;
  */
 public class InternManCLUI extends CommandLineUI<InternMan> {
 
+	/**
+	 * Instantiates a new intern man clui.
+	 *
+	 * @param facade the facade
+	 * @param dialogue the dialogue
+	 */
 	public InternManCLUI(
 			InternMan facade, SystemDialogue dialogue) {
 		
@@ -34,10 +40,10 @@ public class InternManCLUI extends CommandLineUI<InternMan> {
 	 */
 	public static void main(String[] args) {
 		
-		UserStore userStore = new UserStore("data/users.obj");
+		UserStoreImpl userStore = new UserStoreImpl("data/users.obj", "data/students.obj", "data/employers.obj", "data/visitors.obj");
 		userStore.addUser("Storer", "Tim", "tws", "1234");
-
-		InternMan facade = new InternManStub(userStore);
+		
+		InternMan facade = new InternManImpl(userStore);
 		
 		SystemDialogue dialogue = new SystemDialogue(System.in, System.out, System.err);
 
