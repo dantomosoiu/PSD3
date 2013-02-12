@@ -40,7 +40,7 @@
 
   <!--Creates the deployable jar file  -->
   <target name="jar" depends="compile">
-    <jar destfile="${dist.dir}\InternManagement.uk.ac.glasgow.internman.ui.ant.jar" basedir="${build.dir}">
+    <jar destfile="${dist.dir}\uk.ac.glasgow.internman.ui.InternManCLUI.jar" basedir="${build.dir}">
       <manifest>
         <attribute name="Main-Class" value="uk.ac.glasgow.internman.ui.InternManCLUI" />
       </manifest>
