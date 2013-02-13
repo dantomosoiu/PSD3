@@ -168,7 +168,7 @@ public class InternManImpl implements InternMan {
 	public void notifyAcceptedOffer(Role role, String managerName,
 			String managerEmail) {
 		System.out.println("Send an email to " + managerEmail + " because " + role.getTitle() + " Accepted");
-
+		
 	}
 
 	/**
@@ -178,6 +178,7 @@ public class InternManImpl implements InternMan {
 	@Override
 	public void approveAcceptedOffer(String matriculation) {
 		offerman.approveAcceptedOffer(matriculation);
+		
 	}
 
 	/** 
