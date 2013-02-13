@@ -1,10 +1,12 @@
 package UserFactory;
 
+import uk.ac.glasgow.internman.Visitor;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class Visitor.
  */
-public class Visitor extends User {
+public class VisitorImpl extends User implements Visitor{
 
 	/**
 	 * Instantiates a new visitor.
@@ -14,7 +16,7 @@ public class Visitor extends User {
 	 * @param GUID the guid
 	 * @param password the password
 	 */
-	protected Visitor(String surname, String forename, String GUID, String password) {
+	protected VisitorImpl(String surname, String forename, String GUID, String password) {
 		super(surname, forename, GUID, password);
 	}
 	
@@ -23,7 +25,7 @@ public class Visitor extends User {
 	 *
 	 * @return the name
 	 */
-	String getName(){
+	public String getName(){
 		return (this.getForename()+ " "+ this.getSurname());
 	}
 	

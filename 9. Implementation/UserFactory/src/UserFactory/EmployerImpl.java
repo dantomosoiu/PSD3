@@ -1,12 +1,13 @@
 package UserFactory;
 
 import java.io.Serializable;
+import uk.ac.glasgow.internman.*;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class Employer.
+ * The Class EmployerImpl .
  */
-public class Employer implements Serializable{
+public class EmployerImpl  implements Serializable, Employer{
 	
 	/** The name. */
 	private String name;
@@ -24,7 +25,7 @@ public class Employer implements Serializable{
 	 * @param contact the contact
 	 * @param password the password
 	 */
-	public Employer(String name, String contact, String password) {
+	public EmployerImpl (String name, String contact, String password) {
 		this.name = name;
 		this.contact = contact;
 		this.password = password;
@@ -44,8 +45,8 @@ public class Employer implements Serializable{
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	public boolean equals(Object o){
-		if(o instanceof Employer){
-			Employer e = (Employer) o;
+		if(o instanceof EmployerImpl ){
+			EmployerImpl  e = (EmployerImpl ) o;
 			if(this.name.equals(e.name) && this.contact.equals(e.contact) && this.password.equals(e.password)){
 				return true;
 			}

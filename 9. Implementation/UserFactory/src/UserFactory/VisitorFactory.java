@@ -1,11 +1,12 @@
 package UserFactory;
 
+import uk.ac.glasgow.internman.Visitor;
+
 // TODO: Auto-generated Javadoc
 /**
  * A factory for creating Visitor objects.
  */
 public class VisitorFactory extends UserFactory {
-
 	/**
 	 * Creates a new Visitor object.
 	 *
@@ -16,7 +17,7 @@ public class VisitorFactory extends UserFactory {
 	 * @return the visitor
 	 */
 	protected Visitor createVisitor(String surname, String forename, String GUID,String password) {
-		return new Visitor(surname,forename,GUID,password);
+		return new VisitorImpl(surname,forename,GUID,password);
 	}
 	
 }

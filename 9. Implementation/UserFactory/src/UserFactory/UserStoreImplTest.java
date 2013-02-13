@@ -9,6 +9,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import uk.ac.glasgow.internman.Employer;
+import uk.ac.glasgow.internman.Student;
+import uk.ac.glasgow.internman.Visitor;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class UserStoreImplTest.
@@ -62,8 +66,8 @@ public class UserStoreImplTest {
 	 */
 	@Test 
 	public void addGetStudent(){
-		Student s1 = new Student("Kilian", "Michael", "1003819k@student.gla.ac.uk", "password","1003819",Programme.SE);
-		userstore.addStudent("Kilian", "Michael", "1003819k@student.gla.ac.uk", "password","1003819",Programme.SE);
+		Student s1 = new StudentImpl("Kilian", "Michael", "1003819k@student.gla.ac.uk", "password","1003819",Student.Programme.SE);
+		userstore.addStudent("Kilian", "Michael", "1003819k@student.gla.ac.uk", "password","1003819",Student.Programme.SE);
 		Student s2 = userstore.getStudent("1003819k@student.gla.ac.uk", "password");
 		assertTrue(s1.equals(s2));
 	}
@@ -73,7 +77,7 @@ public class UserStoreImplTest {
 	 */
 	@Test 
 	public void addGetEmployer(){
-		Employer s1 = new Employer("BT", "bt","password");
+		Employer s1 = new EmployerImpl("BT", "bt","password");
 		userstore.addEmployer("BT","bt","password");
 		Employer s2 = userstore.getEmployer("bt", "password");
 		assertTrue(s1.equals(s2));
@@ -84,7 +88,7 @@ public class UserStoreImplTest {
 	 */
 	@Test 
 	public void addGetVisitor(){
-		Visitor u1 = new Visitor("Kilian", "Michael", "1003819", "password");
+		Visitor u1 = new VisitorImpl("Kilian", "Michael", "1003819", "password");
 		userstore.addVisitor("Kilian", "Michael", "1003819", "password");
 		Visitor u2 = userstore.getVisitor("1003819", "password");
 		assertTrue(u1.equals(u2));

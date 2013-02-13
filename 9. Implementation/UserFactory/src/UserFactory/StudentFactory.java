@@ -1,5 +1,7 @@
 package UserFactory;
-
+import uk.ac.glasgow.internman.*;
+import uk.ac.glasgow.internman.*;
+import uk.ac.glasgow.internman.Student.Programme;
 // TODO: Auto-generated Javadoc
 /**
  * A factory for creating Student objects.
@@ -17,8 +19,8 @@ public class StudentFactory extends UserFactory {
 	 * @param programme the programme
 	 * @return the student
 	 */
-	protected Student createStudent(String surname, String forename, String GUID, String password, String matriculation, Programme programme){
-		return new Student(surname,forename,GUID,password,matriculation,programme);
+	protected Student createStudent(String surname, String forename, String GUID, String password, String matriculation, Student.Programme programme){
+		return new StudentImpl(surname,forename,GUID,password,matriculation,programme);
 	}
 
 }

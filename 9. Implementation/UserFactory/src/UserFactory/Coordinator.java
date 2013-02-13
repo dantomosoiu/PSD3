@@ -1,10 +1,10 @@
 package UserFactory;
-
+import uk.ac.glasgow.internman.Visitor;
 // TODO: Auto-generated Javadoc
 /**
  * The Class Coordinator.
  */
-public	class Coordinator extends Visitor {
+public	class Coordinator extends VisitorImpl implements Visitor {
 	 
  	/**
  	 * Instantiates a new coordinator.

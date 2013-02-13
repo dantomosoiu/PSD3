@@ -10,6 +10,10 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import uk.ac.glasgow.internman.Employer;
+import uk.ac.glasgow.internman.Student;
+import uk.ac.glasgow.internman.Visitor;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class UserStoreImpl.
@@ -159,6 +163,9 @@ public class UserStoreImpl implements UserStore {
 				e.printStackTrace();
 			}
 		}
+		else 
+			this.visitormap = new HashMap<String,Visitor>();
+		
 		
 		if(coordinatorFile.exists()){
 			try{
@@ -216,7 +223,7 @@ public class UserStoreImpl implements UserStore {
 	 * @param matriculation the matriculation
 	 * @param programme the programme
 	 */
-	public void addStudent(String surname, String forename, String GUID,String password,String matriculation,Programme programme){
+	public void addStudent(String surname, String forename, String GUID,String password,String matriculation,Student.Programme programme){
 		Student newStudent = studentfactory.createStudent(surname, forename, GUID, password, matriculation, programme);
 		studentmap.put(matriculation,newStudent);
 		try {
@@ -260,7 +267,7 @@ public class UserStoreImpl implements UserStore {
 	 * @param password the password
 	 */
 	public void addVisitor(String surname, String forename, String GUID, String password){
-		Visitor newVisitor = visitorfactory.createVisitor(surname, forename, GUID, password);
+		VisitorImpl newVisitor = (VisitorImpl) visitorfactory.createVisitor(surname, forename, GUID, password);
 		visitormap.put(GUID, newVisitor);
 		try {
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(visitorFile));
@@ -319,7 +326,7 @@ public class UserStoreImpl implements UserStore {
 	 * @return the student
 	 */
 	public Student getStudent(String GUID, String password) {
-		Student student = studentmap.get(GUID);
+		StudentImpl student = (StudentImpl) studentmap.get(GUID);
 		if (student != null && student.authenticate(password)) 
 			return student;
 		else 
@@ -334,7 +341,7 @@ public class UserStoreImpl implements UserStore {
 	 * @return the employer
 	 */
 	public Employer getEmployer(String contact, String password) {
-		Employer employer = employermap.get(contact);
+		EmployerImpl employer = (EmployerImpl) employermap.get(contact);
 		if (employer != null && employer.authenticate(password)) 
 			return employer;
 		else 
@@ -349,9 +356,9 @@ public class UserStoreImpl implements UserStore {
 	 * @return the visitor
 	 */
 	public Visitor getVisitor(String GUID, String password) {
-		Visitor visitor = visitormap.get(GUID);
+		VisitorImpl visitor = (VisitorImpl) visitormap.get(GUID);
 		if (visitor != null && visitor.authenticate(password)) 
-			return visitor;
+			return (Visitor) visitor;
 		else 
 			return null;
 	}

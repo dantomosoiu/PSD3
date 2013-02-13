@@ -1,11 +1,11 @@
 package UserFactory;
-
+import uk.ac.glasgow.internman.*;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class Student.
  */
-public class Student extends User {
+public class StudentImpl extends User implements Student {
 	
 	/** The matriculation. */
 	private String matriculation;
@@ -26,7 +26,7 @@ public class Student extends User {
 	 * @param matriculation the matriculation
 	 * @param programme the programme
 	 */
-	protected Student(String surname, String forename, String GUID, String password, String matriculation, Programme programme){
+	protected StudentImpl(String surname, String forename, String GUID, String password, String matriculation, Programme programme){
 		super(surname, forename, GUID, password);
 		this.matriculation = matriculation;
 		this.programme = programme;
@@ -75,11 +75,17 @@ public class Student extends User {
 	 */
 	@Override
 	public boolean equals(Object o){
-		if(o instanceof Student){
-			Student s = (Student) o;
+		if(o instanceof StudentImpl){
+			StudentImpl s = (StudentImpl) o;
 			if(super.equals(s) && this.matriculation.equals(s.matriculation) && this.programme.equals(s.programme));
 				return true;
 		}
 		return false;
+	}
+
+
+	@Override
+	public String getEmail() {
+		return this.getGUID();
 	}
 }
