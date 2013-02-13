@@ -12,7 +12,8 @@ public class Utility {
 	@Test
 	public void studentLoginSuccess() {
 		/*
-		 * Test Case U-L001 
+		 * Use Case: Login
+		 * Test Case U-L001 (Student Primary)
 		 * connection to users.db is setup and active;
 		 * connection to MyCampus credentials DB setup and active; DB contains
 		 * student credentials for username "1100123D" and password "pa$$word"
@@ -24,7 +25,8 @@ public class Utility {
 	@Test
 	public void studentLoginWrongPass() {
 		/*
-		 * Test Case U-L002 
+		 * Use Case: Login
+		 * Test Case U-L002 (Student Alternative (Wrong Password))
 		 * connection to users.db is setup and active;
 		 * connection to MyCampus credentials DB setup and active; DB contains
 		 * student credentials for username "1100123D" and password "pa$$word"
@@ -38,7 +40,8 @@ public class Utility {
 	@Test
 	public void studentLoginWrongUsername() {
 		/*
-		 * Test Case U-L003
+		 * Use Case: Login
+		 * Test Case U-L003 (Student Alternative (Wrong Username))
 		 * connection to users.db is setup and active;
 		 * connection to MyCampus credentials DB setup and active; DB does not
 		 * contain credentials for username "1100123D"
@@ -52,7 +55,8 @@ public class Utility {
 	@Test
 	public void studentLoginDatabaseUnreachable() {
 		/*
-		 * Test Case U-L004 
+		 * Use Case: Login
+		 * Test Case U-L004 (Student Alternative (Database Unreachable))
 		 * connection to users.db is setup and active;
 		 * connection to MyCampus credentials DB setup unreachable;
 		 */
@@ -65,7 +69,8 @@ public class Utility {
 	@Test
 	public void visitorLoginSuccess() {
 		/*
-		 * Test Case U-L005
+		 * Use Case: Login
+		 * Test Case U-L005 (Visitor Primary)
 		 * connection to users.db is setup and active;
 		 * connection to MyCampus credentials DB setup and active; DB contains
 		 * visitor credentials for username "Visitor01" and password
@@ -80,7 +85,8 @@ public class Utility {
 	@Test
 	public void visitorLoginSuccessWrongUsername() {
 		/*
-		 * Test Case U-L006 
+		 * Use Case: Login
+		 * Test Case U-L006 (Visitor Alternative (Wrong Username))
 		 * connection to users.db is setup and active;
 		 * connection to MyCampus credentials DB setup and active; DB does not
 		 * contain credentials for username "Visitor01"
@@ -94,7 +100,8 @@ public class Utility {
 	@Test
 	public void employerLoginSuccess() {
 		/*
-		 * Test Case U-L007 
+		 * Use Case: Login
+		 * Test Case U-L007 (Employer Primary)
 		 * connection to users.db is setup and active; users.db
 		 * contains employer credentials for username "Google" and password
 		 * "ilikelongpasswordsandthisisnoexception"
@@ -109,7 +116,8 @@ public class Utility {
 	@Test
 	public void employerLoginWrongPassword() {
 		/*
-		 * Test Case U-L008 
+		 * Use Case: Login
+		 * Test Case U-L008 (Employer Alternative(Wrong Password))
 		 * connection to users.db is setup and active; users.db
 		 * contains employer credentials for username "Google" and password
 		 * "ilikelongpasswordsandthisisnoexception"
@@ -123,7 +131,8 @@ public class Utility {
 	@Test
 	public void employerLoginWrongUsername() {
 		/*
-		 * Test Case U-L009 
+		 * Use Case: Login
+		 * Test Case U-L009 (Employer Alternative(Non-existing Username))
 		 * connection to users.db is setup and active; users.db
 		 * does not contain credentials for username "Google"
 		 */
@@ -136,7 +145,8 @@ public class Utility {
 	@Test
 	public void employerLoginDatabaseUnreachable() {
 		/*
-		 * Test Case U-L010 
+		 * Use Case: Login
+		 * Test Case U-L010 (Employer Alternative(Database Unreachable))
 		 * connection to users.db is setup but host is unreachable;
 		 */
 
@@ -148,7 +158,8 @@ public class Utility {
 	@Test
 	public void coordinatorLoginSuccess() {
 		/*
-		 * Test Case U-L012 
+		 * Use Case: Login
+		 * Test Case U-L012 (Coordinator Primary)
 		 * connection to users.db is setup and active;
 		 * connection to MyCampus credentials DB setup and active; 
 		 * DB contains coordinator credentials for username "Coordinator01" and password "ilikevisitsandotherstuff"
@@ -163,7 +174,9 @@ public class Utility {
 	@Test
 	public void coordinatorLoginWrongUsername() {
 		/*
-		 * Test Case U-L013 connection to users.db is setup and active;
+		 * Use Case: Login
+		 * Test Case U-L013 (Coordinator Alternative(Non-existing Username))
+		 * connection to users.db is setup and active;
 		 * connection to MyCampus credentials DB setup and active; DB does not
 		 * contain credentials for username Coordinator01
 		 */
@@ -177,7 +190,7 @@ public class Utility {
 	@Test
 	public void studentAdvertismentListingSuccess() {
 		/*
-		 * Test Case A-001 
+		 * Test Case A-001 (Student Primary)
 		 * connection to advertisments.db is setup and active;
 		 * DB contains one or more published advertisements
 		 */
@@ -192,7 +205,8 @@ public class Utility {
 	@Test
 	public void studentAdvertismentListingDatabaseUnreachable() {
 		/*
-		 * Test Case A-002 
+		 * Use Case: View advertisement summary
+		 * Test Case A-002 (Student Alternative (Database Unreachable))
 		 * connection to advertisments.db is setup but host is
 		 * unreachable;
 		 */
@@ -207,7 +221,8 @@ public class Utility {
 	@Test
 	public void employerAdvertismentListingSuccess() {
 		/*
-		 * Test Case A-003 
+		 * Use Case: View advertisement summary
+		 * Test Case A-003 (Employer Primary)
 		 * connection to advertisments.db is setup and active;
 		 * DB contains one or more advertisements published by the current
 		 * employer
@@ -223,7 +238,8 @@ public class Utility {
 	@Test
 	public void employerAdvertismentListingDatabaseUnreachable() {
 		/*
-		 * Test Case A-004
+		 * Use Case: View advertisement summary
+		 * Test Case A-004 (Employer Alternative (Database Unreachable))
 		 * connection to advertisments.db is setup but host is unreachable;
 		 */
 
@@ -237,7 +253,8 @@ public class Utility {
 	@Test
 	public void coordinatorAdvertismentListingSuccess() {
 		/*
-		 * Test Case A-005
+		 * Use Case: View advertisement summary
+		 * Test Case A-005 (Coordinator Primary)
 		 * connection to advertisments.db is setup and active;
 		 * DB contains one or more advertisements
 		 */
@@ -252,7 +269,8 @@ public class Utility {
 	@Test
 	public void coordinatorAdvertismentListingDatabaseUnreachable() {
 		/*
-		 * Test Case A-006
+		 * Use Case: View advertisement summary
+		 * Test Case A-006 (Coordinator Alternative (Database Unreachable))
 		 * connection to advertisments.db is setup but host is unreachable;
 		 */
 
