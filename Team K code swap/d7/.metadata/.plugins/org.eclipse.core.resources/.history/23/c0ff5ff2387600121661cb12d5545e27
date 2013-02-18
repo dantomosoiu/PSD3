@@ -1,0 +1,107 @@
+package uk.ac.glasgow.internman.advert;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.Map;
+
+import uk.ac.glasgow.internman.Employer;
+import uk.ac.glasgow.internman.Role;
+
+public class AdvertisementImpl implements uk.ac.glasgow.internman.Advertisement, Serializable {
+	
+	private int advertId;
+	
+	private Map<Integer, Role> roles;
+	private Employer employer;
+	private String applicationDetails;
+	private String comments;
+	private AdvertisementStatus status;
+	
+	/**
+	 * Creates instance of an advertisement.
+	 * @param advertId
+	 * 		Identifier for the advert
+	 * @param roles
+	 * 		Roles that the advertisement is looking for
+	 * @param employer
+	 * 		Employer that posted the advert
+	 * @param applicationDetails
+	 * 		Further details about application
+	 * @param comments
+	 * 		Course coordinators comments on the advert
+	 * @param status
+	 * 		status of advert, whether it is pending etc
+	 */
+	public AdvertisementImpl(int advertId, Map<Integer, Role> roles, Employer employer,
+			String applicationDetails, String comments, AdvertisementStatus status){
+		this.advertId = advertId;
+		this.roles = roles;
+		this.employer = employer;
+		this.applicationDetails = applicationDetails;
+		this.comments = comments;
+		this.status = status;
+	}
+	
+	
+	/**
+	 * Returns map of roles for this advert
+	 */
+	@Override
+	public Map<Integer, Role> getRoles() {
+		return this.roles;
+	}
+	
+	/**
+	 * Returns employer for this advert
+	 */
+	@Override
+	public Employer getEmployer() {
+		return this.employer;
+	}
+
+	/**
+	 * Returns string application details for this advert
+	 */
+	@Override
+	public String getApplicationDetails() {
+		return this.applicationDetails;
+	}
+
+	/**
+	 * returns string comments on this advert
+	 */
+	@Override
+	public String getComments() {
+		return this.comments;
+	}
+
+	/**
+	 * Returns status of this advert
+	 */
+	@Override
+	public AdvertisementStatus getStatus() {
+		return this.status;
+	}
+
+	/**
+	 * Adds a new role to the roles map by creating role object from series of
+	 *  input params, returns role instance
+	 */
+	@Override
+	public Role addNewRole(String title, String location, Date start, Date end,
+			String description, Double salary) {
+		
+		/*TODO Discrepancy with String description, doesn't fit with role constructor
+		 * 	   Perhaps has another use? Needs looking at
+		 */
+		
+		//false because role by default needs approving by coord.
+		boolean approved = false;
+		
+		Role role = new RoleImpl(title, start, end, salary, approved, location);
+		//now add role to hashmap
+		roles.put(advertId, role);
+		return role;
+	}
+	
+}

@@ -1,0 +1,89 @@
+package uk.ac.glasgow.internman.offer;
+
+import uk.ac.glasgow.internman.Internship;
+import uk.ac.glasgow.internman.Student;
+import uk.ac.glasgow.internman.Visitor;
+import uk.ac.glasgow.internman.users.User;
+
+public class StudentCon extends User implements Student{
+	
+	private Internship internship;
+	private Programme programme;
+	private String email;
+	
+	/**
+	 * Creates instance of a student
+	 * 
+	 * @param surname
+	 * 		students last name
+	 * @param forename
+	 * 		students first name
+	 * @param GUID
+	 * 		students GUID for login
+	 * @param password
+	 * 		students password for login
+	 * @param email
+	 * 		students email address
+	 * @param programme
+	 * 		programme student is studying
+	 * @param internship
+	 * 		internship student is undertaking
+	 */
+	public StudentCon(String surname, String forename, String GUID, 
+						String password, String email, Programme programme, Internship internship){
+		super(surname, forename, GUID, password);
+		this.internship = internship;
+		this.programme = programme;
+		this.email = email;
+	}
+	
+	
+	/**
+	 * returns internship that student is undertaking
+	 */
+	@Override
+	public Internship getInternship() {
+		return internship;
+	}
+
+	/**
+	 * returns students surname
+	 */
+	@Override
+	public String getSurname() {
+		return this.surname;
+	}
+
+	/**
+	 * returns students matric number
+	 */
+	@Override
+	public String getMatriculation() {
+		return this.GUID;
+	}
+
+	/**
+	 * returns students forename
+	 */
+	@Override
+	public String getForename() {
+		return this.forename;
+	}
+
+	/**
+	 * returns students email address
+	 */
+	@Override
+	public String getEmail() {
+		return this.email;
+	}
+
+	/**
+	 * returns students degree programme
+	 */
+	@Override
+	public Programme getProgramme() {
+		return this.programme;
+	}
+
+}

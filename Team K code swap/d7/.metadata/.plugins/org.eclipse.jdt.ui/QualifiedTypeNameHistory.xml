@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.Role"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.advert.RoleImpl"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.Internship"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.impl.InternManStub"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.Visitor"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.ws.api.config.management.policy.ManagedServiceAssertion.ImplementationRecord"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.offer.InternshipCon"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.Visit"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.visit.VisitImpl"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.visit.VisitorImpl"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.Internship.InternshipStatus"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.advert.EmployerImpl"/>
+<fullyQualifiedTypeName name="uk.ac.glasgow.internman.offer.StudentCon"/>
+</qualifiedTypeNameHistroy>

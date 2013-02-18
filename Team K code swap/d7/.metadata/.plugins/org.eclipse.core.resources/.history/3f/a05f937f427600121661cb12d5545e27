@@ -1,0 +1,14 @@
+package uk.ac.glasgow.internman;
+
+
+public interface Visit {
+
+	Visitor getVisitor();
+	
+	void setVisitor(Visitor v);
+
+	UoGGrade getGrade();
+
+	String getDescription();
+
+}
