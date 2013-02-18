@@ -1,0 +1,377 @@
+---- UTILITY ----
+
+Identifier: U-L001
+Use Case: Login
+Scenario: Student Primary
+Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB contains student credentials for username 1100123D and password "pa$$word"
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/utility/StudentLoginSuccess
+Inputs: username="1100123D", password="pa$$word"
+Outcome: Student with the 1100123D matric is authenticated and set as current user
+
+Identifier: U-L002
+Use Case: Login
+Scenario: Student Alternative (Wrong Password)
+Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB contains student credentials for username 1100123D and password "pa$$word"
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/StudentLoginWrongPass
+Inputs: username="1100123D", password="iforgotit"
+Outcome: authentication fails, an error message regarding user/password combination is displayed to the user
+
+Identifier: U-L003
+Use Case: Login
+Scenario: Student Alternative (Wrong Username)
+Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB does not contain credentials for username 1100123D
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/StudentLoginWrongUsername
+Inputs: username="1100123D", password="pa$$word"
+Outcome: authentication fails, an error message regarding user/password combination is displayed to the user
+
+Identifier: U-L004
+Use Case: Login
+Scenario: Student Alternative (Database Unreachable)
+Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup unreachable; 
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/StudentLoginDatabaseUnreachable
+Inputs: username="1100123D", password="pa$$word"
+Outcome: authentication fails, an error message regarding DB conectivity is displayed to the user
+
+Identifier: U-L005
+Use Case: Login
+Scenario: Visitor Primary
+Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB contains visitor credentials for username Visitor01 and password "iliketovisitvisit"
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/VisitorLoginSuccess
+Inputs: username="Visitor01", password="iliketovisitvisit"
+Outcome: Visitor with the Visitor01 username is authenticated and set as current user
+
+Identifier: U-L006
+Use Case: Login
+Scenario: Visitor Alternative (Wrong Username)
+Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB does not contain credentials for username Visitor01
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/VisitorLoginSuccessWrongUsername
+Inputs: username="Visitor01", password="ihopeihaveanaccount"
+Outcome: authentication fails, an error message regarding user/password combination is displayed to the user
+
+Identifier: U-L007
+Use Case: Login
+Scenario: Employer Primary
+Setup: connection to users.db is setup and active; users.db contains employer credentials for username Google and password "ilikelongpasswordsandthisisnoexception"
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/EmployerLoginSuccess
+Inputs: username="Google", password="ilikelongpasswordsandthisisnoexception"
+Outcome: Employer with the Google username is authenticated and set as current user
+
+Identifier: U-L008
+Use Case: Employer Alternative(Wrong Password)
+Scenario: 
+Setup: connection to users.db is setup and active; users.db contains employer credentials for username Google and password "ilikelongpasswordsandthisisnoexception"
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/EmployerLoginWrongPassword
+Inputs: username="Google", password="thisisntmypassword"
+Outcome: authentication fails, an error message regarding user/password combination is displayed to the user
+
+Identifier: U-L009
+Use Case: Login
+Scenario: Employer Alternative(Non-existing Username)
+Setup: connection to users.db is setup and active; users.db does not contain credentials for username Google
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/EmployerLoginWrongUsername
+Inputs: username="Google", password="thisisntmypassword"
+Outcome: authentication fails, an error message regarding user/password combination is displayed to the user
+
+Identifier: U-L010
+Use Case: Login
+Scenario: Employer Alternative(Database Unreachable)
+Setup: connection to users.db is setup but host is unreachable; 
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/EmployerLoginDatabaseUnreachable
+Inputs: username="Google", password="thisisntmypassword"
+Outcome: authentication fails, an error message regarding DB conectivity is displayed to the user
+
+Identifier: U-L012
+Use Case: Login
+Scenario: Coordinator Primary
+Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB contains coordinator credentials for username Coordinator01 and password "ilikevisitsandotherstuff"
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/VisitorLoginSuccess
+Inputs: username="Coordinator01", password="ilikevisitsandotherstuff"
+Outcome: Visitor with the Visitor01 username is authenticated and set as current user
+
+Identifier: U-L013
+Use Case: Login
+Scenario: Coordinator Alternative(Non-existing Username)
+Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB does not contain credentials for username Coordinator01
+Interface: src/uk/ac/glasgow/internman/
+Includes: -
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/VisitorLoginWrongUsername
+Inputs: username="Coordinator01", password="ihopeihaveanaccount"
+Outcome: authentication fails, an error message regarding user/password combination is displayed to the user
+
+Identifier: U-A001
+Use Case: View advertisement summary
+Scenario: Student Primary
+Setup: connection to advertisments.db is setup and active;
+Interface: src/uk/ac/glasgow/internman/
+Includes: - U-L001 (successful student login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/StudentAdvertismentListingSuccess
+Inputs: -
+Outcome: A list of all approved advertisments is displayed to the student; Each advertisment should have the following information regarding their corresponding role(s): Employer name, Title, Start date, End date, Coordinator approved, Location, Salary
+
+Identifier: U-A002
+Use Case: View advertisement summary
+Scenario: Student Alternative (Database Unreachable)
+Setup: connection to advertisments.db is setup but host is unreachable;
+Interface: src/uk/ac/glasgow/internman/
+Includes: - U-L001 (successful student login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/StudentAdvertismentListingDatabaseUnreachable
+Inputs: -
+Outcome: an error message regarding DB conectivity is displayed to the user
+
+Identifier: U-A003
+Use Case: View advertisement summary
+Scenario: Employer Primary
+Setup: connection to advertisments.db is setup and active;
+Interface: src/uk/ac/glasgow/internman/
+Includes: - U-L007 (successful employer login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/EmployerAdvertismentListingSuccess
+Inputs: -
+Outcome: A list of all advertisments posted by current employer is displayed; Each advertisment should have the following information regarding their corresponding role(s): Employer name, Title, Start date, End date, Coordinator approved, Location, Salary
+
+Identifier: U-A004
+Use Case: View advertisement summary
+Scenario: Employer Alternative (Database Unreachable)
+Setup: connection to advertisments.db is setup but host is unreachable;
+Interface: src/uk/ac/glasgow/internman/
+Includes: - U-L001 (successful employer login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/EmployerAdvertismentListingDatabaseUnreachable
+Inputs: -
+Outcome: an error message regarding DB conectivity is displayed to the user
+
+Identifier: U-A005
+Use Case: View advertisement summary
+Scenario: Coordinator Primary
+Setup: connection to advertisments.db is setup and active;
+Interface: src/uk/ac/glasgow/internman/
+Includes: - U-L012 (successful coordinator login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/CoordinatorAdvertismentListingSuccess
+Inputs: -
+Outcome: A list of all advertisments is displayed to the coordinator; Each advertisment should have the following information regarding their corresponding role(s): Employer name, Title, Start date, End date, Coordinator approved, Location, Salary
+
+Identifier: U-A006
+Use Case: View advertisement summary
+Scenario: Coordinator Alternative (Database Unreachable)
+Setup: connection to advertisments.db is setup but host is unreachable;
+Interface: src/uk/ac/glasgow/internman/
+Includes: - U-L012 (successful coordinator login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/CoordinatorAdvertismentListingDatabaseUnreachable
+Inputs: -
+Outcome: an error message regarding DB conectivity is displayed to the user
+
+
+---- ADVERTISMENT MANAGEMENT ----
+
+Identifier: AM-A001
+Use Case: View Advertisment Detail
+Scenario: Student Primary
+Setup: advertisments.db is setup and active; advertisments.db contains an approved advert with the id 123001
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-A001 (View advertisment summary)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/StudentViewAdvertismentDetailSuccess
+Inputs: index=123001
+Outcome: Student is presented with the following information regarding the placement: Employer name and contact, The location where the roles will be based, How to apply for the listed roles, CourseCoordinator comment; Student is presented with the following information regarding the role: Title, Start and end dates, Description, Salary, Whether the Role has been approved as appropriate for SESP
+
+Identifier: AM-A002
+Use Case: View Advertisment Detail
+Scenario: Student Alternative (Unnaproved Advert)
+Setup: advertisments.db is setup and active; advertisments.db contains an unapproved advert with the id 123001
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-A001 (View advertisment summary - student)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/StudentViewAdvertismentDetailUnapproved
+Inputs: index=123001
+Outcome: Error message regarding insufficient priviledges to view the advert is displayed
+
+Identifier: AM-A003
+Use Case: View Advertisment Detail
+Scenario: Coordinator Primary
+Setup: advertisments.db is setup and active; advertisments.db contains an advert with the id 123001
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-A005 (View advertisment summary - coordinator)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/CoordinatorViewAdvertismentDetailSuccess
+Inputs: index=123001
+Outcome: Coordinator is presented with the following information regarding the placement: Employer name and contact, The location where the roles will be based, How to apply for the listed roles, CourseCoordinator comment; Coordinator is presented with the following information regarding the role: Title, Start and end dates, Description, Salary, Whether the Role has been approved as appropriate for SESP
+
+Identifier: AM-A004
+Use Case: View Advertisment Detail
+Scenario: Employer Primary
+Setup: advertisments.db is setup and active; advertisments.db contains an advert with the id 123002, owned by the current Employer
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-A003 (View advertisment summary - employer)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/EmployerViewAdvertismentDetailSuccess
+Inputs: index=123002
+Outcome: Employer is presented with the following information regarding the placement: Employer name and contact, The location where the roles will be based, How to apply for the listed roles, CourseCoordinator comment; Employer is presented with the following information regarding the role: Title, Start and end dates, Description, Salary, Whether the Role has been approved as appropriate for SESP
+
+Identifier: AM-A005
+Use Case: View Advertisment Detail
+Scenario: Employer Alternative (Forbidden)
+Setup: advertisments.db is setup and active; advertisments.db contains an advert with the id 123002, owned by someone other than the current Employer
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-A003 (View advertisment summary - employer)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/EmployerViewAdvertismentDetailForbidden
+Inputs: index=123002
+Outcome: Error message regarding insufficient priviledges to view the advert is displayed
+
+Identifier: AM-RE001
+Use Case: Register Employer
+Scenario: Primary
+Setup: users.db is setup and active;
+Interface: src/uk/ac/glasgow/internman/
+Includes: Includes: - U-L012 (successful coordinator login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/RegisterEmployerSuccess
+Inputs: name="AwesomeCompany", email="hr@ac.com"
+Outcome: A new employer entry is created in users.db, with the a randomly generated username and a randomly generated password. This username will be different than all users in users.db. An email is sent to the provided address containing the username and password of the newly created employer account.
+
+Identifier: AM-SA001
+Use Case: Submit Advertisment
+Scenario: Coordinator Primary
+Setup: users.db and advertisments.db ares setup and active;
+Interface: src/uk/ac/glasgow/internman/
+Includes: Includes: - U-L012 (successful coordinator login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/CoordinatorSubmitAdvertismentSuccess
+Inputs: applicationDetails="employer details, location, application, process details, role title, dates, description, salary"
+Outcome: A new advertisment entry containing the provided information is inserted into advertisments.db. Its status is set to pending.
+
+Identifier: AM-SA002
+Use Case: Submit Advertisment
+Scenario: Employer Primary
+Setup: users.db and advertisments.db ares setup and active;
+Interface: src/uk/ac/glasgow/internman/
+Includes: - U-L001 (successful employer login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/EmployerSubmitAdvertismentSuccess
+Inputs: applicationDetails="employer details, location, application, process details, role title, dates, description, salary"
+Outcome: A new advertisment entry containing the provided information is inserted into advertisments.db. Its status is set to pending.
+
+Identifier: AM-PA001
+Use Case: Publish Advertisment
+Scenario: Primary
+Setup: advertisments.db ares setup and active; advert with id 123005 exists with the status "PENDING"
+Interface: src/uk/ac/glasgow/internman/
+Includes: AM-A003 (Coordinator View Advertisment Detail)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/PublishAdvertismentSuccess
+Inputs: index="123005", comment="comment about advert", SESP=true
+Outcome: The advert with index 123005 is published with the provided comment and its role set as being SESP compliant.
+
+Identifier: AM-PA002
+Use Case: Publish Advertisment
+Scenario: Alternative (Already Published)
+Setup: advertisments.db ares setup and active; advert with id 123006 exists with the status "PUBLISHED"
+Interface: src/uk/ac/glasgow/internman/
+Includes: AM-A003 (Coordinator View Advertisment Detail)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/PublishAdvertismentAlreadyPublished
+Inputs: index="123006", comment="comment about advert", SESP=true
+Outcome: An error will be displayed informing that the advert's status was "PUBLISHED"
+
+Identifier: AM-PA003
+Use Case: Publish Advertisment
+Scenario: Alternative (Advert Not Found)
+Setup: advertisments.db ares setup and active; advert with id 123007 does not exist in the db
+Interface: src/uk/ac/glasgow/internman/
+Includes: AM-A003 (Coordinator View Advertisment Detail)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/PublishAdvertismentNotFound
+Inputs: index="123006", comment="comment about advert", SESP=true
+Outcome: An error will be displayed informing that the desired advert does not exist
+
+
+---- OFFER MANAGEMENT ----
+
+Identifier: OM-VS001
+Use Case: View Student Detail
+Scenario: Coordinator Primary
+Setup: users.db is setup and active; student with the matric 1230123Q exists in the database
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-L012 (Coordinator login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/CoordinatorViewStudentDetailSuccess
+Inputs: matric="1230123Q"
+Outcome: The coordinator receives the following information about the selected student: Name, Matriculation, Programme, Internship status. If the Student has accepted an "APPROVED" internship role, further information is visible: Internship role title, Internship start and end dates, Internship location, Internship salary, Internship employer name, Internship contact details, Internship manager details. If available, Visitor Name and Visit Grade should be displayed.
+
+Identifier: OM-VS002
+Use Case: View Student Detail
+Scenario: Student Primary
+Setup: users.db is setup and active;
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-L002 (Student login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/StudentViewStudentDetailSuccess
+Inputs: 
+Outcome: The student receives the following information about himself: Name, Matriculation, Programme, Internship status. If the Student has accepted an "APPROVED" internship role, further information is visible: Internship role title, Internship start and end dates, Internship location, Internship salary, Internship employer name, Internship contact details, Internship manager details. If available, Visitor Name and Visit Grade should be displayed.
+
+Identifier: OM-VS003
+Use Case: View Student Detail
+Scenario: Visitor Primary
+Setup: users.db is setup and active; current user is visitor but not coordinator; student with the matric 1230123Q exists in the database, and has assigned the current visitor as an Internship Visitor
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-L006 (Visitor login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/VisitorViewStudentDetailSuccess
+Inputs: matric="1230123Q"
+Outcome: The visitor receives the following information about himself: Name, Matriculation, Programme, Internship status, Internship role title, Internship start and end dates, Internship location, Internship salary, Internship employer name, Internship contact details, Internship manager details, Visitor Name. If available, Visit Grade should be displayed.
+
+Identifier: OM-VS004
+Use Case: View Student Detail
+Scenario: Visitor Alternative (Forbidden)
+Setup: users.db is setup and active; current user is visitor but not coordinator; student with the matric 1230123Q exists in the database, but has no assigned visitor
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-L006 (Visitor login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/VisitorViewStudentDetailForbidden
+Inputs: matric="1230123Q"
+Outcome: The visitor receives an error message regarding insufficient priviledges to view the student's details.
+
+Identifier: OM-NA001
+Use Case: Notify Accepted Offer
+Scenario: Student Primary (Existing)
+Setup: advertisments.db and users.db are setup and active; role with id r1234 exists with the status "APPROVED".
+Interface: src/uk/ac/glasgow/internman/
+Includes: AM-A001 (Student View Advertisment Detail)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/NotifyAcceptedOfferExisting
+Inputs: role="r1234", managerName = "John Smith", managerEmail="john@google.com"
+Outcome: The student is being flagged as having accepted an "APPROVED" internship.
+
+Identifier: OM-NA002
+Use Case: Notify Accepted Offer
+Scenario: Student Alternative (New)
+Setup: advertisments.db and users.db are setup and active;
+Interface: src/uk/ac/glasgow/internman/
+Includes: AM-A001 (Student View Advertisment Detail)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/NotifyAcceptedOfferNew
+Inputs: title"roleTitle", location="Glasgow", start="01/06/13", end="01/09/13", description="soft dev", salary=300.33
+Outcome: Email is sent to coordinator with details about the self-sourced role. A new "PENDING" internship is created in the system with the provided details. Student is being flagged as having accepted a "PENDING" internship.
+
+Identifier: OM-AA001
+Use Case: Approve Accepted Offer
+Scenario: Primary
+Setup: advertisments.db and users.db are setup and active; student with matric 1234001 exists and has an internship with the "PENDING" status
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-L012 (Coordinator login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/ApproveAcceptedOfferSuccess
+Inputs: matric="1234001"
+Outcome: Internship status is set to "APPROVED". Student is sent a confirmation email.
+
+Identifier: OM-AA002
+Use Case: Approve Accepted Offer
+Scenario: Alternative (No Internship Found)
+Setup: advertisments.db and users.db are setup and active; student with matric 1234001 but has no internship associated
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-L012 (Coordinator login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/ApproveAcceptedOfferNoInternship
+Inputs: matric="1234001"
+Outcome: Coordinator receives an error message saying that the user has no internship
