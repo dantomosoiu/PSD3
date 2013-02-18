@@ -34,7 +34,7 @@ public class InternManCLUI extends CommandLineUI<InternMan> {
 	 */
 	public static void main(String[] args) {
 		
-		UserStore userStore = new UserStoreImpl("data/users.obj");
+		UserStore userStore = new UserStoreImpl("users.obj");
 		userStore.addUser("Storer", "Tim", "tws", "1234");
 
 		InternMan facade = new InternManStub(userStore);
