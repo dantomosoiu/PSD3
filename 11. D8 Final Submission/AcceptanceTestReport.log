@@ -1,8 +1,8 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.9.3)  22 FEB 2013 09:56
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.9.3)  22 FEB 2013 11:46
 entering extended mode
  %&-line parsing enabled.
-**AcceptanceTestingReport.tex
-(./AcceptanceTestingReport.tex
+**AcceptanceTestReport.tex
+(./AcceptanceTestReport.tex
 LaTeX2e <2005/12/01>
 Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
@@ -97,8 +97,9 @@ Package: tabulary 2007/10/02 v0.9 tabulary package (DPC)
 (/usr/share/texmf/tex/latex/ltxmisc/url.sty
 \Urlmuskip=\muskip10
 Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
-) (./AcceptanceTestingReport.aux)
-\openout1 = `AcceptanceTestingReport.aux'.
+)
+No file AcceptanceTestReport.aux.
+\openout1 = `AcceptanceTestReport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
@@ -113,7 +114,6 @@ LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 54.
-
 (/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -128,45 +128,51 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 {/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/CompSci_mono.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
- (./AcceptanceTestingReport.toc
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
-)
-\tf@toc=\write3
-\openout3 = `AcceptanceTestingReport.toc'.
 
- [1]
+No file AcceptanceTestReport.toc.
+\tf@toc=\write3
+\openout3 = `AcceptanceTestReport.toc'.
+
+[1]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 83.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 83.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 83.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 85.
 
 Underfull \hbox (badness 10000) in paragraph at lines 83--99
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 111.
+
+Overfull \hbox (28.83652pt too wide) in paragraph at lines 104--106
+\OT1/ptm/m/n/10.95 Which sce-nar-ios for said use cases caused the prob-lems? W
+ere there any un-ex-pected re-sults/problems/defects
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 115.
 
 (/usr/share/texmf/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [2]
-(./AcceptanceTestingReport.aux) ) 
+) [2] (./AcceptanceTestReport.aux) ) 
 Here is how much of TeX's memory you used:
- 960 strings out of 256216
- 11708 string characters out of 1917073
+ 956 strings out of 256216
+ 11575 string characters out of 1917073
  62615 words of memory out of 1500000
  4247 multiletter control sequences out of 10000+200000
  18495 words of font info for 42 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 32i,14n,23p,206b,267s stack positions out of 5000i,500n,6000p,200000b,15000s
-{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}
-</usr/share/texmf/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf/fonts/ty
-pe1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmr8a.pfb>
-Output written on AcceptanceTestingReport.pdf (3 pages, 61501 bytes).
+ 32i,14n,23p,365b,267s stack positions out of 5000i,500n,6000p,200000b,15000s
+{/usr/share/texmf/fonts/enc/dvips/base/8r.e
+nc}</usr/share/texmf/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf/fonts
+/type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmr8a.pfb>
+
+Output written on AcceptanceTestReport.pdf (3 pages, 62391 bytes).
 PDF statistics:
  34 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
