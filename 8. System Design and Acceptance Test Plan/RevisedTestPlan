@@ -375,3 +375,29 @@ Includes: U-L012 (Coordinator login)
 Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/ApproveAcceptedOfferNoInternship
 Inputs: matric="1234001"
 Outcome: Coordinator receives an error message saying that the user has no internship
+
+Indentifier: NF-003
+Requirement: "The system shall realise the Facade interface provided to ensure compatability with other user interface implementations."
+Setup:N/A
+Interface: src/uk/ac/glasgow/internman/
+Includes:
+Procedure: Check all methods are implemented.
+Inputs:N/A
+Outcome: N/A
+
+Identifier: NF-006
+Requirement: "The system shall support at least 50 registered SESP students."
+Setup: Generate 50 students each which a random but unique GUID.
+Interface: src/uk/ac/glasgow/internman/
+Includes:
+Inputs:List of 50 unique GUIDs.
+Outcome: Check each student has been created and stored successfully.
+
+Identifier: NF-007
+Requirement: "The system shall support at least 100 concurrent users."
+Setup: Generate 100 users each which a random but unique GUID.
+Interface: src/uk/ac/glasgow/internman/
+Includes:
+Inputs:List of 100 unique GUIDs.
+Outcome: Check each user has been created and stored successfully.
+
