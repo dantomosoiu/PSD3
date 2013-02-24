@@ -190,17 +190,17 @@ Setup: advertisments.db is setup and active; advertisments.db contains an approv
 Interface: src/uk/ac/glasgow/internman/
 Includes: U-A001 (View advertisment summary)
 Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/StudentViewAdvertismentDetailSuccess
-Inputs: index=123001
+Inputs: index=123001, Advert Status = PUBLISHED
 Outcome: Student is presented with the following information regarding the placement: Employer name and contact, The location where the roles will be based, How to apply for the listed roles, CourseCoordinator comment; Student is presented with the following information regarding the role: Title, Start and end dates, Description, Salary, Whether the Role has been approved as appropriate for SESP
 
 Identifier: AM-A002
 Use Case: View Advertisment Detail
 Scenario: Student Alternative (Unnaproved Advert)
-Setup: advertisments.db is setup and active; advertisments.db contains an unapproved advert with the id 123001
+Setup: advertisments.db is setup and active; advertisments.db contains an unapproved advert with the id 123456
 Interface: src/uk/ac/glasgow/internman/
 Includes: U-A001 (View advertisment summary - student)
 Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/StudentViewAdvertismentDetailUnapproved
-Inputs: index=123001
+Inputs: index=123001, Advert Status = PENDING
 Outcome: Error message regarding insufficient priviledges to view the advert is displayed
 
 Identifier: AM-A003
@@ -216,21 +216,21 @@ Outcome: Coordinator is presented with the following information regarding the p
 Identifier: AM-A004
 Use Case: View Advertisment Detail
 Scenario: Employer Primary
-Setup: advertisments.db is setup and active; advertisments.db contains an advert with the id 123002, owned by the current Employer
+Setup: advertisments.db is setup and active; advertisments.db contains an advert with the id 123001, owned by the current Employer
 Interface: src/uk/ac/glasgow/internman/
 Includes: U-A003 (View advertisment summary - employer)
 Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/EmployerViewAdvertismentDetailSuccess
-Inputs: index=123002
+Inputs: index=123001
 Outcome: Employer is presented with the following information regarding the placement: Employer name and contact, The location where the roles will be based, How to apply for the listed roles, CourseCoordinator comment; Employer is presented with the following information regarding the role: Title, Start and end dates, Description, Salary, Whether the Role has been approved as appropriate for SESP
 
 Identifier: AM-A005
 Use Case: View Advertisment Detail
 Scenario: Employer Alternative (Forbidden)
-Setup: advertisments.db is setup and active; advertisments.db contains an advert with the id 123002, owned by someone other than the current Employer
+Setup: advertisments.db is setup and active; advertisments.db contains an advert with the id 123456, owned by someone other than the current Employer
 Interface: src/uk/ac/glasgow/internman/
 Includes: U-A003 (View advertisment summary - employer)
 Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/advertMgt/EmployerViewAdvertismentDetailForbidden
-Inputs: index=123002
+Inputs: index=123456
 Outcome: Error message regarding insufficient priviledges to view the advert is displayed
 
 Identifier: AM-RE001
@@ -323,7 +323,7 @@ Setup: users.db is setup and active; current user is visitor but not coordinator
 Interface: src/uk/ac/glasgow/internman/
 Includes: U-L006 (Visitor login)
 Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/VisitorViewStudentDetailSuccess
-Inputs: matric="1230123Q"
+Inputs: matric="1230123Q". Visitor guid="1234321", password="password"
 Outcome: The visitor receives the following information about himself: Name, Matriculation, Programme, Internship status, Internship role title, Internship start and end dates, Internship location, Internship salary, Internship employer name, Internship contact details, Internship manager details, Visitor Name. If available, Visit Grade should be displayed.
 
 Identifier: OM-VS004
@@ -343,7 +343,7 @@ Setup: advertisments.db and users.db are setup and active; role with id r1234 ex
 Interface: src/uk/ac/glasgow/internman/
 Includes: AM-A001 (Student View Advertisment Detail)
 Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/NotifyAcceptedOfferExisting
-Inputs: role="r1234", managerName = "John Smith", managerEmail="john@google.com"
+Inputs: role="r1234", managerName = "John Smith", managerEmail="john@google.com", advert id = 123001
 Outcome: The student is being flagged as having accepted an "APPROVED" internship.
 
 Identifier: OM-NA002

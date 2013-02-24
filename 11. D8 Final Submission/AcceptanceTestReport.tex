@@ -78,27 +78,331 @@
 
 \section{Test Cases}
 
-%%%%% START TEMPLATE %%%%
+%%%%%%%%%%%ADVERT MANAGEMENT TESTS%%%%%%%%%%%%%%%
 
 \begin{tabular}{lp{10cm}}
 \hline 
-\textbf{Test Case} & INSERT TEST CASE LABEL\tabularnewline
+\textbf{Test Case} & AM-A001\tabularnewline
 \hline 
 \hline 
-Tested By & INSERT NAME\tabularnewline
+Tested By & Michael Kilian\tabularnewline
 \hline 
-Date Tested & INSERT DATE\tabularnewline
+Date Tested & 24/02/2013\tabularnewline
 \hline 
-Test Result & PASS OR FAIL?\tabularnewline
+Test Result & PASS\tabularnewline
 \hline
-Further Comments & INSERT COMMENTS ON PASS OR FAIL\tabularnewline
+Further Comments & Pass based on ability to retrieve advert and call methods for retrieving data from advert successfully. Format of output is not considered. \tabularnewline
 \hline
-Test Setup & a reference to the setup/testing data used, you could provide the data as an appendix, or just give the files used a label e.g. userLoginMock.csv. \tabularnewline
+Test Setup & Used 1003819k and "password" as GUID and password respectively for student login. For advert inputs see acceptance test plan. \tabularnewline
 \hline
 \end{tabular}\\
 
-%%%%% END TEMPLATE %%%%
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-A002\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & User granted access to the advertisement despite it not having been approved.\tabularnewline
+\hline
+Test Setup & Used 1003819k and "password" as GUID and password respectively for student login. For advert inputs see acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
 
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-A003\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & No means provided to add/login as a coordinator. Failed by default.\tabularnewline
+\hline
+Test Setup & N/A \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-A004\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & \tabularnewline
+\hline
+Test Setup & Employer Details: GUID = "IBM.com-emp", password = "password". See acceptance test plan for advert setup.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-A005\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & Employer granted access to advertisement belonging to another company.\tabularnewlinemployertheseconde
+\hline
+Test Setup & Employer Details: GUID = "IBM.com-emp", password = "password". See acceptance test plan for advert setup.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-RE001\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & New employer could not be registered through facade methods. \tabularnewlinemployertheseconde
+\hline
+Test Setup &  See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-SA001\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & No methods provided to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
+\hline
+Test Setup &  See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-SA002\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & Attempt to create advert failed (null advert returned); \tabularnewlinemployertheseconde
+\hline
+Test Setup &  See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-PA001\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
+\hline
+Test Setup &  See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-PA003\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
+\hline
+Test Setup &  See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-PA003\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
+\hline
+Test Setup &  See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+%%%%%%%%%%%%%%%%%%OFFER MANAGEMENT TESTS %%%%%%%%%%%%%
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & OM-VS001\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
+\hline
+Test Setup &  See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & OM-VS002\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & Success based on ability to retrieve student and check details. \tabularnewlinemployertheseconde
+\hline
+Test Setup & Student matric=1230123Q,surname="Kilian",forename="Michael". See acceptance test plan for further details.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & OM-VS003\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & Success based on ability to retrieve student and check details. \tabularnewlinemployertheseconde
+\hline
+Test Setup & Student matric=1230123Q,surname="Kilian",forename="Michael". See acceptance test plan for further details.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & OM-VS004\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & Visitor denied access as expected. \tabularnewline
+\hline
+Test Setup & Student matric=1230123Q,surname="Kilian",forename="Michael". See acceptance test plan for further details.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & OM-NA001\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & Notification received correctly.. \tabularnewline
+\hline
+Test Setup & Student matric=1230123Q,password = "password". See acceptance test plan for further details.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & OM-NA002\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & Pass based on return value of role creation method. Persistent system state is not checked. \tabularnewline
+\hline
+Test Setup & Student matric=1230123Q,password = "password". See acceptance test plan for further details.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & OM-AA001\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & No means by which to add/login as a coordinator. Failed by default.\tabularnewline
+\hline
+Test Setup & See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & OM-AA002\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & No means by which to add/login as a coordinator. Failed by default.\tabularnewline
+\hline
+Test Setup & See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary of Acceptance Testing}
 Overall Summary \\
