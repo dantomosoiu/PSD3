@@ -100,7 +100,7 @@ Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/EmployerLoginDatab
 Inputs: username="Google", password="thisisntmypassword"
 Outcome: authentication fails, an error message regarding DB conectivity is displayed to the user
 
-Identifier: U-L012
+Identifier: U-L011
 Use Case: Login
 Scenario: Coordinator Primary
 Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB contains coordinator credentials for username Coordinator01 and password "ilikevisitsandotherstuff"
@@ -110,7 +110,7 @@ Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/VisitorLoginSucces
 Inputs: username="Coordinator01", password="ilikevisitsandotherstuff"
 Outcome: Visitor with the Visitor01 username is authenticated and set as current user
 
-Identifier: U-L013
+Identifier: U-L012
 Use Case: Login
 Scenario: Coordinator Alternative(Non-existing Username)
 Setup: connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB does not contain credentials for username Coordinator01
@@ -384,6 +384,22 @@ Includes:
 Procedure: Check all methods are implemented.
 Inputs:N/A
 Outcome: N/A
+
+Identifier: NF-004
+Requirement: "The system shall support at least 50 advertisements with at least one role per advert."
+Setup: Generate 50 students each which a random but unique GUID.
+Interface: src/uk/ac/glasgow/internman/
+Includes:
+Inputs:List of 50 unique advert id's and role id's.
+Outcome: Check each student has been created and stored successfully.
+
+Identifier: NF-005
+Requirement: "The system shall support at least 50 employers."
+Setup: Generate 50 students each which a random but unique GUID.
+Interface: src/uk/ac/glasgow/internman/
+Includes:
+Inputs:List of 50 unique employer usernames.
+Outcome: Check each student has been created and stored successfully.
 
 Identifier: NF-006
 Requirement: "The system shall support at least 50 registered SESP students."

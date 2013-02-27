@@ -1,0 +1,930 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{l3deliverable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{svn-multi}
+%\svnid{$Id: d2.tex 2500 2011-09-21 15:56:43Z tws $}
+\version{3.0}
+
+%Made \svnday/\svnmonth/\svnyear~ by \svnauthor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a utility environment for formatting tasks - see document for usage
+\usepackage{tabulary}
+\newenvironment{PSDTask}[8]{
+  \tabularx{\linewidth}{|l|X|} \hline
+    \bf\itshape Task #1: & \bf\itshape #2 \\\hline
+}{\endtabularx}
+
+\newcommand{\PSDTaskComponent}[2]{\it #1: & #2 \\ \hline}
+\newcommand{\PSDTaskDescription}[1]{\PSDTaskComponent{Description}{#1}}
+\newcommand{\PSDTaskOutcomes}[1]{\PSDTaskComponent{Outcomes}{#1}}
+\newcommand{\PSDTaskDeliverables}[1]{\PSDTaskComponent{Deliverables}{#1}}
+\newcommand{\PSDTaskRisks}[1]{\PSDTaskComponent{Risk}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Check these macro values for appropriateness for your own document.
+
+\title{Acceptance Test Report}
+
+%%authors
+\author{
+  Dan Tomosoui\\
+  Michael Kilian \\
+}
+
+%%release date
+\date{27th February 2013}
+
+\deliverableID{D8}
+\project{PSD3 Group Exercise 2}
+\team{L}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Standard section for all documents
+
+\section{Introduction}
+
+\subsection{Identification}
+Acceptance Test Plan for Internship Management System.
+
+\subsection{Related Documentation}
+\begin{itemize}
+\item{Acceptance Test Plan}
+\item{Requirements Specification}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Test Cases}
+
+%%%%%%%%%%%%%%UTILITY CASES %%%%%%%%%%%%%%%%%%%%
+\subsection{Utility Test Cases}
+\subsubsection{Login Tests}
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L001\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Student Primary \tabularnewline
+\hline 
+Setup &  Connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB contains student credentials for username 1100123D and password "pa\$\$word" \tabularnewline
+\hline 
+Includes &  N/A \tabularnewline
+\hline 
+Input Specification & username="1100123D", password="pa\$\$word"\tabularnewline
+\hline 
+Output Specification & Student with the 1100123D matric is authenticated and set as current user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L002 \tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Student Alternative (Wrong Password) \tabularnewline
+\hline 
+Setup & connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB contains student credentials for username 1100123D and password "pa\$\$word" \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & username="1100123D", password="iforgotit" \tabularnewline
+\hline 
+Output Specification & Authentication fails, an error message regarding user/password combination is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L003\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Student Alternative (Wrong Username) \tabularnewline
+\hline 
+Setup & Connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB does not contain credentials for username 1100123D  \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & username="1100123D", password="pa\$\$word".\tabularnewline
+\hline 
+Output Specification & Authentication fails, an error message regarding user/password combination is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L004\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Student Alternative (Database Unreachable) \tabularnewline
+\hline 
+Setup & Connection to users.db is setup and active; connection to MyCampus credentials DB setup unreachable \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & username="1100123D", password="pa\$\$word".\tabularnewline
+\hline 
+Output Specification & Authentication fails, an error message regarding DB conectivity is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L005\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Visitor Primary \tabularnewline
+\hline 
+Setup &  Connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB contains student credentials for username Visitor01 and password "iliketovisitvisit" \tabularnewline
+\hline 
+Includes &  N/A \tabularnewline
+\hline 
+Input Specification & username="Visitor01", password="iliketovisitvisit"\tabularnewline
+\hline 
+Output Specification &  Visitor with the Visitor01 username is authenticated and set as current user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L006 \tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Visitor Alternative (Wrong Username) \tabularnewline
+\hline 
+Setup & connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB does not contain credentials for username Visitor01 \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & username="Visitor01", password="ihopeihaveanaccount"  \tabularnewline
+\hline 
+Output Specification & Authentication fails, an error message regarding user/password combination is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L007\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Employer Primary \tabularnewline
+\hline 
+Setup & Connection to users.db is setup and active; users.db contains employer credentials for username Google and password "ilikelongpasswordsandthisisnoexception" \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & username="Google", password="ilikelongpasswordsandthisisnoexception".\tabularnewline
+\hline 
+Output Specification & Employer with the Google username is authenticated and set as current user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L008\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Employer Alternative(Wrong Password) \tabularnewline
+\hline 
+Setup & Connection to users.db is setup and active; users.db contains employer credentials for username Google and password "ilikelongpasswordsandthisisnoexception" \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & username="Google", password="thisisntmypassword".\tabularnewline
+\hline 
+Output Specification & Authentication fails, an error message regarding user/password combination is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L009\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Employer Alternative (Wrong Username) \tabularnewline
+\hline 
+Setup & Connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB does not contain credentials for username Google  \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & username="Google", password="thisisntmypassword".\tabularnewline
+\hline 
+Output Specification & Authentication fails, an error message regarding user/password combination is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L010\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Employer Alternative (Database Unreachable) \tabularnewline
+\hline 
+Setup & Connection to users.db is setup but host is unreachable;  \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification &  username="Google", password="thisisntmypassword".\tabularnewline
+\hline 
+Output Specification & Authentication fails, an error message regarding DB conectivity is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L011\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Coordinator Primary \tabularnewline
+\hline 
+Setup & Connection to users.db is setup and active; users.db contains employer credentials for username Google and password "ilikelongpasswordsandthisisnoexception" \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & username="Coordinator01", password="ilikevisitsandotherstuff".\tabularnewline
+\hline 
+Output Specification & Visitor with the Visitor01 username is authenticated and set as current user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-L012\tabularnewline
+\hline 
+\hline 
+Use Case & Login \tabularnewline
+\hline 
+Scenario & Coordinator Alternative (Wrong Username) \tabularnewline
+\hline 
+Setup & Connection to users.db is setup and active; connection to MyCampus credentials DB setup and active; DB does not contain credentials for username Coordinator01 \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & username="Coordinator01", password="ihopeihaveanaccount".\tabularnewline
+\hline 
+Output Specification & Authentication fails, an error message regarding user/password combination is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+%%%%%%%%%%%%%%%%%%%%%View Advert Summary tests %%%
+\subsubsection{View Advert Summary Tests}
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-A001\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Summary \tabularnewline
+\hline 
+Scenario & Student Primary \tabularnewline
+\hline 
+Setup & Connection to advertisments.db is setup and active \tabularnewline
+\hline 
+Includes &  U-L001 (successful student login) \tabularnewline
+\hline 
+Input Specification & N/A.\tabularnewline
+\hline 
+Output Specification &  A list of all approved advertisments is displayed to the student; Each advertisment should have the following information regarding their corresponding role(s): Employer name, Title, Start date, End date, Coordinator approved, Location, Salary.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-A002\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Summary \tabularnewline
+\hline 
+Scenario & Student Alternative (Database Unreachable) \tabularnewline
+\hline 
+Setup & Connection to advertisments.db is setup but host is unreachable; \tabularnewline
+\hline 
+Includes &  U-L001 (successful student login) \tabularnewline
+\hline 
+Input Specification & N/A.\tabularnewline
+\hline 
+Output Specification & An error message regarding DB conectivity is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-A003\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Summary \tabularnewline
+\hline 
+Scenario & Employer Primary \tabularnewline
+\hline 
+Setup & Connection to advertisments.db is setup and active \tabularnewline
+\hline 
+Includes &  U-L007 (successful employer login) \tabularnewline
+\hline 
+Input Specification & N/A.\tabularnewline
+\hline 
+Output Specification &  A list of all advertisments posted by current employer is displayed; Each advertisment should have the following information regarding their corresponding role(s): Employer name, Title, Start date, End date, Coordinator approved, Location, Salary.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-A004\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Summary \tabularnewline
+\hline 
+Scenario & Employer Alternative (Database Unreachable) \tabularnewline
+\hline 
+Setup & Connection to advertisments.db is setup but host is unreachable. \tabularnewline
+\hline 
+Includes &  U-L007 (successful employer login) \tabularnewline
+\hline 
+Input Specification & N/A.\tabularnewline
+\hline 
+Output Specification &  An error message regarding DB conectivity is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-A005\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Summary \tabularnewline
+\hline 
+Scenario & Coordinator Primary \tabularnewline
+\hline 
+Setup & Connection to advertisments.db is setup and active \tabularnewline
+\hline 
+Includes & U-L012 (successful coordinator login) \tabularnewline
+\hline 
+Input Specification & N/A.\tabularnewline
+\hline 
+Output Specification & A list of all advertisments is displayed to the coordinator; Each advertisment should have the following information regarding their corresponding role(s): Employer name, Title, Start date, End date, Coordinator approved, Location, Salary.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & U-A006\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Summary \tabularnewline
+\hline 
+Scenario & Coordinator Alternative (Database Unreachable) \tabularnewline
+\hline 
+Setup & Connection to advertisments.db is setup but host is unreachable.\tabularnewline
+\hline 
+Includes & U-L012 (successful coordinator login) \tabularnewline
+\hline 
+Input Specification & N/A.\tabularnewline
+\hline 
+Output Specification & An error message regarding DB conectivity is displayed to the user.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ADVERT MANAGEMENT TESTS %%%%%%
+\subsection{Advert Management Use Cases}
+\subsubsection{View Advertisement Detail Tests}
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-A001\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Detail \tabularnewline
+\hline 
+Scenario & Student Primary \tabularnewline
+\hline 
+Setup & Advertisments.db is setup and active; advertisments.db contains an approved advert with the id 123001.\tabularnewline
+\hline 
+Includes & U-A001 (View advertisment summary) \tabularnewline
+\hline 
+Input Specification & index=123001, Advert Status = PUBLISHED. \tabularnewline
+\hline 
+Output Specification & Student is presented with the following information regarding the placement: Employer name and contact, The location where the roles will be based, How to apply for the listed roles, CourseCoordinator comment; Student is presented with the following information regarding the role: Title, Start and end dates, Description, Salary, Whether the Role has been approved as appropriate for SESP.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-A002\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Detail \tabularnewline
+\hline 
+Scenario & Student Alternative (Unnaproved Advert) \tabularnewline
+\hline 
+Setup & Advertisments.db is setup and active; advertisments.db contains an unapproved advert with the id 123456.\tabularnewline
+\hline 
+Includes & U-A001 (View advertisment summary) \tabularnewline
+\hline 
+Input Specification & index=123456, Advert Status = PENDING. \tabularnewline
+\hline 
+Output Specification &  Error message regarding insufficient priviledges to view the advert is displayed.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-A003\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Detail \tabularnewline
+\hline 
+Scenario & Coordinator Primary \tabularnewline
+\hline 
+Setup & Advertisments.db is setup and active; advertisments.db contains an approved advert with the id 123001.\tabularnewline
+\hline 
+Includes & U-A005 (View advertisment summary - coordinator) \tabularnewline
+\hline 
+Input Specification & index=123001 \tabularnewline
+\hline 
+Output Specification & Coordinator is presented with the following information regarding the placement: Employer name and contact, The location where the roles will be based, How to apply for the listed roles, CourseCoordinator comment; Coordinator is presented with the following information regarding the role: Title, Start and end dates, Description, Salary, Whether the Role has been approved as appropriate for SESP.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-A004\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Detail \tabularnewline
+\hline 
+Scenario & Employer Primary \tabularnewline
+\hline 
+Setup & Advertisments.db is setup and active; advertisments.db contains an advert with the id 123001, owned by the current Employer.\tabularnewline
+\hline 
+Includes & U-A003 (View advertisment summary - employer)\tabularnewline
+\hline 
+Input Specification & index=123001 \tabularnewline
+\hline 
+Output Specification & Employer is presented with the following information regarding the placement: Employer name and contact, The location where the roles will be based, How to apply for the listed roles, CourseCoordinator comment; Employer is presented with the following information regarding the role: Title, Start and end dates, Description, Salary, Whether the Role has been approved as appropriate for SESP.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-A005\tabularnewline
+\hline 
+\hline 
+Use Case & View Adverstisement Detail \tabularnewline
+\hline 
+Scenario & Employer Alternative (Forbidden) \tabularnewline
+\hline 
+Setup & Advertisments.db is setup and active; advertisments.db contains an advert with the id 123456, owned by someone other than the current Employer.\tabularnewline
+\hline 
+Includes & U-A003 (View advertisment summary - employer)\tabularnewline
+\hline 
+Input Specification & index=123456 \tabularnewline
+\hline 
+Output Specification & Error message regarding insufficient priviledges to view the advert is displayed.\tabularnewline
+\hline 
+\end{tabular}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%Register Employer
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-RE001\tabularnewline
+\hline 
+\hline 
+Use Case & Register Employer \tabularnewline
+\hline 
+Scenario & Primary \tabularnewline
+\hline 
+Setup & Users.db is setup and active.\tabularnewline
+\hline 
+Includes & U-L012 (successful coordinator login) \tabularnewline
+\hline 
+Input Specification & name="AwesomeCompany", email="hr@ac.com" \tabularnewline
+\hline 
+Output Specification & A new employer entry is created in users.db, with the a randomly generated username and a randomly generated password. This username will be different than all users in users.db. An email is sent to the provided address containing the username and password of the newly created employer account.\tabularnewline
+\hline 
+\end{tabular}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Submit Advertisement
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-SA001\tabularnewline
+\hline 
+\hline 
+Use Case & Submit Advertisment \tabularnewline
+\hline 
+Scenario & Coordinator Primary \tabularnewline
+\hline 
+Setup & Users.db and advertisments.db are setup and active.\tabularnewline
+\hline 
+Includes & U-L012 (successful coordinator login) \tabularnewline
+\hline 
+Input Specification & applicationDetails="employer details, location, application, process details, role title, dates, description, salary" \tabularnewline
+\hline 
+Output Specification & A new advertisment entry containing the provided information is inserted into advertisments.db. Its status is set to pending.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-SA002\tabularnewline
+\hline 
+\hline 
+Use Case & Submit Advertisment \tabularnewline
+\hline 
+Scenario & Employer Primary \tabularnewline
+\hline 
+Setup & Users.db and advertisments.db are setup and active.\tabularnewline
+\hline 
+Includes & U-L001 (successful employer login) \tabularnewline
+\hline 
+Input Specification & applicationDetails="employer details, location, application, process details, role title, dates, description, salary" \tabularnewline
+\hline 
+Output Specification & A new advertisment entry containing the provided information is inserted into advertisments.db. Its status is set to pending.\tabularnewline
+\hline 
+\end{tabular}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Publish Advert
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-PA001\tabularnewline
+\hline 
+\hline 
+Use Case & Publish Advertisment \tabularnewline
+\hline 
+Scenario & Primary \tabularnewline
+\hline 
+Setup & Advertisments.db ares setup and active; advert with id 123005 exists with the status "PENDING"\tabularnewline
+\hline 
+Includes & AM-A003 (Coordinator View Advertisment Detail)\tabularnewline
+\hline 
+Input Specification & index="123005", comment="comment about advert", SESP=true \tabularnewline
+\hline 
+Output Specification &The advert with index 123005 is published with the provided comment and its role set as being SESP compliant.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-PA002\tabularnewline
+\hline 
+\hline 
+Use Case & Publish Advertisment \tabularnewline
+\hline 
+Scenario & Alternative (Already Published) \tabularnewline
+\hline 
+Setup & Advertisments.db ares setup and active; advert with id 123006 exists with the status "PUBLISHED"\tabularnewline
+\hline 
+Includes & AM-A003 (Coordinator View Advertisment Detail)\tabularnewline
+\hline 
+Input Specification & index="123006", comment="comment about advert", SESP=true \tabularnewline
+\hline 
+Output Specification & An error will be displayed informing that the advert's status was "PUBLISHED".\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & AM-PA003\tabularnewline
+\hline 
+\hline 
+Use Case & Publish Advertisment \tabularnewline
+\hline 
+Scenario & Alternative (Advert Not Found) \tabularnewline
+\hline 
+Setup & Advertisments.db ares setup and active; advert with id 123007 does not exist in the db\tabularnewline
+\hline 
+Includes & AM-A003 (Coordinator View Advertisment Detail)\tabularnewline
+\hline 
+Input Specification & index="123007", comment="comment about advert", SESP=true \tabularnewline
+\hline 
+Output Specification & An error will be displayed informing that the desired advert does not exist.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\subsection{Offer Management Use Cases}
+\subsubsection{View Student Detail Tests}
+%%%%%%%%%%%%%%%%%%%%%%%%%View Student Detail
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & OM-VS001\tabularnewline
+\hline 
+\hline 
+Use Case & View Student Detail \tabularnewline
+\hline 
+Scenario & Coordinator Primary \tabularnewline
+\hline 
+Setup & Users.db is setup and active; student with the matric 1230123Q exists in the database. \tabularnewline
+\hline 
+Includes & U-L012 (Coordinator login) \tabularnewline
+\hline 
+Input Specification & matric="1230123Q" \tabularnewline
+\hline 
+Output Specification &  The coordinator receives the following information about the selected student: Name, Matriculation, Programme, Internship status. If the Student has accepted an "APPROVED" internship role, further information is visible: Internship role title, Internship start and end dates, Internship location, Internship salary, Internship employer name, Internship contact details, Internship manager details. If available, Visitor Name and Visit Grade should be displayed.\tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & OM-VS002\tabularnewline
+\hline 
+\hline 
+Use Case & View Student Detail \tabularnewline
+\hline 
+Scenario & Student Primary \tabularnewline
+\hline 
+Setup & Users.db is setup and active; \tabularnewline
+\hline 
+Includes & U-L002 (Student login) \tabularnewline
+\hline 
+Input Specification & matric="1230123Q" \tabularnewline
+\hline 
+Output Specification &  The student receives the following information about himself: Name, Matriculation, Programme, Internship status. If the Student has accepted an "APPROVED" internship role, further information is visible: Internship role title, Internship start and end dates, Internship location, Internship salary, Internship employer name, Internship contact details, Internship manager details. If available, Visitor Name and Visit Grade should be displayed.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & OM-VS003\tabularnewline
+\hline 
+\hline 
+Use Case & View Student Detail \tabularnewline
+\hline 
+Scenario & Visitor Primary \tabularnewline
+\hline 
+Setup & Users.db is setup and active; current user is visitor but not coordinator; student with the matric 1230123Q exists in the database, and has assigned the current visitor as an Internship Visitor \tabularnewline
+\hline 
+Includes & U-L006 (Visitor login) \tabularnewline
+\hline 
+Input Specification & matric="1230123Q". Visitor guid="1234321", password="password" \tabularnewline
+\hline 
+Output Specification & The visitor receives the following information about himself: Name, Matriculation, Programme, Internship status, Internship role title, Internship start and end dates, Internship location, Internship salary, Internship employer name, Internship contact details, Internship manager details, Visitor Name. If available, Visit Grade should be displayed.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & OM-VS004\tabularnewline
+\hline 
+\hline 
+Use Case & View Student Detail \tabularnewline
+\hline 
+Scenario & Visitor Alternative (Forbidden) \tabularnewline
+\hline 
+Setup & Users.db is setup and active; current user is visitor but not coordinator; student with the matric 1230123Q exists in the database, but has no assigned visitor. \tabularnewline
+\hline 
+Includes & U-L006 (Visitor login) \tabularnewline
+\hline 
+Input Specification & matric="1230123Q" \tabularnewline
+\hline 
+Output Specification & The visitor receives an error message regarding insufficient priviledges to view the student's details.\tabularnewline
+\hline 
+\end{tabular}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Notify Accepted Offer
+\subsubsection{Notify Accepted Offer Tests}
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & OM-NA001\tabularnewline
+\hline 
+\hline 
+Use Case & Notify Accepted Offer \tabularnewline
+\hline 
+Scenario & Student Primary (Existing) \tabularnewline
+\hline 
+Setup & Advertisments.db and users.db are setup and active; role with id r1234 exists with the status "APPROVED".\tabularnewline
+\hline 
+Includes & AM-A001 (Student View Advertisment Detail) \tabularnewline
+\hline 
+Input Specification & role="r1234", managerName = "John Smith", managerEmail="john@google.com", advert id = 123001 \tabularnewline
+\hline 
+Output Specification & The student is being flagged as having accepted an "APPROVED" internship.\tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & OM-NA002\tabularnewline
+\hline 
+\hline 
+Use Case & Notify Accepted Offer \tabularnewline
+\hline 
+Scenario & Student Alternative (New) \tabularnewline
+\hline 
+Setup & Advertisments.db and users.db are setup and active.\tabularnewline
+\hline 
+Includes & AM-A001 (Student View Advertisment Detail) \tabularnewline
+\hline 
+Input Specification & rtitle="roleTitle", location="Glasgow", start="01/06/13", end="01/09/13", description="soft dev", salary=300.33 \tabularnewline
+\hline 
+Output Specification & Email is sent to coordinator with details about the self-sourced role. A new "PENDING" internship is created in the system with the provided details. Student is being flagged as having accepted a "PENDING" internship.\tabularnewline
+\hline 
+\end{tabular}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%Approve Accepted Offer
+\subsubsection{Approce Accepted Offer Tests}
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & OM-AA001\tabularnewline
+\hline 
+\hline 
+Use Case & Approve Accepted Offer\tabularnewline
+\hline 
+Scenario & Primary \tabularnewline
+\hline 
+Setup & Advertisments.db and users.db are setup and active; student with matric 1234001 exists and has an internship with the "PENDING" status\tabularnewline
+\hline 
+Includes & U-L012 (Coordinator login) \tabularnewline
+\hline 
+Input Specification &  matric="1234001" \tabularnewline
+\hline 
+Output Specification & Internship status is set to "APPROVED". Student is sent a confirmation email.\tabularnewline
+\hline 
+\end{tabular}\\
+
+Identifier: OM-AA002
+Use Case: Approve Accepted Offer
+Scenario: 
+Setup: 
+Interface: src/uk/ac/glasgow/internman/
+Includes: U-L012 (Coordinator login)
+Procedure: JUnit Test Case: src/uk/ac/glasgow/internman/tests/offerMgt/ApproveAcceptedOfferNoInternship
+Inputs: matric="1234001"
+Outcome: Coordinator receives an error message saying that the user has no internship
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & OM-AA002\tabularnewline
+\hline 
+\hline 
+Use Case & Approve Accepted Offer\tabularnewline
+\hline 
+Scenario & Alternative (No Internship Found) \tabularnewline
+\hline 
+Setup & Advertisments.db and users.db are setup and active; student with matric 1234001 but has no internship associated\tabularnewline
+\hline 
+Includes & U-L012 (Coordinator login) \tabularnewline
+\hline 
+Input Specification &  matric="1234001" \tabularnewline
+\hline 
+Output Specification & Coordinator receives an error message saying that the user has no internship. \tabularnewline
+\hline 
+\end{tabular}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%NF REQUIREMENTS%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Non-Functional Requirements}
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & NF-003\tabularnewline
+\hline 
+\hline 
+Requirement & ``The system shall realise the Facade interface provided to ensure compatability with other user interface implementations.'' \tabularnewline
+\hline 
+Setup & N/A \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification &  N/A \tabularnewline
+\hline 
+Output Specification & N/A. \tabularnewline
+\hline 
+\end{tabular}\\
+
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & NF-004\tabularnewline
+\hline 
+\hline 
+Requirement & ``The system shall support at least 50 advertisements with at least one role per advert.'' \tabularnewline
+\hline 
+Setup & N/A \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification & List of 50 unique advert id's and role id's. \tabularnewline
+\hline 
+Output Specification & 50 students are stored successfully. \tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & NF-005\tabularnewline
+\hline 
+\hline 
+Requirement & ``The system shall support at least 50 employers.'' \tabularnewline
+\hline 
+Setup & Generate 50 employers each which a random but unique id. \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification &  List of 50 unique employer id's\tabularnewline
+\hline 
+Output Specification & 50 employers are stored successfully. \tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & NF-006\tabularnewline
+\hline 
+\hline 
+Requirement & ``The system shall support at least 50 registered SESP students.'' \tabularnewline
+\hline 
+Setup & Generate 50 students each which a random but unique GUID \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification &  List of 50 unique student GUIDs \tabularnewline
+\hline 
+Output Specification & 50 SESP students stored successfully. \tabularnewline
+\hline 
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case Identifier} & NF-007\tabularnewline
+\hline 
+\hline 
+Requirement & ``The system shall support at least 100 concurrent users.'' \tabularnewline
+\hline 
+Setup & Generate 100 users each which a random but unique GUID. \tabularnewline
+\hline 
+Includes & N/A \tabularnewline
+\hline 
+Input Specification &  List of 100 unique GUIDs. \tabularnewline
+\hline 
+Output Specification & Check each user has been created and stored successfully. \tabularnewline
+\hline 
+\end{tabular}\\
+
+
+
+
+
+
+\end{document}

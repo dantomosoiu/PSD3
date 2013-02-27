@@ -35,15 +35,11 @@
 
 %%authors
 \author{
-  Hector Grebbell \\
-  Tony Lau \\
   Michael Kilian \\
-  Dan Tomosoiu \\
-  Peeranat Fupongsiripan 
 }
 
 %%release date
-\date{28th February 2013}
+\date{27th February 2013}
 
 \deliverableID{D8}
 \project{PSD3 Group Exercise 2}
@@ -67,19 +63,347 @@
 \section{Introduction}
 
 \subsection{Identification}
+Acceptance Test Report of Team K's implementation.
 
 \subsection{Related Documentation}
-
-\subsection{Purpose and Description of Document}
-
-\subsection{Document Status and Schedule}
+\begin{itemize}
+\item{Acceptance Test Plan}
+\item{Requirements Specification}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Test Cases}
 
+
+%%%%%%%%%%%%UTILITY TESTS%%%%%%%%%%%%%%%
+\subsection{Utility Use Case Tests}
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L001\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & User logged in and established as current user correctly. \tabularnewline
+\hline
+Test Setup & See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L002\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & User denied login with wrong password as expected. \tabularnewline
+\hline
+Test Setup & Password "p" used as wrong password. See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L003\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & User denied login with wrong username as expected. \tabularnewline
+\hline
+Test Setup & Username "1101" used as wrong username. See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L004\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & UNDECIDABLE\tabularnewline
+\hline
+Further Comments & Database not implemented, as was implicitly agreed in changes to requirements between writing of acceptance test plan and testing. Should be retested in future iteration when MyCampus authentication has been used. \tabularnewline
+\hline
+Test Setup & See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L005\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & Visitor logged in and set as current user as expected. \tabularnewline
+\hline
+Test Setup & See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L006\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments &  Visitor refused login with wrong username.. \tabularnewline
+\hline
+Test Setup & Username "Vr01" used as wrong username. See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L007\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments &  Employer logged in and set as current user as expected. \tabularnewline
+\hline
+Test Setup & Username "Google.com-emp" used as username instead to obey naming convention layed out by implementation. Password = "ilikelongpasswordsandthisisnoexception" \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L008\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments &  Employer denied access with wrong password as expected. \tabularnewline
+\hline
+Test Setup & Username "Google.com-emp" used as username instead to obey naming convention layed out by implementation. Incorrect password used ="wrong". \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L009\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments &  Employer denied access with wrong usern as expected. \tabularnewline
+\hline
+Test Setup & Correct username "Google.com-emp" used as username instead to obey naming convention layed out by implementation. Incorrect username used ="Google.com". \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L010\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & UNDECIDABLE\tabularnewline
+\hline
+Further Comments &   Database not implemented, as was implicitly agreed in changes to requirements between writing of acceptance test plan and testing. Should be retested in future iteration when MyCampus authentication has been used. \tabularnewline
+\hline
+Test Setup & Correct username "Google.com-emp" used as username instead to obey naming convention layed out by implementation. See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L011\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments &  No functionality implemented for adding/logging in as a coordinator. Failed by default. \tabularnewline
+\hline
+Test Setup &  See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & U-L012\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments &  No functionality implemented for adding/logging in as a coordinator. Failed by default. \tabularnewline
+\hline
+Test Setup &  See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A-001\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments &  Student granted access to unpublished advert. \tabularnewline
+\hline
+Test Setup &  Two adverts used. The first id=123001, status = PUBLISHED. The second with id=123456 and status = PENDING. Test was performed by attempting to select first the published advert then the pending. Naturally the first should be returned while the other should be denied. See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A-001\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments &  Student granted access to unpublished advert. \tabularnewline
+\hline
+Test Setup &  Two adverts used. The first id=123001, status = PUBLISHED. The second with id=123456 and status = PENDING. Test was performed by attempting to select first the published advert then the pending. Naturally the first should be returned while the other should be denied. See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A-002\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments &  No database implemented in this iteration. Should be tested when this requirement is fulfilled. \tabularnewline
+\hline
+Test Setup &  See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A-003\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments &  Employer given access to adverts other than their own. \tabularnewline
+\hline
+Test Setup &  Two adverts used. The first id=123001 and belonging to the employer. The second with id=123456 and not belonging to the employer. Test was performed by attempting to select first advert then the second. Naturally the first should be returned while the other should be denied. See acceptance test plan for employer details. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A-004\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & UNDECIDABLE\tabularnewline
+\hline
+Further Comments &  No database implemented in this iteration. Should be tested when this requirement is fulfilled. \tabularnewline
+\hline
+Test Setup &  See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A-005\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments &  No functionality implemented for adding/logging in as a coordinator. Failed by default. \tabularnewline
+\hline
+Test Setup &  See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & A-006\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 26/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments &  No functionality implemented for adding/logging in as a coordinator. Failed by default. \tabularnewline
+\hline
+Test Setup &  See acceptance test plan. \tabularnewline
+\hline
+\end{tabular}\\
+
 %%%%%%%%%%%ADVERT MANAGEMENT TESTS%%%%%%%%%%%%%%%
 
+\subsection{Advert Management Use Case Tests}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & AM-A001\tabularnewline
@@ -266,8 +590,10 @@ Further Comments & No means provided by which to add/login as a coordinator. Fai
 Test Setup &  See acceptance test plan.\tabularnewline
 \hline
 \end{tabular}\\
-%%%%%%%%%%%%%%%%%%OFFER MANAGEMENT TESTS %%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%OFFER MANAGEMENT TESTS %%%%%%%%%%%%%
+\subsection{Offer Management Use Case Test}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & OM-VS001\tabularnewline
@@ -404,7 +730,7 @@ Test Setup & See acceptance test plan.\tabularnewline
 \hline
 \end{tabular}\\
 
-
+\subsection{Non-Functional Requirements Tests}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%NF Requirements%%%%%%%%%%%%%%
 \begin{tabular}{lp{10cm}}
 \hline 
@@ -425,7 +751,7 @@ Test Setup & See acceptance test plan.\tabularnewline
 
 \begin{tabular}{lp{10cm}}
 \hline 
-\textbf{Test Case} & NF-006\tabularnewline
+\textbf{Test Case} & NF-004\tabularnewline
 \hline 
 \hline 
 Tested By & Michael Kilian\tabularnewline
@@ -434,7 +760,24 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & PASS\tabularnewline
 \hline
-Further Comments & System supports at least 50 SESP students at once.\tabularnewline
+Further Comments & System supports at least 50 Adverts at once with one role each.\tabularnewline
+\hline
+Test Setup & See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & NF-005\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & System supports at least 50 Employers at once.\tabularnewline
 \hline
 Test Setup & See acceptance test plan.\tabularnewline
 \hline
@@ -458,24 +801,22 @@ Test Setup & See acceptance test plan.\tabularnewline
 \end{tabular}\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary of Acceptance Testing}
-Overall Summary \\
-Provide a brief (maybe a few paragraphs) overall summary of the results. What use cases failed? Which scenarios for said use cases caused the problems? Were there any unexpected results/problems/defects which occurred during testing? Basically, just highlight the issues which need to be resolved, and what was successful in the testing. 
+All tests were carried out using the JUnit test framework on a pre-written test harness. This was modified to make test cases more complete and to accomodate the ability to add users/adverts, etc. using the methods provided by Team K. Each test was run multiple times on a 'fresh' instance of the InternMan implementation provided to ensure the accuracy of results.\\
+
+As can be plainly seen a large number of tests have failed. In general however, most of these stem from two issues:
+\begin{enumerate}
+\item{Failure to implement a coordinator.}
+\item{Failure to limit effective permissions of the various categories of user.}
+\end{enumerate}
+To expand the second point, all tests in which a user should be denied access to a certain piece of information failed by the user being granted access. This could suggest that logging in has no effect on what data can or can not be accessed at any time. Further testing and code inspection would be required to prove this theory.\\
+Naturally the implementation and testing of these features should be a priority in future development iterations.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 
 \section{Glossary}
+PSD/PSD3 - Professional Software Development 3
 
-Including expansions of non-standard abbreviations and acronyms and
-other key definitions.  You may find it useful to maintain a glossary
-as a shared section amongst all your PSD documents. using the
-\verb!\input{}! macro.
-
-\section{Another appendix}
-\begin{itemize}
-\item{Acceptance Test Plan}
-\item{Requirements Specification}
-\end{itemize}
 
 \end{document}
 
