@@ -6,7 +6,7 @@
 
 %\usepackage{svn-multi}
 %\svnid{$Id: d2.tex 2500 2011-09-21 15:56:43Z tws $}
-\version{3.0}
+
 
 %Made \svnday/\svnmonth/\svnyear~ by \svnauthor}
 
@@ -78,6 +78,9 @@ Acceptance Test Report of Team K's implementation.
 
 %%%%%%%%%%%%UTILITY TESTS%%%%%%%%%%%%%%%
 \subsection{Utility Use Case Tests}
+
+%%%%%%%%%%%%%%%%%%login
+\subsubsection{Login Tests}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & U-L001\tabularnewline
@@ -140,7 +143,7 @@ Date Tested & 26/02/2013\tabularnewline
 \hline 
 Test Result & UNDECIDABLE\tabularnewline
 \hline
-Further Comments & Database not implemented, as was implicitly agreed in changes to requirements between writing of acceptance test plan and testing. Should be retested in future iteration when MyCampus authentication has been used. \tabularnewline
+Further Comments & Database not implemented, as was implicitly agreed in changes to requirements between writing of acceptance test plan and testing. Should be re-tested in future iteration when MyCampus authentication has been used. \tabularnewline
 \hline
 Test Setup & See acceptance test plan. \tabularnewline
 \hline
@@ -193,7 +196,7 @@ Test Result & PASS\tabularnewline
 \hline
 Further Comments &  Employer logged in and set as current user as expected. \tabularnewline
 \hline
-Test Setup & Username "Google.com-emp" used as username instead to obey naming convention layed out by implementation. Password = "ilikelongpasswordsandthisisnoexception" \tabularnewline
+Test Setup & Username "Google.com-emp" used as username instead to obey naming convention laid out by implementation. Password = "ilikelongpasswordsandthisisnoexception" \tabularnewline
 \hline
 \end{tabular}\\
 
@@ -210,7 +213,7 @@ Test Result & PASS\tabularnewline
 \hline
 Further Comments &  Employer denied access with wrong password as expected. \tabularnewline
 \hline
-Test Setup & Username "Google.com-emp" used as username instead to obey naming convention layed out by implementation. Incorrect password used ="wrong". \tabularnewline
+Test Setup & Username "Google.com-emp" used as username instead to obey naming convention laid out by implementation. Incorrect password used ="wrong". \tabularnewline
 \hline
 \end{tabular}\\
 
@@ -225,9 +228,9 @@ Date Tested & 26/02/2013\tabularnewline
 \hline 
 Test Result & PASS\tabularnewline
 \hline
-Further Comments &  Employer denied access with wrong usern as expected. \tabularnewline
+Further Comments &  Employer denied access with wrong username as expected. \tabularnewline
 \hline
-Test Setup & Correct username "Google.com-emp" used as username instead to obey naming convention layed out by implementation. Incorrect username used ="Google.com". \tabularnewline
+Test Setup & Correct username "Google.com-emp" used as username instead to obey naming convention laid out by implementation. Incorrect username used ="Google.com". \tabularnewline
 \hline
 \end{tabular}\\
 
@@ -242,9 +245,9 @@ Date Tested & 26/02/2013\tabularnewline
 \hline 
 Test Result & UNDECIDABLE\tabularnewline
 \hline
-Further Comments &   Database not implemented, as was implicitly agreed in changes to requirements between writing of acceptance test plan and testing. Should be retested in future iteration when MyCampus authentication has been used. \tabularnewline
+Further Comments &   Database not implemented, as was implicitly agreed in changes to requirements between writing of acceptance test plan and testing. Should be re-tested in future iteration when MyCampus authentication has been used. \tabularnewline
 \hline
-Test Setup & Correct username "Google.com-emp" used as username instead to obey naming convention layed out by implementation. See acceptance test plan. \tabularnewline
+Test Setup & Correct username "Google.com-emp" used as username instead to obey naming convention laid out by implementation. See acceptance test plan. \tabularnewline
 \hline
 \end{tabular}\\
 
@@ -282,22 +285,9 @@ Test Setup &  See acceptance test plan. \tabularnewline
 \hline
 \end{tabular}\\
 
-\begin{tabular}{lp{10cm}}
-\hline 
-\textbf{Test Case} & A-001\tabularnewline
-\hline 
-\hline 
-Tested By & Michael Kilian\tabularnewline
-\hline 
-Date Tested & 26/02/2013\tabularnewline
-\hline 
-Test Result & FAIL\tabularnewline
-\hline
-Further Comments &  Student granted access to unpublished advert. \tabularnewline
-\hline
-Test Setup &  Two adverts used. The first id=123001, status = PUBLISHED. The second with id=123456 and status = PENDING. Test was performed by attempting to select first the published advert then the pending. Naturally the first should be returned while the other should be denied. See acceptance test plan. \tabularnewline
-\hline
-\end{tabular}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%View Advert Summary
+\subsubsection{View Advertisement Summary Tests}
 
 \begin{tabular}{lp{10cm}}
 \hline 
@@ -401,9 +391,13 @@ Test Setup &  See acceptance test plan. \tabularnewline
 \hline
 \end{tabular}\\
 
+\newpage
 %%%%%%%%%%%ADVERT MANAGEMENT TESTS%%%%%%%%%%%%%%%
 
 \subsection{Advert Management Use Case Tests}
+
+%%%%%%%%%%%%%%%%View Advert Detail
+\subsubsection{View Advert Detail Tests}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & AM-A001\tabularnewline
@@ -483,12 +477,14 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & FAIL\tabularnewline
 \hline
-Further Comments & Employer granted access to advertisement belonging to another company.\tabularnewlinemployertheseconde
+Further Comments & Employer granted access to advertisement belonging to another company.\tabularnewline
 \hline
 Test Setup & Employer Details: GUID = "IBM.com-emp", password = "password". See acceptance test plan for advert setup.\tabularnewline
 \hline
 \end{tabular}\\
 
+%%%%%%%%%%%%%%Register Employer 
+\subsubsection{Register Employer Tests}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & AM-RE001\tabularnewline
@@ -500,12 +496,14 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & FAIL\tabularnewline
 \hline
-Further Comments & New employer could not be registered through facade methods. \tabularnewlinemployertheseconde
+Further Comments & New employer could not be registered through facade methods. \tabularnewline
 \hline
 Test Setup &  See acceptance test plan.\tabularnewline
 \hline
 \end{tabular}\\
 
+%%%%%%%%%%%%%%%%%Submit Advertisement
+\subsubsection{Submit Advertisement Tests}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & AM-SA001\tabularnewline
@@ -517,7 +515,7 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & FAIL\tabularnewline
 \hline
-Further Comments & No methods provided to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
+Further Comments & No methods provided to add/login as a coordinator. Failed by default. \tabularnewline
 \hline
 Test Setup &  See acceptance test plan.\tabularnewline
 \hline
@@ -534,12 +532,15 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & FAIL\tabularnewline
 \hline
-Further Comments & Attempt to create advert failed (null advert returned); \tabularnewlinemployertheseconde
+Further Comments & Attempt to create advert failed (null advert returned); \tabularnewline
 \hline
 Test Setup &  See acceptance test plan.\tabularnewline
 \hline
 \end{tabular}\\
 
+
+%%%%%%%%%%%%%%%%Publish Advertisement
+\subsubsection{Publish Advertisement Tests}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & AM-PA001\tabularnewline
@@ -551,7 +552,24 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & FAIL\tabularnewline
 \hline
-Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
+Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewline
+\hline
+Test Setup &  See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
+\textbf{Test Case} & AM-PA002\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & FAIL\tabularnewline
+\hline
+Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewline
 \hline
 Test Setup &  See acceptance test plan.\tabularnewline
 \hline
@@ -568,32 +586,18 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & FAIL\tabularnewline
 \hline
-Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
+Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewline
 \hline
 Test Setup &  See acceptance test plan.\tabularnewline
 \hline
 \end{tabular}\\
 
-\begin{tabular}{lp{10cm}}
-\hline 
-\textbf{Test Case} & AM-PA003\tabularnewline
-\hline 
-\hline 
-Tested By & Michael Kilian\tabularnewline
-\hline 
-Date Tested & 24/02/2013\tabularnewline
-\hline 
-Test Result & FAIL\tabularnewline
-\hline
-Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
-\hline
-Test Setup &  See acceptance test plan.\tabularnewline
-\hline
-\end{tabular}\\
-
-
+\newpage
 %%%%%%%%%%%%%%%%%%OFFER MANAGEMENT TESTS %%%%%%%%%%%%%
 \subsection{Offer Management Use Case Test}
+ 
+%%%%%%%%%%%%%%%%View Student Detail
+\subsubsection{View Student Detail}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & OM-VS001\tabularnewline
@@ -605,7 +609,7 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & FAIL\tabularnewline
 \hline
-Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewlinemployertheseconde
+Further Comments & No means provided by which to add/login as a coordinator. Failed by default. \tabularnewline
 \hline
 Test Setup &  See acceptance test plan.\tabularnewline
 \hline
@@ -622,7 +626,7 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & PASS\tabularnewline
 \hline
-Further Comments & Success based on ability to retrieve student and check details. \tabularnewlinemployertheseconde
+Further Comments & Success based on ability to retrieve student and check details. \tabularnewline
 \hline
 Test Setup & Student matric=1230123Q,surname="Kilian",forename="Michael". See acceptance test plan for further details.\tabularnewline
 \hline
@@ -639,7 +643,7 @@ Date Tested & 24/02/2013\tabularnewline
 \hline 
 Test Result & PASS\tabularnewline
 \hline
-Further Comments & Success based on ability to retrieve student and check details. \tabularnewlinemployertheseconde
+Further Comments & Success based on ability to retrieve student and check details. \tabularnewline
 \hline
 Test Setup & Student matric=1230123Q,surname="Kilian",forename="Michael". See acceptance test plan for further details.\tabularnewline
 \hline
@@ -662,6 +666,8 @@ Test Setup & Student matric=1230123Q,surname="Kilian",forename="Michael". See ac
 \hline
 \end{tabular}\\
 
+%%%%%%%%%%%%%%%%%%Notify Accepted Offer
+\subsubsection{Notify Accepted Offer Tests}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & OM-NA001\tabularnewline
@@ -696,6 +702,8 @@ Test Setup & Student matric=1230123Q,password = "password". See acceptance test 
 \hline
 \end{tabular}\\
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%Approce Accepted Offer
+\subsubsection{Approve Accepted Offer Tests}
 \begin{tabular}{lp{10cm}}
 \hline 
 \textbf{Test Case} & OM-AA001\tabularnewline
@@ -729,6 +737,8 @@ Further Comments & No means by which to add/login as a coordinator. Failed by de
 Test Setup & See acceptance test plan.\tabularnewline
 \hline
 \end{tabular}\\
+
+\newpage 
 
 \subsection{Non-Functional Requirements Tests}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%NF Requirements%%%%%%%%%%%%%%
@@ -785,6 +795,23 @@ Test Setup & See acceptance test plan.\tabularnewline
 
 \begin{tabular}{lp{10cm}}
 \hline 
+\textbf{Test Case} & NF-006\tabularnewline
+\hline 
+\hline 
+Tested By & Michael Kilian\tabularnewline
+\hline 
+Date Tested & 24/02/2013\tabularnewline
+\hline 
+Test Result & PASS\tabularnewline
+\hline
+Further Comments & System supports at least 50 SESP students at once.\tabularnewline
+\hline
+Test Setup & See acceptance test plan.\tabularnewline
+\hline
+\end{tabular}\\
+
+\begin{tabular}{lp{10cm}}
+\hline 
 \textbf{Test Case} & NF-007\tabularnewline
 \hline 
 \hline 
@@ -799,9 +826,11 @@ Further Comments & 100 users added successfully.\tabularnewline
 Test Setup & See acceptance test plan.\tabularnewline
 \hline
 \end{tabular}\\
+\newpage 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary of Acceptance Testing}
-All tests were carried out using the JUnit test framework on a pre-written test harness. This was modified to make test cases more complete and to accomodate the ability to add users/adverts, etc. using the methods provided by Team K. Each test was run multiple times on a 'fresh' instance of the InternMan implementation provided to ensure the accuracy of results.\\
+All tests were carried out using the JUnit test framework on a pre-written test harness. This was modified to make test cases more complete and to accommodate the ability to add users/adverts, etc. using the methods provided by Team K. Each test was run multiple times on a 'fresh' instance of the InternMan implementation provided to ensure the accuracy of results.\\
 
 As can be plainly seen a large number of tests have failed. In general however, most of these stem from two issues:
 \begin{enumerate}
