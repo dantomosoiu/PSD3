@@ -74,7 +74,7 @@
 This document outlines the proposed design for the Internship Management System. 
 \subsection{Related Documentation}
 \begin{itemize}
-\item{Requirements Specification Document (\url{http://fims.moodle.gla.ac.uk/file.php/128/coursework/requirements-specification-ge2.pdf})}
+\item{Requirements Specification Document (\url{http://fims.moodle.gla.ac.uk/file.php/128/coursework/requirements-specification-ge2.pdf}}
 \end{itemize}
  
 
@@ -83,18 +83,17 @@ This document outlines the proposed design for the Internship Management System.
 27/02/2013 - Final Version
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{System Overview}
-\includegraphics[scale = 0.4]{ComponentDiagram.pdf}\\
+\includegraphics[scale = 0.4]{ComponentDiagram.png}\\
 The proposed system consists of the following components:
 \begin{itemize}
 \item{InternMan: This component contains an implementation of the InternMan facade provided and can be seen as the 'main' component for the system. }
-\item{User Factory: Provides methods for creating new users of different types, storing created users and fetching users from this store. This component also providesservices for authenticating a user's login credentials using a stored username/password combination. Note that this contains the provided UserStore component (not shown).}
+\item{User Factory: Provides methods for creating new users of different types, storing created users and fetching users from this store. This component also provides
+services for authenticating a user's login credentials using a stored username/password combination.}
 \item{Offer Management: Handles offers made to students.}
 \item{Advert Management/Store: This component provides the necessary services to create and view adverts, associated these with an employer account, etc. It simultaneously
 manages the storage and retrieval of adverts from an appropriate source.}
-\item{Placement Store: Provides services for manipulating internships and associating these with an appropriate role.}
+\item{Placement Store: Provides services for manipulating internships and associating these with an approriate role.}
 \end{itemize}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{State Machine Diagram}
@@ -147,7 +146,7 @@ String surname\\
 String forename\\
 String GUID\\
 String password\\
-String matriculation\\
+String matricaulation\\
 String programme\\
 \\
 %addEmployer
@@ -248,7 +247,7 @@ This component is needed to allow students to notify the course coordinator that
 \subsubsection{API}
 OfferMangementImpl implements OfferManagement\\
 \textbf{Methods}\\
-
+%addUser
 \textbf{public void notifyAcceptedOffer(Role role, String managerName, String managerEmail)}\\
 Sends email to coordinator informing that a student has accepted an internship\\
 \textbf{Parameters}\\
@@ -256,7 +255,6 @@ Role role\\
 String managerName\\
 String managerEmail\\
 \\
-
 \textbf{public void approveAcceptedOffer(String matriculation)}\\
 Sends email to coordinator informing that a student has accepted an internship\\
 \textbf{Parameters}\\
@@ -282,95 +280,13 @@ Double salary\\
 \subsubsection{Description and Rationale}
 Advert Management/Store is needed to handle creation, selection and publishing of all advertisements within the system. It interacts with other components which need information on adverts through the selectAdvertisement method which provides a handle on an advert with a supplied index.
 \subsubsection{API}
-\textbf{public Advertisement getAd (long id)}\\
-Retrives advert indexed by id.\\
-\textbf{Return}\\
-Advertisement advert\\
-\textbf{Parameters}\\
-long id\\
-\\
-
-\textbf{public LinkedList<Advertisement> getPublishedAds()}\\
-Retrives list of all published adverts\\
-\textbf{Return}\\
-LinkedList<Advertisement> adverts.\\
-\textbf{Parameters}\\
-N/A\\
-\\
-
-\textbf{public LinkedList<Advertisement> getAllAds()}\\
-Retrives list of all adverts\\
-\textbf{Return}\\
-LinkedList<Advertisement> adverts.\\
-\textbf{Parameters}\\
-N/A\\
-\\
-
-\textbf{public void publishAd (long id)}\\
-Publishes advert indexed by id.\\
-\textbf{Return}\\
-void\\
-\textbf{Parameters}\\
-long id\\
-\\
-
-\textbf{public boolean addAd (Advertisement ad)}\\
-Adds new advert to store\\
-\textbf{Return}\\
-true if added successfully, false otherwise.\\
-\textbf{Parameters}\\
-Advertisement ad\\
-\\
-
-\textbf{public boolean delAd (long id)}\\
-Deletes advert indexed by id.\\
-\textbf{Return}\\
-True if advert found and deleted, false otherwise.\\
-\textbf{Parameters}\\
-long id\\
-\\
-
-\textbf{public boolean editAd (int id,Advert a)}\\
-Edit advert indexed by id to match a \\
-\textbf{Return}\\
-true if found and edited successfully, false otherwise.\\
-\textbf{Parameters}\\
-int id\\
-Placement p\\
-\\
-
-
-\textbf{public boolean addPlacement (Placement p)}\\
-Adds new placement to the store.\\
-\textbf{Return}\\
-true if added successfully, false otherwise.\\
-\textbf{Parameters}\\
-Placement p\\
-\\
-
-\textbf{public Placement viewPlacement (int id)}\\
-Return placement identified by id\\
-\textbf{Return}\\
-Placement indexed by id if it exists, null otherwise.\\
-\textbf{Parameters}\\
-int id\\
-\\
-
-\textbf{public boolean editPlacement (int id,Placement p)}\\
-Edit placement identified by id to match p\\
-\textbf{Return}\\
-true if found and edited, false otherwise\\
-\textbf{Parameters}\\
-int id\\
-Placement p\\
-\\
-
+TODO
 
 %%%%%Placement Store
 \subsection{Placement Store}
 \includegraphics[scale = 0.4]{ClassDiagram_PlacementStore.png}
 \subsubsection{Description and Rationale}
-Placement Store contains all information on placements in the system at any given time and is needed to allow other components to keep track of which placements are in the system and their status.
+Placement Store contains all information on placements in the system at any given time and is needed to allow other componenets to keep track of which placements are in the system and their status.
 \subsubsection{API}
 \textbf{Interface PlacementStoreInf}\\
 
