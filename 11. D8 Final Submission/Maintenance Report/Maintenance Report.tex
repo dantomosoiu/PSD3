@@ -10,12 +10,9 @@
 %% See D1 for an example of how to integrate sub version revision
 %% numbers into a LaTeX document.
 %
-\usepackage{svn-multi}%
-\svnid{$Id: $}
 
-\version{SVN Revision \svnrev~ \
+\version{3}
 
-Made \svnday/\svnmonth/\svnyear~ by \svnauthor}
 
 \usepackage{url}%
 
@@ -29,7 +26,7 @@ Made \svnday/\svnmonth/\svnyear~ by \svnauthor}
         Peeranat Fupongsiripan
         }
 
-\date{28 Febuary 2013}
+\date{28 February 2013}
 
 \deliverableID{D8}
 \project{PSD3 Group Exercise 2}
@@ -52,12 +49,16 @@ Made \svnday/\svnmonth/\svnyear~ by \svnauthor}
 
 \section{Purpose and Description of Document}
 This report documents maintenance improvements to our Intern Management System implementation. \\
-Due to updating of system requirements by the client combined with flaws made apparent by system testing it became necessary to make several adjustments to the implementation.\\
+Due to updating of system requirements by the client it became necessary to make several adjustments to the implementation.\\
 
 \subsection{Changes to system requirements}
 
-
-\subsection{Adjustments necessary due to resolve current issues}
+\begin{itemize}
+\item A student should be able to accept multiple approved internships, provided their dates do not overlap.
+\item Students must have sufficient approved internships to cover a total of at least 12 weeks.
+\item Addition of the WITHDRAWN status for each role.
+\item The same academic visitor must visit all internships assigned to a single student.
+\end{itemize}
 
 \section{Changes}
 
@@ -91,22 +92,33 @@ Addition of array of students (to allow removal of Visit class) which the visito
 \subsubsection{Addition of assignPlacementGrade Method}
 Method added to allow a visitor to assign a grade to one of the students he is visiting. Change necessary due to changes to system requirements.
 
-\section{Potential Changes}
-Because of the changes made, API call
+\subsection{Changes to Class Diagrams}
+Due to changes to the specification the Placement Store API changed somewhat. Hence the class diagram was updated as below.
 
-\appendix
+\includegraphics[scale = 1]{ClassDiagram_PlacementStore.png}\\
 
-Some suggested appendices are included below. Appendices should be
-used to include information not completely necessary to the
-understanding of the main document.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Changes to the API and potential future changes}
 
-\section{Glossary}
+\subsection{API Changes}
+Because of the changes made, some API calls needed to be changed:
+\begin{itemize}
+\item IsApproved() method of the Role interface changed to getStatus(), since there are three possible status a role might have. The returning type is Status instead of the initial boolean type. To respect backwards-compatibility, the isApproved() method has been left as a method, returning true if the Status is APPROVED or false if it is WITHDRAWN or PENDING.
+\item Placement constructor was updated to take the additional Status parameter.
+\item Grade attribute was added so the Role had to be updated as well as a consequence.
+\item Visitor class was updated to have each visitor hold a list of the students to which they have been allocated for visits.
+\end{itemize}
 
-Definitions.
+\subsection{Acceptance Test}
+Because of the changes made, the following changes to the acceptance tests should be done:
+\begin{itemize}
+\item Additional tests need to be written for when a student withdraws his application for a role.
+\item Tests should be added for a visitor to set a grade for a visit to a student's role. 
+\item Test should be added for the case where a student has multiple roles, and also check coordinator approval only being possible if their total duration is at least 12 weeks.
+\item Multiple roles added to the same placement need to be checked for overlapping.
+\item Since employers can also approve students for a role, further tests should be written for this.
+\end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
 
