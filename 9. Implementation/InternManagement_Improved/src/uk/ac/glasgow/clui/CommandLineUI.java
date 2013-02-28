@@ -52,7 +52,7 @@ public abstract class CommandLineUI<Facade> implements Runnable {
 	 * 
 	 * @param commandName
 	 *            the label for the command when entered on the command line.
-	 * @param systemCommand
+	 * @param command
 	 *            the command to invoke on receiving the specified label.
 	 */
 	public void addSystemCommand(String commandName, SystemCommand<Facade> command) {

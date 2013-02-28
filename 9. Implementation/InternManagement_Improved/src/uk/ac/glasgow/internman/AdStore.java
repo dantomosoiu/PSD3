@@ -15,20 +15,20 @@ public interface AdStore {
 	
 	/**
 	 * Retrieves the advert with the id specified
-	 * @param advertisement id
+	 * @param id advertisement id
 	 * @return created advert
 	 */
 	Advert getAd(int id);
 	
 	/**
 	 * Returns a Collection of all published adverts
-	 * @return
+	 * @return a Collection of all published adverts
 	 */
 	Map <Integer, Advertisement> getPublishedAds();
 	
 	/**
 	 * Returns a Collection of all adverts
-	 * @return
+	 * @return a Collection of all adverts
 	 */
 	Map <Integer, Advertisement> getAllAds();
 	
@@ -47,7 +47,7 @@ public interface AdStore {
 	/**
 	 * Deletes the ad with the given id from the system 
 	 * @param id
-	 * @return
+	 * @return a boolean indicating success
 	 */
 	boolean delAd(int id);
 	
@@ -60,7 +60,7 @@ public interface AdStore {
 	/**
 	 * Returns the placement with the given id
 	 * @param id
-	 * @return
+	 * @return the placement with the given id
 	 */
 	Placement viewPlacement(int id);
 	
@@ -81,7 +81,7 @@ public interface AdStore {
 	 * replaces the advert with the given id with a
 	 * @param id
 	 * @param a
-	 * @return
+	 * @return a boolean indicating success.
 	 */
 	boolean editAd(int id, Advert a);
 	

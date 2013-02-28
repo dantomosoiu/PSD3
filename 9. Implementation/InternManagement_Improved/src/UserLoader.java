@@ -34,7 +34,7 @@ public class UserLoader {
 	 * Reads the input csv file and sends the parsed data to the usuerstore.
 	 * @param linescan
 	 * @param userstore
-	 * @return
+	 * @return a boolean indicating success.
 	 */
 	public static boolean processFile(Scanner linescan, UserStoreImpl userstore){
 		Scanner scan = null;

@@ -90,7 +90,7 @@ public class RoleImpl implements Role {
 
 	/**
 	 * Sets the start date of the role to the specified Date.
-	 * @param start the Date to which to set the start date of the role.
+	 * @param end the Date to which to set the start date of the role.
 	 */
 	public void setEnd(Date end) {
 		this.end = end;
@@ -128,7 +128,7 @@ public class RoleImpl implements Role {
 
 	/**
 	 * Sets the location of the current role to the specified location.
-	 * @param salary The location to which to set the location of the current role.
+	 * @param location The location to which to set the location of the current role.
 	 */
 	public void setLocation(String location) {
 		this.location = location;

@@ -32,7 +32,7 @@ public interface OfferManagement {
 	 * @param end End date of the role.
 	 * @param description Description of the role.
 	 * @param salary Salary of the role. 
-	 * @return an instance of the created role·.
+	 * @return an instance of the created role.
 	 */
 	Role createNewSelfSourcedRole(String title, String location, Date start, Date end, String description, Double salary);
 

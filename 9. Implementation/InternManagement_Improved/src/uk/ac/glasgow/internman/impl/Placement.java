@@ -39,7 +39,7 @@ public class Placement {
 	
 	/**
 	 * Returns a boolean saying whether the placement has been approved.
-	 * @return
+	 * @return a boolean saying whether the placement has been approved.
 	 */
 	public boolean isApproved(){
 		return this.approved;
@@ -182,7 +182,7 @@ public class Placement {
 
 	/**
 	 * Sets the name of the manager associated with this placement to the specified parameter.
-	 * @param s The name of the manager.
+	 * @param m The name of the manager.
 	 */
 	public void setManager(String m){
 		this.manager = m;
@@ -190,7 +190,7 @@ public class Placement {
 	
 	/**
 	 * Sets the contact details of the manager associated with this placement to the specified parameter.
-	 * @param s The contact details to set.
+	 * @param c The contact details to set.
 	 */
 	public void setContact(String c){
 		this.contact = c;

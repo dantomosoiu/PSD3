@@ -1,0 +1,210 @@
+package uk.ac.glasgow.internman.impl;
+
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.util.Calendar;
+import java.util.Date;
+import uk.ac.glasgow.internman.impl.RoleImpl;
+import uk.ac.glasgow.internman.users.Status;
+import uk.ac.glasgow.internman.users.Student;
+
+public class Placement {
+	
+	private int id;
+	private ArrayList<RoleImpl> roles;
+	private String manager;
+	private String contact;
+	private Student student;
+	private boolean approved;
+
+	/**
+	 * Placement constructor
+	 * @param id of the placement
+	 * @param role role associated with the placement
+	 * @param stu student doing the placement
+	 * @param manager name of manager associated with the placement
+	 * @param contact contact information of the manager associated with the placement
+	 */
+	public Placement(int id, RoleImpl role, Student stu, String manager, String contact){
+		this.id = id;
+		this.roles = new ArrayList<RoleImpl>();
+		this.addPlacement(role);
+		this.student = stu;
+		this.manager = manager;
+		this.contact = contact;
+		this.approved = false;
+	}
+	
+	/*newly added methods*/
+	
+	/**
+	 * Returns a boolean saying whether the placement has been approved.
+	 * @return a boolean saying whether the placement has been approved.
+	 */
+	public boolean isApproved(){
+		return this.approved;
+	}
+	
+	/**
+	 * Retrievs an instance of a Calendar for the supplied date.
+	 * @param date The date for which the Calendar needs to be retrieved.
+	 * @return an instance of a Calendar for the supplied date.
+	 */
+	private Calendar getCalendar(Date date) {
+	    Calendar cal = Calendar.getInstance();
+	    cal.setTime(date);
+	    return cal;
+	}
+	
+	/**
+	 * Returns the year difference between two Dates.
+	 * @param first first date
+	 * @param last last date
+	 * @return year difference between the dates.
+	 */
+	private int getYearDiff(Date first, Date last){
+		Calendar a = getCalendar(first);
+	    Calendar b = getCalendar(last);
+	    int diff = b.get(b.YEAR) - a.get(a.YEAR);
+	    if (a.get(a.MONTH) > b.get(b.MONTH) || 
+	        (a.get(a.MONTH) == b.get(b.MONTH) && a.get(a.DATE) > b.get(b.DATE))) {
+	        diff--;
+	    }
+	    return diff;
+	}
+	
+	/**
+	 * Ensures that approval of a placement is done 
+	 * only if the summed durations of the roles associated with it
+	 * is 12 weeks or more.   
+	 */
+	private void checkApproval(){
+		Calendar c;
+		GregorianCalendar dateBefore, dateAfter;
+		double monthsBetween = 0;
+		for (RoleImpl r: this.roles){
+			if (r.getStatus() == Status.APPROVED){
+				if (getYearDiff(r.getStart(), r.getEnd())*12.0 > 3.0){
+					this.approved = true;
+					return ;
+				}
+				c = getCalendar(r.getStart());
+				dateBefore = new GregorianCalendar(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DATE));
+				c = getCalendar(r.getEnd());
+				dateAfter = new GregorianCalendar(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DATE));
+				
+				monthsBetween += dateAfter.get(GregorianCalendar.MONTH)-dateBefore.get(GregorianCalendar.MONTH);
+				if(dateAfter.get(Calendar.DAY_OF_MONTH)!=dateAfter.getActualMaximum(Calendar.DAY_OF_MONTH)
+		                && dateAfter.get(Calendar.DAY_OF_MONTH)!=dateAfter.getActualMaximum(Calendar.DAY_OF_MONTH) ){
+		            monthsBetween += ((dateAfter.get(Calendar.DAY_OF_MONTH)-dateBefore.get(Calendar.DAY_OF_MONTH))/31d);
+		        }
+				if (monthsBetween > 3.0){
+					this.approved = true;
+					return ;
+				}
+					
+			}
+		}
+	}
+	
+	/**
+	 * Updates the role's status.
+	 */
+	public void updateRoleStatus(){
+		checkApproval();
+	}
+	
+	/**
+	 * Adds a role to the existing placement.
+	 * @param role the role to add to the current placement.
+	 * @return The added role if adding was successful or null if not.
+	 */
+	public RoleImpl addPlacement(RoleImpl role){
+		for (RoleImpl r: this.roles){
+			if (role.getStart().before(r.getEnd()))
+				return null;
+		}
+		this.roles.add(role);
+		checkApproval();
+		
+		return role;
+	}
+	////////////////////////
+	
+	/**
+	 * Returns the id of the current placement.
+	 * @return the id of the current placement.
+	 */
+	public int getID(){
+		return this.id;
+	}
+	
+	//changed
+	/**
+	 * Returns the list of Roles associated with this placement.
+	 * @return the list of Roles associated with this placement.
+	 */
+	public ArrayList<RoleImpl> getRole(){
+		return this.roles;
+	}
+	
+	/**
+	 * Retrieves an instance of the student associated with this placement.
+	 * @return an instance of the student associated with this placement.
+	 */
+	public Student getStudent(){
+		return this.student;
+	}
+	
+	/**
+	 * Retrieves the name of the manager associated with this placement.
+	 * @return the name of the manager associated with this placement.
+	 */
+	public String getManager(){
+		return this.manager;
+	}
+	
+	/**
+	 * Retrieves the contact details of the manager associated with this placement.
+	 * @return the contact details of the manager associated with this placement.
+	 */
+	public String getContact(){
+		return this.contact;
+	}
+	
+	/**
+	 * Sets the student associated with this placement to the specified parameter.
+	 * @param s The student to set.
+	 */
+	public void setStudent(Student s){
+		this.student = s;
+	}
+
+	/**
+	 * Sets the name of the manager associated with this placement to the specified parameter.
+	 * @param s The name of the manager.
+	 */
+	public void setManager(String m){
+		this.manager = m;
+	}
+	
+	/**
+	 * Sets the contact details of the manager associated with this placement to the specified parameter.
+	 * @param c The contact details to set.
+	 */
+	public void setContact(String c){
+		this.contact = c;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
