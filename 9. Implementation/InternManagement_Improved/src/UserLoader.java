@@ -6,9 +6,17 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-
+/**
+ * Used to load user information from an initial csv file to serializable files used by the system.
+ * 
+ * @author Team L
+ *
+ */
 public class UserLoader {
 	
+	/**
+	 * Displays correct command usage. 
+	 */
 	public static void usage(){
 		System.out.printf("Please give at least one .csv file as an argument. These files" +
 				"should use the following format for entries.\nPlease note that only" +
@@ -22,6 +30,12 @@ public class UserLoader {
 				+ "are indexed by their contact email.\n");
 	}
 	
+	/**
+	 * Reads the input csv file and sends the parsed data to the usuerstore.
+	 * @param linescan
+	 * @param userstore
+	 * @return
+	 */
 	public static boolean processFile(Scanner linescan, UserStoreImpl userstore){
 		Scanner scan = null;
 		while(linescan.hasNextLine()){
@@ -78,6 +92,10 @@ public class UserLoader {
 		return true;
 	}
 
+	/**
+	 * Main class. Does the actual things required by this. Javadoc-ing this is silly and i feel silly for doing it.
+	 * @param args
+	 */
 	public static void main(String args[]){
 		UserStoreImpl userstore = new UserStoreImpl("userdata/users.ser","userdata/students.ser","userdata/employers.ser","userdata/visitors.ser");
 		
