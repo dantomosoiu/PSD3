@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>700</x>
+      <y>10</y>
+      <w>340</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>PlacementStore
+--
+- placements: ArrayList&lt;Placement&gt;
+--
++ PlacementStore()
++ getAllPlacements(): ArrayList&lt;Placement&gt;
++ addPlacement(p : Placement): Placement
++ removePlacement(id: int): Placement
++ editPlacement(p: Placement): Placement
++ getPlacement(id: int): Placement
++ size(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>60</x>
+      <y>10</y>
+      <w>580</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>Placement
+--
+- id: int
+- roles: ArrayList&lt;&lt;Role&gt;&gt;
+- student: Student
+- manager: String
+- contact: String
+- boolean: Approved
+--
++ isApproved(): boolean
++ updateRoleStatus: void
++ addPlacement(Role: role): Role
++ Placement(role: Role, stu: Student, manager: String, contact: String, s: Status)
++ getID(): int
++ getRole(): Role
++ getStudent(): Student
++ getManager(): String 
++ getContact(): String
++ setRole(r: Role): void
++ setStudent(s: Student): void
++ setManager(m: Manager): void
++ setContact(con: String): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>350</x>
+      <y>400</y>
+      <w>130</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Status
+--
+- APPROVED
+- REJECTED
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>610</x>
+      <y>80</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;90;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Text</type>
+    <coordinates>
+      <x>680</x>
+      <y>90</y>
+      <w>20</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Text</type>
+    <coordinates>
+      <x>640</x>
+      <y>90</y>
+      <w>20</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>720</x>
+      <y>350</y>
+      <w>330</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+PlacementStoreInf
+--
++ getAllPlacements(): ArrayList&lt;Placement&gt;
++ addPlacement(p: Placement): Placement
++ removePlacement(id: int): Placement
++ editPlacement(p: Placement): Placement
++ getPlacement(id: int): Placement
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>840</x>
+      <y>150</y>
+      <w>50</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30;200;30;30</additional_attributes>
+  </element>
+</diagram>
