@@ -17,7 +17,9 @@ import uk.ac.glasgow.internman.impl.UserFactory;
 
 
 /**
- * @author michael
+ * Implementation of UserStore interface
+ * 
+ * @author Team L
  *
  */
 public class UserStoreImpl implements UserStore {
@@ -46,10 +48,13 @@ public class UserStoreImpl implements UserStore {
 	
 	
 	/**
-	 * @param userFileName
-	 * @param studentFileName
-	 * @param employerFileName
-	 * @param visitorFileName
+	 * UserStoreImpl Constructor
+	 * Imports files to create a userstore object
+	 * 
+	 * @param userFileName File storing generic users
+	 * @param studentFileName File storing Student-Type Users
+	 * @param employerFileName File storing Employer-Type Users
+	 * @param visitorFileName File storing Visitor-Type Users
 	 */
 	public UserStoreImpl(String userFileName, String studentFileName, String employerFileName, String visitorFileName){ 
 		/*Assign file name*/
@@ -168,6 +173,16 @@ public class UserStoreImpl implements UserStore {
 		}
 	}
 	
+	/**
+	 * Adds a new student type user to the store
+	 * 
+	 * @param surname Students Surname
+	 * @param forename Students forename
+	 * @param GUID Students GUID
+	 * @param password New Students password
+	 * @param matriculation Students University of Glasgow Matriculation Number
+	 * @param programme Students Programme of Study
+	 */
 	public void addStudent(String surname, String forename, String GUID,String password,String matriculation,String programme){
 		Student newStudent = studentfactory.createStudent(surname, forename, GUID, password, matriculation, programme);
 		studentmap.put(GUID,newStudent);
@@ -181,7 +196,14 @@ public class UserStoreImpl implements UserStore {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * Adds a new Employer type user to the store
+	 * 
+	 * @param name
+	 * @param contact
+	 * @param password
+	 */
 	public void addEmployer(String name, String contact, String password){
 		EmployerImpl newEmployer = employerfactory.createEmployer(name,contact,password);
 		employermap.put(contact, newEmployer);

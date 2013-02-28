@@ -1,0 +1,11 @@
+package uk.ac.glasgow.internman.users;
+
+/**
+ * Enum for Role status
+ * 
+ * @author hector
+ *
+ */
+public enum Status {
+	APPROVED, WITHDRAWN, PENDING
+}

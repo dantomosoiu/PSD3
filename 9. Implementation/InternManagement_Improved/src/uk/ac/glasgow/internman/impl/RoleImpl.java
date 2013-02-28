@@ -16,7 +16,6 @@ public class RoleImpl implements Role {
 	private Double salary;
 	private Status status;
 	private UoGGrade grade;
-	private boolean approved;
 
 	public RoleImpl(String title, String location, Date start, Date end,
 			String description, Double salary) {
@@ -28,7 +27,6 @@ public class RoleImpl implements Role {
 		this.description = description;
 		this.salary = salary;
 		this.status = Status.PENDING;
-		this.approved = false;
 	}
 	
 	@Override
@@ -108,7 +106,7 @@ public class RoleImpl implements Role {
 
 	@Override
 	public boolean isApproved() {
-		return this.approved;
+		return (this.status == Status.APPROVED);
 	}
 
 }

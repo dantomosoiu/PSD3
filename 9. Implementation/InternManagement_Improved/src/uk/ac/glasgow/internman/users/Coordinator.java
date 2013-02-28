@@ -4,17 +4,35 @@ import uk.ac.glasgow.internman.users.Visitor;
 import uk.ac.glasgow.internman.users.Student;
 import java.util.ArrayList;
 
+/**
+ * Implementation of Coordinator type user.
+ * 
+ * @author Team L
+ *
+ */
 public class Coordinator extends Visitor {
 	
 	private ArrayList<Student> students;
 	
+	/**
+	 * Constructor for new coordinator object.
+	 * 
+	 * @param surname New Coordinator Surname
+	 * @param forename New Coordinator Forename
+	 * @param GUID New Coordinator GUID
+	 * @param password New Coordinator account password
+	 */
 	 protected Coordinator(String surname, String forename, String GUID,
 			String password) {
 		super(surname, forename, GUID, password);
 		for (Student s: UserStoreImpl.getAllStudents())
 			students.add(s);
 	}
-	 
+	 /**
+	  * Method to retrieve an ArrayList of all students. Why is this not part of UserStore??
+	  * 
+	  * @return Returns an arraylist of all students.
+	  */
 	public ArrayList<Student> getAllStudents(){
 			return students;
 	}

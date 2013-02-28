@@ -1,5 +1,10 @@
 package uk.ac.glasgow.internman.users;
 
+/**
+ * Interface for a user store. Allows storage and retrieval of generic user objects.
+ * @author Team L
+ *
+ */
 public interface UserStore {
 	
 	/**
