@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {subsection}{\numberline {1.1}Identification}{2}
+\contentsline {subsection}{\numberline {1.2}Related Documentation}{2}
+\contentsline {section}{\numberline {2}Test Cases}{3}
+\contentsline {subsection}{\numberline {2.1}Utility Test Cases}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}Login Tests}{3}
+\contentsline {subsubsection}{\numberline {2.1.2}View Advert Summary Tests}{6}
+\contentsline {subsection}{\numberline {2.2}Advert Management Use Cases}{8}
+\contentsline {subsubsection}{\numberline {2.2.1}View Advertisement Detail Tests}{8}
+\contentsline {subsubsection}{\numberline {2.2.2}Register Employer Tests}{9}
+\contentsline {subsubsection}{\numberline {2.2.3}Submit Advertisement Tests}{10}
+\contentsline {subsubsection}{\numberline {2.2.4}Publish Advertisement Tests}{10}
+\contentsline {subsection}{\numberline {2.3}Offer Management Use Cases}{12}
+\contentsline {subsubsection}{\numberline {2.3.1}View Student Detail Tests}{12}
+\contentsline {subsubsection}{\numberline {2.3.2}Notify Accepted Offer Tests}{13}
+\contentsline {subsubsection}{\numberline {2.3.3}Approve Accepted Offer Tests}{14}
+\contentsline {subsection}{\numberline {2.4}Non-Functional Requirements}{14}
+\contentsline {section}{\numberline {3}Test Execution}{15}

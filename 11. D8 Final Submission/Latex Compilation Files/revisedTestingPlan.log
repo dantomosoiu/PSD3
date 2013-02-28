@@ -1,0 +1,429 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.8.30)  28 FEB 2013 09:39
+entering extended mode
+ %&-line parsing enabled.
+**revisedTestingPlan.tex
+(./revisedTestingPlan.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(./l3deliverable.cls
+Document Class: l3deliverable 
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo
+File: size11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/ltxmisc/a4wide.sty
+Package: a4wide 1994/08/30
+
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+))
+(/usr/share/texmf/tex/latex/textcase/textcase.sty
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+)
+(/usr/share/texmf/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2006/02/20 v1.4 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
+\col@sep=\dimen105
+\extrarowheight=\dimen106
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\TX@col@width=\dimen107
+\TX@old@table=\dimen108
+\TX@old@col=\dimen109
+\TX@target=\dimen110
+\TX@delta=\dimen111
+\TX@cols=\count88
+\TX@ftn=\toks16
+)
+(/usr/share/texmf/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+))
+(/usr/share/texmf/tex/latex/tabulary/tabulary.sty
+Package: tabulary 2003/09/14 v0.8 tabulary package (DPC)
+\TY@count=\count89
+\TY@linewidth=\dimen112
+\tymin=\dimen113
+\tymax=\dimen114
+\TY@tablewidth=\dimen115
+)
+(/usr/share/texmf/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+) (./revisedTestingPlan.aux)
+\openout1 = `revisedTestingPlan.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 52.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+<img/CompSci_mono.pdf, id=1, 413.545pt x 93.34875pt>
+File: img/CompSci_mono.pdf Graphic file (type pdf)
+
+<use img/CompSci_mono.pdf>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+ [1
+
+{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/CompSci_mono.pdf>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
+ (./revisedTestingPlan.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+)
+\tf@toc=\write3
+\openout3 = `revisedTestingPlan.toc'.
+
+ [1]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 67.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 72.
+
+(/usr/share/texmf/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 73.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Overfull \hbox (58.74469pt too wide) in paragraph at lines 73--74
+[]\OT1/ptm/m/n/10.95 Requirements Spec-i-fi-ca-tion ($\OT1/pcr/m/n/10.95 http :
+ / / fims . moodle . gla . ac . uk / file . php / 128 / coursework /
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 85--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--144
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--183
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 185--203
+
+ []
+
+
+Overfull \hbox (47.03453pt too wide) in paragraph at lines 218--219
+[]|\OT1/ptm/m/n/10.95 username=``Google", pass-word=``ilikelongpasswordsandthis
+isnoexception".| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--263
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 265--283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+[]|\OT1/ptm/m/n/10.95 username=``Coordinator01", pass-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--345
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 346--364
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--384
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--404
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--424
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 426--444
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 450--468
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--506
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--525
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 526--544
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 547--565
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 568--586
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 587--605
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--626
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 627--645
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--665
+
+ []
+
+[10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 671--689
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 691--709
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--724
+[]|\OT1/ptm/m/n/10.95 matric=``1230123Q". Vis-i-tor guid=``1234321", pass-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 710--728
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 729--747
+
+ []
+
+
+Underfull \hbox (badness 5189) in paragraph at lines 764--765
+[]|\OT1/ptm/m/n/10.95 role=``r1234", man-ager Name = "John Smith", man-ager
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 766--767
+[]|\OT1/ptm/m/n/10.95 The stu-dent is be-ing flagged as hav-ing ac-cepted an "A
+P-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 751--769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 783--784
+[]|\OT1/ptm/m/n/10.95 rtitle=``roleTitle", lo-ca-tion=``Glasgow", start=``01/06
+/13",
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--788
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 792--810
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 812--830
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 836--852
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 854--870
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 871--887
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 888--904
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 905--921
+
+ []
+
+[15] (./revisedTestingPlan.aux) ) 
+Here is how much of TeX's memory you used:
+ 980 strings out of 256216
+ 12308 string characters out of 1917072
+ 65662 words of memory out of 1500000
+ 4261 multiletter control sequences out of 10000+200000
+ 18495 words of font info for 42 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 32i,14n,23p,525b,267s stack positions out of 5000i,500n,6000p,200000b,15000s
+{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}
+</usr/share/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/typ
+e1/urw/courier/ucrr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></
+usr/share/texmf/fonts/type1/urw/times/utmr8a.pfb>
+Output written on revisedTestingPlan.pdf (16 pages, 93895 bytes).
+PDF statistics:
+ 80 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
