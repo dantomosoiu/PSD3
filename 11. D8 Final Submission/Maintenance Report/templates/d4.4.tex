@@ -22,18 +22,17 @@ Made \svnday/\svnmonth/\svnyear~ by \svnauthor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Check these macro values for appropriateness for your own document.
 
-\title{Prototyping Report}
+\title{Maintenance Report}
 
-\author{Author 1 \\
-        Author 2 \\
-        Author 3 \\
+\author{Hector Grebbell \\
+        Dan Tomosoiu \\
         ...}
 
-\date{9 January 2009}
+\date{28 Febuary 2013}
 
-\deliverableID{D3}
-\project{PSD3 Group Exercise 1}
-\team{X}
+\deliverableID{D8}
+\project{PSD3 Group Exercise 2}
+\team{L}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -50,13 +49,47 @@ Made \svnday/\svnmonth/\svnyear~ by \svnauthor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Standard section for all documents
 
-\section{Introduction}
+\section{Purpose and Description of Document}
+This report documents maintenance improvements to our Intern Management System implementation. \\
+Due to updating of system requirements by the client combined with flaws made apparent by system testing it became necessary to make several adjustments to the implementation.\\
 
-\subsection{Identification}
+\subsection{Changes to system requirements}
 
-\subsection{Related Documentation}
 
-\subsection{Purpose and Description of Document}
+\subsection{Adjustments necessary due to resolve current issues}
+
+\section{Changes}
+
+\subsection{Role Implementation}
+
+\subsubsection{Role Status}
+Approval status changed from a boolean value to an enum (PENDING, APPROVED, WITHDRAWN) due to changes to system requirements.
+
+\subsubsection{Role Status}
+Added grade variable (To allow removal of Visit class) for assignment by visitor due to changes to system requirements.
+
+\subsection{Placement Implementation}
+
+\subsubsection{Placement Role}
+Role changed from singular to array, allowing several roles to be assigned to the same students placement. Change necessary due to changes to system requirements.
+
+\subsubsection{Addition of Approval}
+Boolean value added to indicate whether placement has been approved by the coordinator. Change necessary due to changes to system requirements.
+
+\subsubsection{Addition of Internship Duration Constraint}
+To be approved a students combined placement roles must sum to at least 12 weeks in duration. Change necessary due to changes to system requirements.
+
+\subsubsection{Addition of updateRoleStatus Method}
+Method added to allow employers to approve a student for a role. Change necessary due to changes to system requirements.
+
+%%FIX VISITOR PLACEMENT THINGYMAGIG
+
+\subsection{Visitor Implementation}
+
+\subsubsection{Assignment to Students}
+Vist class replaced 
+
+
 
 \subsection{Document Status and Schedule}
 
