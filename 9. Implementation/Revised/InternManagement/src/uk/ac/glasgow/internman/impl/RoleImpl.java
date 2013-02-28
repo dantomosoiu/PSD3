@@ -3,6 +3,8 @@ package uk.ac.glasgow.internman.impl;
 import java.util.Date;
 
 import uk.ac.glasgow.internman.Role;
+import uk.ac.glasgow.internman.UoGGrade;
+import uk.ac.glasgow.internman.users.Status;
 
 public class RoleImpl implements Role {
 
@@ -12,7 +14,8 @@ public class RoleImpl implements Role {
 	private Date end;
 	private String description;
 	private Double salary;
-	private boolean approved = false;
+	private Status status;
+	private UoGGrade grade;
 
 	public RoleImpl(String title, String location, Date start, Date end,
 			String description, Double salary) {
@@ -23,11 +26,20 @@ public class RoleImpl implements Role {
 		this.end = end;
 		this.description = description;
 		this.salary = salary;
+		this.status = Status.PENDING;
 	}
 	
 	@Override
 	public String getTitle() {
 		return title;
+	}
+	
+	public void setGrade(UoGGrade grade){
+		this.grade = grade;
+	}
+	
+	public UoGGrade getGrade(){
+		return this.grade;
 	}
 	
 
@@ -83,8 +95,8 @@ public class RoleImpl implements Role {
 	}
 
 	@Override
-	public boolean isApproved() {
-		return this.approved;
+	public Status getStatus() {
+		return this.status;
 	}
 
 	@Override

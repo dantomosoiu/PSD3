@@ -1,6 +1,7 @@
 package uk.ac.glasgow.internman;
 
 import java.util.Date;
+import uk.ac.glasgow.internman.users.Status;
 
 public interface Role {
 
@@ -12,7 +13,7 @@ public interface Role {
 
 	public Double getSalary();
 	
-	boolean isApproved();
+	public Status getStatus();
 
 	public String getLocation();
 }

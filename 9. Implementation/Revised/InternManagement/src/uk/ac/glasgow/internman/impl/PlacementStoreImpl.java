@@ -2,7 +2,7 @@ package uk.ac.glasgow.internman.impl;
 
 
 
-
+import uk.ac.glasgow.internman.users.Student;
 import java.util.ArrayList;
 import uk.ac.glasgow.internman.impl.Placement;
 import uk.ac.glasgow.internman.PlacementStore;
@@ -10,7 +10,7 @@ import uk.ac.glasgow.internman.PlacementStore;
 
 public class PlacementStoreImpl implements PlacementStore{
 	
-	private ArrayList<Placement> placements;
+	private static ArrayList<Placement> placements;
 	
 	public PlacementStoreImpl(){
 		placements = new ArrayList<Placement>();
@@ -68,6 +68,16 @@ public class PlacementStoreImpl implements PlacementStore{
 		}
 		return null;
 	}
+	
+	public static Placement getPlacementByStudent(Student s){
+		for (Placement p: placements){
+			if (p.getStudent().getMatriculation().equals(s.getMatriculation())){
+				return p;
+			}
+		}
+		return null;
+	}
+	
 	
 	public int getSize(){
 		return placements.size();

@@ -10,14 +10,14 @@ public interface PlacementStore {
 	/**
 	 * returns ArrayList of all existing placements in PlacementStore
 	 */
-	ArrayList<Placement> getAllPlacements();
+	public ArrayList<Placement> getAllPlacements();
 	
 	/**
 	 * Returns a newly added Placement, if successful, Null otherwise.
 	 * @param p
 	 *            the new placement
 	 */
-	Placement addPlacement(Placement p);
+	public Placement addPlacement(Placement p);
 	
 
 	/**
@@ -25,19 +25,20 @@ public interface PlacementStore {
 	 * @param id
 	 *            the placement id
 	 */
-	Placement removePlacement(int id);
+	public Placement removePlacement(int id);
 
 	/**
 	 * Returns an edited Placement, if placement exists, Null otherwise.
 	 * @param p
 	 *            the edited placement
 	 */
-	Placement editPlacement(Placement p);
+	public Placement editPlacement(Placement p);
 
 	/**
 	 * Returns a Placement with the given id, if successful, Null otherwise.
 	 * @param id
 	 *            the placement id
 	 */
-	Placement getPlacement(int id);
+	public Placement getPlacement(int id);
+
 }

@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,7 +25,7 @@ public class UserStoreImpl implements UserStore {
 	private Map<String,User> usermap;
 	private File userFile;
 	
-	private Map<String,Student> studentmap;
+	private static Map<String,Student> studentmap;
 	private File studentFile;
 	
 	private Map<String,EmployerImpl> employermap;
@@ -253,6 +254,10 @@ public class UserStoreImpl implements UserStore {
 	
 	public Map<String,Student> getStudents() {
 		return studentmap;
+	}
+	
+	public static Collection<Student> getAllStudents(){
+		return studentmap.values();
 	}
 	
 	
