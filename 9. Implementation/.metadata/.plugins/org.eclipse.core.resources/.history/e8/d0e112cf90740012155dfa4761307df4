@@ -1,5 +1,0 @@
-package uk.ac.glasgow.internman.impl;
-
-public enum Status {
-	APPROVED, REJECTED
-}

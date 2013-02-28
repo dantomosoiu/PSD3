@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
-<libraryInfo home="/usr/lib/jvm/java-7-openjdk-amd64" version="1.7.0_09">
+<libraryInfo home="/usr/lib/jvm/java-7-openjdk-amd64" version="1.7.0_15">
 <bootpath>
 <entry path="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar"/>
 <entry path="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar"/>
@@ -22,6 +22,24 @@
 <entry path="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
+<libraryInfo home="C:\Program Files\Java\jre6" version="1.6.0_13">
+<bootpath>
+<entry path="C:\Program Files\Java\jre6\lib\resources.jar"/>
+<entry path="C:\Program Files\Java\jre6\lib\rt.jar"/>
+<entry path="C:\Program Files\Java\jre6\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\Java\jre6\lib\jsse.jar"/>
+<entry path="C:\Program Files\Java\jre6\lib\jce.jar"/>
+<entry path="C:\Program Files\Java\jre6\lib\charsets.jar"/>
+<entry path="C:\Program Files\Java\jre6\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\Java\jre6\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\Java\jre6\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
 <libraryInfo home="/usr/java/jdk1.6.0_26/jre" version="1.6.0_26">
 <bootpath>
 <entry path="/usr/java/jdk1.6.0_26/jre/lib/resources.jar"/>
@@ -39,24 +57,6 @@
 </extensionDirs>
 <endorsedDirs>
 <entry path="/usr/java/jdk1.6.0_26/jre/lib/endorsed"/>
-</endorsedDirs>
-</libraryInfo>
-<libraryInfo home="C:\Program Files\Java\jre6" version="1.6.0_13">
-<bootpath>
-<entry path="C:\Program Files\Java\jre6\lib\resources.jar"/>
-<entry path="C:\Program Files\Java\jre6\lib\rt.jar"/>
-<entry path="C:\Program Files\Java\jre6\lib\sunrsasign.jar"/>
-<entry path="C:\Program Files\Java\jre6\lib\jsse.jar"/>
-<entry path="C:\Program Files\Java\jre6\lib\jce.jar"/>
-<entry path="C:\Program Files\Java\jre6\lib\charsets.jar"/>
-<entry path="C:\Program Files\Java\jre6\classes"/>
-</bootpath>
-<extensionDirs>
-<entry path="C:\Program Files\Java\jre6\lib\ext"/>
-<entry path="C:\Windows\Sun\Java\lib\ext"/>
-</extensionDirs>
-<endorsedDirs>
-<entry path="C:\Program Files\Java\jre6\lib\endorsed"/>
 </endorsedDirs>
 </libraryInfo>
 <libraryInfo home="/usr/java/jdk1.6.0_26" version="1.6.0_26">
@@ -78,7 +78,7 @@
 <entry path="/usr/java/jdk1.6.0_26/jre/lib/endorsed"/>
 </endorsedDirs>
 </libraryInfo>
-<libraryInfo home="/usr/lib/jvm/java-7-openjdk-amd64/jre" version="1.7.0_09">
+<libraryInfo home="/usr/lib/jvm/java-7-openjdk-amd64/jre" version="1.7.0_15">
 <bootpath>
 <entry path="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/resources.jar"/>
 <entry path="/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar"/>

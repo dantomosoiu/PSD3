@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="uk.ac.glasgow.internman.Student"/>
 <fullyQualifiedTypeName name="uk.ac.glasgow.internman.impl.Placement"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
 </qualifiedTypeNameHistroy>

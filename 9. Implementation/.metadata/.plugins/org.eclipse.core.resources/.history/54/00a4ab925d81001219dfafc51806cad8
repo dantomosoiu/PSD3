@@ -1,0 +1,9 @@
+package uk.ac.glasgow.internman;
+
+public interface Employer implements Serializable{
+
+	String getName();
+
+	String getEmailAddress();
+
+}

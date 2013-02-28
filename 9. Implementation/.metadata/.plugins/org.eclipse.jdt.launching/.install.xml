@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
-<entry loc="/usr/lib/jvm/java-7-openjdk-amd64" stamp="1359118492000"/>
+<entry loc="/usr/lib/jvm/java-7-openjdk-amd64" stamp="1361510544000"/>
 <entry loc="C:\Program Files\Java\jre6" stamp="1250117076337"/>
 <entry loc="/usr/java/jdk1.6.0_26" stamp="1346686116000"/>
+<entry loc="/usr/lib/jvm/java-7-openjdk-amd64/jre" stamp="1361510549000"/>
 </dirs>

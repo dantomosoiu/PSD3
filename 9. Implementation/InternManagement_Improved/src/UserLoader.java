@@ -1,0 +1,115 @@
+import uk.ac.glasgow.internman.users.*;
+
+import java.io.Console;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+public class UserLoader {
+	
+	public static void usage(){
+		System.out.printf("Please give at least one .csv file as an argument. These files" +
+				"should use the following format for entries.\nPlease note that only" +
+				"on coordinator can exist at any one time. Adding a new one will delete the old.\n\n" +
+				"user,surname,forename,GUID,password\n"
+				+ "student,surname,forename,GUID,password,matriculation,password\n"
+				+ "employer,name,contact,password\n"
+				+ "visitor,surname,forename,GUID,password\n"
+				+ "coordinator,surname,forename,GUID,password\n\n"
+				+ "File can have as many entries of each type as you wish. Note that employers "
+				+ "are indexed by their contact email.\n");
+	}
+	
+	public static boolean processFile(Scanner linescan, UserStoreImpl userstore){
+		Scanner scan = null;
+		while(linescan.hasNextLine()){
+			try{
+				scan = new Scanner(linescan.nextLine());
+			}catch(Exception e){
+				return false;
+			}
+			scan.useDelimiter(",");
+			try{
+				String type = scan.next();
+				if(type.equalsIgnoreCase("user")){
+					String surname = scan.next();
+					String forename = scan.next();
+					String GUID = scan.next();
+					String password = scan.next();
+					userstore.addUser(surname, forename, GUID, password);	
+				}else if(type.equalsIgnoreCase("student")){
+					String surname = scan.next();
+					String forename = scan.next();
+					String GUID = scan.next();
+					String password = scan.next();
+					String matriculation = scan.next();
+					String programme = scan.next();
+					userstore.addStudent(surname, forename, GUID, password, matriculation, programme);
+				}else if(type.equalsIgnoreCase("employer")){
+					String name = scan.next();
+					String contact = scan.next();
+					String password = scan.next();
+					userstore.addEmployer(name, contact, password);
+				}else if(type.equalsIgnoreCase("visitor")){
+					String surname = scan.next();
+					String forename = scan.next();
+					String GUID = scan.next();
+					String password = scan.next();
+					userstore.addVisitor(surname, forename, GUID, password);
+				}else if(type.equalsIgnoreCase("coordinator")){
+					String surname = scan.next();
+					String forename = scan.next();
+					String GUID = scan.next();
+					String password = scan.next();
+					userstore.addCoordinator(surname, forename, GUID, password);
+				}else{
+					scan.close();
+					return false;
+				}
+			}catch(Exception e){
+				scan.close();
+				System.out.println(e.toString());
+				return false;
+			}
+			scan.close();
+		}
+		return true;
+	}
+
+	public static void main(String args[]){
+		UserStoreImpl userstore = new UserStoreImpl("userdata/users.ser","userdata/students.ser","userdata/employers.ser","userdata/visitors.ser");
+		
+		if(args.length < 1)
+			usage();
+		
+		Scanner linescan = null;
+		File f;
+		for(int i = 0; i < args.length; i++){
+			try{
+				f = new File(args[i]);
+			}catch(Exception e){
+				System.err.println("File could not be read!");
+				return;
+			}
+			if(!f.exists()){
+				System.out.printf("Specified file does not exist.\n");
+				return;
+			}
+			
+			try{
+				linescan = new Scanner(new FileInputStream(f));
+			}catch(IOException e){
+				System.err.println("Problems reading file.");
+				return;
+			}
+			
+			if(processFile(linescan,userstore) == false){
+				System.out.printf("Input file formatted incorrectly. Please refer to the following format.\n");
+				usage();
+			}
+			
+		}
+	}
+}
