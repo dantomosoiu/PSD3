@@ -1,9 +1,16 @@
-\contentsline {section}{\numberline {1}Introduction}{2}
-\contentsline {subsection}{\numberline {1.1}Identification}{2}
-\contentsline {subsection}{\numberline {1.2}Related Documentation}{2}
-\contentsline {subsection}{\numberline {1.3}Purpose and Description of Document}{2}
-\contentsline {subsection}{\numberline {1.4}Document Status and Schedule}{2}
-\contentsline {section}{\numberline {2}Objectives}{2}
-\contentsline {section}{\numberline {3}Prototype Scope and Design}{2}
-\contentsline {section}{\numberline {4}Evaluation}{2}
-\contentsline {section}{\numberline {A}Glossary}{2}
+\contentsline {section}{\numberline {1}Purpose and Description of Document}{2}
+\contentsline {subsection}{\numberline {1.1}Changes to system requirements}{2}
+\contentsline {subsection}{\numberline {1.2}Adjustments necessary due to resolve current issues}{2}
+\contentsline {section}{\numberline {2}Changes}{2}
+\contentsline {subsection}{\numberline {2.1}Role Implementation}{2}
+\contentsline {subsubsection}{\numberline {2.1.1}Role Status}{2}
+\contentsline {subsubsection}{\numberline {2.1.2}Role Status}{2}
+\contentsline {subsection}{\numberline {2.2}Placement Implementation}{2}
+\contentsline {subsubsection}{\numberline {2.2.1}Placement Role}{2}
+\contentsline {subsubsection}{\numberline {2.2.2}Addition of Approval}{2}
+\contentsline {subsubsection}{\numberline {2.2.3}Addition of Internship Duration Constraint}{2}
+\contentsline {subsubsection}{\numberline {2.2.4}Addition of updateRoleStatus Method}{2}
+\contentsline {subsection}{\numberline {2.3}Visitor Implementation}{3}
+\contentsline {subsubsection}{\numberline {2.3.1}Assignment to Students}{3}
+\contentsline {subsubsection}{\numberline {2.3.2}Addition of assignPlacementGrade Method}{3}
+\contentsline {section}{\numberline {A}Glossary}{3}

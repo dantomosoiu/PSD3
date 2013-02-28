@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.12.5)  28 FEB 2013 05:09
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.12.5)  28 FEB 2013 09:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -118,8 +118,7 @@ Package etexcmds Info: Could not find \expanded.
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-)
-No file d4.4.aux.
+) (./d4.4.aux)
 \openout1 = `d4.4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -135,6 +134,7 @@ LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
 LaTeX Font Info:    ... okay on input line 40.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 40.
+
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -190,30 +190,42 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/CompSci_mono.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
-
-No file d4.4.toc.
+ (./d4.4.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+)
 \tf@toc=\write3
 \openout3 = `d4.4.toc'.
 
-[1]
+ [1]
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
+
+ []
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
- [2] (./d4.4.aux) ) 
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
+[2] [3] (./d4.4.aux) ) 
 Here is how much of TeX's memory you used:
- 2020 strings out of 495059
- 29236 string characters out of 3182030
- 83978 words of memory out of 3000000
- 5180 multiletter control sequences out of 15000+200000
- 13915 words of font info for 30 fonts, out of 3000000 for 9000
+ 2044 strings out of 495059
+ 29505 string characters out of 3182030
+ 83999 words of memory out of 3000000
+ 5193 multiletter control sequences out of 15000+200000
+ 17980 words of font info for 40 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,14n,23p,231b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
-/usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on d4.4.pdf (3 pages, 48783 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.en
+c}</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on d4.4.pdf (4 pages, 52768 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 34 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

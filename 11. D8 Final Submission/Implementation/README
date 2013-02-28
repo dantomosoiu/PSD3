@@ -1,0 +1,7 @@
+
+Execute run.sh from a terminal to run the jar build.
+To add users use AddUsers.sh (But it doesnt work at the moment)
+
+Documentation in Javadoc form can be found in docs
+
+Built by Team L (Dan Tomosoiu, Hector Grebbell, Michael Kilian, Tony Lau & Peeranat Fupongsiripan) based on interfaces provided by Tim Storer
