@@ -200,9 +200,9 @@ public class UserStoreImpl implements UserStore {
 	/**
 	 * Adds a new Employer type user to the store
 	 * 
-	 * @param name
-	 * @param contact
-	 * @param password
+	 * @param name Employer Name
+	 * @param contact Employer contact email
+	 * @param password New Employer password
 	 */
 	public void addEmployer(String name, String contact, String password){
 		EmployerImpl newEmployer = employerfactory.createEmployer(name,contact,password);
@@ -218,6 +218,14 @@ public class UserStoreImpl implements UserStore {
 		}
 	}
 
+	/**
+	 * Adds a new Visitor-type user to the store
+	 * 
+	 * @param surname Visitor Surname
+	 * @param forename Visitor Forename
+	 * @param GUID Visitor GUID
+	 * @param password New visitors Password
+	 */
 	public void addVisitor(String surname, String forename, String GUID, String password){
 		Visitor newVisitor = visitorfactory.createVisitor(surname, forename, GUID, password);
 		visitormap.put(GUID, newVisitor);
