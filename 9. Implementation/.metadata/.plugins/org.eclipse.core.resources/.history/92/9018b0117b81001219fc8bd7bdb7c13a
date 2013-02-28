@@ -10,7 +10,7 @@ import uk.ac.glasgow.internman.impl.RoleImpl;
 
 /**
  * Visitor User-Type
- * @author Team L
+ * @author hector
  *
  */
 public class Visitor extends User {

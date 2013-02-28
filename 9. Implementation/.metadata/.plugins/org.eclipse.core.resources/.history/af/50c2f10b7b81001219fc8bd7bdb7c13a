@@ -8,41 +8,18 @@ import java.util.ArrayList;
 import uk.ac.glasgow.internman.UoGGrade;
 import uk.ac.glasgow.internman.impl.RoleImpl;
 
-/**
- * Visitor User-Type
- * @author Team L
- *
- */
 public class Visitor extends User {
 	
 	private ArrayList<Student> studentsUnderCustody;
 
-	/**
-	 * Visitor object constructor
-	 * 
-	 * @param surname The visitors surname
-	 * @param forename The Visitors forename
-	 * @param GUID The visitors GUID
-	 * @param password The new Visitors Password
-	 */
 	protected Visitor(String surname, String forename, String GUID, String password) {
 		super(surname, forename, GUID, password);
 	}
 	
-	/**
-	 * Gets a list of students under the visitors supervision
-	 * @return An array of Students to be visited by the Visitor
-	 */
 	public ArrayList<Student> getStudentsUnderCustody(){
 		return studentsUnderCustody;
 	}
 	
-	/**
-	 * Assigns a grade to a student for a placement
-	 * @param stu Student Object
-	 * @param grade Grade to be assigned
-	 * @param r Placement Role
-	 */
 	public void assignPlacementGrade(Student stu, UoGGrade grade, RoleImpl r){
 		Placement p = PlacementStoreImpl.getPlacementByStudent(stu);
 		for (RoleImpl role: p.getRole()){
@@ -51,12 +28,6 @@ public class Visitor extends User {
 		}
 	}
 	
-	/**
-	 * Adds a student to the visitors supervision
-	 * 
-	 * @param stu The student object
-	 * @return the student again or null if it fails
-	 */
 	public Student addStudentsUnderCustody(Student stu){
 		for (Student student: studentsUnderCustody)
 			if (student.equals(stu))

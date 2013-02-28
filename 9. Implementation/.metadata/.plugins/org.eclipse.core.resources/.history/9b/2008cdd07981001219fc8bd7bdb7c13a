@@ -240,14 +240,6 @@ public class UserStoreImpl implements UserStore {
 		}
 	}
 	
-	/**
-	 * Adds a new visitor to the userstore
-	 * 
-	 * @param surname New Coordinator Surname
-	 * @param forename New Coordinator Forename
-	 * @param GUID New Coordinator GUID
-	 * @param password New Coordinator account password
-	 */
 	public boolean addCoordinator(String surname, String forename, String GUID, String password){
 		if(coordinator == null){
 			coordinator = new Coordinator(surname,forename,GUID,password);
@@ -265,12 +257,6 @@ public class UserStoreImpl implements UserStore {
 			return null;
 	}
 	
-	/**
-	 * Authenticates and returns a student
-	 * @param GUID Students GUID
-	 * @param password Students password
-	 * @return If the password is correct returns the student. Else null
-	 */
 	public Student getStudent(String GUID, String password) {
 		Student Student = studentmap.get(GUID);
 		if (Student != null && Student.authenticate(password)) 
@@ -279,13 +265,6 @@ public class UserStoreImpl implements UserStore {
 			return null;
 	}
 	
-	/**
-	 * Authenticates and returns an Employer
-	 * 
-	 * @param contact Employer contact email (username)
-	 * @param password Employer password
-	 * @return If the password is correct returns the Employer. Else null
-	 */
 	public EmployerImpl getEmployer(String contact, String password) {
 		EmployerImpl employer = employermap.get(contact);
 		if (employer != null && employer.authenticate(password)) 
@@ -294,12 +273,6 @@ public class UserStoreImpl implements UserStore {
 			return null;
 	}
 	
-	/**
-	 * Authenticates and returns a Visitor
-	 * @param GUID Visitors GUID
-	 * @param password Visitors password
-	 * @return If the password is correct returns the Visitor. Else null
-	 */
 	public Visitor getVisitor(String GUID, String password) {
 		Visitor visitor = visitormap.get(GUID);
 		if (visitor != null && visitor.authenticate(password)) 
@@ -308,27 +281,14 @@ public class UserStoreImpl implements UserStore {
 			return null;
 	}
 
-	/**
-	 * Returns the coordinator object
-	 * @return Returns the coordinator object
-	 */
 	public Coordinator getCoordinator() {
 		return coordinator;
 	}
 	
-	/**
-	 * Returns a map of all students keyed with their GUID
-	 * 
-	 * @return Returns a map of all students keyed with their GUID
-	 */
 	public Map<String,Student> getStudents() {
 		return studentmap;
 	}
 	
-	/**
-	 * 
-	 * @return A collection of all students
-	 */
 	public static Collection<Student> getAllStudents(){
 		return studentmap.values();
 	}
