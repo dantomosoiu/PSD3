@@ -8,9 +8,14 @@ import uk.ac.glasgow.internman.Advertisement;
 import uk.ac.glasgow.internman.Employer;
 import uk.ac.glasgow.internman.Role;
 
-
+/**
+ * Instance of an advertisment of an internship.
+ * 
+ * @author Team L
+ *
+ */
 public class Advert implements Advertisement {
-
+	
 	private Advertisement.AdvertisementStatus status;
 	private Map<Integer, Role> roles;
 	private int roleMaxInt;
@@ -18,7 +23,15 @@ public class Advert implements Advertisement {
 	private String applicationDetails;
 	private String comments;
 	
-	
+	/**
+	 * Constructor for the Advert class.
+	 * @param e the employer who submitted the advert
+	 * @param d the details of the advert
+	 * @param c the comments made by the coordinator
+	 * @param s the status of the created advertisement
+	 * @param r the roles to be assigned to this advertisement
+	 * @param m the max number of roles for this position
+	 */
 	public Advert(Employer e, String d, String c, Advertisement.AdvertisementStatus s, Map<Integer, Role> r, int m) {
 		roles = r;
 		status = s;
@@ -28,6 +41,14 @@ public class Advert implements Advertisement {
 		comments = c;
 	}
 	
+	/**
+	 * Constructor for the Avert class
+	 * 
+	 * @param e the employer who submitted the advert
+	 * @param d the details of the advert
+	 * @param c the comments made by the coordinator
+	 * @param s the status of the created advertisement
+	 */
 	public Advert(Employer e, String d, String c, Advertisement.AdvertisementStatus s) {
 		roles = new HashMap<Integer, Role>();
 		status = s;
@@ -37,6 +58,13 @@ public class Advert implements Advertisement {
 		comments = c;
 	}
 	
+	/**
+	 * Constructor for the Avert class
+	 * 
+	 * @param e the employer who submitted the advert
+	 * @param d the details of the advert
+	 * @param c the comments made by the coordinator
+	 */
 	public Advert(Employer e, String d, String c) {
 		roles = new HashMap<Integer, Role>();
 		status = Advertisement.AdvertisementStatus.PENDING;
@@ -66,6 +94,11 @@ public class Advert implements Advertisement {
 		return status;
 	}
 	
+	/**
+	 * Sets the status of the advertisement to status s and sets the comments as c. 
+	 * @param s The status to set for the advertisement.
+	 * @param c The comments for the advertisement.
+	 */
 	public void publish(AdvertisementStatus s, String c) {
 		status = s;
 		comments = c;

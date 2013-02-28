@@ -31,6 +31,10 @@ public class InternManImpl implements InternMan {
 	private OfferManagementImpl offerman;
 	private AdvertManagement adman;
 
+	/**
+	 * Constructor for the InternMan
+	 * @param users the users with which to populate the newly created InternManImpl
+	 */
 	public InternManImpl(UserStore users){
 		this.users = (UserStoreImpl) users;
 	}

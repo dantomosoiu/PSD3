@@ -5,7 +5,10 @@ import java.util.ArrayList;
 
 import uk.ac.glasgow.internman.impl.Placement;
 
-
+/**
+ * Allows storage and retrieval of student placements. 
+ * @author  Team L
+ */
 public interface PlacementStore {
 	/**
 	 * returns ArrayList of all existing placements in PlacementStore

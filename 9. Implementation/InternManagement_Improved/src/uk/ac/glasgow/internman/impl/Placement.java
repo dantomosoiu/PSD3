@@ -16,7 +16,15 @@ public class Placement {
 	private String contact;
 	private Student student;
 	private boolean approved;
-	
+
+	/**
+	 * Placement constructor
+	 * @param id of the placement
+	 * @param role role associated with the placement
+	 * @param stu student doing the placement
+	 * @param manager name of manager associated with the placement
+	 * @param contact contact information of the manager associated with the placement
+	 */
 	public Placement(int id, RoleImpl role, Student stu, String manager, String contact){
 		this.id = id;
 		this.roles = new ArrayList<RoleImpl>();
@@ -29,16 +37,31 @@ public class Placement {
 	
 	/*newly added methods*/
 	
+	/**
+	 * Returns a boolean saying whether the placement has been approved.
+	 * @return
+	 */
 	public boolean isApproved(){
 		return this.approved;
 	}
 	
+	/**
+	 * Retrievs an instance of a Calendar for the supplied date.
+	 * @param date The date for which the Calendar needs to be retrieved.
+	 * @return an instance of a Calendar for the supplied date.
+	 */
 	private Calendar getCalendar(Date date) {
 	    Calendar cal = Calendar.getInstance();
 	    cal.setTime(date);
 	    return cal;
 	}
 	
+	/**
+	 * Returns the year difference between two Dates.
+	 * @param first first date
+	 * @param last last date
+	 * @return year difference between the dates.
+	 */
 	private int getYearDiff(Date first, Date last){
 		Calendar a = getCalendar(first);
 	    Calendar b = getCalendar(last);
@@ -50,6 +73,11 @@ public class Placement {
 	    return diff;
 	}
 	
+	/**
+	 * Ensures that approval of a placement is done 
+	 * only if the summed durations of the roles associated with it
+	 * is 12 weeks or more.   
+	 */
 	private void checkApproval(){
 		Calendar c;
 		GregorianCalendar dateBefore, dateAfter;
@@ -79,10 +107,18 @@ public class Placement {
 		}
 	}
 	
+	/**
+	 * Updates the role's status.
+	 */
 	public void updateRoleStatus(){
 		checkApproval();
 	}
 	
+	/**
+	 * Adds a role to the existing placement.
+	 * @param role the role to add to the current placement.
+	 * @return The added role if adding was successful or null if not.
+	 */
 	public RoleImpl addPlacement(RoleImpl role){
 		for (RoleImpl r: this.roles){
 			if (role.getStart().before(r.getEnd()))
@@ -95,35 +131,67 @@ public class Placement {
 	}
 	////////////////////////
 	
+	/**
+	 * Returns the id of the current placement.
+	 * @return the id of the current placement.
+	 */
 	public int getID(){
 		return this.id;
 	}
 	
 	//changed
+	/**
+	 * Returns the list of Roles associated with this placement.
+	 * @return the list of Roles associated with this placement.
+	 */
 	public ArrayList<RoleImpl> getRole(){
 		return this.roles;
 	}
 	
+	/**
+	 * Retrieves an instance of the student associated with this placement.
+	 * @return an instance of the student associated with this placement.
+	 */
 	public Student getStudent(){
 		return this.student;
 	}
 	
+	/**
+	 * Retrieves the name of the manager associated with this placement.
+	 * @return the name of the manager associated with this placement.
+	 */
 	public String getManager(){
 		return this.manager;
 	}
 	
+	/**
+	 * Retrieves the contact details of the manager associated with this placement.
+	 * @return the contact details of the manager associated with this placement.
+	 */
 	public String getContact(){
 		return this.contact;
 	}
 	
+	/**
+	 * Sets the student associated with this placement to the specified parameter.
+	 * @param s The student to set.
+	 */
 	public void setStudent(Student s){
 		this.student = s;
 	}
-	
+
+	/**
+	 * Sets the name of the manager associated with this placement to the specified parameter.
+	 * @param s The name of the manager.
+	 */
 	public void setManager(String m){
 		this.manager = m;
 	}
 	
+	/**
+	 * Sets the contact details of the manager associated with this placement to the specified parameter.
+	 * @param s The contact details to set.
+	 */
 	public void setContact(String c){
 		this.contact = c;
 	}

@@ -12,6 +12,9 @@ public class PlacementStoreImpl implements PlacementStore{
 	
 	private static ArrayList<Placement> placements;
 	
+	/**
+	 * Constructor for PlacementStoreImpl.
+	 */
 	public PlacementStoreImpl(){
 		placements = new ArrayList<Placement>();
 	}
@@ -69,6 +72,12 @@ public class PlacementStoreImpl implements PlacementStore{
 		return null;
 	}
 	
+	/**
+	 * Gets an instance of the placement associated with the provided student.
+	 * @param s The student for which to retrieve the placement.
+	 * @return an instance of the placement associated with 
+	 * the provided student or null if it could not be found.
+	 */
 	public static Placement getPlacementByStudent(Student s){
 		for (Placement p: placements){
 			if (p.getStudent().getMatriculation().equals(s.getMatriculation())){

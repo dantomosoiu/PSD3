@@ -20,10 +20,20 @@ public interface OfferManagement {
 	
 	/**
 	 * Approves an offer made to the student with the specified matriculation.
-	 * @param matriculation
+	 * @param matriculation of the student for which the offer is to be approved.
 	 */
 	void approveAcceptedOffer(String matriculation);
 	
+	/**
+	 * Creates a new self-sourced role.
+	 * @param title Title of the role.
+	 * @param location Location of the role.
+	 * @param start Start date of the role.
+	 * @param end End date of the role.
+	 * @param description Description of the role.
+	 * @param salary Salary of the role. 
+	 * @return an instance of the created role·.
+	 */
 	Role createNewSelfSourcedRole(String title, String location, Date start, Date end, String description, Double salary);
 
 }

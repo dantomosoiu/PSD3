@@ -2,15 +2,14 @@ package uk.ac.glasgow.internman;
 
 import uk.ac.glasgow.internman.users.User;
 
-
 public interface UserStore {
 	
 	/**
 	 * Adds a new user to the store.
-	 * @param surname
-	 * @param GUID
-	 * @param forename
-	 * @param password
+	 * @param surname surname of the user to be added.
+	 * @param GUID Glasgow University ID of the user to be added.
+	 * @param forename forename of the user to be added.
+	 * @param password password of the user to be added.
 	 */
 	public void addUser(
 			String surname, 
@@ -22,13 +21,9 @@ public interface UserStore {
 	 * Returns a user specified by the GUID, if authentication is
 	 * successful.
 	 * 
-	 * @param GUID
-	 *            the user's GUID
-	 * @param password
-	 *            the user's password
-	 * @return the user specified by the GUID, if the password
-	 * matches that of
-	 *         the user.
+	 * @param GUID the user's GUID
+	 * @param password the user's password
+	 * @return the user specified by the GUID, if the password matches that of the user.
 	 */
 	public User getUser(String GUID, String password);
 	

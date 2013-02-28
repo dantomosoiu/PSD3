@@ -17,6 +17,15 @@ public class RoleImpl implements Role {
 	private Status status;
 	private UoGGrade grade;
 
+	/**
+	 * Constructor for the Role class.
+	 * @param title Title of the role. 
+	 * @param location Location of the role.
+	 * @param start Start date of the role.
+	 * @param end End date of the role.
+	 * @param description Description of the role.
+	 * @param salary Salary per week of the role.
+	 */
 	public RoleImpl(String title, String location, Date start, Date end,
 			String description, Double salary) {
 		super();
@@ -34,15 +43,26 @@ public class RoleImpl implements Role {
 		return title;
 	}
 	
+	/**
+	 * Sets the grade for the role to the specified UoGGrade
+	 * @param grade the UoGGrade to which to set the Role grade.
+	 */
 	public void setGrade(UoGGrade grade){
 		this.grade = grade;
 	}
 	
+	/**
+	 * Gets the UoGGrade assigned to the current role. 
+	 * @return the UoGGrade assigned to the current role.
+	 */
 	public UoGGrade getGrade(){
 		return this.grade;
 	}
-	
 
+	/**
+	 * Sets the title of the current role.
+	 * @param title title to set.
+	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -54,6 +74,10 @@ public class RoleImpl implements Role {
 	}
 
 
+	/**
+	 * Sets the start date of the role to the specified Date.
+	 * @param start the Date to which to set the start date of the role.
+	 */
 	public void setStart(Date start) {
 		this.start = start;
 	}
@@ -64,17 +88,26 @@ public class RoleImpl implements Role {
 		return end;
 	}
 
-
+	/**
+	 * Sets the start date of the role to the specified Date.
+	 * @param start the Date to which to set the start date of the role.
+	 */
 	public void setEnd(Date end) {
 		this.end = end;
 	}
 
-
+	/**
+	 * Gets the description of the current role.
+	 * @return the description of the current role.
+	 */
 	public String getDescription() {
 		return description;
 	}
 
-
+	/**
+	 * Sets the description of the current role to the specified description.
+	 * @param description The description to which to set the description of the current role.
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -85,11 +118,18 @@ public class RoleImpl implements Role {
 		return salary;
 	}
 
-
+	/**
+	 * Sets the salary of the current role to the specified salary.
+	 * @param salary The salary to which to set the salary of the current role.
+	 */
 	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
 
+	/**
+	 * Sets the location of the current role to the specified location.
+	 * @param salary The location to which to set the location of the current role.
+	 */
 	public void setLocation(String location) {
 		this.location = location;
 	}
