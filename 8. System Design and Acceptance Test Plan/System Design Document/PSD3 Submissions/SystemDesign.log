@@ -1,16 +1,28 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.7)  27 FEB 2013 21:55
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.1.27)  28 FEB 2013 07:54
 entering extended mode
- %&-line parsing enabled.
-**SystemDesign.tex
-(./SystemDesign.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
-(./l3deliverable.cls
+**C:/Users/ATL/Documents/GitHub/PSD3/8.*System*Design*and*Acceptance*Test*Plan/
+System*Design*Document/PSD3*Submissions/SystemDesign.tex
+
+("C:/Users/ATL/Documents/GitHub/PSD3/8. System Design and Acceptance Test Plan/
+System Design Document/PSD3 Submissions/SystemDesign.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+
+("C:\Users\ATL\Documents\GitHub\PSD3\8. System Design and Acceptance Test Plan\
+System Design Document\PSD3 Submissions\l3deliverable.cls"
 Document Class: l3deliverable 
-(/usr/share/texmf-texlive/tex/latex/base/article.cls
+("C:\Program Files\MiKTeX\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size11.clo
+("C:\Program Files\MiKTeX\tex\latex\base\size11.clo"
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -25,47 +37,58 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/a4wide.sty
+("C:\Users\ATL\Documents\GitHub\PSD3\8. System Design and Acceptance Test Plan\
+System Design Document\PSD3 Submissions\a4wide.sty"
 Package: a4wide 1994/08/30
 
-(/usr/share/texmf-texlive/tex/latex/ntgclass/a4.sty
-Package: a4 2004/04/15 v1.2g A4 based page layout
-)) (./textcase.sty
+("C:\Users\ATL\Documents\GitHub\PSD3\8. System Design and Acceptance Test Plan\
+System Design Document\PSD3 Submissions\a4.sty"
+Package: a4 1999/03/03 v1.2f A4 based page layout
+))
+("C:\Users\ATL\Documents\GitHub\PSD3\8. System Design and Acceptance Test Plan\
+System Design Document\PSD3 Submissions\textcase.sty"
 Package: textcase 1998/11/12 v0.06 Text only upper/lower case changing (DPC)
 )
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+("C:\Program Files\MiKTeX\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+("C:\Program Files\MiKTeX\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+("C:\Program Files\MiKTeX\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+("C:\Program Files\MiKTeX\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+("C:\Program Files\MiKTeX\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+("C:\Program Files\MiKTeX\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
 \Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+("C:\Program Files\MiKTeX\tex\latex\tools\tabularx.sty"
 Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 
-(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+("C:\Program Files\MiKTeX\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen105
 \extrarowheight=\dimen106
@@ -81,27 +104,30 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@cols=\count88
 \TX@ftn=\toks16
 )
-(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+("C:\Program Files\MiKTeX\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 ))
-(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+("C:\Program Files\MiKTeX\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(/etc/texmf/tex/latex/config/color.cfg
+("C:\Program Files\MiKTeX\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
-) (./comment.sty
-Excluding comment 'comment') (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+)
+("C:\Users\ATL\Documents\GitHub\PSD3\8. System Design and Acceptance Test Plan\
+System Design Document\PSD3 Submissions\comment.sty"
+Excluding comment 'comment')
+("C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/etc/texmf/tex/latex/config/color.cfg
+("C:\Program Files\MiKTeX\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Package option `usenames' ignored on input line 216.
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
+("C:\Program Files\MiKTeX\tex\latex\colortbl\colortbl.sty"
 Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
 \everycr=\toks17
 \minrowclearance=\skip45
@@ -118,424 +144,489 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 
-(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def
+("C:\Program Files\MiKTeX\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 )
-(/usr/share/texmf/tex/latex/xcolor/svgnam.def
+("C:\Program Files\MiKTeX\tex\latex\xcolor\svgnam.def"
 File: svgnam.def 2007/01/21 v2.11 Predefined colors according to SVG 1.1 (UK)
 ))
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+("C:\Program Files\MiKTeX\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-) (./SystemDesign.aux)
-\openout1 = `SystemDesign.aux'.
+)
+("C:\Users\ATL\Documents\GitHub\PSD3\8. System Design and Acceptance Test Plan\
+System Design Document\PSD3 Submissions\SystemDesign.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 63.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 62.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+("C:\Program Files\MiKTeX\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count90
-\scratchdimen=\dimen112
-\scratchbox=\box26
-\nofMPsegments=\count91
-\nofMParguments=\count92
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count93
-\MPscratchDim=\dimen113
-\MPnumerator=\count94
-\everyMPtoPDFconversion=\toks19
-) <img/CompSci_mono.pdf, id=1, 413.545pt x 93.34875pt>
+<img/CompSci_mono.pdf, id=1, 413.545pt x 93.34875pt>
 File: img/CompSci_mono.pdf Graphic file (type pdf)
 
 <use img/CompSci_mono.pdf>
+Package pdftex.def Info: img/CompSci_mono.pdf used on input line 67.
+(pdftex.def)             Requested size: 373.71042pt x 53.51495pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 67.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/CompSci_mono.pdf>]
+{C:/Users/ATL/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/ATL/
+Documents/GitHub/PSD3/8. System Design and Acceptance Test Plan/System Design D
+ocument/PSD3 Submissions/img/CompSci_mono.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 72.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 78.
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+("C:\Program Files\MiKTeX\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 77.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 78.
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+("C:\Program Files\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 77.
+(Font)              <10.95> on input line 78.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 77.
+(Font)              <8> on input line 78.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 77.
+(Font)              <6> on input line 78.
 
-Overfull \hbox (7.89256pt too wide) in paragraph at lines 77--78
+Overfull \hbox (7.89256pt too wide) in paragraph at lines 78--79
 []\OT1/ptm/m/n/10.95 Requirements Spec-i-fi-ca-tion Doc-u-ment ($\OT1/pcr/m/n/1
-0.95 http : / / fims . moodle . gla . ac . uk / file . php /
+0.95 http : / / fims . moodle . gla . ac . uk / file . php /$
  []
 
 <ComponentDiagram.pdf, id=15, 762.85pt x 712.6625pt>
 File: ComponentDiagram.pdf Graphic file (type pdf)
 
-<use ComponentDiagram.pdf> [1 <./ComponentDiagram.pdf>]
-<StateMachineDiagram.png, id=25, 1836.8625pt x 1154.3125pt>
-File: StateMachineDiagram.png Graphic file (type png)
+<use ComponentDiagram.pdf>
+Package pdftex.def Info: ComponentDiagram.pdf used on input line 87.
+(pdftex.def)             Requested size: 305.1346pt x 285.05995pt.
+ [1 <C:/Users/ATL/Documents/GitHub/PSD3/8. System Design and Acceptance Test Pl
+an/System Design Document/PSD3 Submissions/ComponentDiagram.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
-<use StateMachineDiagram.png>
-Overfull \hbox (16.56076pt too wide) in paragraph at lines 102--104
+ []
+
+<AdvertState.png, id=25, 531.9875pt x 90.3375pt>
+File: AdvertState.png Graphic file (type png)
+ <use AdvertState.png>
+Package pdftex.def Info: AdvertState.png used on input line 106.
+(pdftex.def)             Requested size: 265.9931pt x 45.16862pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--113
+
+ []
+
+<StudentState.png, id=26, 1144.275pt x 120.45pt>
+File: StudentState.png Graphic file (type png)
+ <use StudentState.png>
+Package pdftex.def Info: StudentState.png used on input line 115.
+(pdftex.def)             Requested size: 514.91899pt x 54.20198pt.
+
+Overfull \hbox (72.26524pt too wide) in paragraph at lines 115--116
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--104
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
-<UserFactoryComponent.png, id=26, 1204.5pt x 742.775pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--122
+
+ []
+
+<UserFactoryComponent.png, id=27, 1204.5pt x 742.775pt>
 File: UserFactoryComponent.png Graphic file (type png)
 
-<use UserFactoryComponent.png> [2 <./StateMachineDiagram.png (PNG copy)>]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
+<use UserFactoryComponent.png>
+Package pdftex.def Info: UserFactoryComponent.png used on input line 129.
+(pdftex.def)             Requested size: 421.58131pt x 259.97514pt.
+ [2 <C:/Users/ATL/Documents/GitHub/PSD3/8. System Design and Acceptance Test Pl
+an/System Design Document/PSD3 Submissions/AdvertState.png (PNG copy)> <C:/User
+s/ATL/Documents/GitHub/PSD3/8. System Design and Acceptance Test Plan/System De
+sign Document/PSD3 Submissions/StudentState.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--210
-
- []
-
-[3 <./UserFactoryComponent.png (PNG copy)>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 212--218
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 221--227
+Underfull \hbox (badness 10000) in paragraph at lines 140--227
 
  []
 
+[3 <C:/Users/ATL/Documents/GitHub/PSD3/8. System Design and Acceptance Test Pla
+n/System Design Document/PSD3 Submissions/UserFactoryComponent.png (PNG copy)>]
+[4]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 229.
+
+ ("C:\Program Files\MiKTeX\tex\latex\psnfss\omlptm.fd"
+File: omlptm.fd 
+)
+
+LaTeX Font Warning: Font shape `OML/ptm/bx/n' undefined
+(Font)              using `OML/ptm/m/it' instead
+(Font)              for symbol `textless' on input line 229.
+
+LaTeX Font Info:    Font shape `OML/ptm/m/it' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 229.
+LaTeX Font Info:    Font shape `OML/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 229.
 
 Underfull \hbox (badness 10000) in paragraph at lines 229--235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--244
+Underfull \hbox (badness 10000) in paragraph at lines 238--244
 
  []
 
-[5] <OfferManagement.png, id=39, 582.175pt x 160.6pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--261
+
+ []
+
+[5] <OfferManagement.png, id=41, 582.175pt x 160.6pt>
 File: OfferManagement.png Graphic file (type png)
 
 <use OfferManagement.png>
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
+Package pdftex.def Info: OfferManagement.png used on input line 262.
+(pdftex.def)             Requested size: 291.08679pt x 80.29979pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--259
+Underfull \hbox (badness 10000) in paragraph at lines 269--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--259
+Underfull \hbox (badness 10000) in paragraph at lines 269--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--277
+Underfull \hbox (badness 10000) in paragraph at lines 277--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--277
+Underfull \hbox (badness 10000) in paragraph at lines 277--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--277
+Underfull \hbox (badness 10000) in paragraph at lines 277--294
 
  []
 
-[6 <./OfferManagement.png (PNG copy)>]
-<adStore.png, id=44, 582.175pt x 291.0875pt>
+[6 <C:/Users/ATL/Documents/GitHub/PSD3/8. System Design and Acceptance Test Pla
+n/System Design Document/PSD3 Submissions/OfferManagement.png (PNG copy)>]
+<adStore.png, id=46, 582.175pt x 291.0875pt>
 File: adStore.png Graphic file (type png)
  <use adStore.png>
-Underfull \hbox (badness 10000) in paragraph at lines 285--292
+Package pdftex.def Info: adStore.png used on input line 297.
+(pdftex.def)             Requested size: 291.08679pt x 145.54338pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--292
+Underfull \hbox (badness 10000) in paragraph at lines 302--309
+
+ []
+
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 313.
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--300
+Underfull \hbox (badness 10000) in paragraph at lines 310--317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--300
+Underfull \hbox (badness 10000) in paragraph at lines 318--325
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--308
+Underfull \hbox (badness 10000) in paragraph at lines 318--325
+
+ []
+
+[7 <C:/Users/ATL/Documents/GitHub/PSD3/8. System Design and Acceptance Test Pla
+n/System Design Document/PSD3 Submissions/adStore.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 326--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--308
-
- []
-
-[7 <./adStore.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
+Underfull \hbox (badness 10000) in paragraph at lines 326--333
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--316
+Underfull \hbox (badness 10000) in paragraph at lines 334--341
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--324
+Underfull \hbox (badness 10000) in paragraph at lines 334--341
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--324
+Underfull \hbox (badness 10000) in paragraph at lines 342--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--332
+Underfull \hbox (badness 10000) in paragraph at lines 342--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--332
+Underfull \hbox (badness 10000) in paragraph at lines 350--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--341
+Underfull \hbox (badness 10000) in paragraph at lines 350--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--341
+Underfull \hbox (badness 10000) in paragraph at lines 360--367
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--350
+Underfull \hbox (badness 10000) in paragraph at lines 360--367
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--350
+Underfull \hbox (badness 10000) in paragraph at lines 368--375
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--358
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 351--358
+Underfull \hbox (badness 10000) in paragraph at lines 368--375
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 359--367
+Underfull \hbox (badness 10000) in paragraph at lines 376--384
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--367
+Underfull \hbox (badness 10000) in paragraph at lines 376--384
 
  []
 
-<ClassDiagram_PlacementStore.png, id=51, 1084.05pt x 511.9125pt>
+<ClassDiagram_PlacementStore.png, id=53, 1084.05pt x 511.9125pt>
 File: ClassDiagram_PlacementStore.png Graphic file (type png)
 
 <use ClassDiagram_PlacementStore.png>
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Package pdftex.def Info: ClassDiagram_PlacementStore.png used on input line 388
+.
+(pdftex.def)             Requested size: 433.61232pt x 204.76137pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--455
+Underfull \hbox (badness 10000) in paragraph at lines 394--472
 
  []
 
-[9 <./ClassDiagram_PlacementStore.png (PNG copy)>] [10] [11]
-(./SystemDesign.aux) ) 
+[9 <C:/Users/ATL/Documents/GitHub/PSD3/8. System Design and Acceptance Test Pla
+n/System Design Document/PSD3 Submissions/ClassDiagram_PlacementStore.png (PNG 
+copy)>] [10] [11]
+("C:\Users\ATL\Documents\GitHub\PSD3\8. System Design and Acceptance Test Plan\
+System Design Document\PSD3 Submissions\SystemDesign.aux")
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2013 strings out of 495061
- 26305 string characters out of 1182622
- 96049 words of memory out of 3000000
- 5160 multiletter control sequences out of 15000+50000
+ 1955 strings out of 494045
+ 27642 string characters out of 3150005
+ 101067 words of memory out of 3000000
+ 5212 multiletter control sequences out of 15000+200000
  18495 words of font info for 42 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 41i,16n,35p,409b,284s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/
-type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr
-8a.pfb>
-Output written on SystemDesign.pdf (12 pages, 266249 bytes).
+ 715 hyphenation exceptions out of 8191
+ 41i,16n,35p,527b,284s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/cou
+rier/ucrr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
+Output written on SystemDesign.pdf (12 pages, 226006 bytes).
 PDF statistics:
- 76 PDF objects out of 1000 (max. 8388607)
+ 81 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -51,7 +51,8 @@
 }
 
 %%release date 
-\date{30 Jan 2013}
+\date{28 Feb 2013}
+\version{2}
 
 \deliverableID{D6}
 \project{PSD3 Group Exercise 2}
@@ -100,8 +101,24 @@ manages the storage and retrieval of adverts from an appropriate source.}
 \section{State Machine Diagram}
 \subsection{Description and Rationale}
 The state machine diagram shows the state of objects within the Internship Management System at any given moment in time.\\
-\includegraphics[scale = 0.25]{StateMachineDiagram.png}\\
 
+\subsection{Advertisement State}
+\includegraphics[scale = 0.5]{AdvertState.png}\\
+
+\subsubsection{Rationale}
+When an advertisement is created and submitted by the employer it has a pending state.
+Only when the course coordinator executes the publishAdvert method does the state of the 
+advertisement change from pending to published. The advertisement can be revised prior to
+publishing by the course coordinator. \\
+
+\subsection{Student State}
+\includegraphics[scale = 0.45]{StudentState.png}\\
+
+\subsubsection{Rationale}
+This represents the various states of the student and whether they have an offer which is approved by the course coordinator.
+A student will start off in the Idle state and move between this state and the acceptance pending state when they apply for a position advertised in the system
+or find a self-sourced role. The final state is Approved which is reached when the course coordinator approves the student's offer which meets the requirements for an
+SESP internship. \\  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -209,7 +226,7 @@ String password\\
 \\
 
 %getUserMap
-\textbf{public Map<String,User> getUserMap()}\\
+\textbf{public Map\textless String,User\textgreater  getUserMap()}\\
 Returns map holding all current users.\\
 \textbf{Return} The user store's user map.\\
 \textbf{Parameters}\\
@@ -218,7 +235,7 @@ N/A
 
 
 %getVisitorMap
-\textbf{public Map<String,Visitor> getVisitorMap()}\\
+\textbf{public Map\textless String,Visitor\textgreater   getVisitorMap()}\\
 Returns map holding all current visitors.\\
 \textbf{Return} The user store's visitor map.\\
 \textbf{Parameters}\\
@@ -226,7 +243,7 @@ N/A
 \\
 
 %getStudentMap
-\textbf{public Map<String,Student> getStudentMap()}\\
+\textbf{public Map\textless String,Student\textgreater   getStudentMap()}\\
 Returns map holding all current students.\\
 \textbf{Return} The user store's student map.\\
 \textbf{Parameters}\\
@@ -234,7 +251,7 @@ N/A
 \\
 
 %getEmployerMap
-\textbf{public Map<String,Employer> getUserMap()}\\
+\textbf{public Map\textless String,Employer\textgreater   getUserMap()}\\
 Returns map holding all current employer.\\
 \textbf{Return} The user store's employer map.\\
 \textbf{Parameters}\\
@@ -290,18 +307,18 @@ Advertisement advert\\
 long id\\
 \\
 
-\textbf{public LinkedList<Advertisement> getPublishedAds()}\\
+\textbf{public LinkedList\textless Advertisement\textgreater   getPublishedAds()}\\
 Retrives list of all published adverts\\
 \textbf{Return}\\
-LinkedList<Advertisement> adverts.\\
+LinkedList\textless Advertisement\textgreater   adverts.\\
 \textbf{Parameters}\\
 N/A\\
 \\
 
-\textbf{public LinkedList<Advertisement> getAllAds()}\\
+\textbf{public LinkedList\textless Advertisement\textgreater   getAllAds()}\\
 Retrives list of all adverts\\
 \textbf{Return}\\
-LinkedList<Advertisement> adverts.\\
+LinkedList\textless Advertisement\textgreater   adverts.\\
 \textbf{Parameters}\\
 N/A\\
 \\
